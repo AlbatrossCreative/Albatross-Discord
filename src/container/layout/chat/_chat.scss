@@ -1,0 +1,18 @@
+@use 'abstract' as *;
+
+#{c(chat chat)} {
+    @include nebula-rounded-styling($br: small);
+    overflow: hidden;
+    @include nebula-color-styling($bg: transparent);
+    #{c(chat chatContent)} {
+        @include nebula-color-styling($bg: secondary);
+        @include nebula-rounded-styling($br: small);
+        @include nebula-spacing-styling($mt: small);
+        #{c(chat chatContentInner)} {
+            @include nebula-color-styling($bg: transparent);
+        }
+        &::before{
+            display: none;
+        }
+    }
+}

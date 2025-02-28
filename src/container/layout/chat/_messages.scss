@@ -1,0 +1,71 @@
+@use 'abstract' as *;
+
+#{c(chat messageListItem)} {
+	#{c(chat message)} {
+		grid-column-gap: var(--nebula-spacing-sm);
+		display: grid;
+		#{c(chat repliedMessage)} {
+			@include nebula-spacing-styling($mb: x-small);
+			grid-area: replied;
+		}
+		#{c(chat messageContents)} {
+			@include nebula-flex-styling($dir: column, $gap: var(--nebula-spacing-xs));
+			border-radius: var(--nebula-message-roundness);
+			@include nebula-color-styling($bgc: tertiary);
+			@include nebula-padding-styling($p: small);
+			width: max-content;
+			grid-area: message;
+			max-width: 45%;
+			img {
+				grid-area: avatar;
+				left: 0;
+			}
+			&:has(#{c(chat messageContent)}:empty) {
+				display: none;
+			}
+		}
+		#{c(chat messageAttachmentsContainer)} {
+			grid-area: media;
+		}
+		&#{c(chat mentioned)} {
+			@include nebula-color-styling($bg: transparent);
+			#{c(chat repliedMessage)} {
+				#{c(chat repliedMessageClickableSpine)}{
+					border-color: var(--accent-400);
+				}
+			}
+			#{c(chat messageContents)} {
+				background-color: var(--accent-400);
+			}
+			&::before{
+				display: none;
+			}
+		}
+	}
+	&[data-is-self='true'] {
+		#{c(chat message)} {
+			justify-items: flex-end;
+			grid-template-areas:
+				'. replied'
+				'message avatar'
+				'media .';
+			grid-template-columns: auto 40px;
+		}
+	}
+	&[data-is-self='false'] {
+		#{c(chat message)} {
+			justify-items: flex-start;
+			grid-template-areas:
+				'. replied'
+				'avatar message'
+				'. media';
+			grid-template-columns: 40px auto;
+			#{c(chat messageContents)} {
+				h3 {
+					min-height: unset;
+					line-height: unset;
+				}
+			}
+		}
+	}
+}

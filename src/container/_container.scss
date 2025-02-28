@@ -1,0 +1,19 @@
+@use 'abstract' as *;
+
+#{c(main appMount)} {
+    @include nebula-color-styling($bgc: primary);
+	#{c(main appInner)} {
+        @include nebula-color-styling($bg: transparent);
+        #{c(main bg)} {
+            display: none;
+        }
+		#{c(main appLayers)} {
+			#{c(main baseLayer)} {
+				#{c(main container)} {
+					@include nebula-spacing-styling($m: small, $mt: 0);
+					@include nebula-position-styling($w: unset);
+				}
+			}
+		}
+	}
+}

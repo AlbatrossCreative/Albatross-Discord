@@ -1,0 +1,85 @@
+@use 'abstract' as *;
+
+#{c(os titleBar)} {
+	height: var(--nebula-osbar-height);
+	margin: 0 0 var(--nebula-spacing-sm) 0;
+	#{c(os wordmark)} {
+		@include nebula-padding-styling($p: 0);
+		&::before {
+			@include nebula-position-styling(
+				$w: 100%,
+				$h: var(--nebula-osbar-height),
+				$top: 0,
+				$pos: fixed,
+				$z: 100
+			);
+			@include nebula-flex-styling($jc: center, $ai: center);
+
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background-color: var(--nebula-primary-430);
+			color: var(--text-primary);
+			text-align: center;
+			font-weight: 400;
+			font-size: 12px;
+		}
+		&#{c(os win wordmark)} {
+			&::before {
+				content: '#{$theme-name}' ' 〡 ' 'v#{$win-version}' ' 〡 ' '#{$skinID}';
+			}
+		}
+		&#{c(os mac wordmark)} {
+			&::before {
+				content: '#{$theme-name}' ' 〡 ' 'v#{$osx-version}' ' 〡 ' '#{$skinID}';
+			}
+		}
+		&::after {
+			@include nebula-position-styling(
+				$pos: relative,
+				$top: var(--nebula-spacing-xxs),
+				$left: var(--nebula-spacing-xs),
+				$z: 3001,
+				$w: 151px,
+				$h: 32px
+			);
+			@include nebula-color-styling($bg: titlebar-wordmark);
+			@include nebula-flex-styling;
+			content: '';
+		}
+		svg {
+			display: none;
+		}
+	}
+	#{c(os win button)} {
+		@include nebula-position-styling(
+			$w: 42px,
+			$h: var(--nebula-osbar-height),
+			$top: 0px,
+			$z: 3001
+		);
+		&::before {
+			@include nebula-position-styling($w: 16px, $h: 16px);
+			background: var(--header-secondary);
+			content: '';
+		}
+		&#{c(os win buttonClose)} {
+			&::before {
+				mask: var(--titlebar-close);
+			}
+		}
+		&#{c(os win buttonMinMax)} {
+			&:nth-child(3) {
+				&::before {
+					mask: var(--titlebar-maximize);
+				}
+			}
+			&:nth-child(4) {
+				&::before {
+					mask: var(--titlebar-minimize);
+				}
+			}
+		}
+		svg {
+			display: none;
+		}
+	}
+}

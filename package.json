@@ -1,0 +1,30 @@
+{
+	"name": "nebula",
+	"version": "1.0.0",
+	"description": "",
+	"engines": {
+		"node": ">=20.0.0",
+		"pnpm": ">=9.0.0"
+	},
+	"scripts": {
+		"build": "replugged build theme",
+		"watch": "replugged build theme --watch",
+		"bundle": "replugged bundle theme",
+		"release": "replugged release",
+		"lint": "prettier ./src --check",
+		"lint:fix": "prettier ./src --write",
+		"buildTheme": "sass src/_source.scss -I public/build/nebula.css",
+		"debugClassList": "sass src/abstract/_debug-dump-all.scss public/debug/output.css -I public/build/nebula.css"
+	},
+	"keywords": [],
+	"author": "Loremly",
+	"license": "GPL-3.0-only",
+	"devDependencies": {
+		"@types/node": "^20.14.10",
+		"prettier": "^3.4.2",
+		"replugged": "^4.8.1"
+	},
+	"dependencies": {
+		"sass": "^1.85.0"
+	}
+}

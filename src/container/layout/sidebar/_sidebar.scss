@@ -1,0 +1,13 @@
+@use 'abstract' as *;
+
+html:not(.visual-refresh) #{c(sidebar sidebar)} {
+	&:not(#{c(other cv channelsSidebarHidden)}) {
+		@include nebula-color-styling($bg: transparent);
+		@include nebula-position-styling($w: var(--nebula-sidebar-width));
+		@include nebula-spacing-styling($mx: small); 
+		@include nebula-flex-styling($dir: column-reverse);
+	}
+	::-webkit-scrollbar{
+		display: none;
+	}
+}
