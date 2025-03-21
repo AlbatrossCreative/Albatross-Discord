@@ -1,0 +1,5 @@
+@use 'abstract' as *;
+
+#{c(button button)} {
+	@include nebula-rounded-styling($br: x-small);
+}

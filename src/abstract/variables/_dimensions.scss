@@ -1,0 +1,10 @@
+html:root {
+	--nebula-topbar-height: 58px;
+	--nebula-sidebar-width: 287px;
+	--nebula-guild-item: 48px;
+	--nebula-guild-list-width: 76px;
+	--nebula-sidebar-profile-area-height: 70px;
+	--nebula-sidebar-inner-width: calc(var(--nebula-sidebar-width) - var(--nebula-spacing-lg));
+	--nebula-osbar-height: 32px;
+	--nebula-pill-width: 5px;
+}

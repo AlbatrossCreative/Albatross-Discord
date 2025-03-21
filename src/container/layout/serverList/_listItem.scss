@@ -1,0 +1,18 @@
+@use 'abstract' as *;
+
+#{c(serverList listItem)} {
+	div {
+		#{c(serverList blobContainer)} {
+			#{c(serverList serverWrapper)} {
+				svg {
+					foreignObject {
+						@include nebula-color-styling($bg: primary);
+						img {
+							@include nebula-transition-styling($l: medium, $p: opacity);
+						}
+					}
+				}
+			}
+		}
+	}
+}

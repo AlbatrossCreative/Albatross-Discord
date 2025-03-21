@@ -1,0 +1,16 @@
+$spacing: (
+	'xxs' 6px,
+	'xs' 8px,
+	'sm' 10px,
+	'md' 14px,
+	'lg' 14px,
+	'xl' 16px,
+	'2xl' 20px,
+	'3xl' 26px,
+	'4xl' 30px
+);
+html:root {
+	@each $id, $value in $spacing {
+		--nebula-spacing-#{$id}: #{$value};
+	}
+}

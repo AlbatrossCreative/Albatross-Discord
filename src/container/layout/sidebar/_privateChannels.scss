@@ -3,16 +3,18 @@
 #{c(sidebar private channels)} {
 	@include nebula-color-styling($bg: transparent);
 	#{c(sidebar private searchBar)} {
+		@include nebula-color-styling($bgc: secondary);
 		@include nebula-position-styling($h: unset);
-		@include nebula-rounded-styling($br: var(--nebula-rounded-sm));
-		margin-bottom: var(--nebula-spacing-sm);
+		@include nebula-rounded-styling($br: small);
+		@include nebula-spacing-styling($mb: small);
+		@include nebula-padding-styling($p: x-small);
 		overflow: hidden;
 		box-shadow: none;
-		padding: 0;
 		button {
-			@include nebula-color-styling($bgc: secondary);
-			@include nebula-padding-styling($p: small, $pl: large);
+			@include nebula-color-styling($bgc: primary);
+			@include nebula-padding-styling($p: x-small, $pl: large);
 			@include nebula-position-styling($h: unset);
+			@include nebula-rounded-styling($br: small);
 			line-height: unset;
 		}
 	}
@@ -21,13 +23,10 @@
 		@include nebula-color-styling($bg: secondary);
 		ul {
 			@include nebula-flex-styling($ac: flex-start, $wrap: wrap);
-			@include nebula-padding-styling(
-				$pt: x-small,
-				$pr: x-small
-			);
+			@include nebula-padding-styling($pt: x-small, $pr: x-small);
 			#{c(sidebar private friendsButtonContainer)} {
+				@include nebula-flex-styling;
 				margin-left: var(--nebula-spacing-xs);
-				display: flex;
 				flex: 1;
 				li#{c(sidebar private channel)} {
 					margin-left: 0 !important;
@@ -38,7 +37,7 @@
 						width: unset;
 						&::before,
 						&::after {
-							display: none;
+							@include nebula-position-styling($d: none);
 						}
 					}
 				}
@@ -81,19 +80,17 @@
 							}
 							&::after {
 								@include nebula-position-styling($w: 0, $h: 30px, $pos: absolute);
-								@include nebula-color-styling($bg: var(--accent-500));
 								@include nebula-rounded-styling($br: small);
-								transition: 0.1s 0.2s ease all;
+								transition: 0.1s 0.05s ease all;
 								content: '';
 								order: -1;
 							}
 						}
 						&:hover,
 						&:focus-within {
-							@include nebula-color-styling($bg: #19917d48);
 							#{c(sidebar private link)} {
 								&::after {
-									@include nebula-color-styling($bg: var(--accent-430));
+									@include nebula-color-styling($bg: $C03);
 									@include nebula-position-styling(
 										$w: var(--nebula-pill-width),
 										$h: 30px,
@@ -103,10 +100,14 @@
 							}
 						}
 						&#{c(sidebar private interactiveSelected)} {
-							@include nebula-color-styling($bg: #25998669);
+							@include nebula-color-styling(
+								$bgc: var(--background-modifier-selected),
+								$c: var(--interactive-active)
+							);
 							#{c(sidebar private link)} {
 								&::after {
 									transition-delay: 0 !important;
+									@include nebula-color-styling($bg: $C01);
 									@include nebula-position-styling(
 										$w: var(--nebula-pill-width),
 										$h: 30px,
@@ -121,11 +122,11 @@
 					margin-left: var(--nebula-spacing-xs);
 					flex: 1;
 					#{c(sidebar private interactive)} {
-						@include nebula-color-styling($bgc: secondary-alt);
+						@include nebula-color-styling($bgc: primary);
 						transition: 0.2s ease;
 						#{c(sidebar private link)} {
 							#{c(sidebar private newBadge)} {
-								display: none;
+								@include nebula-position-styling($d: none);
 							}
 							#{c(sidebar private layout)} {
 								justify-content: center;
@@ -134,20 +135,20 @@
 									margin: 0;
 								}
 								#{c(sidebar private content)} {
-									display: none;
+									@include nebula-position-styling($d: none);
 								}
 							}
 						}
 						&:hover,
 						&:focus-within {
 							@include nebula-color-styling(
-								$bgc: var(--nebula-primary-600),
+								$bgc: primary,
 								$c: var(--interactive-active)
 							);
 						}
 						&#{c(sidebar private selectedBG)} {
 							@include nebula-color-styling(
-								$bg: var(--accent-400),
+								$bg: var(--background-modifier-active),
 								$c: var(--interactive-active)
 							);
 						}

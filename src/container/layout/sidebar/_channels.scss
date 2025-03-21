@@ -1,0 +1,153 @@
+@use 'abstract' as *;
+
+#{c(sidebar server container)} {
+	@include nebula-color-styling($bg: transparent);
+	#{c(sidebar upsellContainer)} {
+		@include nebula-color-styling($bg: secondary);
+		@include nebula-rounded-styling($br: small);
+		@include nebula-spacing-styling($mt: small);
+		#{c(sidebar eventNotice notice)} {
+			border: none;
+		}
+		&:empty {
+			@include nebula-position-styling($d: none);
+		}
+	}
+	#{c(sidebar server scroller)} {
+		@include nebula-color-styling($bg: secondary);
+		@include nebula-rounded-styling($br: small);
+		@include nebula-spacing-styling($mt: small);
+		ul {
+			@include nebula-padding-styling($px: x-small);
+			> [style='height: 84px;'] {
+				@include nebula-position-styling($d: none);
+			}
+			#{c(sidebar server divider)} {
+				@include nebula-position-styling($d: none);
+			}
+			li {
+				#{c(sidebar boostContainer)} {
+					@include nebula-padding-styling($p: small);
+					@include nebula-color-styling($bg: primary);
+					@include nebula-rounded-styling($br: small);
+					#{c(sidebar boostTextArea)},
+					#{c(sidebar boostProgressBarContainer)} {
+						@include nebula-spacing-styling($mx: 0);
+					}
+					&::after {
+						@include nebula-position-styling($d: none);
+					}
+				}
+				#{c(sidebar server channel container)} {
+					@include nebula-flex-styling($dir: row, $ai: center, $f: 1);
+					@include nebula-padding-styling($px: x-small, $py: xx-small);
+					@include nebula-rounded-styling($br: small);
+					@include nebula-spacing-styling($m: 0);
+					&::after {
+						@include nebula-position-styling($pos: relative, $w: 0);
+						@include nebula-flex-styling($d: block);
+						content: '';
+						order: -1;
+					}
+					&::before {
+						@include nebula-rounded-styling($br: small);
+						@include nebula-position-styling($pos: absolute, $w: 0, $h: 25px);
+						@include nebula-flex-styling($d: block);
+						transition: 0.1s 0.06s ease all;
+						content: '';
+					}
+					#{c(sidebar server channel link)} {
+						@include nebula-rounded-styling($br: small);
+						@include nebula-flex-styling($f: 1, $jc: center);
+						@include nebula-padding-styling($pl: small);
+					}
+					&:hover {
+						@include nebula-color-styling($bg: var(--background-modifier-hover));
+						#{c(sidebar server channel link)} {
+							@include nebula-color-styling($bg: transparent);
+						}
+						&::before {
+							@include nebula-position-styling($w: var(--nebula-pill-width));
+							@include nebula-color-styling($bg: #{$C03});
+						}
+					}
+				}
+			}
+			li#{c(sidebar server channel container)} {
+				@include nebula-padding-styling($pb: x-small);
+				@include nebula-flex-styling($f: 1, $dir: column);
+				#{c(sidebar server channel wrapper)} {
+					@include nebula-spacing-styling($m: 0);
+					@include nebula-flex-styling($ai: center, $wrap: wrap, $dir: row, $f: 1);
+					@include nebula-rounded-styling($br: small);
+					@include nebula-padding-styling($px: x-small);
+					transition: 0.1s ease all;
+					#{c(sidebar server channel unreadBlob)} {
+						@include nebula-flex-styling($d: none);
+					}
+					&::after {
+						@include nebula-position-styling($pos: relative, $w: 0);
+						@include nebula-flex-styling($d: block);
+						content: '';
+						order: -1;
+					}
+					&::before {
+						@include nebula-rounded-styling($br: small);
+						@include nebula-position-styling($pos: absolute, $w: 0, $h: 25px);
+						@include nebula-flex-styling($d: block);
+						transition: 0.1s 0.06s ease all;
+						content: '';
+					}
+					&#{c(sidebar server channel modeUnreadImportant)} {
+						&::before {
+							@include nebula-position-styling($w: var(--nebula-pill-width));
+							@include nebula-color-styling($bg: #{$C03});
+						}
+					}
+					&#{c(sidebar server channel modeSelected)} {
+						@include nebula-color-styling($bg: var(--background-modifier-selected));
+						a {
+							@include nebula-color-styling($bg: transparent);
+						}
+						&:before {
+							@include nebula-position-styling($w: var(--nebula-pill-width));
+							@include nebula-color-styling($bg: #{$C01});
+						}
+					}
+					&:hover:not(#{c(sidebar server channel modeSelected)}) {
+						@include nebula-color-styling($bg: var(--background-modifier-hover));
+						a {
+							@include nebula-color-styling($bg: transparent);
+						}
+						&:before {
+							@include nebula-position-styling($w: var(--nebula-pill-width));
+							@include nebula-color-styling($bg: #{$C03});
+						}
+					}
+					> div[class]:not(#{c(sidebar server channel unreadBlob)}) {
+						@include nebula-flex-styling($f: 1);
+						@include nebula-position-styling($w: 100%);
+						a {
+							@include nebula-rounded-styling($br: small);
+							@include nebula-position-styling($w: 100%);
+							@include nebula-flex-styling($f: 1);
+							gap: 4px;
+							flex-direction: row;
+							@include nebula-padding-styling($py: small, $pl: small, $pr: 0);
+							#{c(sidebar server channel linkTop)} {
+								@include nebula-flex-styling($f: 1, $gap: xx-small);
+								@include nebula-position-styling($w: 100%);
+								#{c(sidebar server channel iconContainer)} {
+									@include nebula-spacing-styling($m: 0);
+								}
+							}
+							#{c(sidebar server channel linkBottom)} {
+								@include nebula-spacing-styling($m: 0);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

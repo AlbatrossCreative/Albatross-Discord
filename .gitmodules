@@ -1,4 +1,3 @@
-[submodule "src/abstract"]
-	path = src/abstract
+[submodule "src/abstract/classes"]
+	path = src/abstract/classes
 	url = https://github.com/LeafyLuigi/sulfide
-	branch = master

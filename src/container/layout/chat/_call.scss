@@ -1,0 +1,21 @@
+@use 'abstract' as *;
+
+#{c(call wrapper)} {
+	@include nebula-color-styling($bg: transparent);
+	#{c(call root)} {
+		#{c(call videoControls)} {
+			@include nebula-padding-styling($p: 0);
+			#{c(call topControls)} {
+				div {
+					#{c(call headerWrapper)} {
+						@include nebula-spacing-styling($m: 0);
+					}
+				}
+			}
+			#{c(call bottomControls)} {
+			}
+		}
+		#{c(call voiceCallWrapper)} {
+		}
+	}
+}

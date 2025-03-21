@@ -1,0 +1,11 @@
+@use 'abstract' as *;
+
+#{c(userSettings divider)} {
+	@include nebula-rounded-styling($br: small);
+	border-width: 4px;
+}
+#{c(tab separator)} {
+	@include nebula-rounded-styling($br: small);
+	@include nebula-position-styling($h: 4px);
+	@include nebula-spacing-styling($my: small, $mx: 0);
+}

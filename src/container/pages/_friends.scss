@@ -1,0 +1,29 @@
+@use 'abstract' as *;
+
+#{c(friends container)} {
+	#{c(header themed)} {
+		@include nebula-rounded-styling($br: small);
+		@include nebula-color-styling($bg: secondary);
+	}
+	#{c(friends tabBody)} {
+		@include nebula-spacing-styling($mt: small);
+		#{c(friends peopleColumn)} {
+			@include nebula-color-styling($bg: secondary);
+			@include nebula-rounded-styling($br: small);
+			@include nebula-spacing-styling($mr: small);
+		}
+		#{c(friends nowPlayingColumn)} {
+			@include nebula-color-styling($bg: secondary);
+			@include nebula-rounded-styling($br: small);
+			#{c(friends nowPlayingContainer)} {
+				@include nebula-color-styling($bg: transparent);
+				#{c(friends nowPlayingScroller)} {
+					border: none;
+				}
+			}
+		}
+		&::before {
+			@include nebula-position-styling($d: none);
+		}
+	}
+}

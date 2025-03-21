@@ -1,0 +1,13 @@
+@use 'abstract' as *;
+
+#{c(other cv shopAll)} {
+	#{c(other cv shopBackground)} {
+		#{c(other cv shopViewWrapper)} {
+			#{c(other cv shopPreview)} {
+				@include nebula-color-styling($bg: secondary);
+				@include nebula-rounded-styling($br: small);
+				@include nebula-spacing-styling($mt: small);
+			}
+		}
+	}
+}

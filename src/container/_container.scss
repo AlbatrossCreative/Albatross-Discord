@@ -1,17 +1,26 @@
 @use 'abstract' as *;
 
 #{c(main appMount)} {
-    @include nebula-color-styling($bgc: primary);
-	#{c(main appInner)} {
-        @include nebula-color-styling($bg: transparent);
-        #{c(main bg)} {
-            display: none;
-        }
-		#{c(main appLayers)} {
-			#{c(main baseLayer)} {
-				#{c(main container)} {
-					@include nebula-spacing-styling($m: small, $mt: 0);
-					@include nebula-position-styling($w: unset);
+	#{c(main appContainer)} {
+		#{c(main appInner)} {
+			@include nebula-color-styling($bg: transparent);
+			#{c(main bg)} {
+				@include nebula-position-styling($d: none);
+			}
+			#{c(main appLayer)} {
+				@include nebula-color-styling($bg: transparent);
+			}
+			#{c(main appLayers)} {
+				@include nebula-color-styling($bgc: primary);
+				#{c(main baseLayer)} {
+					@include nebula-color-styling($bg: transparent);
+					opacity: 1 !important;
+					transform: unset !important;
+					will-change: unset !important;
+					#{c(main container)} {
+						@include nebula-spacing-styling($m: small);
+						@include nebula-position-styling($w: unset);
+					}
 				}
 			}
 		}

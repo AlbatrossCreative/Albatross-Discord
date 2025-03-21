@@ -1,18 +1,74 @@
 @use 'abstract' as *;
 
 #{c(chat chat)} {
-    @include nebula-rounded-styling($br: small);
-    overflow: hidden;
-    @include nebula-color-styling($bg: transparent);
-    #{c(chat chatContent)} {
-        @include nebula-color-styling($bg: secondary);
-        @include nebula-rounded-styling($br: small);
-        @include nebula-spacing-styling($mt: small);
-        #{c(chat chatContentInner)} {
-            @include nebula-color-styling($bg: transparent);
-        }
-        &::before{
-            display: none;
-        }
-    }
+	@include nebula-color-styling($bg: transparent);
+	#{c(chat chatContent)} {
+		@include nebula-color-styling($bg: transparent);
+		@include nebula-spacing-styling($mt: small);
+		@include nebula-flex-styling($gap: small);
+		#{c(chat chatContentInner)} {
+			@include nebula-color-styling($bg: secondary);
+			@include nebula-rounded-styling($br: small);
+			overflow: hidden;
+			#{c(chat messagesWrapper)} {
+				@include nebula-color-styling($bg: transparent);
+				&::before {
+					@include nebula-position-styling(
+						$w: 100%,
+						$h: 50px,
+						$pos: absolute,
+						$top: 0,
+						$left: 0,
+						$z: 4
+					);
+					@include nebula-color-styling($bg: secondary);
+					mask-image: linear-gradient(#000 10%, transparent);
+					content: '';
+				}
+ 				#{c(chat chatLoadingWrapper)} {
+					@include nebula-color-styling($bg: transparent);
+					#{c(chat messageLoadingWrapper)} {
+						@include nebula-color-styling($bg: transparent);
+					}
+				}
+				#{c(chatForm typingBaseBar)} {
+					@include nebula-position-styling(
+						$pos: relative,
+						$right: unset,
+						$left: unset,
+						$top: 0,
+						$h: 32px,
+						$z: 5
+					);
+					@include nebula-rounded-styling($br: small);
+					@include nebula-spacing-styling($m: small);
+					@include nebula-padding-styling($p: 0);
+					@include nebula-flex-styling($f: 1);
+					&#{c(chatForm jumpToPresentBar)} {
+						@include nebula-position-styling($bottom: auto);
+					}
+				}
+				#{c(chat newMessagesBar)} {
+					@include nebula-position-styling($w: unset, $left: unset, $right: unset);
+				}
+				#{c(chat divider)} {
+					@include nebula-color-styling($bg: transparent);
+					border: none;
+					#{c(chat unreadPill)} {
+						@include nebula-position-styling($pos: relative, $top: 0);
+						@include nebula-padding-styling($py: xx-small, $px: 0);
+						@include nebula-rounded-styling($br: 0);
+						letter-spacing: 3px;
+						font-size: 12px;
+						svg {
+							@include nebula-position-styling($d: none);
+						}
+					}
+				}
+			}
+		}
+		&::before {
+			@include nebula-position-styling($d: none);
+		}
+	}
 }

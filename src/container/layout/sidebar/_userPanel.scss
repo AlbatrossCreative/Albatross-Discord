@@ -1,40 +1,83 @@
 @use 'abstract' as *;
 
 #{c(sidebar panel panels)} {
-    @include nebula-spacing-styling($mb: small);
-    @include nebula-rounded-styling($br: x-large);
-    @include nebula-color-styling($bg: transparent);
-    #{c(sidebar panel activity activityPanel)} {
-        @include nebula-color-styling($bg: secondary);
-        @include nebula-rounded-styling($brt: small);
-        border: unset;
-    }
-    #{c(sidebar panel avatarWrapper)} {
-        @include nebula-rounded-styling($brb: small);
-        @include nebula-color-styling($bg: secondary);
-        @include nebula-position-styling($w: 100%);
-        @include nebula-padding-styling($p: 0);
-        @include nebula-spacing-styling($mx: large);
-    }
-    #{c(sidebar panel container)} {
-        @include nebula-position-styling($h: unset);
-        @include nebula-color-styling($bg: transparent);
-        @include nebula-padding-styling($p: 0);
-        @include nebula-flex-styling($dir: column, $ac: center, $gap: var(--nebula-spacing-xs));
-        #{c(sidebar panel buttons buttons)} {
-            @include nebula-position-styling($w: 100%);
-            @include nebula-flex-styling($gap: var(--nebula-spacing-xs));
-            #{c(sidebar panel buttons micButtonParent)} {
-                @include nebula-color-styling($bg: secondary);
-                @include nebula-rounded-styling($br: small);
-                @include nebula-flex-styling($f: 1);
-            }
-            button{
-                @include nebula-color-styling($bg: secondary);
-                @include nebula-rounded-styling($br: small);
-                @include nebula-position-styling($h: unset);
-                @include nebula-flex-styling($f: 1);
-            }
-        }
-    }
+	@include nebula-color-styling($bg: secondary);
+	@include nebula-spacing-styling($mt: small);
+	@include nebula-rounded-styling($br: small);
+	overflow: hidden;
+	#{c(sidebar panel activity activityPanel)} {
+		@include nebula-color-styling($bg: transparent);
+		@include nebula-padding-styling($px: small, $pt: small, $pb: 0);
+		border: unset;
+		#{c(sidebar panel activity body)} {
+			@include nebula-color-styling($bg: secondary-alt);
+			@include nebula-padding-styling($p: small);
+			@include nebula-rounded-styling($br: small);
+		}
+	}
+	#{c(sidebar panel voice wrapper)} {
+		@include nebula-padding-styling($p: small);
+		#{c(sidebar panel voice container)} {
+			@include nebula-rounded-styling($br: small);
+			border: none;
+		}
+		&:empty{
+			@include nebula-padding-styling($p: 0);
+		}
+	}
+	#{c(sidebar panel container)} {
+		@include nebula-position-styling($h: unset);
+		@include nebula-color-styling($bg: transparent);
+		@include nebula-padding-styling($p: 0);
+		@include nebula-flex-styling($dir: column, $ac: stretch, $gap: small, $wrap: wrap);
+		@include nebula-spacing-styling($m: small);
+		#{c(sidebar panel avatarWrapper)} {
+			@include nebula-color-styling($bg: transparent);
+			@include nebula-position-styling($w: 100%, $min-w: 0);
+			@include nebula-padding-styling($p: 0);
+			@include nebula-flex-styling($gap: x-small);
+			@include nebula-spacing-styling($m: 0);
+			#{c(avatar wrapper)} {
+				svg {
+					mask {
+					}
+					foreignObject {
+						#{c(avatar stack)} {
+						}
+					}
+				}
+			}
+			#{c(sidebar panel nameTag)} {
+				padding: 0;
+				#{c(sidebar panel subtextContainer)} {
+					#{c(sidebar panel statusSubtext)} {
+					}
+				}
+			}
+		}
+		#{c(sidebar panel buttons buttons)} {
+			@include nebula-position-styling($w: 100%);
+			@include nebula-flex-styling($gap: var(--nebula-spacing-xs));
+			@include nebula-color-styling($bg: secondary);
+			@include nebula-padding-styling($p: 0);
+			#{c(sidebar panel buttons micButtonParent)} {
+				@include nebula-color-styling($bg: primary);
+				@include nebula-rounded-styling($br: small);
+				@include nebula-spacing-styling($mr: 0);
+				@include nebula-flex-styling($f: 1);
+			}
+			button {
+				@include nebula-color-styling($bg: primary);
+				@include nebula-rounded-styling($br: small);
+				@include nebula-position-styling($h: unset);
+				@include nebula-flex-styling($f: 1);
+				#{c(button contents)} {
+					@include nebula-padding-styling($p: x-small);
+				}
+				&:hover {
+					@include nebula-color-styling($bg: primary);
+				}
+			}
+		}
+	}
 }

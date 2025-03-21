@@ -1,0 +1,142 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=supreme@1,2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+// Skin Meta
+$A01: 'Loremly';
+$A02: 'Comet';
+
+// Skin Fonts
+$B01: 'Satoshi', sans-serif;
+$B02: 'Supreme', sans-serif;
+$B03: 'Fira Code', monospace;
+
+// Accent
+$C01: #16a28a;
+$C02: #137667;
+$C03: #13534d;
+
+// Background color
+$D01: #2e345a; // Background Primary
+$D02: #272c4f; // Background Secondary
+$D03: #364075; // Background Secondary Alt
+$D04: #1e2237; // Background Tertiary
+$D05: #2f3763; // Background Floating
+$D06: #2f3763; // Background Mobile
+$D07: #1e2237; // Background Input
+$D08: #16a28a; // Background accent
+
+$E01: #e5e5ea; // Text Primary
+$E02: #9497a8; // Text Secondary
+$E03: #4d588d; // Text Muted
+$E04: #16a28a; // Text Link
+$E05: #ffffff; // Text Header/Active
+
+$F01: #d5e1f0; // Interactive Normal
+$F02: #b2b9c9; // Interactive Hover
+$F03: #e3f4ff; // Interactive Active
+$F04: #b2b4c9; // Interactive Disabled
+
+$G01: placeholder; //
+$G02: placeholder; //
+$G03: placeholder; //
+$G04: placeholder; //
+
+$H01: #137667; // Background Modifier Hover
+$H02: #2eb19b; // Background Modifier Selected
+$H03: #73ddcc; // Background Modifier Active
+$H04: #16a28a; // Background Modifier Accent
+
+html {
+	--accent-800: #d5f0e3;
+	--accent-700: #73ddcc;
+	--accent-630: #5ccfbc;
+	--accent-600: #45c0ab;
+	--accent-560: #3ab9a3;
+	--accent-530: #2eb19b;
+	--accent-500: #16a28a;
+	--accent-460: #158c79;
+	--accent-430: #158c79;
+	--accent-400: #137667;
+	--accent-360: #126055;
+	--accent-330: #13534d;
+	--accent-300: #0f3a31;
+	--accent-260: #0d2e25;
+	--accent-230: #0c2a22;
+
+	--brand-100: hsl(var(--brand-100-hsl) / 1);
+	--brand-100-hsl: 240 calc(var(--saturation-factor, 1) * 77.778%) 98.235%;
+	--brand-130: hsl(var(--brand-130-hsl) / 1);
+	--brand-130-hsl: 235.714 calc(var(--saturation-factor, 1) * 87.5%) 96.863%;
+	--brand-160: hsl(var(--brand-160-hsl) / 1);
+	--brand-160-hsl: 234.545 calc(var(--saturation-factor, 1) * 84.615%) 94.902%;
+	--brand-200: hsl(var(--brand-200-hsl) / 1);
+	--brand-200-hsl: 236 calc(var(--saturation-factor, 1) * 83.333%) 92.941%;
+	--brand-230: hsl(var(--brand-230-hsl) / 1);
+	--brand-230-hsl: 235.5 calc(var(--saturation-factor, 1) * 86.957%) 90.98%;
+	--brand-260: hsl(var(--brand-260-hsl) / 1);
+	--brand-260-hsl: 235.2 calc(var(--saturation-factor, 1) * 86.207%) 88.627%;
+	--brand-300: hsl(var(--brand-300-hsl) / 1);
+	--brand-300-hsl: 235.161 calc(var(--saturation-factor, 1) * 86.111%) 85.882%;
+	--brand-330: hsl(var(--brand-330-hsl) / 1);
+	--brand-330-hsl: 234.75 calc(var(--saturation-factor, 1) * 85.106%) 81.569%;
+	--brand-345: hsl(var(--brand-345-hsl) / 1);
+	--brand-345-hsl: 234.783 calc(var(--saturation-factor, 1) * 85.185%) 78.824%;
+	--brand-360: hsl(var(--brand-360-hsl) / 1);
+	--brand-360-hsl: 235.152 calc(var(--saturation-factor, 1) * 86.087%) 77.451%;
+	--brand-400: hsl(var(--brand-400-hsl) / 1);
+	--brand-400-hsl: 234.677 calc(var(--saturation-factor, 1) * 86.111%) 71.765%;
+	--brand-430: hsl(var(--brand-430-hsl) / 1);
+	--brand-430-hsl: 235 calc(var(--saturation-factor, 1) * 85.714%) 69.804%;
+	--brand-460: hsl(var(--brand-460-hsl) / 1);
+	--brand-460-hsl: 234.93 calc(var(--saturation-factor, 1) * 85.542%) 67.451%;
+	--brand-500: hsl(var(--brand-500-hsl) / 1);
+	--brand-500-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%) 64.706%;
+	--brand-530: hsl(var(--brand-530-hsl) / 1);
+	--brand-530-hsl: 234.857 calc(var(--saturation-factor, 1) * 66.667%) 58.824%;
+	--brand-560: hsl(var(--brand-560-hsl) / 1);
+	--brand-560-hsl: 234.72 calc(var(--saturation-factor, 1) * 51.44%) 52.353%;
+	--brand-600: hsl(var(--brand-600-hsl) / 1);
+	--brand-600-hsl: 234.857 calc(var(--saturation-factor, 1) * 46.667%) 44.118%;
+	--brand-630: hsl(var(--brand-630-hsl) / 1);
+	--brand-630-hsl: 235.385 calc(var(--saturation-factor, 1) * 46.667%) 38.235%;
+	--brand-660: hsl(var(--brand-660-hsl) / 1);
+	--brand-660-hsl: 234.75 calc(var(--saturation-factor, 1) * 47.059%) 33.333%;
+	--brand-700: hsl(var(--brand-700-hsl) / 1);
+	--brand-700-hsl: 235.161 calc(var(--saturation-factor, 1) * 46.97%) 25.882%;
+	--brand-730: hsl(var(--brand-730-hsl) / 1);
+	--brand-730-hsl: 234.828 calc(var(--saturation-factor, 1) * 46.774%) 24.314%;
+	--brand-760: hsl(var(--brand-760-hsl) / 1);
+	--brand-760-hsl: 234.34 calc(var(--saturation-factor, 1) * 46.903%) 22.157%;
+	--brand-800: hsl(var(--brand-800-hsl) / 1);
+	--brand-800-hsl: 234.894 calc(var(--saturation-factor, 1) * 47.475%) 19.412%;
+	--brand-830: hsl(var(--brand-830-hsl) / 1);
+	--brand-830-hsl: 235 calc(var(--saturation-factor, 1) * 47.368%) 14.902%;
+	--brand-860: hsl(var(--brand-860-hsl) / 1);
+	--brand-860-hsl: 234.783 calc(var(--saturation-factor, 1) * 46.939%) 9.608%;
+	--brand-900: hsl(var(--brand-900-hsl) / 1);
+	--brand-900-hsl: 232.5 calc(var(--saturation-factor, 1) * 50%) 3.137%;
+}
+html.theme-dark {
+	--nebula-primary-800: #ffffff;
+	--nebula-primary-760: #e5e5ea;
+	--nebula-primary-730: #c6c7d8;
+	--nebula-primary-700: #9497a8;
+	--nebula-primary-660: #6c74a1;
+	--nebula-primary-630: #4d588d;
+	--nebula-primary-600: #030303;
+	--nebula-primary-560: #2f3763;
+	--nebula-primary-530: rgb(54, 60, 92);
+	--nebula-primary-500: rgb(46, 52, 86);
+	--nebula-primary-460: #2a3053;
+	--nebula-primary-430: #282e51;
+	--nebula-primary-400: rgb(39, 45, 78);
+	--nebula-primary-360: rgb(37, 43, 74);
+	--nebula-primary-330: rgb(36, 41, 70);
+	--nebula-primary-300: rgb(34, 39, 66);
+	--nebula-primary-260: rgb(25, 34, 66);
+	--nebula-primary-230: rgb(33, 38, 63);
+	--nebula-primary-200: rgb(31, 36, 59);
+	--nebula-primary-160: rgb(30, 34, 55);
+	--nebula-primary-130: #1d2135;
+	--nebula-primary-100: #1c2033;
+}

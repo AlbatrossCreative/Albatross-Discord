@@ -1,0 +1,23 @@
+@use 'abstract' as *;
+
+
+#{c(memberList container)} {
+	@include nebula-color-styling($bg: secondary);
+	@include nebula-rounded-styling($br: small);
+	overflow: hidden;
+	aside {
+		#{c(memberList members)} {
+				#{c(memberList member)} {
+					@include nebula-rounded-styling($br: small);
+					#{c(memberList childContainer)},
+					.childContainer__91a9d {
+						@include nebula-padding-styling($px: small, $py: xx-small);
+						#{c(memberList layout)} {
+							@include nebula-position-styling($h: unset);
+						}
+					}
+				}
+			
+		}
+	}
+}

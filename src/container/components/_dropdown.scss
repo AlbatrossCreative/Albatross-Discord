@@ -1,0 +1,5 @@
+@use 'abstract' as *;
+
+#{c(modals dropdown select)} {
+	@include nebula-rounded-styling($br: small);
+}

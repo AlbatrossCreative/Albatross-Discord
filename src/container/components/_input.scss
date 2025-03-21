@@ -1,0 +1,8 @@
+@use 'abstract' as *;
+
+#{c(other cv input)},
+#{c(modals searchPopup container)},
+#{c(checkbox wrapper)}#{c(checkbox row)} {
+	@include nebula-color-styling($bgc: tertiary);
+	@include nebula-rounded-styling($br: small);
+}

@@ -1,80 +1,95 @@
 @use 'abstract' as *;
 
-#{c(chat subtitleContainer)} {
-	#{c(header header)} {
-		@include nebula-color-styling($bg: secondary);
-		@include nebula-rounded-styling($br: 3small);
-		#{c(header upperContainer)} {
-			justify-content: space-between;
-			#{c(header children)} {
-				flex: unset;
-				#{c(avatar wrapper)} {
-					@include nebula-spacing-styling($m: 0);
-					@include nebula-color-styling($bg: secondary-alt);
-					@include nebula-rounded-styling($brl: small);
-					@include nebula-padding-styling($px: small);
-					@include nebula-position-styling($h: unset, $w: unset);
-					svg {
-						@include nebula-position-styling($pos: relative);
-					}
-				}
-				#{c(header iconWrapper)} {
-					@include nebula-rounded-styling($brl: small);
-					@include nebula-color-styling($bg: secondary-alt);
-					@include nebula-position-styling($h: 100%);
-					@include nebula-spacing-styling($m: 0);
-					@include nebula-flex-styling($ac: center, $wrap: wrap);
-					@include nebula-padding-styling($px: small);
-				}
-				#{c(header titleWrapper)} {
-					@include nebula-color-styling($bg: secondary-alt);
-					@include nebula-rounded-styling($brr: small);
-					@include nebula-position-styling($h: 100%);
-					@include nebula-flex-styling($ac: center);
-					@include nebula-padding-styling($pr: small);
-				}
-				&::after {
-					display: none;
+#{c(header header)} {
+	@include nebula-color-styling($bg: secondary);
+	@include nebula-rounded-styling($br: small);
+	@include nebula-padding-styling($px: small);
+	overflow: hidden;
+	#{c(header upperContainer)} {
+		justify-content: space-between;
+		#{c(header children)} {
+			@include nebula-color-styling($bg: transparent);
+			@include nebula-rounded-styling($br: small);
+			flex: unset;
+			#{c(avatar wrapper)} {
+				@include nebula-spacing-styling($m: 0);
+				@include nebula-padding-styling($px: small);
+				@include nebula-position-styling($h: 100%, $w: unset);
+				svg {
+					@include nebula-position-styling($pos: relative);
 				}
 			}
-			#{c(header toolbar)} {
-				#{c(header search)} {
-					@include nebula-spacing-styling($m: 0);
-					order: -1;
-					#{c(header searchInner)} {
-						#{c(header searchBar)} {
-							@include nebula-color-styling($bg: transparent);
-							@include nebula-position-styling($w: 32px);
+			#{c(header iconWrapper)} {
+				@include nebula-rounded-styling($brl: small);
+				@include nebula-position-styling($h: 100%);
+				@include nebula-spacing-styling($m: 0);
+				@include nebula-flex-styling($ac: center, $wrap: wrap);
+				@include nebula-padding-styling($px: small);
+			}
+			#{c(header titleWrapper)} {
+				@include nebula-rounded-styling($brr: small);
+				@include nebula-position-styling($h: 100%);
+				@include nebula-flex-styling($ac: center);
+				@include nebula-padding-styling($pr: small);
+			}
+			&::after {
+				@include nebula-position-styling($d: none);
+			}
+		}
+		#{c(header toolbar)} {
+			#{c(header search)} {
+				@include nebula-spacing-styling($m: 0);
+				@include nebula-color-styling($bg: secondary);
+				order: 1;
+				#{c(header searchInner)} {
+					#{c(header searchBar)} {
+						@include nebula-color-styling($bg: transparent);
+						@include nebula-position-styling($w: 32px);
+						@include nebula-flex-styling(
+							$dir: row-reverse,
+							$jc: flex-end,
+							$gap: x-small
+						);
+						transition: 0.25s ease all;
+						cursor: pointer !important;
+						#{c(modals searchBar iconLayout)} {
+							@include nebula-position-styling($w: 22px, $h: 100%);
+							cursor: pointer !important;
+							#{c(modals searchBar iconContainer)} {
+								@include nebula-position-styling($w: 22px, $h: 100%);
+								#{c(modals searchBar icon)} {
+									@include nebula-color-styling($c: var(--interactive-normal));
+								}
+							}
+						}
+						.DraftEditor-root {
+							@include nebula-rounded-styling($br: x-small);
+							@include nebula-padding-styling($p: xx-small);
 							transition: 0.25s ease all;
+							overflow: hidden;
+							.public-DraftEditorPlaceholder-root {
+								@include nebula-padding-styling($pl: 0);
+							}
+						}
+						&:hover,
+						&:focus {
+							@include nebula-position-styling($w: 160px);
 							#{c(modals searchBar iconLayout)} {
-								@include nebula-position-styling($w: 26px, $h: 100%);
 								#{c(modals searchBar iconContainer)} {
-									@include nebula-position-styling($w: 26px, $h: 100%);
 									#{c(modals searchBar icon)} {
-										@include nebula-color-styling(
-											$c: var(--interactive-header)
-										);
+										@include nebula-color-styling($c: var(--interactive-hover));
 									}
 								}
 							}
-							&:hover {
-								@include nebula-position-styling($w: 125px);
-								#{c(modals searchBar iconLayout)} {
-									#{c(modals searchBar iconContainer)} {
-										#{c(modals searchBar icon)} {
-											@include nebula-color-styling(
-												$c: var(--interactive-hover)
-											);
-										}
-									}
-								}
+							.DraftEditor-root {
+								@include nebula-color-styling($bg: secondary-alt);
 							}
 						}
 					}
 				}
-				a {
-					display: none;
-				}
+			}
+			a {
+				@include nebula-position-styling($d: none);
 			}
 		}
 	}

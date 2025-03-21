@@ -14,7 +14,7 @@
 	},
 	"license": "GPL-3.0-only",
 	"type": "replugged-theme",
-	"main": "src/main.css",
+	"main": "public/build/nebula.css",
 	"source": "https://github.com/loremly/nebula",
 	"image": ["https://i.imgur.com/XLLrtsH.png"]
 }

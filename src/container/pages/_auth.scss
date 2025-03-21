@@ -1,19 +1,19 @@
 @use 'abstract' as *;
 
 #{c(login authBox)} {
-    @include nebula-color-styling($bg: primary);
-    @include nebula-rounded-styling($br: medium);
-    &#{c(login authBoxExpanded)} {
-        #{c(login centeringWrapper)}{
-            #{c(login mainLoginContainer)}{
-                flex: 1;
-            }
-            #{c(login qrLogin)} {
-                @include nebula-rounded-styling($br: small);
-                @include nebula-color-styling($bg: var(--background-tertiary));
-                @include nebula-position-styling($w: min-content, $h: unset);
-                @include nebula-padding-styling($p: large);
-            }
-        }
-    }
+	@include nebula-color-styling($bg: primary);
+	@include nebula-rounded-styling($br: medium);
+	&#{c(login authBoxExpanded)} {
+		#{c(login centeringWrapper)} {
+			#{c(login mainLoginContainer)} {
+				flex: 1;
+			}
+			#{c(login qrLogin)} {
+				@include nebula-rounded-styling($br: small);
+				@include nebula-color-styling($bg: var(--background-tertiary));
+				@include nebula-position-styling($w: min-content, $h: unset);
+				@include nebula-padding-styling($p: large);
+			}
+		}
+	}
 }

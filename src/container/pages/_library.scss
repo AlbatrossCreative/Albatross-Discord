@@ -1,0 +1,14 @@
+@use 'abstract' as *;
+
+#{c(other cv libraryContainer)} {
+	#{c(other cv libraryScroller)} {
+		@include nebula-color-styling($bg: secondary);
+		@include nebula-rounded-styling($br: small);
+		@include nebula-spacing-styling($mt: small);
+	}
+	#{c(other cv librarySettingsScroller)} {
+		@include nebula-color-styling($bg: secondary);
+		@include nebula-rounded-styling($br: small);
+		@include nebula-spacing-styling($mt: small);
+	}
+}

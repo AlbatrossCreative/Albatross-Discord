@@ -3,67 +3,187 @@
 #{c(chat messageListItem)} {
 	#{c(chat message)} {
 		grid-column-gap: var(--nebula-spacing-sm);
-		display: grid;
+		@include nebula-padding-styling($pr: large, $pl: x-large);
+		@include nebula-flex-styling($d: grid);
 		#{c(chat repliedMessage)} {
-			@include nebula-spacing-styling($mb: x-small);
+			@include nebula-position-styling($max-w: 40vw, $w: auto);
+			@include nebula-spacing-styling($mb: small);
 			grid-area: replied;
+			overflow: unset;
+			#{c(chat repliedMessageClickableSpine)} {
+				@include nebula-position-styling(
+					$pos: relative,
+					$top: 30%,
+					$left: 0,
+					$w: 30px,
+					$h: 80%
+				);
+				border: var(--spine-width) solid var(--spine-default) !important;
+				border-bottom: 0 !important;
+			}
+			#{c(chat repliedTextPreview)} {
+				#{c(chat repliedTextContent)} {
+					@include nebula-padding-styling($p: 0);
+					@include nebula-spacing-styling($m: 0);
+					span {
+						white-space: nowrap;
+					}
+				}
+			}
 		}
 		#{c(chat messageContents)} {
 			@include nebula-flex-styling($dir: column, $gap: var(--nebula-spacing-xs));
-			border-radius: var(--nebula-message-roundness);
-			@include nebula-color-styling($bgc: tertiary);
+			@include nebula-rounded-styling($br: small);
+			@include nebula-position-styling($max-w: 40vw, $w: auto);
+			@include nebula-color-styling($bgc: var(--message-background));
 			@include nebula-padding-styling($p: small);
-			width: max-content;
+			transition: 0.15s 0.1s ease all !important;
 			grid-area: message;
-			max-width: 45%;
-			img {
+			#{c(chat chatAvatar)} {
 				grid-area: avatar;
 				left: 0;
+				top: 0;
 			}
-			&:has(#{c(chat messageContent)}:empty) {
-				display: none;
+			&:has(#{c(chat messageContent)}:empty):not(:has(#{c(chat chatAvatar)})) {
+				@include nebula-color-styling($bgc: transparent);
+			}
+			&:hover {
+				@include nebula-color-styling($bgc: var(--message-background-hover));
+			}
+			#{c(chat chatAvatarDecoration)} {
+				grid-area: avatar;
+				left: -4px;
+				top: 0;
+			}
+			#{c(chat messageContent)} {
+				&:has(#{c(chat chatTimestamp)}):not(:has(> *:not(#{c(chat chatTimestamp)}))) {
+					@include nebula-position-styling($d: none);
+				}
 			}
 		}
 		#{c(chat messageAttachmentsContainer)} {
+			@include nebula-spacing-styling($mt: small);
+			@include nebula-position-styling($max-w: 40vw, $w: auto);
+			@include nebula-flex-styling($gapr: small, $d: grid);
 			grid-area: media;
+			#{c(other cv embed)} {
+				@include nebula-rounded-styling($br: small);
+				&#{c(embeds embedFull)} {
+					@include nebula-color-styling($bg: primary);
+					border: none;
+				}
+			}
+			#{c(embeds invite)} {
+				@include nebula-rounded-styling($br: small);
+				@include nebula-padding-styling($p: small);
+				@include nebula-color-styling($bg: primary);
+				#{c(embeds inviteSplash)} {
+					@include nebula-spacing-styling($m: 0, $mb: x-small);
+					@include nebula-rounded-styling($br: small);
+				}
+			}
+			#{c(modals mediaViewer imageWrapperInner)} {
+				@include nebula-rounded-styling($br: small);
+			}
+			.mosaicItem__6c706{
+				@include nebula-rounded-styling($br: unset);
+				.container_a8e786{
+					@include nebula-color-styling($bg: var(--message-background));
+					@include nebula-padding-styling($p: small);
+					@include nebula-rounded-styling($br: small);
+				}
+			}
 		}
 		&#{c(chat mentioned)} {
-			@include nebula-color-styling($bg: transparent);
+			@include nebula-color-styling($bgc: transparent);
 			#{c(chat repliedMessage)} {
-				#{c(chat repliedMessageClickableSpine)}{
-					border-color: var(--accent-400);
+				#{c(chat repliedMessageClickableSpine)} {
+					border-color: $C03;
 				}
 			}
 			#{c(chat messageContents)} {
-				background-color: var(--accent-400);
+				@include nebula-color-styling($bgc: var(--message-background-mentioned));
+				&:hover {
+					@include nebula-color-styling($bgc: var(--message-background-mentioned-hover));
+				}
 			}
-			&::before{
-				display: none;
+			&::before {
+				@include nebula-position-styling($d: none);
 			}
+		}
+		&#{c(chat messageSelected)} {
+			@include nebula-color-styling($bg: transparent);
+			#{c(chat messageContents)} {
+				@include nebula-color-styling($bg: var(--message-background-hover));
+			}
+		}
+		&:hover {
+			@include nebula-color-styling($bg: transparent);
 		}
 	}
 	&[data-is-self='true'] {
 		#{c(chat message)} {
 			justify-items: flex-end;
 			grid-template-areas:
-				'. replied'
+				'replied replied'
 				'message avatar'
 				'media .';
-			grid-template-columns: auto 40px;
+			grid-template-columns: auto var(--chat-avatar-size);
+			#{c(chat repliedMessage)} {
+				@include nebula-spacing-styling($mr: medium);
+				@include nebula-flex-styling($dir: row-reverse);
+				#{c(chat repliedMessageClickableSpine)} {
+					@include nebula-rounded-styling($brtr: small);
+					border-left: 0 !important;
+				}
+				img {
+					@include nebula-spacing-styling($mr: x-small);
+				}
+				#{c(chat chatAvatarDecoration)} {
+					@include nebula-position-styling($left: unset, $right: xx-small);
+				}
+			}
+			#{c(chat messageContents)} {
+				.timestampVisibleOnHover_c19a55{
+					@include nebula-position-styling($left: unset, $right: xx-small);
+				}
+			}
+			#{c(chat messageAttachmentsContainer)} {
+				@include nebula-flex-styling($ji: end);
+			}
+			&#{c(chat isSystemMessage)} {
+				grid-template-columns: 1fr auto;
+			}
 		}
 	}
 	&[data-is-self='false'] {
 		#{c(chat message)} {
 			justify-items: flex-start;
 			grid-template-areas:
-				'. replied'
+				'replied .'
 				'avatar message'
 				'. media';
-			grid-template-columns: 40px auto;
+			grid-template-columns: var(--chat-avatar-size) auto;
+			#{c(chat repliedMessage)} {
+				@include nebula-spacing-styling($ml: medium);
+				#{c(chat repliedMessageClickableSpine)} {
+					@include nebula-rounded-styling($brtl: small);
+					border-right: 0 !important;
+				}
+				img {
+					@include nebula-spacing-styling($ml: xx-small);
+				}
+			}
 			#{c(chat messageContents)} {
 				h3 {
 					min-height: unset;
 					line-height: unset;
+				}
+			}
+			#{c(other cv messageButtonContainer)} {
+				@include nebula-position-styling($right: unset, $left: 0);
+				#{c(chat buttons)} {
+					@include nebula-position-styling($right: unset, $left: 0);
 				}
 			}
 		}

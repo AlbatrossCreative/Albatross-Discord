@@ -1,23 +1,33 @@
 {
 	"name": "nebula",
-	"version": "1.0.0",
+	"version": "1.0",
 	"description": "",
+	"author": "Loremly",
+	"private": true,
 	"engines": {
 		"node": ">=20.0.0",
 		"pnpm": ">=9.0.0"
 	},
 	"scripts": {
-		"build": "replugged build theme",
-		"watch": "replugged build theme --watch",
+		"buildNebula-public": "sass _index.scss:public/build/nebula.css -I src --no-source-map && sass _index.scss:public/build/nebula-minified.css",
+		"buildNebula-vencord": "sass _index.scss:%APPDATA%/Vencord/themes/nebula.theme.css -I src --no-source-map",
+		"buildNebula-full": "sass _index.scss:public/build/nebula.css -I src --no-source-map && sass _index.scss:public/build/nebula-minified.css -I src --no-source-map --style=compressed && sass _index.scss:%APPDATA%/Vencord/themes/nebula.theme.css -I src --no-source-map ",
+		"dev": "sass _index.scss:%APPDATA%/Vencord/themes/nebula.theme.css -I src --no-source-map --watch && sass _index.scss:public/build/nebula-minified.css --watch && sass _index.scss:public/build/nebula.css --watch",
 		"bundle": "replugged bundle theme",
 		"release": "replugged release",
 		"lint": "prettier ./src --check",
 		"lint:fix": "prettier ./src --write",
-		"buildTheme": "sass src/_source.scss -I public/build/nebula.css",
 		"debugClassList": "sass src/abstract/_debug-dump-all.scss public/debug/output.css -I public/build/nebula.css"
 	},
 	"keywords": [],
-	"author": "Loremly",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/loremly/nebula.git"
+	},
+	"homepage": "https://github.com/loremly/nebula",
+	"bugs": {
+		"url": "https://github.com/loremly/nebula/issues"
+	},
 	"license": "GPL-3.0-only",
 	"devDependencies": {
 		"@types/node": "^20.14.10",

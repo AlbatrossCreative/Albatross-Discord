@@ -1,0 +1,14 @@
+@use 'abstract' as *;
+
+#{c(serverList wrapper)} {
+	@include nebula-color-styling($bg: secondary);
+	@include nebula-rounded-styling($br: small);
+	overflow: hidden;
+	ul {
+		#{c(serverList itemsContainer)} {
+			#{c(serverList scroller)} {
+				@include nebula-padding-styling($p: 0);
+			}
+		}
+	}
+}

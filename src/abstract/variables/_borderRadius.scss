@@ -1,0 +1,13 @@
+$rounding:
+	'xs' 8px,
+	'sm' 10px,
+	'md' 14px,
+	'lg' 18px,
+	'xl' 20px,
+	'2xl' 24px,
+	'full' 50%;
+html:root {
+	@each $id, $value in $rounding {
+		--nebula-rounded-#{$id}: #{$value};
+	}
+}
