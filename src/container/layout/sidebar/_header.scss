@@ -36,6 +36,7 @@
 					$left: 0,
 					$z: 3
 				);
+				@include nebula-rounded-styling($brt: small);
 				@include nebula-color-styling($bg: secondary);
 				mask-image: linear-gradient(#000 10%, transparent);
 				content: '';

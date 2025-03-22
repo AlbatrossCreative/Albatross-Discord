@@ -36,7 +36,6 @@
 			@include nebula-rounded-styling($br: small);
 			@include nebula-position-styling($max-w: 40vw, $w: auto);
 			@include nebula-color-styling($bgc: var(--message-background));
-			@include nebula-padding-styling($p: small);
 			transition: 0.15s 0.1s ease all !important;
 			grid-area: message;
 			#{c(chat chatAvatar)} {
@@ -55,9 +54,21 @@
 				left: -4px;
 				top: 0;
 			}
+			&:has(#{c(chat chatHeaderUsername)}),
+			&:has(#{c(chat messageContent)} > span) {
+				@include nebula-padding-styling($p: small);
+			}
 			#{c(chat messageContent)} {
+				@include nebula-spacing-styling($m: 0);
+				@include nebula-padding-styling($p: 0);
 				&:has(#{c(chat chatTimestamp)}):not(:has(> *:not(#{c(chat chatTimestamp)}))) {
 					@include nebula-position-styling($d: none);
+				}
+				.container__235ca{
+					@include nebula-spacing-styling($mx: small, $mt: x-small);
+				}
+				#{c(embeds poll finished embed)} {
+					@include nebula-spacing-styling($m: small);
 				}
 			}
 		}
@@ -71,6 +82,17 @@
 				&#{c(embeds embedFull)} {
 					@include nebula-color-styling($bg: primary);
 					border: none;
+				}
+			}
+			#{c(embeds poll container)} {
+				@include nebula-color-styling($bg: primary);
+			}
+			.container__122e4{
+				@include nebula-position-styling($w: auto);
+			}
+			#{c(forums reactions reactions)} {
+				#{c(forums reactions reaction)} {
+					@include nebula-color-styling($bg: primary);
 				}
 			}
 			#{c(embeds invite)} {
@@ -109,6 +131,14 @@
 			}
 			&::before {
 				@include nebula-position-styling($d: none);
+			}
+		}
+		&#{c(chat isSystemMessage)} {
+			#{c(chat messageContents)} {
+				@include nebula-padding-styling($p: small);
+				.container__235ca{
+					@include nebula-spacing-styling($m: 0);
+				}
 			}
 		}
 		&#{c(chat messageSelected)} {

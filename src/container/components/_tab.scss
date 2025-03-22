@@ -1,10 +1,13 @@
 @use 'abstract' as *;
-
+#{c(pages header tabBar)} {
+    border: none;
+}
 #{c(tab item)} {
     @include nebula-rounded-styling($br: small);
-    @include nebula-padding-styling($pl: medium, $py: small);
+    @include nebula-padding-styling($p: small);
     @include nebula-flex-styling($ai: center);
     transition: .1s ease all;
+    border: none !important;
     overflow: hidden;
     &::after {
         @include nebula-position-styling(
@@ -23,6 +26,7 @@
         }
     }
     &:hover:not(#{c(tab selected)}) {
+        @include nebula-color-styling($bg: var(--background-modifier-hover));
         &::before {
             @include nebula-position-styling($w: var(--nebula-pill-width));
             @include nebula-color-styling($bg: #{$C03});

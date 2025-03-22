@@ -64,14 +64,14 @@ Nebula has only been tested on Discord Canary, I recommend using Nebula on this 
  
 
 ## Wiki
-The wiki provides advanced information about everything you need to know about the theme, from procedure for contributing to the development, and usage of the variables that are the backbone of Nebula's color system.
-
 
 ### [Nebula Wiki](https://github.com/loremly/nebula/wiki)
 
+## Contribution
+Before contributing to this project, please look through LeafyLuigi's [Sulfide](https://github.com/LeafyLuigi/sulfide) as this is the backend for how Nebula keeps its classes updated and maintained.
+
+I recommend developing with Vencord as it is easier, however Vencord may disconnect sometimes.
+
 ## License
-This theme is licensed under the GPL-3.0 license. Please refer to the [LICENSE](https://github.com) file for more details regarding rights and limitations.
-
-## Support
-
-For further support please 
+This project is under the **[GNU General Public License v3.0](https://spdx.org/licenses/GPL-3.0-or-later.html)**
+Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.

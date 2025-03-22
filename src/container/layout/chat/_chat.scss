@@ -15,14 +15,14 @@
 				&::before {
 					@include nebula-position-styling(
 						$w: 100%,
-						$h: 50px,
+						$h: 60px,
 						$pos: absolute,
 						$top: 0,
 						$left: 0,
 						$z: 4
 					);
 					@include nebula-color-styling($bg: secondary);
-					mask-image: linear-gradient(#000 10%, transparent);
+					mask-image: linear-gradient(#000000f2 12%, #00000080 45%, #0000001a 70%, transparent 95%);
 					content: '';
 				}
  				#{c(chat chatLoadingWrapper)} {
@@ -65,6 +65,14 @@
 						}
 					}
 				}
+			}
+		}
+		&#{c(pages header container)} {
+			@include nebula-color-styling($bg: secondary);
+			@include nebula-rounded-styling($br: small);
+			@include nebula-flex-styling($gap: 0);
+			#{c(pages header tabBar)} {
+				@include nebula-spacing-styling($m: small, $mb: 0);
 			}
 		}
 		&::before {

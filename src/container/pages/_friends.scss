@@ -11,6 +11,56 @@
 			@include nebula-color-styling($bg: secondary);
 			@include nebula-rounded-styling($br: small);
 			@include nebula-spacing-styling($mr: small);
+			#{c(serverSettings roleSearchBar)} {
+				@include nebula-spacing-styling($m: small, $mb: 0)
+			}
+			#{c(friends peopleList)} {
+				#{c(scroller content)} {
+					@include nebula-flex-styling($d: grid, $jc: center, $ac: flex-start, $gap: small);
+					@include nebula-padding-styling($pl: small);
+					grid-template-columns: 1fr 1fr 1fr;
+					.sectionTitle__5ec2f{
+						@include nebula-spacing-styling($mt: small);
+						grid-column: 1 / -1;
+						#{c(friends peopleListTitle)} {
+							@include nebula-spacing-styling($m: 0);
+							font-family: var(--font-display);
+							color: var(--header-primary);
+							font-weight: 700;
+							font-size: 20px;
+							line-height: 24px;
+						}
+					}
+					[style="height: 0px;"]{ 
+						@include nebula-position-styling($d: none);
+					}
+					#{c(friends peopleListItem)} {
+						@include nebula-color-styling($bg: primary);
+						@include nebula-rounded-styling($br: small);
+						@include nebula-spacing-styling($m: 0);
+						@include nebula-padding-styling($p: small);
+						@include nebula-position-styling($h: 100%);
+						border: 0;
+						.listItemContents_fc004c{
+							@include nebula-flex-styling($d: grid, $gapr: x-small);
+							grid-template-areas:
+							'banner banner' 
+							'userInfo userInfo';
+							&::before{
+								grid-column: banner;
+								@include nebula-rounded-styling($br: small);
+								@include nebula-position-styling($pos: relative, $h: 80px);
+								@include nebula-color-styling($bg: secondary-alt);
+								content: ''
+							}
+						}
+						
+						&:hover{
+							@include nebula-padding-styling($p: small);
+						}
+					}
+				}
+			}
 		}
 		#{c(friends nowPlayingColumn)} {
 			@include nebula-color-styling($bg: secondary);

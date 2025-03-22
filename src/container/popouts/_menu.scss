@@ -17,7 +17,6 @@
 	}
 	#{c(modals menus item)} {
 		@include nebula-rounded-styling($br: small);
-		@include nebula-flex-styling($dir: row-reverse);
 		#{c(modals menus iconContainer)} {
 			@include nebula-spacing-styling($ml: 0, $mr: xx-small);
 		}
