@@ -2,9 +2,9 @@
 
 #{c(chat messageListItem)} {
 	#{c(chat message)} {
-		grid-column-gap: var(--nebula-spacing-sm);
 		@include nebula-padding-styling($pr: large, $pl: x-large);
-		@include nebula-flex-styling($d: grid);
+		@include nebula-flex-styling($d: grid, $gapc: small);
+		@include nebula-color-styling($bg: transparent);
 		#{c(chat repliedMessage)} {
 			@include nebula-position-styling($max-w: 40vw, $w: auto);
 			@include nebula-spacing-styling($mb: small);
@@ -149,6 +149,14 @@
 		}
 		&:hover {
 			@include nebula-color-styling($bg: transparent);
+		}
+		&#{c(chat replying)} {
+			#{c(chat messageContents)} {
+				@include nebula-color-styling($bg: var(--message-background-mentioned));
+			}
+		}
+		&::before{
+			display: none;
 		}
 	}
 	&[data-is-self='true'] {

@@ -25,4 +25,10 @@
 			}
 		}
 	}
+	.stop-animations {
+		* {
+			transition-property: inherit !important;
+			animation: inherit !important;
+		}
+	}
 }

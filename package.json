@@ -9,10 +9,9 @@
 		"pnpm": ">=9.0.0"
 	},
 	"scripts": {
-		"buildNebula-public": "sass _index.scss:public/build/nebula.css -I src --no-source-map && sass _index.scss:public/build/nebula-minified.css",
 		"buildNebula-vencord": "sass _index.scss:%APPDATA%/Vencord/themes/nebula.theme.css -I src --no-source-map",
-		"buildNebula-full": "sass _index.scss:public/build/nebula.css -I src --no-source-map && sass _index.scss:public/build/nebula-minified.css -I src --no-source-map --style=compressed && sass _index.scss:%APPDATA%/Vencord/themes/nebula.theme.css -I src --no-source-map ",
-		"dev": "sass _index.scss:%APPDATA%/Vencord/themes/nebula.theme.css -I src --no-source-map --watch && sass _index.scss:public/build/nebula-minified.css --watch && sass _index.scss:public/build/nebula.css --watch",
+		"buildNebula-full": "sass _index.scss:public/build/nebula.css -I src --no-source-map && sass _index.scss:public/build/nebula-minified.css -I src --no-source-map --style=compressed",
+		"dev": "sass _index.scss:%APPDATA%/Vencord/themes/nebula.theme.css -I src --no-source-map --watch",
 		"bundle": "replugged bundle theme",
 		"release": "replugged release",
 		"lint": "prettier ./src --check",

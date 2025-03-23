@@ -1,7 +1,7 @@
 @use 'abstract' as *;
 
 #{c(serverList homeContainer)} {
-	@include nebula-position-styling($pos: sticky, $top: 0px, $z: 4);
+	@include nebula-position-styling($pos: sticky, $top: 0px, $z: 5);
 	@include nebula-padding-styling($pt: small);
 	@include nebula-color-styling($bg: secondary);
 	#{c(serverList listItem)} {

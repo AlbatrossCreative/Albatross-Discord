@@ -31,23 +31,6 @@
 						@include nebula-color-styling($bg: transparent);
 					}
 				}
-				#{c(chatForm typingBaseBar)} {
-					@include nebula-position-styling(
-						$pos: relative,
-						$right: unset,
-						$left: unset,
-						$top: 0,
-						$h: 32px,
-						$z: 5
-					);
-					@include nebula-rounded-styling($br: small);
-					@include nebula-spacing-styling($m: small);
-					@include nebula-padding-styling($p: 0);
-					@include nebula-flex-styling($f: 1);
-					&#{c(chatForm jumpToPresentBar)} {
-						@include nebula-position-styling($bottom: auto);
-					}
-				}
 				#{c(chat newMessagesBar)} {
 					@include nebula-position-styling($w: unset, $left: unset, $right: unset);
 				}
@@ -77,6 +60,23 @@
 		}
 		&::before {
 			@include nebula-position-styling($d: none);
+		}
+	}
+	#{c(chatForm typingBaseBar)} {
+		@include nebula-position-styling(
+			$pos: relative,
+			$right: unset,
+			$left: unset,
+			$top: 0,
+			$h: 32px,
+			$z: 7
+		);
+		@include nebula-rounded-styling($br: small);
+		@include nebula-spacing-styling($m: small);
+		@include nebula-padding-styling($p: 0);
+		@include nebula-flex-styling($f: 1);
+		&#{c(chatForm jumpToPresentBar)} {
+			@include nebula-position-styling($bottom: auto);
 		}
 	}
 }

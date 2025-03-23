@@ -42,7 +42,7 @@
 						@include nebula-position-styling($h: 100%);
 						border: 0;
 						.listItemContents_fc004c{
-							@include nebula-flex-styling($d: grid, $gapr: x-small);
+							@include nebula-flex-styling($d: grid, $gapr: small);
 							grid-template-areas:
 							'banner banner' 
 							'userInfo userInfo';

@@ -5,7 +5,7 @@
 #{c(tab item)} {
     @include nebula-rounded-styling($br: small);
     @include nebula-padding-styling($p: small);
-    @include nebula-flex-styling($ai: center);
+    @include nebula-flex-styling($ai: center, $gap: 0);
     transition: .1s ease all;
     border: none !important;
     overflow: hidden;
@@ -15,6 +15,7 @@
             $w: var(--nebula-pill-width)
         );
         @include nebula-flex-styling($d: block);
+        @include nebula-padding-styling($pr: xx-small);
         content: '';
         order: -1;
     }

@@ -5,6 +5,10 @@
 	@include nebula-spacing-styling($m: 0);
 	#{c(os wordmark)} {
 		@include nebula-padding-styling($p: 0);
+		@include nebula-flex-styling;
+		@include nebula-position-styling($pos: relative);
+		@include nebula-spacing-styling($mr: auto);
+		order: 1;
 		&::before {
 			@include nebula-color-styling($bg: tertiary, $c: var(--text-muted));
 			@include nebula-position-styling(
@@ -12,35 +16,35 @@
 				$h: var(--nebula-osbar-height),
 				$top: 0,
 				$pos: fixed,
+				$left: 0,
 				$z: 100
 			);
 			@include nebula-flex-styling($jc: center, $ai: center);
 			font-family: 'satoshi', san-serif;
 			text-align: center;
-			font-weight: 400;
+			font-weight: 500;
 			font-size: 12px;
 		}
 		&#{c(os win wordmark)} {
 			&::before {
-				content: '#{$theme-name} v#{$win-version}' ' 〡 ' '#{$A02} Edition';
+				content: '#{$theme-name} v#{$win-version}' ' 〡 ' '#{$A02} Edition' ' 〡 ' 'Early Dev';
 			}
 		}
 		&#{c(os mac wordmark)} {
 			&::before {
-				content: '#{$theme-name}   v#{$osx-version}' ' 〡 ' '#{$A02} Edition';
+				content: '#{$theme-name}   v#{$osx-version}' ' 〡 ' '#{$A02} Edition' ' 〡 ' 'Early Dev';
 			}
 		}
 		&::after {
 			@include nebula-position-styling(
 				$pos: relative,
-				$top: xx-small,
+				$top: 0,
 				$left: x-small,
 				$z: 3001,
-				$w: 151px,
-				$h: 32px
+				$w: 101px,
+				$h: 100%
 			);
-			@include nebula-color-styling($bg: var(--titlebar-wordmark));
-			@include nebula-flex-styling();
+			@include nebula-color-styling($bg: var(--titlebar-wordmark) center);
 			content: '';
 		}
 		svg {

@@ -2,7 +2,6 @@
 
 #{c(userSettings standardSidebarView)} {
 	@include nebula-color-styling($bg: transparent);
-	@include nebula-spacing-styling($mx: min(25rem, 10vw), $my: min(7rem, 10vh));
 	@include nebula-rounded-styling($br: small);
 	#{c(userSettings sidebarRegion)} {
 		@include nebula-spacing-styling($ml: medium, $my: small);
@@ -61,26 +60,6 @@
 					#{c(modals soundboard nitro upsell container)} {
 						@include nebula-position-styling($max-w: unset);
 						@include nebula-rounded-styling($br: small);
-					}
-				}
-				#{c(other cv settingsToolsContainer)} {
-					@include nebula-position-styling($pos: fixed, $z: -1);
-					#{c(other cv settingsTools)} {
-						#{c(userSettings closeButtonContainer)} {
-							#{c(userSettings closeButton)} {
-								background-color: rgba(0, 0, 0, 0.486);
-								@include nebula-position-styling($pos: fixed, $w: 100%, $h: 100%);
-								@include nebula-rounded-styling($br: 0);
-								inset: 0;
-								border: none;
-								svg {
-									@include nebula-position-styling($d: none);
-								}
-							}
-							#{c(userSettings closeButtonKeybind)} {
-								@include nebula-position-styling($d: none);
-							}
-						}
 					}
 				}
 			}

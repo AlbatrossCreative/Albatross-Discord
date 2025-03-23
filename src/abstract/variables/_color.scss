@@ -48,8 +48,8 @@ html:root,
 
 	--message-background: rgba(#{hexToRGB($D01)});
 	--message-background-hover: rgba(#{hexToRGB($D04)});
-	--message-background-mentioned: rgba(#{hexToRGB($C02)}, #{$O03});
-	--message-background-mentioned-hover: rgba(#{hexToRGB($C03)}, #{$O05});
+	--message-background-mentioned: rgba(#{hexToRGB($D03)});
+	--message-background-mentioned-hover: rgba(#{hexToRGB($D04)}, #{$O05});
 
 	--scrollbar-thin-thumb: var(--accent-500);
 	--scrollbar-thin-track: transparent;
