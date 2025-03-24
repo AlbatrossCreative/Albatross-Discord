@@ -56,8 +56,8 @@ pnpm i
 ### Compile file
 
 **Use** `pnpm` **to begin using Nebula based on your use choice.**
-| Script | Description| |
-| :---- | :--- | :--- 
+| Script | Description|
+| :---- | :--- |
 | `devfull` | To begin live development (Both on BD and Vencord) 
 | `build`| To build the compiled CSS files to `public/build`.  
 | `devBetterDiscord` | Begin live development for BetterDiscord.  
