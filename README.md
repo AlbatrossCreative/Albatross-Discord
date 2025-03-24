@@ -84,9 +84,11 @@ Nebula utilized these projects to make Nebula what it is today.
 
 This project is under the **[GNU General Public License v3.0](https://spdx.org/licenses/GPL-3.0-or-later.html)**. Please refer to the [License](license) for further information regarding the license' permissions, limitations and conditions.
 
+<br>
+<br>
 
 <div align="center">
-<span>Made with ♥️ by <a href="https://github.com/loremly">Loremly</a></span>
+<small>Made with ♥️ by <a href="https://github.com/loremly">Loremly</a></small>
 <br>
-<span>Developed with <a href="https://github.com/LeafyLuigi/sulfide">Sulfide</a></span>
+<small>Developed with <a href="https://github.com/LeafyLuigi/sulfide">Sulfide</a></small>
 </div>
