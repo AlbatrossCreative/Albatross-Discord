@@ -1,11 +1,17 @@
 /**
  * @name Nebula
- * @description Something cool
- * @author Loremly
+ * @description A dark, rounded discord theme.
+ * @author loremly
+ * @authorLink https://www.github.com/loremly
  * @version 1.0.0
- * @authorId 278543574059057154
- * @website https://loremly.github.io/
+ * @website https://loremly.github.io/nebula
  * @source https://github.com/loremly/nebula
- * @updateUrl 
- *
+ * @authorId 597072695875600385
+ * @authorLink https://www.github.com/loremly
  */
+
+ @import url('https://loremly.github.io/nebula/public/build/nebula.css');
+
+ /* Import desired skin */
+
+ 

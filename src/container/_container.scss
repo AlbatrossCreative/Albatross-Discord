@@ -1,28 +1,95 @@
 @use 'abstract' as *;
 
-#{c(main appMount)} {
-	#{c(main appContainer)} {
-		#{c(main appInner)} {
-			@include nebula-color-styling($bg: transparent);
-			#{c(main bg)} {
-				@include nebula-position-styling($d: none);
+#app-mount {
+	#{c(main bg)} {
+		@include nebula-position-styling($d: none);
+	}
+	#{c(main appInner)} {
+		@include nebula-color-styling($bg: primary);
+	}
+	#{c(main appLayer)} {
+		@include nebula-color-styling($bg: transparent);
+		&.stop-animations {
+			&:first-child {
+				&::after {
+					@include nebula-position-styling($pos: fixed, $z: 1000);
+					@include nebula-color-styling($bg: #000);
+					inset: 0 !important;
+					content: '' !important;
+					opacity: #{$O05} !important;
+					pointer-events: none !important;
+				}
 			}
-			#{c(main appLayer)} {
-				@include nebula-color-styling($bg: transparent);
+		}
+		& ~ #{c(main appLayer)} {
+			@include nebula-position-styling(
+				$pos: absolute,
+				$w: var(--settingswidth_v),
+				$h: var(--settingsheight_v),
+				$z: 1000
+			);
+			@include nebula-spacing-styling($m: auto);
+			@include nebula-padding-styling($p: 0);
+			overflow: hidden !important;
+			contain: unset !important;
+			inset: 0 !important;
+			--settingsiconsadditionalsize: var(--use-settingsicons, 0) *
+				(var(--settingsicons-size, 0px) + var(--settingsicons-gap, 0px));
+			#{c(userSettings standardSidebarView)},
+			> div {
+				@include nebula-position-styling($pos: static, $w: 100%, $h: 100%);
+				@include nebula-padding-styling($p: 0);
+				@include nebula-spacing-styling($m: 0);
+				overflow: hidden !important;
 			}
-			#{c(main appLayers)} {
-				@include nebula-color-styling($bgc: primary);
-				#{c(main baseLayer)} {
-					@include nebula-color-styling($bg: transparent);
-					opacity: 1 !important;
-					transform: unset !important;
-					will-change: unset !important;
-					#{c(main container)} {
-						@include nebula-spacing-styling($m: small);
-						@include nebula-position-styling($w: unset);
+			#{c(other cv settingsToolsContainer)} {
+				@include nebula-position-styling(
+					$pos: fixed,
+					$max-w: 100%,
+					$max-h: 100%,
+					$z: -1,
+					$w: 100%,
+					$h: 100%
+				);
+				@include nebula-padding-styling($pt: 0);
+				opacity: #{$O12} !important;
+				inset: 0 !important;
+				#{c(other cv settingsTools)} {
+					@include nebula-position-styling($w: 100%, $h: 100%);
+					#{c(userSettings closeButtonContainer)} {
+						@include nebula-position-styling($h: 100%);
+						#{c(userSettings closeButton)} {
+							@include nebula-position-styling(
+								$w: 100%,
+								$h: 100%,
+								$max-w: unset,
+								$max-h: unset
+							);
+							transition: none !important;
+							border: none !important;
+							cursor: default !important;
+							flex: unset;
+							> svg {
+								@include nebula-position-styling($d: none);
+							}
+						}
+						#{c(userSettings closeButtonKeybind)} {
+							@include nebula-position-styling($d: none);
+						}
 					}
 				}
 			}
+		}
+	}
+
+	#{c(main baseLayer)} {
+		@include nebula-color-styling($bg: transparent);
+		opacity: #{$O01} !important;
+		transform: unset !important;
+		will-change: unset !important;
+		#{c(main container)} {
+			@include nebula-spacing-styling($m: small);
+			@include nebula-position-styling($w: unset);
 		}
 	}
 	.stop-animations {

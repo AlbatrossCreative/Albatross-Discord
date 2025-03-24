@@ -5,6 +5,22 @@
 		@include nebula-padding-styling($pr: large, $pl: x-large);
 		@include nebula-flex-styling($d: grid, $gapc: small);
 		@include nebula-color-styling($bg: transparent);
+		&[data-is-self='true'] {
+			justify-items: flex-end;
+			grid-template-areas:
+				'replied replied'
+				'message avatar'
+				'media .';
+			grid-template-columns: auto var(--chat-avatar-size);
+		}
+		&[data-is-self='false'] {
+			justify-items: flex-start;
+			grid-template-areas:
+				'replied replied'
+				'avatar message'
+				'. media';
+			grid-template-columns: var(--chat-avatar-size) auto;
+		}
 		#{c(chat repliedMessage)} {
 			@include nebula-position-styling($max-w: 40vw, $w: auto);
 			@include nebula-spacing-styling($mb: small);
@@ -163,9 +179,9 @@
 		#{c(chat message)} {
 			justify-items: flex-end;
 			grid-template-areas:
-				'replied replied'
+				'replied .'
 				'message avatar'
-				'media .';
+				'. media';
 			grid-template-columns: auto var(--chat-avatar-size);
 			#{c(chat repliedMessage)} {
 				@include nebula-spacing-styling($mr: medium);

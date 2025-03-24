@@ -9,9 +9,10 @@
 		"pnpm": ">=9.0.0"
 	},
 	"scripts": {
-		"buildNebula-vencord": "sass _index.scss:%APPDATA%/Vencord/themes/nebula.theme.css -I src --no-source-map",
-		"buildNebula-full": "sass _index.scss:public/build/nebula.css -I src --no-source-map && sass _index.scss:public/build/nebula-minified.css -I src --no-source-map --style=compressed",
-		"dev": "sass _index.scss:%APPDATA%/Vencord/themes/nebula.theme.css -I src --no-source-map --watch",
+		"build": "sass _index.scss:public/build/nebula.css -I src --no-source-map & sass _index.scss:public/build/nebula-minified.css -I src --no-source-map --style=compressed",
+		"devFull": "sass _index.scss:%APPDATA%/Vencord/themes/nebula.theme.css -I src --no-source-map --no-charset --watch & sass _index.scss:%APPDATA%/BetterDiscord/themes/nebula.theme.css -I src --no-charset --no-source-map --watch",
+		"devBetterDiscord": "sass _index.scss:%APPDATA%/BetterDiscord/themes/nebula.theme.css -I src --no-charset --no-source-map --watch",
+		"devVencord": "sass _index.scss:%APPDATA%/Vencord/themes/nebula.theme.css -I src --no-source-map --no-charset --watch",
 		"bundle": "replugged bundle theme",
 		"release": "replugged release",
 		"lint": "prettier ./src --check",
