@@ -1,10 +1,11 @@
 # Nebula 1.0
-[![Version](https://img.shields.io/github/manifest-json/v/loremly/nebula?style=for-the-badge&labelColor=151b23&color=16a28a)](.github/docs/changelog.md)
-[![License](https://img.shields.io/github/license/loremly/nebula?style=for-the-badge&labelColor=151b23&color=16a28a)](license)
-[![Stars](https://img.shields.io/github/stars/loremly/nebula?style=for-the-badge&labelColor=151b23&color=16a28a)](https://github.com/loremly/nebula/stargazers)
-![GitHub top language](https://img.shields.io/github/languages/top/loremly/nebula?style=for-the-badge&labelColor=151b23&color=16a28a)
-[![vencord](https://img.shields.io/badge/vencord-mod?style=for-the-badge&color=151b23)](https://vencord.dev)
-[![betterdiscord](https://img.shields.io/badge/betterdiscord-mod?style=for-the-badge&color=151b23)](https://vencord.dev)
+[![Version](https://img.shields.io/github/manifest-json/v/loremly/nebula?style=for-the-badge&labelColor=404c5a&color=0a4d41)](.github/docs/changelog.md)
+[![License](https://img.shields.io/github/license/loremly/nebula?style=for-the-badge&labelColor=404c5a&color=0a4d41)](license)
+[![Stars](https://img.shields.io/github/stars/loremly/nebula?style=for-the-badge&labelColor=404c5a&color=0a4d41)](https://github.com/loremly/nebula/stargazers)
+![GitHub top language](https://img.shields.io/github/languages/top/loremly/nebula?style=for-the-badge&labelColor=404c5a&color=0a4d41)
+[![vencord](https://img.shields.io/badge/vencord-mod?style=for-the-badge&color=404c5a)](https://vencord.dev)
+[![betterdiscord](https://img.shields.io/badge/betterdiscord-mod?style=for-the-badge&color=404c5a)](https://vencord.dev)
+[![Sulfide](https://img.shields.io/badge/sulfide-language?style=for-the-badge&color=404c5a)](https://github.com/LeafyLuigi/sulfide)
 
 ### Some sort of description that im working on.
 ![image](https://github.com/user-attachments/assets/b3db0075-e637-4b27-a357-e260d062b0f3)
@@ -84,5 +85,8 @@ Nebula utilized these projects to make Nebula what it is today.
 This project is under the **[GNU General Public License v3.0](https://spdx.org/licenses/GPL-3.0-or-later.html)**. Please refer to the [License](license) for further information regarding the license' permissions, limitations and conditions.
 
 
-<strong>Made with ♥️ by <a href="https://github.com/loremly">Loremly</a></strong>
-<span>Developed with <a>Sulfide</a></span>
+<div align="center">
+<span>Made with ♥️ by <a href="https://github.com/loremly">Loremly</a></span>
+<br>
+<span>Developed with <a href="https://github.com/LeafyLuigi/sulfide">Sulfide</a></span>
+</div>
