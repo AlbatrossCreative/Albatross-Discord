@@ -2,7 +2,6 @@
 [![Version](https://img.shields.io/github/manifest-json/v/loremly/nebula?style=for-the-badge&labelColor=404c5a&color=0a4d41)](.github/docs/changelog.md)
 [![License](https://img.shields.io/github/license/loremly/nebula?style=for-the-badge&labelColor=404c5a&color=0a4d41)](license)
 [![Stars](https://img.shields.io/github/stars/loremly/nebula?style=for-the-badge&labelColor=404c5a&color=0a4d41)](https://github.com/loremly/nebula/stargazers)
-![GitHub top language](https://img.shields.io/github/languages/top/loremly/nebula?style=for-the-badge&labelColor=404c5a&color=0a4d41)
 [![vencord](https://img.shields.io/badge/vencord-mod?style=for-the-badge&color=404c5a)](https://vencord.dev)
 [![betterdiscord](https://img.shields.io/badge/betterdiscord-mod?style=for-the-badge&color=404c5a)](https://vencord.dev)
 [![Sulfide](https://img.shields.io/badge/sulfide-language?style=for-the-badge&color=404c5a)](https://github.com/LeafyLuigi/sulfide)
