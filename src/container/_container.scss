@@ -67,7 +67,6 @@
 							);
 							transition: none !important;
 							border: none !important;
-							cursor: default !important;
 							flex: unset;
 							> svg {
 								@include nebula-position-styling($d: none);
@@ -88,8 +87,12 @@
 		transform: unset !important;
 		will-change: unset !important;
 		#{c(main container)} {
-			@include nebula-spacing-styling($m: small);
+			@include nebula-spacing-styling($m: 0);
 			@include nebula-position-styling($w: unset);
+			#{c(main content)} {
+				@include nebula-flex-styling($d: grid, $gapc: x-small);
+				@include nebula-spacing-styling($m: small);
+			}
 		}
 	}
 	.stop-animations {

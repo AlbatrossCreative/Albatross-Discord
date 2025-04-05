@@ -1,9 +1,13 @@
 @use '../config/config' as *;
 
+
 html {
 	&:root {
 		--font-primary: #{$B01} !important;
 		--font-display: #{$B02} !important;
 		--font-code: #{$B03} !important;
+	}
+	* {
+		font-optical-sizing: auto;
 	}
 }

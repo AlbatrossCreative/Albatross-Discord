@@ -9,12 +9,12 @@
 html:root,
 .theme-dark,
 .theme-light {
-	--text-primary: rgba(#{hexToRGB($E01)});
-	--text-secondary: rgba(#{hexToRGB($E02)});
-	--text-active: rgba(#{hexToRGB($E05)});
-	--text-header: rgba(#{hexToRGB($E05)});
-	--text-muted: rgba(#{hexToRGB($E03)});
-	--text-link: rgba(#{hexToRGB($E04)});
+	--text-primary: rgba(#{hexToRGB($E01)}) !important;
+	--text-secondary: rgba(#{hexToRGB($E02)}) !important;
+	--text-active: rgba(#{hexToRGB($E05)}) !important;
+	--text-header: rgba(#{hexToRGB($E05)}) !important;
+	--text-muted: rgba(#{hexToRGB($E03)}) !important;
+	--text-link: rgba(#{hexToRGB($E04)}) !important;
 
 	--background-primary: rgba(#{hexToRGB($D01)}) !important;
 	--background-secondary: rgba(#{hexToRGB($D02)}) !important;

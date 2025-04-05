@@ -38,7 +38,7 @@
 		}
 		#{c(header toolbar)} {
 			#{c(header search)} {
-				@include nebula-spacing-styling($m: 0);
+				@include nebula-spacing-styling($my: 0, $mx: x-small);
 				@include nebula-color-styling($bg: secondary);
 				order: 1;
 				#{c(header searchInner)} {
@@ -60,29 +60,6 @@
 								#{c(modals searchBar icon)} {
 									@include nebula-color-styling($c: var(--interactive-normal));
 								}
-							}
-						}
-						.DraftEditor-root {
-							@include nebula-rounded-styling($br: x-small);
-							@include nebula-padding-styling($p: xx-small);
-							transition: 0.25s ease all;
-							overflow: hidden;
-							.public-DraftEditorPlaceholder-root {
-								@include nebula-padding-styling($pl: 0);
-							}
-						}
-						&:hover,
-						&:focus {
-							@include nebula-position-styling($w: 160px);
-							#{c(modals searchBar iconLayout)} {
-								#{c(modals searchBar iconContainer)} {
-									#{c(modals searchBar icon)} {
-										@include nebula-color-styling($c: var(--interactive-hover));
-									}
-								}
-							}
-							.DraftEditor-root {
-								@include nebula-color-styling($bg: secondary-alt);
 							}
 						}
 					}

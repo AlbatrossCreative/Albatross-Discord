@@ -12,6 +12,14 @@
 				'message avatar'
 				'media .';
 			grid-template-columns: auto var(--chat-avatar-size);
+			#{c(chat repliedMessage)} {
+				@include nebula-flex-styling($dir: row-reverse);
+				#{c(chat repliedMessageClickableSpine)} {
+					@include nebula-rounded-styling($brtr: small);
+					border-left: 0 !important;
+				}
+			}
+
 		}
 		&[data-is-self='false'] {
 			justify-items: flex-start;
@@ -20,6 +28,12 @@
 				'avatar message'
 				'. media';
 			grid-template-columns: var(--chat-avatar-size) auto;
+			#{c(chat repliedMessage)} {
+				#{c(chat repliedMessageClickableSpine)} {
+					@include nebula-rounded-styling($brtl: small);
+					border-right: 0 !important;
+				}
+			}
 		}
 		#{c(chat repliedMessage)} {
 			@include nebula-position-styling($max-w: 40vw, $w: auto);
@@ -179,9 +193,9 @@
 		#{c(chat message)} {
 			justify-items: flex-end;
 			grid-template-areas:
-				'replied .'
+				'replied replied'
 				'message avatar'
-				'. media';
+				'media .';
 			grid-template-columns: auto var(--chat-avatar-size);
 			#{c(chat repliedMessage)} {
 				@include nebula-spacing-styling($mr: medium);
@@ -214,7 +228,7 @@
 		#{c(chat message)} {
 			justify-items: flex-start;
 			grid-template-areas:
-				'replied .'
+				'replied replied'
 				'avatar message'
 				'. media';
 			grid-template-columns: var(--chat-avatar-size) auto;

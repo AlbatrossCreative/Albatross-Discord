@@ -12,5 +12,6 @@ $spacing: (
 html:root {
 	@each $id, $value in $spacing {
 		--nebula-spacing-#{$id}: #{$value};
+		--space-#{$id}: #{$value};
 	}
 }

@@ -2,9 +2,10 @@
 
 #{c(chat chat)} {
 	@include nebula-color-styling($bg: transparent);
+	border: none !important;
 	#{c(chat chatContent)} {
 		@include nebula-color-styling($bg: transparent);
-		@include nebula-spacing-styling($mt: small);
+		@include nebula-spacing-styling($mt: x-small);
 		@include nebula-flex-styling($gap: small);
 		#{c(chat chatContentInner)} {
 			@include nebula-color-styling($bg: secondary);

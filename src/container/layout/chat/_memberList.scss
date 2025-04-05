@@ -6,12 +6,15 @@
 	@include nebula-rounded-styling($br: small);
 	overflow: hidden;
 	aside {
+		border: none !important;
 		#{c(memberList members)} {
+			@include nebula-color-styling($bg: transparent);
 				#{c(memberList member)} {
 					@include nebula-rounded-styling($br: small);
+					@include nebula-color-styling($bg: transparent);
 					#{c(memberList childContainer)},
 					.childContainer__91a9d {
-						@include nebula-padding-styling($px: small, $py: xx-small);
+						@include nebula-padding-styling($p: 0);
 						#{c(memberList layout)} {
 							@include nebula-position-styling($h: unset);
 						}

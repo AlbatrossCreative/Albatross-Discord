@@ -5,6 +5,7 @@
 		@include nebula-color-styling($bg: secondary);
 		@include nebula-rounded-styling($br: small);
 		box-shadow: none !important;
+		border: none !important;
 	}
 	#{c(sidebar server header bannerContainer)} {
 		@include nebula-position-styling($pos: relative);
@@ -32,7 +33,7 @@
 					$w: 100%,
 					$h: 50px,
 					$pos: absolute,
-					$bottom: calc(-1 * calc(50px + var(--nebula-spacing-sm))),
+					$bottom: calc(-1 * calc(50px + var(--nebula-spacing-xs))),
 					$left: 0,
 					$z: 3
 				);

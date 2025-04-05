@@ -2,16 +2,18 @@
 
 #{c(userSettings standardSidebarView)} {
 	@include nebula-color-styling($bg: transparent);
-	@include nebula-rounded-styling($br: small);
 	@include nebula-flex-styling($gapc: small);
 	#{c(userSettings sidebarRegion)} {
+		@include nebula-color-styling($bg: primary);
+		@include nebula-rounded-styling($br: small);
 		@include nebula-flex-styling($f: 0);
 		#{c(userSettings sidebarRegionScroller)} {
 			@include nebula-position-styling($w: var(--nebula-sidebar-width));
 			@include nebula-rounded-styling($br: small);
+			@include nebula-color-styling($bg: transparent);
 			#{c(userSettings sidebar)} {
 				@include nebula-position-styling($w: 100%);
-				@include nebula-padding-styling($p: x-small);
+				@include nebula-padding-styling($p: medium);
 				#{c(tab side)} {
 					.searchBar_c7e907 {
 						@include nebula-rounded-styling($br: small);
@@ -24,7 +26,7 @@
 		}
 	}
 	#{c(userSettings contentRegion)} {
-		@include nebula-color-styling($bg: secondary);
+		@include nebula-color-styling($bg: primary);
 		@include nebula-rounded-styling($br: small);
 		@include nebula-position-styling($max-w: 100%);
 		overflow: hidden;

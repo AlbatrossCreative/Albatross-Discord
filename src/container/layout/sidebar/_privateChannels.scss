@@ -10,11 +10,13 @@
 		@include nebula-padding-styling($p: x-small);
 		overflow: hidden;
 		box-shadow: none;
+		border: none !important;
 		button {
 			@include nebula-color-styling($bgc: primary);
 			@include nebula-padding-styling($p: x-small, $pl: large);
 			@include nebula-position-styling($h: unset);
 			@include nebula-rounded-styling($br: small);
+			border: none !important;
 			line-height: unset;
 		}
 	}
@@ -23,7 +25,7 @@
 		@include nebula-color-styling($bg: secondary);
 		ul {
 			@include nebula-flex-styling($ac: flex-start, $wrap: wrap);
-			@include nebula-padding-styling($pt: x-small, $pr: x-small);
+			@include nebula-padding-styling($pt: x-small);
 			#{c(sidebar private friendsButtonContainer)} {
 				@include nebula-flex-styling;
 				margin-left: var(--nebula-spacing-xs);
@@ -74,7 +76,7 @@
 									$pos: relative
 								);
 								@include nebula-rounded-styling($br: small);
-
+								@include nebula-spacing-styling($mr: xx-small);
 								content: '';
 								order: -1;
 							}
@@ -125,14 +127,15 @@
 						@include nebula-color-styling($bgc: primary);
 						transition: 0.2s ease;
 						#{c(sidebar private link)} {
+							@include nebula-padding-styling($p: x-small);
 							#{c(sidebar private newBadge)} {
 								@include nebula-position-styling($d: none);
 							}
 							#{c(sidebar private layout)} {
-								justify-content: center;
-								padding: 0;
+								@include nebula-flex-styling($jc: center);
+								@include nebula-padding-styling($p: 0);
 								#{c(sidebar private avatar)} {
-									margin: 0;
+									@include nebula-spacing-styling($m: 0);
 								}
 								#{c(sidebar private content)} {
 									@include nebula-position-styling($d: none);

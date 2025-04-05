@@ -1,13 +1,10 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap');
-@import url('https://api.fontshare.com/v2/css?f[]=supreme@1,2&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
-// Skin Meta
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Nunito+Sans:ital,opsz,wdth,wght,YTLC@0,6..12,75..125,200..1000,440..540;1,6..12,75..125,200..1000,440..540&display=swap');
 $A01: 'Loremly';
 $A02: 'Comet';
 
 // Skin Fonts
-$B01: 'Satoshi', sans-serif;
-$B02: 'Supreme', sans-serif;
+$B01: 'Mona Sans', sans-serif;
+$B02: 'Nunito Sans', sans-serif;
 $B03: 'Fira Code', monospace;
 
 // Accent
