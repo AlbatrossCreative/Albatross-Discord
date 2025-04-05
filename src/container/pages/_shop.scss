@@ -1,7 +1,10 @@
 @use 'abstract' as *;
 
 #{c(other cv shopAll)} {
+	border: none !important;
+	@include nebula-rounded-styling($br: small);
 	#{c(other cv shopBackground)} {
+		@include nebula-rounded-styling($br: small);
 		#{c(other cv shopViewWrapper)} {
 			#{c(other cv shopPreview)} {
 				@include nebula-color-styling($bg: secondary);

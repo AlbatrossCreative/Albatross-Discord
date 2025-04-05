@@ -1,6 +1,5 @@
 @use '../config/config' as *;
 
-
 html {
 	&:root {
 		--font-primary: #{$B01} !important;

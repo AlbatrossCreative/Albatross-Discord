@@ -17,7 +17,7 @@
 		@include nebula-color-styling($bg: secondary);
 		@include nebula-rounded-styling($br: small);
 		@include nebula-spacing-styling($my: x-small);
-		@include nebula-padding-styling($p: 0);	
+		@include nebula-padding-styling($p: 0);
 		ul {
 			@include nebula-padding-styling($pl: x-small);
 			> [style='height: 84px;'] {

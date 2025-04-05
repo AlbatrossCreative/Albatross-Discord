@@ -1,18 +1,18 @@
 @use 'abstract' as *;
 
 #{c(main content)} {
-    .main_c08b38{
-        @include nebula-spacing-styling($ml: small);
-        @include nebula-rounded-styling($br: small);
-        #{c(other cv serverExperiencePrompt)} {
-            @include nebula-color-styling($bg: primary);
-            @include nebula-rounded-styling($br: small);
-            .promptContent_fe70ca{
-                .navButtons_fe70ca{
-                    @include nebula-rounded-styling($br: small);
-                    @include nebula-spacing-styling($m: small);
-                }
-            }
-        }
-    }
+	.main_c08b38 {
+		@include nebula-spacing-styling($ml: small);
+		@include nebula-rounded-styling($br: small);
+		#{c(other cv serverExperiencePrompt)} {
+			@include nebula-color-styling($bg: primary);
+			@include nebula-rounded-styling($br: small);
+			.promptContent_fe70ca {
+				.navButtons_fe70ca {
+					@include nebula-rounded-styling($br: small);
+					@include nebula-spacing-styling($m: small);
+				}
+			}
+		}
+	}
 }

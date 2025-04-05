@@ -4,7 +4,8 @@
 	@include nebula-color-styling($bg: secondary);
 	@include nebula-rounded-styling($br: small);
 	@include nebula-padding-styling($px: small);
-	overflow: hidden;
+	overflow: hidden !important;
+	border: none !important;
 	#{c(header upperContainer)} {
 		justify-content: space-between;
 		#{c(header children)} {
@@ -62,6 +63,16 @@
 								}
 							}
 						}
+					}
+				}
+			}
+			#{c(header iconWrapper)} {
+				svg{
+					@include nebula-color-styling($c: var(--interactive-normal));
+				}
+				&:hover{
+					svg{
+						@include nebula-color-styling($c: var(--interactive-hover));
 					}
 				}
 			}

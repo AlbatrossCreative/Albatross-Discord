@@ -21,7 +21,7 @@
 			@include nebula-rounded-styling($br: small);
 			border: none;
 		}
-		&:empty{
+		&:empty {
 			@include nebula-padding-styling($p: 0);
 		}
 	}

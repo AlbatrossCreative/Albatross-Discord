@@ -1,9 +1,13 @@
 @use 'abstract' as *;
 
 #{c(store store)} {
-	#{c(store scroller)} {
-		@include nebula-color-styling($bg: secondary);
-		@include nebula-rounded-styling($br: small);
-		@include nebula-spacing-styling($mt: small);
+	.homeWrapper__0920e {
+		@include nebula-color-styling($bgc: transparent);
+		border: none !important;
+		#{c(store scroller)} {
+			@include nebula-color-styling($bg: secondary);
+			@include nebula-rounded-styling($br: small);
+			@include nebula-spacing-styling($mt: small);
+		}
 	}
 }

@@ -1,4 +1,6 @@
 # Nebula 1.0
+### ⚠️ This current build of Nebula is NOT complete and its official release will be completely different from its current release.
+
 [![Version](https://img.shields.io/github/manifest-json/v/loremly/nebula?style=for-the-badge&labelColor=404c5a&color=0a4d41)](.github/docs/changelog.md)
 [![License](https://img.shields.io/github/license/loremly/nebula?style=for-the-badge&labelColor=404c5a&color=0a4d41)](license)
 [![Stars](https://img.shields.io/github/stars/loremly/nebula?style=for-the-badge&labelColor=404c5a&color=0a4d41)](https://github.com/loremly/nebula/stargazers)
@@ -63,16 +65,16 @@ pnpm i
 | `devBetterDiscord` | Begin live development for BetterDiscord.  
 | `devVencord` | Begin live development for Vencord. 
 
-## Wiki
+## [Wiki](https://github.com/loremly/nebula/wiki)
 The wiki contains information regarding Nebulas design system and development process. To contribute to Nebula please read the [contribution](https://github.com/loremly/nebula/wiki) section of the wiki.
 
-[Nebula Wiki](https://github.com/loremly/nebula/wiki)
+- [Nebula Wiki](https://github.com/loremly/nebula/wiki)
 
-## Contribution
-Before contributing to this project, please look through LeafyLuigi's [Sulfide](https://github.com/LeafyLuigi/sulfide) as this is the backend for how Nebula keeps its classes updated and maintained.
+## Notice For contributors
+Before contributing to this project, please look through LeafyLuigi's [Sulfide](https://github.com/LeafyLuigi/sulfide) as this is the backend for how Nebula keeps its classes updated and maintained, and every file uses this system. So it'd be good to get familiar with it.
 
 ## Credits
-Nebula utilized these projects to make Nebula what it is today.
+Nebula is greatly inspired by these projects to make Nebula what it is today.
 
 - **[SettingsModal](https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/SettingsModal) by [mwittrien](https://github.com/mwittrien)**
 - **[CreArts](https://github.com/CreArts-Community/CreArts-Discord) by The [CreArts-Community](https://github.com/CreArts-Community)**
@@ -89,5 +91,5 @@ This project is under the **[GNU General Public License v3.0](https://spdx.org/l
 <div align="center">
 <small>Made with ♥️ by <a href="https://github.com/loremly">Loremly</a></small>
 <br>
-<small>Developed with <a href="https://github.com/LeafyLuigi/sulfide">Sulfide</a></small>
+<small>Developed with <a href="https://github.com/LeafyLuigi/sulfide">Sulfide</a> by <a href="https://github.com/leafyluigi">LeafyLuigi</a></small>
 </div>

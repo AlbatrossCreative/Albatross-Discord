@@ -6,28 +6,28 @@
 		@include nebula-color-styling($bg: secondary);
 		@include nebula-padding-styling($pr: small);
 	}
-    > div[style*="min-width:"] {
-        @include nebula-position-styling($d: none);
-    }
+	> div[style*='min-width:'] {
+		@include nebula-position-styling($d: none);
+	}
 	#{c(chat layerWrapper)} {
-        @include nebula-position-styling($pos: relative);
+		@include nebula-position-styling($pos: relative);
 		#{c(threads resizeHandle)} {
 			@include nebula-color-styling($bg: var(--background-modifier-accent));
 			@include nebula-rounded-styling($br: small);
 			@include nebula-spacing-styling($mx: small);
 		}
-        #{c(threads container)} {
-            #{c(threads chat)} {
-                @include nebula-color-styling($bg: secondary);
-                @include nebula-rounded-styling($br: small);
-                @include nebula-spacing-styling($mt: small);
-                #{c(chat chatContentInner)} {
-                    @include nebula-color-styling($bg: transparent);
-                }
-                &::before{
-                    @include nebula-position-styling($d: none);
-                }
-            }
-        }
+		#{c(threads container)} {
+			#{c(threads chat)} {
+				@include nebula-color-styling($bg: secondary);
+				@include nebula-rounded-styling($br: small);
+				@include nebula-spacing-styling($mt: small);
+				#{c(chat chatContentInner)} {
+					@include nebula-color-styling($bg: transparent);
+				}
+				&::before {
+					@include nebula-position-styling($d: none);
+				}
+			}
+		}
 	}
 }

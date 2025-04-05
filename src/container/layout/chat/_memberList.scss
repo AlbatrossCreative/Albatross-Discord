@@ -1,6 +1,5 @@
 @use 'abstract' as *;
 
-
 #{c(memberList container)} {
 	@include nebula-color-styling($bg: secondary);
 	@include nebula-rounded-styling($br: small);
@@ -9,18 +8,17 @@
 		border: none !important;
 		#{c(memberList members)} {
 			@include nebula-color-styling($bg: transparent);
-				#{c(memberList member)} {
-					@include nebula-rounded-styling($br: small);
-					@include nebula-color-styling($bg: transparent);
-					#{c(memberList childContainer)},
-					.childContainer__91a9d {
-						@include nebula-padding-styling($p: 0);
-						#{c(memberList layout)} {
-							@include nebula-position-styling($h: unset);
-						}
+			#{c(memberList member)} {
+				@include nebula-rounded-styling($br: small);
+				@include nebula-color-styling($bg: transparent);
+				#{c(memberList childContainer)},
+				.childContainer__91a9d {
+					@include nebula-padding-styling($p: 0);
+					#{c(memberList layout)} {
+						@include nebula-position-styling($h: unset);
 					}
 				}
-			
+			}
 		}
 	}
 }

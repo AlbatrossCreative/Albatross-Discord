@@ -1,7 +1,7 @@
 @use 'abstract' as *;
 
 #{c(sidebar sidebar)} {
-	&::after{
+	&::after {
 		@include nebula-position-styling($d: none);
 	}
 	#{c(sidebar list)} {

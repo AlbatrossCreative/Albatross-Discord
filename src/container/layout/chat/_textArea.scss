@@ -2,7 +2,7 @@
 
 #{c(chatForm form)} {
 	@include nebula-padding-styling($px: x-small, $pb: small);
-	@include nebula-spacing-styling($mt: 0, $mr: medium);
+	@include nebula-spacing-styling($m: 0);
 	@include nebula-color-styling($bg: secondary);
 	@include nebula-rounded-styling($brb: small);
 	@include nebula-flex-styling($ai: center, $gapc: x-small, $d: grid);
@@ -14,6 +14,7 @@
 		@include nebula-color-styling($bg: primary);
 		@include nebula-spacing-styling($m: 0);
 		@include nebula-rounded-styling($br: small);
+		@include nebula-padding-styling($pr: x-small);
 		grid-area: BottomBar;
 		#{c(chatForm channelTextAreaMain)} {
 			@include nebula-spacing-styling($mb: 0);
@@ -55,6 +56,7 @@
 					}
 					#{c(chatForm buttons)} {
 						@include nebula-position-styling($h: unset);
+						@include nebula-flex-styling($gap: 0);
 					}
 				}
 			}
@@ -145,9 +147,11 @@
 	}
 	#{c(chatForm followWrapper)} {
 		@include nebula-position-styling($w: unset, $h: unset);
+		@include nebula-color-styling($bg: primary);
 		@include nebula-rounded-styling($br: small);
 		@include nebula-padding-styling($p: small);
 		@include nebula-spacing-styling($m: 0);
+		border: none !important;
 		grid-column: 2 / -1;
 		.content__44df5 {
 			@include nebula-position-styling($h: unset);

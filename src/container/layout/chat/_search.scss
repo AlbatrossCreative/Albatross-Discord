@@ -1,19 +1,19 @@
 @use 'abstract' as *;
 
 #{c(search wrap)} {
-    @include nebula-rounded-styling($br: small);
-    #{c(search header)} {
-        @include nebula-spacing-styling($m: small);
-        @include nebula-rounded-styling($br: small);
-    }
-    #{c(search scroller)} {
-        @include nebula-padding-styling($pt: 0);
-        ul#{c(search resultsGroup)} {
-            li#{c(search resultContainer)} {
-                #{c(search result)} {
-                    @include nebula-rounded-styling($br: small);
-                }
-            }
-        }
-    }
+	@include nebula-rounded-styling($br: small);
+	#{c(search header)} {
+		@include nebula-spacing-styling($m: small);
+		@include nebula-rounded-styling($br: small);
+	}
+	#{c(search scroller)} {
+		@include nebula-padding-styling($pt: 0);
+		ul#{c(search resultsGroup)} {
+			li#{c(search resultContainer)} {
+				#{c(search result)} {
+					@include nebula-rounded-styling($br: small);
+				}
+			}
+		}
+	}
 }

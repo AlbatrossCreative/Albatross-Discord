@@ -1,27 +1,57 @@
 @use 'abstract' as *;
 
 #{c(friends container)} {
+	@include nebula-color-styling($bgc: transparent);
+	border: none !important;
 	#{c(header themed)} {
 		@include nebula-rounded-styling($br: small);
 		@include nebula-color-styling($bg: secondary);
+		@include nebula-padding-styling($py: 0);
+		height: unset !important;
+		border: none;
+		#{c(header upperContainer)} {
+			@include nebula-spacing-styling($my: xx-small);
+			#{c(header children)} {
+				#{c(header tabBar)} {
+					#{c(tab item)} {
+						@include nebula-spacing-styling($mx: 0, $ml: small);
+						&#{c(header addFriend)} {
+							@include nebula-color-styling($bg: transparent);
+						}
+					}
+				}
+			}
+		}
 	}
+
 	#{c(friends tabBody)} {
+		@include nebula-color-styling($bgc: transparent);
 		@include nebula-spacing-styling($mt: small);
+
 		#{c(friends peopleColumn)} {
 			@include nebula-color-styling($bg: secondary);
 			@include nebula-rounded-styling($br: small);
 			@include nebula-spacing-styling($mr: small);
+
 			#{c(serverSettings roleSearchBar)} {
-				@include nebula-spacing-styling($m: small, $mb: 0)
+				@include nebula-spacing-styling($m: small, $mb: 0);
 			}
+
 			#{c(friends peopleList)} {
 				#{c(scroller content)} {
-					@include nebula-flex-styling($d: grid, $jc: center, $ac: flex-start, $gap: small);
+					@include nebula-flex-styling(
+						$d: grid,
+						$jc: center,
+						$ac: flex-start,
+						$gap: small
+					);
 					@include nebula-padding-styling($pl: small);
 					grid-template-columns: 1fr 1fr 1fr;
-					.sectionTitle__5ec2f{
+
+					.sectionTitle__5ec2f {
 						@include nebula-spacing-styling($mt: small);
 						grid-column: 1 / -1;
+
 						#{c(friends peopleListTitle)} {
 							@include nebula-spacing-styling($m: 0);
 							font-family: var(--font-display);
@@ -31,9 +61,11 @@
 							line-height: 24px;
 						}
 					}
-					[style="height: 0px;"]{ 
+
+					[style='height: 0px;'] {
 						@include nebula-position-styling($d: none);
 					}
+
 					#{c(friends peopleListItem)} {
 						@include nebula-color-styling($bg: primary);
 						@include nebula-rounded-styling($br: small);
@@ -41,37 +73,43 @@
 						@include nebula-padding-styling($p: small);
 						@include nebula-position-styling($h: 100%);
 						border: 0;
-						.listItemContents_fc004c{
+
+						.listItemContents_fc004c {
 							@include nebula-flex-styling($d: grid, $gapr: small);
 							grid-template-areas:
-							'banner banner' 
-							'userInfo userInfo';
-							&::before{
+								'banner banner'
+								'userInfo userInfo';
+
+							&::before {
 								grid-column: banner;
 								@include nebula-rounded-styling($br: small);
 								@include nebula-position-styling($pos: relative, $h: 80px);
 								@include nebula-color-styling($bg: secondary-alt);
-								content: ''
+								content: '';
 							}
 						}
-						
-						&:hover{
+
+						&:hover {
 							@include nebula-padding-styling($p: small);
 						}
 					}
 				}
 			}
 		}
+
 		#{c(friends nowPlayingColumn)} {
 			@include nebula-color-styling($bg: secondary);
 			@include nebula-rounded-styling($br: small);
+
 			#{c(friends nowPlayingContainer)} {
 				@include nebula-color-styling($bg: transparent);
+
 				#{c(friends nowPlayingScroller)} {
 					border: none;
 				}
 			}
 		}
+
 		&::before {
 			@include nebula-position-styling($d: none);
 		}

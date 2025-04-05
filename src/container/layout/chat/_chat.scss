@@ -23,10 +23,15 @@
 						$z: 4
 					);
 					@include nebula-color-styling($bg: secondary);
-					mask-image: linear-gradient(#000000f2 12%, #00000080 45%, #0000001a 70%, transparent 95%);
+					mask-image: linear-gradient(
+						#000000f2 12%,
+						#00000080 45%,
+						#0000001a 70%,
+						transparent 95%
+					);
 					content: '';
 				}
- 				#{c(chat chatLoadingWrapper)} {
+				#{c(chat chatLoadingWrapper)} {
 					@include nebula-color-styling($bg: transparent);
 					#{c(chat messageLoadingWrapper)} {
 						@include nebula-color-styling($bg: transparent);
