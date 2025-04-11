@@ -13,7 +13,7 @@
 			@include nebula-color-styling($bg: transparent);
 			#{c(userSettings sidebar)} {
 				@include nebula-position-styling($w: 100%);
-				@include nebula-padding-styling($p: medium);
+				@include nebula-padding-styling($py: medium, $pr: small);
 				#{c(tab side)} {
 					.searchBar_c7e907 {
 						@include nebula-rounded-styling($br: small);

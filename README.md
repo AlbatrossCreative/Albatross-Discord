@@ -1,5 +1,6 @@
 # Nebula 1.0
 ### ⚠️ This current build of Nebula is NOT complete and its official release will be completely different from its current release.
+Nebula is a fun project to help me understand sass more, alot of unnecessary scss styling throughout the theme, all compiled into one file. Have fun!
 
 [![Version](https://img.shields.io/github/manifest-json/v/loremly/nebula?style=for-the-badge&labelColor=404c5a&color=0a4d41)](.github/docs/changelog.md)
 [![License](https://img.shields.io/github/license/loremly/nebula?style=for-the-badge&labelColor=404c5a&color=0a4d41)](license)
@@ -16,30 +17,24 @@
 
 
 ## Installation
-Please make sure Theme Attributes is enabled is both Client mods
+Please ensure Discord is installed with your chosen client mod.
+
+| Client | 
+| :---- |
+| [Discord Stable](https://discord.com/download) | 
+| [Discord Canary](https://discord.com/api/downloads/distributions/app/installers/latest?platform=win&channel=canary&arch=x64) | 
+| [Discord PTB](https://discord.com/download) (⚠️ Untested) | 
+
+
+⚠️Theme Attributes MUST be turned on for Nebula to function properly. Thank you.
 ### CSS Import
 - Copy and paste the link in your Quick CSS page.
 ```
 @import url("https://loremly.github.io/nebula/public/build/nebula.css");
 ```
 
-### Vencord & BetterDiscord
-  
-### ![vencord](https://discord-extensions.github.io/assets/icons/vencord.gif) **[Vencord](https://github.com/Vendicated/Vencord)**
----
-- Download `nebula.theme.css` from [BetterDiscord](https://betterdiscord.app/theme/nebula).
-- Press Windows key + R
-- copy and paste `%APPDATA%` and enter.
-- Go to `Vencord/themes`
-- Copy or drag and drop the file into the folder.
-
-### ![betterdiscord](https://discord-extensions.github.io/assets/icons/betterdiscord.png) **[BetterDiscord](https://betterdiscord.app)**
----
-
-- Simply install the theme from the addon store.
-
 ## Local Installation & Setup
-These are the steps to locally install Nebula to have full access to its raw code. I recommend doing this for developing, and also for users who have intermediate knowledge with sass. 
+These are the steps to locally install Nebula to have full access to its raw code. I recommend doing this until Nebula is in its release stages, and also for users who have intermediate knowledge with sass. 
 ### Clone Repository 
 Use this command to clone the repository to your desired directory.
 ```

@@ -6,6 +6,9 @@
 		@include nebula-rounded-styling($br: small);
 		@include nebula-spacing-styling($mt: small);
 	}
+	.body_fb04e1 {
+		@include nebula-position-styling($max-w: 95%);
+	}
 	#{c(other cv librarySettingsScroller)} {
 		@include nebula-color-styling($bg: secondary);
 		@include nebula-rounded-styling($br: small);

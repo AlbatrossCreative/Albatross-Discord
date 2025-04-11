@@ -16,11 +16,17 @@ $nebula-backgrounds: (
 	secondary: var(--background-secondary),
 	secondary-alt: var(--background-secondary-alt),
 	tertiary: var(--background-tertiary),
+	floating: var(--background-floating),
+	modifier-active: var(--background-modifier-active),
+	modifier-selected: var(--background-modifier-selected),
+	modifier-hover: var(--background-modifier-hover),
+	modifier-accent: var(--background-modifier-accent),
 	transparent: transparent,
 );
 
 $nebula-spacing: (
 	unset: unset,
+	auto: auto,
 	0: 0,
 	xx-small: var(--nebula-spacing-xxs),
 	x-small: var(--nebula-spacing-xs),
@@ -66,13 +72,14 @@ $nebula-spacing: (
 
 	@each $id, $style in (mb: margin-bottom, mt: margin-top, ml: margin-left, mr: margin-right) {
 		$value: null;
-		@if $id == mb {
+
+		@if $id ==mb {
 			$value: $mb;
-		} @else if $id == mt {
+		} @else if $id ==mt {
 			$value: $mt;
-		} @else if $id == ml {
+		} @else if $id ==ml {
 			$value: $ml;
-		} @else if $id == mr {
+		} @else if $id ==mr {
 			$value: $mr;
 		}
 
@@ -96,31 +103,38 @@ $nebula-spacing: (
 	$pr: null
 ) {
 	@each $id, $value in $nebula-spacing {
-		@if $p == $id {
+		@if $p ==$id {
 			padding: $value !important;
 		}
-		@if $px == $id {
+
+		@if $px ==$id {
 			padding-left: $value !important;
 			padding-right: $value !important;
 		}
-		@if $py == $id {
+
+		@if $py ==$id {
 			padding-top: $value !important;
 			padding-bottom: $value !important;
 		}
-		@if $pb == $id {
+
+		@if $pb ==$id {
 			padding-bottom: $value !important;
 		}
-		@if $pt == $id {
+
+		@if $pt ==$id {
 			padding-top: $value !important;
 		}
-		@if $pl == $id {
+
+		@if $pl ==$id {
 			padding-left: $value !important;
 		}
-		@if $pr == $id {
+
+		@if $pr ==$id {
 			padding-right: $value !important;
 		}
 	}
 }
+
 @mixin nebula-color-styling($bg: null, $bgc: null, $c: null) {
 	@if $c {
 		color: $c !important;
@@ -157,41 +171,52 @@ $nebula-spacing: (
 	$bry: null
 ) {
 	@each $id, $value in $nebula-rounded {
-		@if $br == $id {
+		@if $br ==$id {
 			border-radius: $value !important;
 		}
-		@if $brt == $id {
+
+		@if $brt ==$id {
 			border-radius: $value $value 0 0 !important;
 		}
-		@if $brb == $id {
+
+		@if $brb ==$id {
 			border-radius: 0 0 $value $value !important;
 		}
-		@if $brr == $id {
+
+		@if $brr ==$id {
 			border-radius: 0 $value $value 0 !important;
 		}
-		@if $brl == $id {
+
+		@if $brl ==$id {
 			border-radius: $value 0 0 $value !important;
 		}
-		@if $brtr == $id {
+
+		@if $brtr ==$id {
 			border-radius: 0 $value 0 0 !important;
 		}
-		@if $brbr == $id {
+
+		@if $brbr ==$id {
 			border-radius: 0 0 $value 0 !important;
 		}
-		@if $brtl == $id {
+
+		@if $brtl ==$id {
 			border-radius: $value 0 0 0 !important;
 		}
-		@if $brbl == $id {
+
+		@if $brbl ==$id {
 			border-radius: 0 0 0 $value !important;
 		}
-		@if $brx == $id {
+
+		@if $brx ==$id {
 			border-radius: $value 0 $value 0 !important;
 		}
-		@if $bry == $id {
+
+		@if $bry ==$id {
 			border-radius: 0 $value 0 $value !important;
 		}
 	}
 }
+
 @mixin nebula-position-styling(
 	$pos: null,
 	$d: null,
@@ -210,42 +235,53 @@ $nebula-spacing: (
 	@if $d {
 		display: $d !important;
 	}
+
 	@if $z {
 		z-index: $z !important;
 	}
+
 	@if $pos {
 		position: $pos !important;
 	}
+
 	@if $max-w {
 		max-width: $max-w !important;
 	}
+
 	@if $min-w {
 		min-width: $min-w !important;
 	}
+
 	@if $max-h {
 		max-height: $max-h !important;
 	}
+
 	@if $min-h {
 		min-height: $min-h !important;
 	}
+
 	@if $w {
 		width: $w !important;
 	}
+
 	@if $h {
 		height: $h !important;
 	}
 
 	@each $id, $value in $nebula-spacing {
-		@if $left == $id {
+		@if $left ==$id {
 			$left: $value;
 		}
-		@if $right == $id {
+
+		@if $right ==$id {
 			$right: $value;
 		}
-		@if $top == $id {
+
+		@if $top ==$id {
 			$top: $value;
 		}
-		@if $bottom == $id {
+
+		@if $bottom ==$id {
 			$bottom: $value;
 		}
 	}
@@ -253,12 +289,15 @@ $nebula-spacing: (
 	@if $top {
 		top: $top !important;
 	}
+
 	@if $bottom {
 		bottom: $bottom !important;
 	}
+
 	@if $left {
 		left: $left !important;
 	}
+
 	@if $right {
 		right: $right !important;
 	}
@@ -277,35 +316,45 @@ $nebula-spacing: (
 	$ai: null,
 	$jc: null,
 	$ji: null,
+	$js: null,
+	$as: null,
 	$d: null,
 	$wrap: null
 ) {
 	@if $f {
 		flex: $f !important;
 	}
+
 	@if $wrap {
 		flex-wrap: $wrap !important;
 	}
+
 	@if $dir {
 		flex-direction: $dir !important;
 	}
+
 	@if $ac {
 		align-content: $ac !important;
 	}
+
 	@if $ai {
 		align-items: $ai !important;
 	}
+
 	@if $jc {
 		justify-content: $jc !important;
 	}
+
 	@if $ji {
 		justify-items: $ji !important;
 	}
+
 	@if $d {
 		display: $d !important;
 	} @else {
 		display: flex !important;
 	}
+
 	@if $gap {
 		@if map.has-key($nebula-spacing, $gap) {
 			gap: map.get($nebula-spacing, $gap) !important;
@@ -313,6 +362,7 @@ $nebula-spacing: (
 			gap: $gap !important;
 		}
 	}
+
 	@if $gapr {
 		@if map.has-key($nebula-spacing, $gapr) {
 			grid-row-gap: map.get($nebula-spacing, $gapr) !important;
@@ -320,6 +370,7 @@ $nebula-spacing: (
 			grid-row-gap: $gapr !important;
 		}
 	}
+
 	@if $gapc {
 		@if map.has-key($nebula-spacing, $gapc) {
 			grid-column-gap: map.get($nebula-spacing, $gapc) !important;
@@ -327,14 +378,22 @@ $nebula-spacing: (
 			grid-column-gap: $gapc !important;
 		}
 	}
+	@if $as {
+		align-self: $as !important;
+	}
+	@if $js {
+		justify-self: $js !important;
+	}
 }
 
 @mixin nebula-icon-replacement($ip: null, $ic: null, $ich: null) {
 	mask: var(--#{$ip}-path);
 	@include nebula-color-styling($bg: #{$ic});
+
 	svg {
 		@include nebula-position-styling($d: none);
 	}
+
 	&:hover {
 		@include nebula-color-styling($bg: #{$ich});
 	}

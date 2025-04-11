@@ -1,10 +1,44 @@
 @use 'abstract' as *;
 
-#{c(userSettings radioGroupItem)} {
-	@include nebula-rounded-styling($br: small);
-	#{c(userSettings radioBar)} {
-		#{c(userSettings radioIndicatorChecked)} {
-			@include nebula-flex-styling;
+.radioGroup__963c3 {
+	#{c(userSettings radioGroupItem)} {
+		#{c(userSettings radioBar)} {
+			@include nebula-color-styling($bg: secondary);
+			@include nebula-rounded-styling($br: small);
+			@include nebula-padding-styling($p: small);
+			grid-template-areas: 'pill checkbox message';
+			grid-template-columns: auto auto 1fr;
+			border: none;
+
+			&:before {
+				@include nebula-color-styling($bg: var(--radio-bar-accent-color));
+				@include nebula-rounded-styling($br: small);
+				@include nebula-position-styling($w: var(--nebula-pill-width),
+					$pos: relative,
+					$h: 65%);
+				transition: 0.2s ease;
+				content: '';
+			}
+
+			#{c(userSettings radioIndicatorChecked)} {
+				@include nebula-flex-styling;
+			}
+		}
+
+		&[aria-checked='true'] {
+			#{c(userSettings radioBar)} {
+				@include nebula-color-styling($bg: modifier-selected);
+
+				&::before {
+					@include nebula-position-styling($h: 90%);
+				}
+			}
+		}
+
+		&:hover:not([aria-checked='true']) {
+			#{c(userSettings radioBar)} {
+				@include nebula-color-styling($bg: modifier-hover);
+			}
 		}
 	}
 }

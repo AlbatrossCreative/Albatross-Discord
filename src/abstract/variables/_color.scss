@@ -1,4 +1,5 @@
 @use '../config/config' as *;
+@use 'map' as *;
 @use 'sass:color';
 @use 'sass:map';
 
@@ -6,74 +7,68 @@
 	@return red($color), green($color), blue($color);
 }
 
-// Accent/Brand variable function
+@mixin nebula-hslvar-func($map, $var, $h-base, $s-base, $l-base) {
+	@each $id, $calc in $map {
+		$h-calc: nth($calc, 1);
+		$s-calc: nth($calc, 2);
+		$l-calc: nth($calc, 3);
+		$opacity: nth($calc, 4);
 
+		--#{$var}-#{$id}: hsla(
+			calc(#{$h-base}#{$h-calc}),
+			calc(var(--saturation-factor) * calc(#{$s-base}#{$s-calc})),
+			calc(#{$l-base}#{$l-calc}),
+			#{$opacity}
+		) !important;
+	}
+}
 
+html:root {
+	&.theme-light,
+	&.theme-dark,
+	&.visual-refresh,
+	&.theme-darker .theme-darker {
+		@include nebula-hslvar-func($NB, 'background', $NBV01, $NBV02, $NBV03);
+		@include nebula-hslvar-func($NI, 'interactive', $NBV10, $NBV11, $NBV12);
+		@include nebula-hslvar-func($NT, 'text', $NBV07, $NBV08, $NBV09);
+		@include nebula-hslvar-func($NBM, 'background-modifier', $NBV13, $NBV14, $NBV15);
+		@include nebula-hslvar-func($NA, 'brand', $NBV04, $NBV05, $NBV06);
+		@include nebula-hslvar-func($NB, 'accent', $NBV04, $NBV05, $NBV06);
 
-html:root,
-.theme-dark,
-.theme-light {
-	--text-primary: rgba(#{hexToRGB($E01)}) !important;
-	--text-secondary: rgba(#{hexToRGB($E02)}) !important;
-	--text-active: rgba(#{hexToRGB($E05)}) !important;
-	--text-header: rgba(#{hexToRGB($E05)}) !important;
-	--text-muted: rgba(#{hexToRGB($E03)}) !important;
-	--text-link: rgba(#{hexToRGB($E04)}) !important;
+		--text-link: var(--brand-500) !important;
 
-	--background-primary: rgba(#{hexToRGB($D01)}) !important;
-	--background-secondary: rgba(#{hexToRGB($D02)}) !important;
-	--background-tertiary: rgba(#{hexToRGB($D04)}) !important;
-	--background-secondary-alt: rgba(#{hexToRGB($D03)}) !important;
-	--background-floating: rgba(#{hexToRGB($D05)}) !important;
-	--background-mobile: rgba(#{hexToRGB($D06)}) !important;
-	--background-input: rgba(#{hexToRGB($D07)}) !important;
-	--background-accent: rgba(#{hexToRGB($D08)}) !important;
+		--background-mobile: var(--background-secondary) !important;
+		--background-input: var(--background-secondary-alt) !important;
+		--background-accent: var(--brand-500) !important;
+		--modal-background: var(--background-primary) !important;
 
-	--background-modifier-hover: rgba(#{hexToRGB($H01)}, #{$O09}) !important;
-	--background-modifier-selected: rgba(#{hexToRGB($H02)}, #{$O08}) !important;
-	--background-modifier-active: rgba(#{hexToRGB($H03)}, #{$O09}) !important;
-	--background-modifier-accent: rgba(#{hexToRGB($H04)}, #{$O10}) !important;
+		--status-active: placeholder;
+		--status-dnd: placeholder;
+		--status-invisible: placeholder;
+		--status-streaming: placeholder;
+		--status-idle: placeholder;
 
-	--accent-primary: placeholder;
-	--accent-secondary: placeholder;
-	--accent-secondary-alt: placeholder;
-	--accent-tertiary: placeholder;
+		--message-background: var(--background-primary);
+		--message-background-hover: var(--background-tertiary);
+		--message-background-mentioned: var(--background-accent);
+		--message-background-mentioned-hover: var(--brand-330);
 
-	--interactive-normal: rgba(#{hexToRGB($F01)}) !important;
-	--interactive-hover: rgba(#{hexToRGB($F02)}) !important;
-	--interactive-active: rgba(#{hexToRGB($F03)}) !important;
-	--interactive-disabled: rgba(#{hexToRGB($F04)}) !important;
-
-	--status-active: placeholder;
-	--status-dnd: placeholder;
-	--status-invisible: placeholder;
-	--status-streaming: placeholder;
-	--status-idle: placeholder;
-
-	--message-background: rgba(#{hexToRGB($D01)});
-	--message-background-hover: rgba(#{hexToRGB($D04)});
-	--message-background-mentioned: rgba(#{hexToRGB($D03)});
-	--message-background-mentioned-hover: rgba(#{hexToRGB($D04)}, #{$O05});
-
-	--scrollbar-thin-thumb: var(--accent-500);
-	--scrollbar-thin-track: transparent;
-	--scrollbar-auto-thumb: var(--accent-500);
-	--scrollbar-auto-track: transparent;
-	--scrollbar-auto-scrollbar-color-thumb: red;
-	--scrollbar-auto-scrollbar-color-track: blue;
-	--green-primary: #43b581;
-	--green-secondary: #61d09a;
-	--green-tertiary: #209967;
-	--yellow-primary: #faa61a;
-	--yellow-secondary: #ffc23d;
-	--yellow-tertiary: #dc8c00;
-	--red-primary: #f04747;
-	--red-secondary: #ff6660;
-	--red-tertiary: #d12731;
-	--purple-primary: #593695;
-	--purple-secondary: #744fb1;
-	--purple-tertiary: #3e207c;
-	--blue-primary: #1d66d3;
-	--blue-secondary: #264ca3;
-	--blue-tertiary: #1e3685;
+		--scrollbar-thin-thumb: var(--brand-500);
+		--scrollbar-auto-thumb: var(--brand-500);
+		--green-primary: #43b581;
+		--green-secondary: #61d09a;
+		--green-tertiary: #209967;
+		--yellow-primary: #faa61a;
+		--yellow-secondary: #ffc23d;
+		--yellow-tertiary: #dc8c00;
+		--red-primary: #f04747;
+		--red-secondary: #ff6660;
+		--red-tertiary: #d12731;
+		--purple-primary: #593695;
+		--purple-secondary: #744fb1;
+		--purple-tertiary: #3e207c;
+		--blue-primary: #1d66d3;
+		--blue-secondary: #264ca3;
+		--blue-tertiary: #1e3685;
+	}
 }

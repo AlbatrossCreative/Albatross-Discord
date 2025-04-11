@@ -22,14 +22,14 @@
 					@include nebula-spacing-styling($m: 0);
 					border-left: 0 !important;
 				}
-				#{c(chat repliedTextPreview)} { 
+				#{c(chat repliedTextPreview)} {
 					@include nebula-spacing-styling($mr: xx-small);
 				}
-
 			}
-			#{c(chat messageAttachmentsContainer)} {
-				.visualMediaItemContainer_f4758a {
-					@include nebula-position-styling($w: unset, $max-w: unset);
+			#{c(other cv messageButtonContainer)} {
+				@include nebula-position-styling($left: unset, $right: 0);
+				#{c(chat buttons)}{
+					@include nebula-position-styling($right: 0);
 				}
 			}
 		}
@@ -51,14 +51,9 @@
 				}
 			}
 			#{c(other cv messageButtonContainer)} {
-				@include nebula-position-styling($right: unset, $left: 0);
-				.container__040f0{
-					@include nebula-position-styling($right: unset, $left: 0);
-					.buttonsInner__5126c{
-						@include nebula-color-styling($bgc: secondary-alt);
-						@include nebula-rounded-styling($br: x-small);
-						box-shadow: none !important;
-					}
+				@include nebula-position-styling($left: 0, $right: unset);
+				#{c(chat buttons)} {
+					@include nebula-position-styling($right: unset);
 				}
 			}
 		}
@@ -92,6 +87,14 @@
 				}
 			}
 		}
+		#{c(other cv messageButtonContainer)} {
+			.buttonsInner__5126c {
+				@include nebula-color-styling($bg: secondary-alt);
+				@include nebula-rounded-styling($br: small);
+				box-shadow: none !important;
+				border: none !important;
+			}
+		}
 
 		#{c(chat messageContents)} {
 			@include nebula-flex-styling($dir: column, $gap: var(--nebula-spacing-xs));
@@ -122,7 +125,8 @@
 			}
 
 			&:has(#{c(chat chatHeaderUsername)}),
-			&:has(#{c(chat messageContent)} > span) {
+			&:has(#{c(chat messageContent)} > span),
+			&:has(#{c(chat messageContent)} > #{c(main anchorLink)}) {
 				@include nebula-padding-styling($p: small);
 			}
 
@@ -130,7 +134,7 @@
 				@include nebula-spacing-styling($m: 0);
 				@include nebula-padding-styling($p: 0);
 
-				&:has(#{c(chat chatTimestamp)}):not(:has(> *:not(#{c(chat chatTimestamp)}))) {
+				&:has(#{c(other cv messageTimestampAlt)}):not(:has(> *:not(#{c(other cv messageTimestampAlt)}))) {
 					@include nebula-position-styling($d: none);
 				}
 
@@ -156,6 +160,54 @@
 				&#{c(embeds embedFull)} {
 					@include nebula-color-styling($bg: primary);
 					border: none;
+				}
+			}
+			.visualMediaItemContainer_f4758a {
+				@include nebula-position-styling($w: unset, $max-w: unset);
+			}
+			#{c(embeds embedGridContainer)} {
+				#{c(embeds embedGrid)} {
+					@include nebula-padding-styling($p: 0);
+					.embedMedia__623de{
+						@include nebula-position-styling($max-w: unset);
+						* {
+							@include nebula-position-styling($max-w: unset, $max-h: unset);
+						}
+					}
+				}
+			}
+			#{c(other cv attachmentEmbedWrapper)}:not(:has(.imageContainer__0f481)) {
+				@include nebula-color-styling($bg: var(--message-background));
+				@include nebula-rounded-styling($br: small);
+				@include nebula-padding-styling($p: small);
+				@include nebula-flex-styling($gap: small, $d: grid);
+				transition: 0.15s 0.1s ease all !important;
+				#{c(embeds textContainer)} {
+					@include nebula-rounded-styling($br: small);
+					border: none !important;
+				}
+				#{c(embeds textFooter)} {
+					@include nebula-rounded-styling($br: small);
+					border: none !important;
+				}
+				&:hover{
+					@include nebula-color-styling($bg: var(--message-background-hover))
+				}
+			}
+			#{c(embeds invite)} {
+				@include nebula-color-styling($bg: primary);
+				@include nebula-rounded-styling($br: small);
+				@include nebula-padding-styling($p: small);
+				border: none !important;
+				> div{
+					@include nebula-flex-styling($gap: small, $d: grid);
+					.container__652b4{
+						@include nebula-spacing-styling($m: 0);
+						@include nebula-rounded-styling($br: small);
+					}
+					.footerContainer_da5e8d{
+						@include nebula-spacing-styling($m: 0);
+					}
 				}
 			}
 
@@ -204,7 +256,7 @@
 
 			#{c(chat repliedMessage)} {
 				#{c(chat repliedMessageClickableSpine)} {
-					border-color: $C03;
+					border-color: var(--brand-300);
 				}
 			}
 
@@ -224,6 +276,7 @@
 		&#{c(chat isSystemMessage)} {
 			#{c(chat messageContents)} {
 				@include nebula-padding-styling($p: small);
+				grid-column: 1 / -1;
 
 				.container__235ca {
 					@include nebula-spacing-styling($m: 0);
@@ -289,6 +342,11 @@
 
 			#{c(chat messageAttachmentsContainer)} {
 				@include nebula-flex-styling($ji: end);
+				.visualMediaItemContainer_f4758a{
+					.container_b7e1cb>* {
+						@include nebula-flex-styling($js: end, $as: end);
+					}
+				}
 			}
 
 			&#{c(chat isSystemMessage)} {
@@ -323,14 +381,6 @@
 				h3 {
 					min-height: unset;
 					line-height: unset;
-				}
-			}
-
-			#{c(other cv messageButtonContainer)} {
-				@include nebula-position-styling($right: unset, $left: 0);
-
-				#{c(chat buttons)} {
-					@include nebula-position-styling($right: unset, $left: 0);
 				}
 			}
 		}

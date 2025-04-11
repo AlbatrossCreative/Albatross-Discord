@@ -1,37 +1,51 @@
 @use 'abstract' as *;
+
 #{c(pages header tabBar)} {
 	border: none;
 }
+
+#{c(tab topPill)} {
+	@include nebula-flex-styling($gap: small);
+}
+
 #{c(tab item)} {
+	@include nebula-color-styling($c: var(--interactive-active));
 	@include nebula-rounded-styling($br: small);
 	@include nebula-padding-styling($p: small);
 	@include nebula-flex-styling($ai: center, $gap: 0);
+	@include nebula-spacing-styling($m: 0);
 	transition: 0.1s ease all;
 	border: none !important;
 	overflow: hidden;
+
 	&::after {
-		@include nebula-position-styling($pos: relative, $w: var(--nebula-pill-width));
+		@include nebula-position-styling($pos: relative, $w: var(--nebula-pill-width), $h: 0);
 		@include nebula-flex-styling($d: block);
 		@include nebula-padding-styling($pr: xx-small);
 		content: '';
 		order: -1;
 	}
+
 	&#{c(tab selected)} {
-		@include nebula-color-styling($bg: var(--background-modifier-selected));
+		@include nebula-color-styling($bg: modifier-selected);
+
 		&::before {
-			@include nebula-position-styling($w: var(--nebula-pill-width));
-			@include nebula-color-styling($bg: #{$C01});
+			@include nebula-position-styling($w: var(--nebula-pill-width), $h: 55%);
+			@include nebula-color-styling($bg: var(--brand-600));
 		}
 	}
+
 	&:hover:not(#{c(tab selected)}) {
-		@include nebula-color-styling($bg: var(--background-modifier-hover));
+		@include nebula-color-styling($bg: modifier-hover);
+
 		&::before {
 			@include nebula-position-styling($w: var(--nebula-pill-width));
-			@include nebula-color-styling($bg: #{$C03});
+			@include nebula-color-styling($bg: var(--brand-500));
 		}
 	}
+
 	&::before {
-		@include nebula-position-styling($pos: absolute, $h: 25px, $left: x-small, $w: 0);
+		@include nebula-position-styling($pos: absolute, $h: 50%, $left: x-small, $w: 0);
 		@include nebula-rounded-styling($br: small);
 		transition: 0.1s 0.06s ease all;
 		content: '';

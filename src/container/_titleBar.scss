@@ -3,45 +3,58 @@
 #{c(topBar bar)} {
 	@include nebula-position-styling($h: var(--nebula-osbar-height));
 	@include nebula-color-styling($bg: tertiary);
+	@include nebula-flex-styling($gap: 0);
 	@include nebula-padding-styling($p: 0);
-	#{c(topBar title container)} {
-		@include nebula-position-styling($pos: relative);
-	}
-	#{c(topBar leading container)} {
-		@include nebula-position-styling($h: 100%, $w: unset);
-		@include nebula-spacing-styling($ml: x-small);
-		order: -1;
-		&::before{
+	#{c(topBar trailing container)} {
+		@include nebula-position-styling($h: 100%, $w: 100%, $pos: relative);
+		@include nebula-flex-styling($gap: small);
+		&::before {
 			@include nebula-color-styling($bg: var(--titlebar-wordmark) center);
-			@include nebula-position-styling($pos: relative, $h: 100%);
-			@include nebula-flex-styling($gap: xx-small);
+			@include nebula-position-styling($pos: relative, $h: 100%, $w: 100px);
+			@include nebula-spacing-styling($ml: xx-small);
 			text-align: right;
 			content: '';
-			width: 100px;
-			height: 100%;
+
 		}
-		&::after{
+		&::after {
 			@include nebula-color-styling($c: var(--text-muted));
+			@include nebula-position-styling($pos: relative);
+			@include nebula-spacing-styling($mr: auto);
 			font-size: 12px;
-			position: relative;
+		}
+		#{c(topBar trailing recentsIcon)} {
+			@include nebula-spacing-styling($ml: auto);
+			order: 1;
+		}
+		#{c(topBar trailing winButtons)} {
+			order: 1;
+		}
+	}
+	#{c(topBar leading container)} {
+		@include nebula-spacing-styling($m: 0)
+	}
+	#{c(topBar trailing container)} {
+		a[href="https://support.discord.com"]
+		{
+			@include nebula-position-styling($d: none);
 		}
 	}
 }
-html{
+html {
 	&#{c(os win platform)} {
 		#{c(topBar bar)} {
-			#{c(topBar leading container)} {
-				&::after{
-					content: 'v#{$win-version}' ' 〡 ' '#{$A02} Palette by #{$A01}'
+			#{c(topBar trailing container)} {
+				&::after {
+					content: 'v#{$win-version}' ' 〡 ' '#{$A02} Palette by #{$A01}';
 				}
 			}
 		}
 	}
 	&#{c(os mac platform)} {
 		#{c(topBar bar)} {
-			#{c(topBar leading container)} {
-				&::after{
-					content: 'v#{$osx-version}' ' 〡 ' '#{$A02} Palette by #{$A01}'
+			#{c(topBar trailing container)} {
+				&::after {
+					content: 'v#{$osx-version}' ' 〡 ' '#{$A02} Palette by #{$A01}';
 				}
 			}
 		}

@@ -2,15 +2,17 @@
 
 #{c(sidebar private channels)} {
 	@include nebula-color-styling($bg: transparent);
+
 	#{c(sidebar private searchBar)} {
 		@include nebula-color-styling($bgc: secondary);
 		@include nebula-position-styling($h: unset);
 		@include nebula-rounded-styling($br: small);
-		@include nebula-spacing-styling($mb: small);
+		@include nebula-spacing-styling($mb: x-small);
 		@include nebula-padding-styling($p: x-small);
 		overflow: hidden;
 		box-shadow: none;
 		border: none !important;
+
 		button {
 			@include nebula-color-styling($bgc: primary);
 			@include nebula-padding-styling($p: x-small, $pl: large);
@@ -20,23 +22,29 @@
 			line-height: unset;
 		}
 	}
+
 	#{c(sidebar private scroller)} {
 		@include nebula-rounded-styling($br: small);
 		@include nebula-color-styling($bg: secondary);
+
 		ul {
 			@include nebula-flex-styling($ac: flex-start, $wrap: wrap);
 			@include nebula-padding-styling($pt: x-small);
+
 			#{c(sidebar private friendsButtonContainer)} {
 				@include nebula-flex-styling;
 				margin-left: var(--nebula-spacing-xs);
 				flex: 1;
+
 				li#{c(sidebar private channel)} {
 					margin-left: 0 !important;
 					max-width: unset !important;
 					width: unset !important;
 					flex: 1;
+
 					#{c(sidebar private interactive)} {
 						width: unset;
+
 						&::before,
 						&::after {
 							@include nebula-position-styling($d: none);
@@ -44,42 +52,50 @@
 					}
 				}
 			}
+
 			#{c(sidebar private recentActivities container)} {
 				width: 100%;
+
 				#{c(sidebar private recentActivities itemContainer)} {
 					overflow: unset;
 				}
 			}
+
 			li#{c(sidebar private channel)} {
 				@include nebula-rounded-styling($br: small);
 				margin: 0;
 				overflow: hidden;
 				max-width: unset;
+
 				#{c(sidebar private interactive)} {
 					padding: 0;
 				}
+
 				&:has(#{c(sidebar private link)}[href*='/channels/@me/']) {
 					margin-left: var(--nebula-spacing-xs);
 					width: -webkit-fill-available;
+
 					#{c(sidebar private interactive)} {
 						transition: 0.1s 0.1s ease;
+
 						#{c(sidebar private link)} {
 							padding: var(--nebula-spacing-xs);
 							gap: 0;
+
 							#{c(sidebar private layout)} {
 								@include nebula-position-styling($w: 100%, $h: unset);
 							}
+
 							&::before {
-								@include nebula-position-styling(
-									$w: var(--nebula-pill-width),
+								@include nebula-position-styling($w: var(--nebula-pill-width),
 									$h: 30px,
-									$pos: relative
-								);
+									$pos: relative);
 								@include nebula-rounded-styling($br: small);
 								@include nebula-spacing-styling($mr: xx-small);
 								content: '';
 								order: -1;
 							}
+
 							&::after {
 								@include nebula-position-styling($w: 0, $h: 30px, $pos: absolute);
 								@include nebula-rounded-styling($br: small);
@@ -88,72 +104,88 @@
 								order: -1;
 							}
 						}
+
+						#{c(sidebar private closeButton)} {
+							@include nebula-position-styling($d: block);
+							transform: translateX(22px);
+							transition: 0.1s 0.07s ease all;
+						}
+
 						&:hover,
 						&:focus-within {
 							#{c(sidebar private link)} {
 								&::after {
-									@include nebula-color-styling($bg: $C03);
-									@include nebula-position-styling(
-										$w: var(--nebula-pill-width),
+									@include nebula-color-styling($bg: var(--brand-430));
+									@include nebula-position-styling($w: var(--nebula-pill-width),
 										$h: 30px,
-										$pos: absolute
-									);
+										$pos: absolute);
 								}
 							}
+
+							#{c(sidebar private closeButton)} {
+								transform: translate(0);
+							}
 						}
+
+						&:hover {
+							@include nebula-color-styling($bgc: modifier-hover);
+						}
+
 						&#{c(sidebar private interactiveSelected)} {
-							@include nebula-color-styling(
-								$bgc: var(--background-modifier-selected),
-								$c: var(--interactive-active)
-							);
+							@include nebula-color-styling($bgc: var(--background-modifier-selected),
+								$c: var(--interactive-active));
+
 							#{c(sidebar private link)} {
 								&::after {
 									transition-delay: 0 !important;
-									@include nebula-color-styling($bg: $C01);
-									@include nebula-position-styling(
-										$w: var(--nebula-pill-width),
+									@include nebula-color-styling($bg: var(--brand-530));
+									@include nebula-position-styling($w: var(--nebula-pill-width),
 										$h: 30px,
-										$pos: absolute
-									);
+										$pos: absolute);
 								}
 							}
 						}
 					}
 				}
+
 				&:has(#{c(sidebar private link)}:not([href*='/channels/@me/'])) {
 					margin-left: var(--nebula-spacing-xs);
 					flex: 1;
+
 					#{c(sidebar private interactive)} {
 						@include nebula-color-styling($bgc: primary);
 						transition: 0.2s ease;
+
 						#{c(sidebar private link)} {
 							@include nebula-padding-styling($p: x-small);
+
 							#{c(sidebar private newBadge)} {
 								@include nebula-position-styling($d: none);
 							}
+
 							#{c(sidebar private layout)} {
 								@include nebula-flex-styling($jc: center);
 								@include nebula-padding-styling($p: 0);
+
 								#{c(sidebar private avatar)} {
 									@include nebula-spacing-styling($m: 0);
 								}
+
 								#{c(sidebar private content)} {
 									@include nebula-position-styling($d: none);
 								}
 							}
 						}
+
 						&:hover,
 						&:focus-within {
-							@include nebula-color-styling(
-								$bgc: primary,
-								$c: var(--interactive-active)
-							);
+							@include nebula-color-styling($bgc: modifier-hover,
+								$c: var(--interactive-active));
 						}
+
 						&#{c(sidebar private selectedBG)} {
-							@include nebula-color-styling(
-								$bg: var(--background-modifier-active),
-								$c: var(--interactive-active)
-							);
+							@include nebula-color-styling($bg: modifier-selected,
+								$c: var(--interactive-active));
 						}
 					}
 				}

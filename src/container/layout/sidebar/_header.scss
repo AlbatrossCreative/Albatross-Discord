@@ -18,7 +18,7 @@
 		overflow: unset;
 		#{c(sidebar server header bannerImage)} {
 			@include nebula-position-styling($w: 100%);
-			@include nebula-color-styling($bg: secondary);
+			@include nebula-color-styling($bg: transparent);
 			transform: none !important;
 			opacity: 1 !important;
 			img {
@@ -35,7 +35,7 @@
 					$pos: absolute,
 					$bottom: calc(-1 * calc(50px + var(--nebula-spacing-xs))),
 					$left: 0,
-					$z: 3
+					$z: 2
 				);
 				@include nebula-rounded-styling($brt: small);
 				@include nebula-color-styling($bg: secondary);
@@ -43,5 +43,9 @@
 				content: '';
 			}
 		}
+	}
+	.headerEllipseBackdrop_f37cb1,
+	.headerEllipseForeground_f37cb1{
+		@include nebula-position-styling($d: none);
 	}
 }
