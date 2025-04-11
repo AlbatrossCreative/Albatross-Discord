@@ -35,27 +35,28 @@ Please ensure Discord is installed with your chosen client mod.
 
 ## Local Installation & Setup
 These are the steps to locally install Nebula to have full access to its raw code. I recommend doing this until Nebula is in its release stages, and also for users who have intermediate knowledge with sass. 
-### Clone Repository 
+### 1. Clone Repository 
 Use this command to clone the repository to your desired directory.
 ```
 git clone https://github.com/loremly/nebula
 ```
 
-### Go to project folder
+### 2. Go to project folder
 ```
 cd nebula
 ```
 
-### Install dependencies
+### 3. Install dependencies
 ```
 pnpm i
 ```
-### Compile file
+### 4. Compile file
 
 **Use** `pnpm` **to begin using Nebula based on your use choice.**
 | Script | Description|
 | :---- | :--- |
-| `devfull` | To begin live development (Both on BD and Vencord) 
+| `buildVC` | To build a single css file to Vencord.
+| `buildBD` | To build a single ad to BetterDiscord.
 | `build`| To build the compiled CSS files to `public/build`.  
 | `devBetterDiscord` | Begin live development for BetterDiscord.  
 | `devVencord` | Begin live development for Vencord. 
