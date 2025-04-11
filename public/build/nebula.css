@@ -928,6 +928,7 @@ html.platform-osx .bar_c38106 .trailing_c38106::after {
 .container_c8ffbb {
   background: var(--background-secondary) !important;
   border-radius: var(--nebula-rounded-sm) !important;
+  border: none !important;
   overflow: hidden;
 }
 .container_c8ffbb aside {
@@ -935,6 +936,17 @@ html.platform-osx .bar_c38106 .trailing_c38106::after {
 }
 .container_c8ffbb aside .members_c8ffbb {
   background: transparent !important;
+}
+.container_c8ffbb aside .members_c8ffbb .container__0f2e8 {
+  height: unset !important;
+  background: var(--background-primary) !important;
+  border-radius: var(--nebula-rounded-sm) !important;
+  padding: var(--nebula-spacing-sm) !important;
+  border: none !important;
+  cursor: pointer;
+}
+.container_c8ffbb aside .members_c8ffbb .container__0f2e8:hover {
+  background: var(--background-modifier-hover) !important;
 }
 .container_c8ffbb aside .members_c8ffbb .member__5d473 {
   border-radius: var(--nebula-rounded-sm) !important;
@@ -2160,51 +2172,20 @@ html.platform-osx .bar_c38106 .trailing_c38106::after {
 }
 .container__133bf .tabBody__133bf .peopleColumn__133bf .searchBar__5ec2f {
   margin: var(--nebula-spacing-sm) !important;
-  margin-bottom: 0 !important;
 }
 .container__133bf .tabBody__133bf .peopleColumn__133bf .peopleList__5ec2f :is(.content__99f8c, .content_d125d2) {
-  align-content: flex-start !important;
-  justify-content: center !important;
-  display: grid !important;
-  gap: var(--nebula-spacing-sm) !important;
-  padding-left: var(--nebula-spacing-sm) !important;
-  grid-template-columns: 1fr 1fr 1fr;
+  height: fit-content !important;
 }
-.container__133bf .tabBody__133bf .peopleColumn__133bf .peopleList__5ec2f :is(.content__99f8c, .content_d125d2) .sectionTitle__5ec2f {
-  margin-top: var(--nebula-spacing-sm) !important;
-  grid-column: 1/-1;
-}
-.container__133bf .tabBody__133bf .peopleColumn__133bf .peopleList__5ec2f :is(.content__99f8c, .content_d125d2) .sectionTitle__5ec2f .title__1472a {
-  margin: 0 !important;
-  font-family: var(--font-display);
-  color: var(--header-primary);
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-}
-.container__133bf .tabBody__133bf .peopleColumn__133bf .peopleList__5ec2f :is(.content__99f8c, .content_d125d2) [style="height: 0px;"] {
-  display: none !important;
+.container__133bf .tabBody__133bf .peopleColumn__133bf .peopleList__5ec2f :is(.content__99f8c, .content_d125d2) .sectionTitle__5ec2f h2 {
+  margin: var(--nebula-spacing-sm) !important;
 }
 .container__133bf .tabBody__133bf .peopleColumn__133bf .peopleList__5ec2f :is(.content__99f8c, .content_d125d2) .peopleListItem_cc6179 {
-  background: var(--background-primary) !important;
+  margin-left: var(--nebula-spacing-sm) !important;
+  margin-right: var(--nebula-spacing-sm) !important;
+  margin-bottom: var(--nebula-spacing-xxs) !important;
   border-radius: var(--nebula-rounded-sm) !important;
-  margin: 0 !important;
   padding: var(--nebula-spacing-sm) !important;
-  height: 100% !important;
-  border: 0;
-}
-.container__133bf .tabBody__133bf .peopleColumn__133bf .peopleList__5ec2f :is(.content__99f8c, .content_d125d2) .peopleListItem_cc6179 .listItemContents_fc004c {
-  display: grid !important;
-  grid-row-gap: var(--nebula-spacing-sm) !important;
-  grid-template-areas: "banner banner" "userInfo userInfo";
-}
-.container__133bf .tabBody__133bf .peopleColumn__133bf .peopleList__5ec2f :is(.content__99f8c, .content_d125d2) .peopleListItem_cc6179 .listItemContents_fc004c::before {
-  grid-column: banner;
-  border-radius: var(--nebula-rounded-sm) !important;
-  position: relative !important;
-  height: 80px !important;
-  background: var(--background-secondary-alt) !important;
-  content: "";
+  border: none;
 }
 .container__133bf .tabBody__133bf .peopleColumn__133bf .peopleList__5ec2f :is(.content__99f8c, .content_d125d2) .peopleListItem_cc6179:hover {
   padding: var(--nebula-spacing-sm) !important;

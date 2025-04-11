@@ -92,7 +92,7 @@ pnpm i
 | :----------------- | :------------------------------------------------- |
 | `buildVC`          | To build a single css file to Vencord.             |
 | `buildBD`          | To build a single ad to BetterDiscord.             |
-| `build`            | To build the compiled CSS files to `public/build`. |
+| `compile`            | To build the compiled CSS files to `public/build`. |
 | `devBetterDiscord` | Begin live development for BetterDiscord.          |
 | `devVencord`       | Begin live development for Vencord.                |
 
