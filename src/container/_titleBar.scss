@@ -1,13 +1,14 @@
 @use 'abstract' as *;
 
-#{c(topBar bar)} {
+#{c(topBar bar)}:not(#{c(topBar systemBar)}) {
 	@include nebula-position-styling($h: var(--nebula-osbar-height));
 	@include nebula-color-styling($bg: tertiary);
 	@include nebula-flex-styling($gap: 0);
 	@include nebula-padding-styling($p: 0);
 	#{c(topBar trailing container)} {
-		@include nebula-position-styling($h: 100%, $w: 100%, $pos: relative);
+		@include nebula-position-styling($h: 100%, $w: 100%);
 		@include nebula-flex-styling($gap: small);
+		-webkit-app-region: drag !important;
 		&::before {
 			@include nebula-color-styling($bg: var(--titlebar-wordmark) center);
 			@include nebula-position-styling($pos: relative, $h: 100%, $w: 100px);
@@ -27,6 +28,7 @@
 			order: 1;
 		}
 		#{c(topBar trailing winButtons)} {
+			-webkit-app-region: no-drag !important;
 			order: 1;
 		}
 	}
@@ -34,8 +36,7 @@
 		@include nebula-spacing-styling($m: 0)
 	}
 	#{c(topBar trailing container)} {
-		a[href="https://support.discord.com"]
-		{
+		a[href="https://support.discord.com"]{
 			@include nebula-position-styling($d: none);
 		}
 	}

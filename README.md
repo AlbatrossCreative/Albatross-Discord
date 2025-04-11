@@ -39,24 +39,33 @@ Nebula is a fun project to help me understand sass more, alot of unnecessary scs
 Please ensure Discord is installed with your chosen client mod.
 <table>
   <tr>
-    <td align=center colspan="3"><strong>Clients<strong></td>
+    <td><strong>Client Mod</strong></td>
+    <td align=center colspan="3"><strong>Clients</strong></td>
   </tr>
     <tr>
         <td>
-            <strong>
-                <a href="https://discord.com/api/downloads/distributions/app/installers/latest?platform=win&channel=canary&arch=x64">
-                Discord Canary
-                </a>
-            </strong>
+            <img src="https://discord-extensions.github.io/assets/icons/vencord.gif">
+            <a href="https://vencord.dev/download/">
+                <strong>Vencord</strong>
+            </a>
+        </td>
+        <td>
+            <a href="https://discord.com/api/downloads/distributions/app/installers/latest?platform=win&channel=canary&arch=x64">
+                <strong>Discord Canary</strong>
+            </a>
         </td>
     </tr>
     <tr>
         <td>
-            <strong>
-                <a href="https://discord.com/api/downloads/distributions/app/installers/latest?platform=win&channel=canary&arch=x64">
-                Discord Stable
-                </a>  
-            </strong>
+            <img src="https://discord-extensions.github.io/assets/icons/betterdiscord.png">
+            <a href="https://betterdiscord.app">
+                <strong>BetterDiscord</strong>
+            </a>
+        </td>
+        <td>
+            <a href="https://discord.com/api/downloads/distributions/app/installers/latest?platform=win&channel=canary&arch=x64">
+                <strong>Discord Stable</strong>
+            </a>  
         </td>
     </tr>
   </tr>

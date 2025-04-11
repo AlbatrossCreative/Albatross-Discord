@@ -771,21 +771,21 @@ html:root {
   content: "";
 }
 
-.bar_c38106 {
+.bar_c38106:not(.systemBar_c38106) {
   height: var(--nebula-osbar-height) !important;
   background: var(--background-tertiary) !important;
   display: flex !important;
   gap: 0 !important;
   padding: 0 !important;
 }
-.bar_c38106 .trailing_c38106 {
-  position: relative !important;
+.bar_c38106:not(.systemBar_c38106) .trailing_c38106 {
   width: 100% !important;
   height: 100% !important;
   display: flex !important;
   gap: var(--nebula-spacing-sm) !important;
+  -webkit-app-region: drag !important;
 }
-.bar_c38106 .trailing_c38106::before {
+.bar_c38106:not(.systemBar_c38106) .trailing_c38106::before {
   background: var(--titlebar-wordmark) center !important;
   position: relative !important;
   width: 100px !important;
@@ -794,23 +794,24 @@ html:root {
   text-align: right;
   content: "";
 }
-.bar_c38106 .trailing_c38106::after {
+.bar_c38106:not(.systemBar_c38106) .trailing_c38106::after {
   color: var(--text-muted) !important;
   position: relative !important;
   margin-right: auto !important;
   font-size: 12px;
 }
-.bar_c38106 .trailing_c38106 .recentsIcon_c99c29 {
+.bar_c38106:not(.systemBar_c38106) .trailing_c38106 .recentsIcon_c99c29 {
   margin-left: auto !important;
   order: 1;
 }
-.bar_c38106 .trailing_c38106 .winButtons_c38106 {
+.bar_c38106:not(.systemBar_c38106) .trailing_c38106 .winButtons_c38106 {
+  -webkit-app-region: no-drag !important;
   order: 1;
 }
-.bar_c38106 .leading_c38106 {
+.bar_c38106:not(.systemBar_c38106) .leading_c38106 {
   margin: 0 !important;
 }
-.bar_c38106 .trailing_c38106 a[href="https://support.discord.com"] {
+.bar_c38106:not(.systemBar_c38106) .trailing_c38106 a[href="https://support.discord.com"] {
   display: none !important;
 }
 
