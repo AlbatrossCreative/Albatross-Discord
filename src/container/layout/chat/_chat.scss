@@ -83,15 +83,24 @@
 			$right: unset,
 			$left: unset,
 			$top: 0,
-			$h: 32px,
+			$h: min-content,
 			$z: 7
 		);
+		@include nebula-color-styling($bg: modifier-accent);
 		@include nebula-rounded-styling($br: small);
 		@include nebula-spacing-styling($m: small);
-		@include nebula-padding-styling($p: 0);
+		@include nebula-padding-styling($p: xx-small);
 		@include nebula-flex-styling($f: 1);
+		border: none !important;
 		&#{c(chatForm jumpToPresentBar)} {
-			@include nebula-position-styling($bottom: auto);
+			@include nebula-position-styling($bottom: auto, $min-h: unset);
+			border: none !important;
+			&::before{
+				@include nebula-position-styling($d: none);
+			}
+		}
+		button {
+			@include nebula-color-styling($bg: transparent);
 		}
 	}
 }

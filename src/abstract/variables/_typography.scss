@@ -4,6 +4,7 @@ html {
 	&:root {
 		--font-primary: #{$B01} !important;
 		--font-display: #{$B02} !important;
+		--font-headline: var(--font-display) !important;
 		--font-code: #{$B03} !important;
 	}
 	* {

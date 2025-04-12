@@ -1,19 +1,17 @@
 @use 'sass:map';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
-
-$A01: 'CorellanStoma';
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Special+Gothic&display=swap');$A01: 'CorellanStoma';
 $A02: 'CreArts';
 
 // Skin Fonts
-$B01: 'Quicksand', sans-serif;
-$B02: 'Montserrat', sans-serif;
-$B03: 'Consolas', monospace;
+$B01: 'Raleway', sans-serif;
+$B02: 'Special Gothic', sans-serif;
+$B03: 'Fira Code', monospace;
 
 // Nebula Background HSL
 
 $NBV01: 240;
 $NBV02: 6%;
-$NBV03: 12%;
+$NBV03: 14%;
 
 // Nebula Accent HSL
 $NBV04: 212;

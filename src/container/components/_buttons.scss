@@ -2,4 +2,8 @@
 
 #{c(button button)} {
 	@include nebula-rounded-styling($br: x-small);
+	border: none !important;
+	&#{c(button lookOutlined)} {
+		border:solid 2px !important;
+	}
 }

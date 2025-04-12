@@ -118,6 +118,7 @@ Nebula is greatly inspired by these projects to make Nebula what it is today.
 
 - **[SettingsModal](https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/SettingsModal) by [mwittrien](https://github.com/mwittrien)**
 - **[CreArts](https://github.com/CreArts-Community/CreArts-Discord) by The [CreArts-Community](https://github.com/CreArts-Community)**
+- **[RadialStatus](https://github.com/DiscordStyles/RadialStatus) by [DiscordStyles](https://github.com/DiscordStyles)** 
 
 
 
