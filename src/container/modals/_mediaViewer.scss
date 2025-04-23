@@ -1,7 +1,7 @@
 @use 'abstract' as *;
 
 #{c(modals mediaViewer carouselModal)} {
-	@include nebula-padding-styling($p: 4x-large);
-	#{c(modals mediaViewer topBar)} {
-	}
+	@include ac-padding-styling($p: 4x-large);
+
+	#{c(modals mediaViewer topBar)} {}
 }

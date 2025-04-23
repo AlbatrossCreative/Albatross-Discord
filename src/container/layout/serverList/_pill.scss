@@ -1,7 +1,9 @@
 @use 'abstract' as *;
+
 #{c(serverList pillHome)} {
-	@include nebula-position-styling($d: none);
+	@include ac-position-styling($d: none);
 }
+
 #{c(serverList pill)} {
-	@include nebula-position-styling($d: none);
+	@include ac-position-styling($d: none);
 }

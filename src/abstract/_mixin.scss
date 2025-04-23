@@ -1,16 +1,17 @@
 @use 'sass:map';
 
-$nebula-rounded: (
+$ac-rounded: (
 	unset: unset,
 	0: 0,
-	x-small: var(--nebula-rounded-xs),
-	small: var(--nebula-rounded-sm),
-	medium: var(--nebula-rounded-md),
-	large: var(--nebula-rounded-lg),
-	full: var(--nebula-rounded-full),
+	x-small: var(--ac-rounded-xs),
+	small: var(--ac-rounded-sm),
+	medium: var(--ac-rounded-md),
+	large: var(--ac-rounded-lg),
+	full: var(--ac-rounded-full),
 );
 
-$nebula-backgrounds: (
+
+$ac-backgrounds: (
 	unset: unset,
 	primary: var(--background-primary),
 	secondary: var(--background-secondary),
@@ -24,48 +25,52 @@ $nebula-backgrounds: (
 	transparent: transparent,
 );
 
-$nebula-spacing: (
+$ac-spacing: (
 	unset: unset,
 	auto: auto,
 	0: 0,
-	xx-small: var(--nebula-spacing-xxs),
-	x-small: var(--nebula-spacing-xs),
-	small: var(--nebula-spacing-sm),
-	medium: var(--nebula-spacing-md),
-	large: var(--nebula-spacing-lg),
-	x-large: var(--nebula-spacing-xl),
-	2x-large: var(--nebula-spacing-2xl),
-	3x-large: var(--nebula-spacing-3xl),
-	4x-large: var(--nebula-spacing-4xl),
+	xx-small: var(--ac-spacing-xxs),
+	x-small: var(--ac-spacing-xs),
+	small: var(--ac-spacing-sm),
+	medium: var(--ac-spacing-md),
+	large: var(--ac-spacing-lg),
+	x-large: var(--ac-spacing-xl),
+	2x-large: var(--ac-spacing-2xl),
+	3x-large: var(--ac-spacing-3xl),
+	4x-large: var(--ac-spacing-4xl),
 );
 
-@mixin nebula-spacing-styling(
-	$m: null,
+@mixin ac-spacing-styling($m: null,
 	$mx: null,
 	$my: null,
 	$mb: null,
 	$mt: null,
 	$ml: null,
-	$mr: null
-) {
-	@if $m and map.has-key($nebula-spacing, $m) {
-		margin: map.get($nebula-spacing, $m) !important;
-	} @else if $m {
+	$mr: null) {
+	@if $m and map.has-key($ac-spacing, $m) {
+		margin: map.get($ac-spacing, $m) !important;
+	}
+
+	@else if $m {
 		margin: $m !important;
 	}
 
-	@if $mx and map.has-key($nebula-spacing, $mx) {
-		margin-left: map.get($nebula-spacing, $mx) !important;
-		margin-right: map.get($nebula-spacing, $mx) !important;
-	} @else if $mx {
+	@if $mx and map.has-key($ac-spacing, $mx) {
+		margin-left: map.get($ac-spacing, $mx) !important;
+		margin-right: map.get($ac-spacing, $mx) !important;
+	}
+
+	@else if $mx {
 		margin-left: $mx !important;
 		margin-right: $mx !important;
 	}
 
-	@if $my and map.has-key($nebula-spacing, $my) {
-		margin-top: map.get($nebula-spacing, $my) !important;
-		margin-bottom: map.get($nebula-spacing, $my) !important;
-	} @else if $my {
+	@if $my and map.has-key($ac-spacing, $my) {
+		margin-top: map.get($ac-spacing, $my) !important;
+		margin-bottom: map.get($ac-spacing, $my) !important;
+	}
+
+	@else if $my {
 		margin-top: $my !important;
 		margin-bottom: $my !important;
 	}
@@ -75,34 +80,40 @@ $nebula-spacing: (
 
 		@if $id ==mb {
 			$value: $mb;
-		} @else if $id ==mt {
+		}
+
+		@else if $id ==mt {
 			$value: $mt;
-		} @else if $id ==ml {
+		}
+
+		@else if $id ==ml {
 			$value: $ml;
-		} @else if $id ==mr {
+		}
+
+		@else if $id ==mr {
 			$value: $mr;
 		}
 
 		@if $value {
-			@if map.has-key($nebula-spacing, $value) {
-				#{$style}: map.get($nebula-spacing, $value) !important;
-			} @else {
+			@if map.has-key($ac-spacing, $value) {
+				#{$style}: map.get($ac-spacing, $value) !important;
+			}
+
+			@else {
 				#{$style}: $value !important;
 			}
 		}
 	}
 }
 
-@mixin nebula-padding-styling(
-	$p: null,
+@mixin ac-padding-styling($p: null,
 	$px: null,
 	$py: null,
 	$pb: null,
 	$pt: null,
 	$pl: null,
-	$pr: null
-) {
-	@each $id, $value in $nebula-spacing {
+	$pr: null) {
+	@each $id, $value in $ac-spacing {
 		@if $p ==$id {
 			padding: $value !important;
 		}
@@ -135,30 +146,33 @@ $nebula-spacing: (
 	}
 }
 
-@mixin nebula-color-styling($bg: null, $bgc: null, $c: null) {
+@mixin ac-color-styling($bg: null, $bgc: null, $c: null) {
 	@if $c {
 		color: $c !important;
 	}
 
 	@if $bg {
-		@if map.has-key($nebula-backgrounds, $bg) {
-			background: map.get($nebula-backgrounds, $bg) !important;
-		} @else {
+		@if map.has-key($ac-backgrounds, $bg) {
+			background: map.get($ac-backgrounds, $bg) !important;
+		}
+
+		@else {
 			background: $bg !important;
 		}
 	}
 
 	@if $bgc {
-		@if map.has-key($nebula-backgrounds, $bgc) {
-			background-color: map.get($nebula-backgrounds, $bgc) !important;
-		} @else {
+		@if map.has-key($ac-backgrounds, $bgc) {
+			background-color: map.get($ac-backgrounds, $bgc) !important;
+		}
+
+		@else {
 			background-color: $bgc !important;
 		}
 	}
 }
 
-@mixin nebula-rounded-styling(
-	$br: null,
+@mixin ac-rounded-styling($br: null,
 	$brt: null,
 	$brb: null,
 	$brr: null,
@@ -168,9 +182,8 @@ $nebula-spacing: (
 	$brtl: null,
 	$brbl: null,
 	$brx: null,
-	$bry: null
-) {
-	@each $id, $value in $nebula-rounded {
+	$bry: null) {
+	@each $id, $value in $ac-rounded {
 		@if $br ==$id {
 			border-radius: $value !important;
 		}
@@ -217,8 +230,7 @@ $nebula-spacing: (
 	}
 }
 
-@mixin nebula-position-styling(
-	$pos: null,
+@mixin ac-position-styling($pos: null,
 	$d: null,
 	$top: null,
 	$bottom: null,
@@ -230,8 +242,7 @@ $nebula-spacing: (
 	$max-h: null,
 	$min-w: null,
 	$min-h: null,
-	$z: null
-) {
+	$z: null) {
 	@if $d {
 		display: $d !important;
 	}
@@ -261,14 +272,20 @@ $nebula-spacing: (
 	}
 
 	@if $w {
-		width: $w !important;
+		@if $w ==fill {
+			width: -webkit-fill-available !important;
+		}
+
+		@else {
+			width: $w !important;
+		}
 	}
 
 	@if $h {
 		height: $h !important;
 	}
 
-	@each $id, $value in $nebula-spacing {
+	@each $id, $value in $ac-spacing {
 		@if $left ==$id {
 			$left: $value;
 		}
@@ -303,11 +320,9 @@ $nebula-spacing: (
 	}
 }
 
-@mixin nebula-transition-styling($l: null, $p: null, $d: null) {
-}
+@mixin ac-transition-styling($l: null, $p: null, $d: null) {}
 
-@mixin nebula-flex-styling(
-	$f: null,
+@mixin ac-flex-styling($f: null,
 	$gap: null,
 	$gapc: null,
 	$gapr: null,
@@ -319,8 +334,7 @@ $nebula-spacing: (
 	$js: null,
 	$as: null,
 	$d: null,
-	$wrap: null
-) {
+	$wrap: null) {
 	@if $f {
 		flex: $f !important;
 	}
@@ -351,50 +365,66 @@ $nebula-spacing: (
 
 	@if $d {
 		display: $d !important;
-	} @else {
+	}
+
+	@else {
 		display: flex !important;
 	}
 
 	@if $gap {
-		@if map.has-key($nebula-spacing, $gap) {
-			gap: map.get($nebula-spacing, $gap) !important;
-		} @else {
+		@if map.has-key($ac-spacing, $gap) {
+			gap: map.get($ac-spacing, $gap) !important;
+		}
+
+		@else {
 			gap: $gap !important;
 		}
 	}
 
 	@if $gapr {
-		@if map.has-key($nebula-spacing, $gapr) {
-			grid-row-gap: map.get($nebula-spacing, $gapr) !important;
-		} @else {
+		@if map.has-key($ac-spacing, $gapr) {
+			grid-row-gap: map.get($ac-spacing, $gapr) !important;
+		}
+
+		@else {
 			grid-row-gap: $gapr !important;
 		}
 	}
 
 	@if $gapc {
-		@if map.has-key($nebula-spacing, $gapc) {
-			grid-column-gap: map.get($nebula-spacing, $gapc) !important;
-		} @else {
+		@if map.has-key($ac-spacing, $gapc) {
+			grid-column-gap: map.get($ac-spacing, $gapc) !important;
+		}
+
+		@else {
 			grid-column-gap: $gapc !important;
 		}
 	}
+
 	@if $as {
 		align-self: $as !important;
 	}
+
 	@if $js {
 		justify-self: $js !important;
 	}
 }
 
-@mixin nebula-icon-replacement($ip: null, $ic: null, $ich: null) {
-	mask: var(--#{$ip}-path);
-	@include nebula-color-styling($bg: #{$ic});
+
+@mixin ac-icon-replacement($ip: null, $ic: null, $ich: null) {
+	@if $ip {
+		mask: var(--#{$ip}-path) !important;
+	}
+
+	@include ac-color-styling($bg: currentColor);
+	@include ac-position-styling($w: 24px, $h: 24px, $d: inline-block);
+	mask-size: 100% 100%;
 
 	svg {
-		@include nebula-position-styling($d: none);
+		@include ac-position-styling($d: none);
 	}
 
 	&:hover {
-		@include nebula-color-styling($bg: #{$ich});
+		@include ac-color-styling($bg: #{$ich});
 	}
 }

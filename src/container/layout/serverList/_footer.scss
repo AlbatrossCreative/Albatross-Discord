@@ -1,8 +1,9 @@
 @use 'abstract' as *;
 
 #{c(serverList discover footer)} {
-	@include nebula-color-styling($bg: transparent);
+	@include ac-color-styling($bg: transparent);
+
 	#{c(serverList listItem)} {
-		@include nebula-color-styling($bg: transparent);
+		@include ac-color-styling($bg: transparent);
 	}
 }

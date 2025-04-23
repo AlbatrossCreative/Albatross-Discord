@@ -1,57 +1,95 @@
 @use 'abstract' as *;
-#{c(header themed)} {
-	@include nebula-position-styling($h: unset);
-	&::before {
-		@include nebula-position-styling($d: none);
-	}
-	.dot__9293f {
-		@include nebula-position-styling($d: none);
-	}
-	&#{c(header header)} {
-		@include nebula-color-styling($bg: secondary);
-		@include nebula-rounded-styling($br: small);
-		@include nebula-padding-styling($px: small);
-		overflow: hidden !important;
-		border: none !important;
+
+#{c(header header)} {
+	@include ac-color-styling($bg: secondary);
+	@include ac-rounded-styling($br: small);
+	@include ac-padding-styling($pr: small, $pl: x-small, $py: small);
+	overflow: hidden !important;
+	border: none !important;
+
+	&#{c(header themed)} {
+		@include ac-position-styling($h: unset);
+
+		&::before {
+			@include ac-position-styling($d: none);
+		}
+
+		.dot__9293f {
+			@include ac-position-styling($d: none);
+		}
+
 		#{c(header upperContainer)} {
 			justify-content: space-between;
+
 			#{c(header children)} {
-				@include nebula-color-styling($bg: transparent);
-				@include nebula-rounded-styling($br: small);
+				@include ac-color-styling($bg: transparent);
+				@include ac-rounded-styling($br: small);
 				flex: unset;
+
 				#{c(avatar wrapper)} {
-					@include nebula-spacing-styling($m: 0);
-					@include nebula-padding-styling($px: small);
-					@include nebula-position-styling($h: 100%, $w: unset);
+					@include ac-spacing-styling($m: 0);
+					@include ac-padding-styling($px: xx-small);
+					@include ac-position-styling($h: 100%, $w: unset);
+
 					svg {
-						@include nebula-position-styling($pos: relative);
+						@include ac-position-styling($pos: relative);
 					}
 				}
+
 				#{c(header iconWrapper)} {
-					@include nebula-rounded-styling($brl: small);
-					@include nebula-position-styling($h: 100%);
-					@include nebula-spacing-styling($m: 0);
-					@include nebula-flex-styling($ac: center, $wrap: wrap);
-					@include nebula-padding-styling($px: small);
+					@include ac-rounded-styling($brl: small);
+					@include ac-position-styling($h: 100%);
+					@include ac-spacing-styling($m: 0);
+					@include ac-flex-styling($ac: center, $wrap: wrap);
+					@include ac-padding-styling($px: small);
 				}
+
 				#{c(header titleWrapper)} {
-					@include nebula-rounded-styling($brr: small);
-					@include nebula-position-styling($h: 100%);
-					@include nebula-flex-styling($ac: center);
-					@include nebula-padding-styling($pr: small);
+					@include ac-rounded-styling($brr: small);
+					@include ac-position-styling($h: 100%);
+					@include ac-flex-styling($ac: center);
+					@include ac-padding-styling($pr: small);
 				}
+
 				&::after {
-					@include nebula-position-styling($d: none);
+					@include ac-position-styling($d: none);
 				}
 			}
+
 			#{c(header toolbar)} {
 				#{c(header iconWrapper)} {
 					svg {
-						@include nebula-color-styling($c: var(--interactive-normal));
+						@include ac-color-styling($c: var(--interactive-normal));
 					}
+
 					&:hover {
 						svg {
-							@include nebula-color-styling($c: var(--interactive-hover));
+							@include ac-color-styling($c: var(--interactive-hover));
+						}
+					}
+
+					&:has([d*="M2 7.4A5.4"]) {
+						@include ac-icon-replacement($ip: call,
+							$ic: var(--interactive-normal),
+							$ich: var(--interactive-hover));
+					}
+
+					&:has([d*="M4 4a3 3 0 0 0-3 3v10a3"]) {
+						@include ac-icon-replacement($ip: videocall,
+							$ic: var(--interactive-normal),
+							$ich: var(--interactive-hover));
+					}
+				}
+
+				#{c(header search)} {
+					@include ac-spacing-styling($m: 0);
+
+					#{c(header searchInner)} {
+						#{c(header searchBar)} {
+							width: 180px;
+							.icon__97492 {
+								@include ac-position-styling($d: none);
+							}
 						}
 					}
 				}

@@ -8,6 +8,6 @@ $rounding:
 	'full' 50%;
 html:root {
 	@each $id, $value in $rounding {
-		--nebula-rounded-#{$id}: #{$value};
+		--ac-rounded-#{$id}: #{$value};
 	}
 }

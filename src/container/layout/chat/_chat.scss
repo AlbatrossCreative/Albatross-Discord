@@ -1,106 +1,121 @@
 @use 'abstract' as *;
 
 #{c(chat chat)} {
-	@include nebula-color-styling($bg: transparent);
+	@include ac-color-styling($bg: transparent);
 	border: none !important;
+
 	#{c(chat chatContent)} {
-		@include nebula-color-styling($bg: transparent);
-		@include nebula-spacing-styling($mt: x-small);
-		@include nebula-flex-styling($gap: small);
+		@include ac-color-styling($bg: transparent);
+		@include ac-spacing-styling($mt: x-small);
+		@include ac-flex-styling($gap: small);
+
 		#{c(chat chatContentInner)} {
-			@include nebula-color-styling($bg: secondary);
-			@include nebula-rounded-styling($br: small);
-			overflow: hidden;
+			@include ac-color-styling($bg: transparent);
+
 			#{c(chat messagesWrapper)} {
-				@include nebula-color-styling($bg: transparent);
+				@include ac-color-styling($bg: secondary);
+				@include ac-rounded-styling($br: small);
+				overflow: hidden;
+
 				&::before {
-					@include nebula-position-styling(
-						$w: 100%,
-						$h: 60px,
+					@include ac-position-styling($w: 100%,
+						$h: 100%,
 						$pos: absolute,
 						$top: 0,
 						$left: 0,
-						$z: 4
-					);
-					@include nebula-color-styling($bg: secondary);
-					mask-image: linear-gradient(
-						#000000f2 12%,
-						#00000080 45%,
-						#0000001a 70%,
-						transparent 95%
-					);
+						$z: 4);
+					@include ac-color-styling($bg: secondary);
+					mask-image: linear-gradient(to bottom,
+							#000 0px,
+							transparent 50px,
+							transparent calc(100% - 50px),
+							#000 100%);
+					pointer-events: none;
 					content: '';
 				}
+
 				#{c(chat chatScroller)} {
-					@include nebula-spacing-styling($mr: xx-small);
+					@include ac-spacing-styling($mr: xx-small);
 				}
+
 				#{c(chat chatLoadingWrapper)} {
-					@include nebula-color-styling($bg: transparent);
+					@include ac-color-styling($bg: transparent);
+
 					#{c(chat messageLoadingWrapper)} {
-						@include nebula-color-styling($bg: transparent);
+						@include ac-color-styling($bg: transparent);
 					}
 				}
+
 				#{c(chat newMessagesBar)} {
-					@include nebula-position-styling($w: unset, $left: unset, $right: unset);
+					@include ac-position-styling($w: unset, $left: unset, $right: unset);
 				}
+
 				#{c(chat divider)} {
-					@include nebula-position-styling($h: unset);
+					@include ac-position-styling($h: unset);
 					border: none;
+
 					#{c(chat unreadPill)} {
-						@include nebula-position-styling($pos: relative, $top: 0, $h: unset);
-						@include nebula-color-styling($bg: modifier-accent);
-						@include nebula-rounded-styling($br: small);
-						@include nebula-padding-styling($p: xx-small);
+						@include ac-position-styling($pos: relative, $top: 0, $h: unset);
+						@include ac-color-styling($bg: modifier-accent);
+						@include ac-rounded-styling($br: small);
+						@include ac-padding-styling($p: xx-small);
 						letter-spacing: 3px;
 						font-size: 12px;
+
 						svg {
-							@include nebula-position-styling($d: none);
+							@include ac-position-styling($d: none);
 						}
 					}
+
 					#{c(chat dividerContent)} {
-						@include nebula-color-styling($bg: secondary-alt);
-						@include nebula-padding-styling($p: xx-small);
-						border:  none !important;
+						@include ac-color-styling($bg: secondary-alt);
+						@include ac-padding-styling($p: xx-small);
+						border: none !important;
 					}
 				}
 			}
 		}
+
 		&#{c(pages header container)} {
-			@include nebula-color-styling($bg: secondary);
-			@include nebula-rounded-styling($br: small);
-			@include nebula-flex-styling($gap: 0);
+			@include ac-color-styling($bg: secondary);
+			@include ac-rounded-styling($br: small);
+			@include ac-flex-styling($gap: 0);
+
 			#{c(pages header tabBar)} {
-				@include nebula-spacing-styling($m: small, $mb: 0);
+				@include ac-spacing-styling($m: small, $mb: 0);
 			}
 		}
+
 		&::before {
-			@include nebula-position-styling($d: none);
+			@include ac-position-styling($d: none);
 		}
 	}
+
 	#{c(chatForm typingBaseBar)} {
-		@include nebula-position-styling(
-			$pos: relative,
+		@include ac-position-styling($pos: relative,
 			$right: unset,
 			$left: unset,
 			$top: 0,
 			$h: min-content,
-			$z: 7
-		);
-		@include nebula-color-styling($bg: modifier-accent);
-		@include nebula-rounded-styling($br: small);
-		@include nebula-spacing-styling($m: small);
-		@include nebula-padding-styling($p: xx-small);
-		@include nebula-flex-styling($f: 1);
+			$z: 7);
+		@include ac-color-styling($bg: modifier-accent);
+		@include ac-rounded-styling($br: small);
+		@include ac-spacing-styling($m: small);
+		@include ac-padding-styling($p: xx-small);
+		@include ac-flex-styling($f: 1);
 		border: none !important;
+
 		&#{c(chatForm jumpToPresentBar)} {
-			@include nebula-position-styling($bottom: auto, $min-h: unset);
+			@include ac-position-styling($bottom: auto, $min-h: unset);
 			border: none !important;
-			&::before{
-				@include nebula-position-styling($d: none);
+
+			&::before {
+				@include ac-position-styling($d: none);
 			}
 		}
+
 		button {
-			@include nebula-color-styling($bg: transparent);
+			@include ac-color-styling($bg: transparent);
 		}
 	}
 }

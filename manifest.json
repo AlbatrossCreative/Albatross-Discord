@@ -1,20 +1,20 @@
 {
-	"id": "dev.Loremly.nebula",
-	"name": "nebula",
-	"description": "",
+	"id": "dev.Loremly.albatross",
+	"name": "Albatross",
+	"description": "kaw!",
 	"author": {
-		"name": "Loremly",
+		"name": "albatrosscreative",
 		"discordID": "num",
-		"github": "Loremly"
+		"github": "albatrosscreative"
 	},
 	"version": "1.0.0",
 	"updater": {
 		"type": "store",
-		"id": "dev.Loremly.nebula"
+		"id": "dev.albatrosscreative.albatross"
 	},
 	"license": "GPL-3.0-only",
 	"type": "replugged-theme",
-	"main": "public/build/nebula.css",
-	"source": "https://github.com/loremly/nebula",
+	"main": "public/build/albatross.css",
+	"source": "https://github.com/albatrosscreative/albatross-discord",
 	"image": ["https://i.imgur.com/XLLrtsH.png"]
 }

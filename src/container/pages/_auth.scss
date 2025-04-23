@@ -1,18 +1,20 @@
 @use 'abstract' as *;
 
 #{c(login authBox)} {
-	@include nebula-color-styling($bg: primary);
-	@include nebula-rounded-styling($br: medium);
+	@include ac-color-styling($bg: primary);
+	@include ac-rounded-styling($br: medium);
+
 	&#{c(login authBoxExpanded)} {
 		#{c(login centeringWrapper)} {
 			#{c(login mainLoginContainer)} {
 				flex: 1;
 			}
+
 			#{c(login qrLogin)} {
-				@include nebula-rounded-styling($br: small);
-				@include nebula-color-styling($bg: var(--background-tertiary));
-				@include nebula-position-styling($w: min-content, $h: unset);
-				@include nebula-padding-styling($p: large);
+				@include ac-rounded-styling($br: small);
+				@include ac-color-styling($bg: var(--background-tertiary));
+				@include ac-position-styling($w: min-content, $h: unset);
+				@include ac-padding-styling($p: large);
 			}
 		}
 	}

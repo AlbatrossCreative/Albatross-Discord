@@ -1,75 +1,90 @@
 @use 'abstract' as *;
 
 #{c(userSettings standardSidebarView)} {
-	@include nebula-color-styling($bg: transparent);
-	@include nebula-flex-styling($gapc: small);
+	@include ac-color-styling($bg: transparent);
+	@include ac-flex-styling($gapc: small);
+
 	#{c(userSettings sidebarRegion)} {
-		@include nebula-color-styling($bg: primary);
-		@include nebula-rounded-styling($br: small);
-		@include nebula-flex-styling($f: 0);
+		@include ac-color-styling($bg: primary);
+		@include ac-rounded-styling($br: small);
+		@include ac-flex-styling($f: 0);
+
 		#{c(userSettings sidebarRegionScroller)} {
-			@include nebula-position-styling($w: var(--nebula-sidebar-width));
-			@include nebula-rounded-styling($br: small);
-			@include nebula-color-styling($bg: transparent);
+			@include ac-position-styling($w: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)));
+			@include ac-rounded-styling($br: small);
+			@include ac-color-styling($bg: transparent);
+
 			#{c(userSettings sidebar)} {
-				@include nebula-position-styling($w: 100%);
-				@include nebula-padding-styling($py: medium, $pr: small);
+				@include ac-position-styling($w: 100%);
+				@include ac-padding-styling($py: medium, $pr: small);
+
 				#{c(tab side)} {
 					.searchBar_c7e907 {
-						@include nebula-rounded-styling($br: small);
+						@include ac-rounded-styling($br: small);
 					}
+
 					#{c(tab header)} {
-						@include nebula-padding-styling($py: small, $px: 0);
+						@include ac-padding-styling($py: small, $px: 0);
 					}
 				}
 			}
 		}
 	}
+
 	#{c(userSettings contentRegion)} {
-		@include nebula-color-styling($bg: primary);
-		@include nebula-rounded-styling($br: small);
-		@include nebula-position-styling($max-w: 100%);
+		@include ac-color-styling($bg: primary);
+		@include ac-rounded-styling($br: small);
+		@include ac-position-styling($max-w: 100%);
 		overflow: hidden;
+
 		#{c(appSettings contentTransitionWrap)} {
-			@include nebula-position-styling($w: 100%);
-			@include nebula-flex-styling;
+			@include ac-position-styling($w: 100%);
+			@include ac-flex-styling;
+
 			#{c(userSettings contentRegionScroller)} {
-				@include nebula-color-styling($bg: transparent);
+				@include ac-color-styling($bg: transparent);
+
 				#{c(userSettings contentColumn)} {
-					@include nebula-position-styling($max-w: 100%);
-					@include nebula-padding-styling($p: 4xl-large);
+					@include ac-position-styling($max-w: 100%);
+					@include ac-padding-styling($p: 4xl-large);
+
 					#{c(tab top)} {
-						@include nebula-flex-styling($gap: small);
+						@include ac-flex-styling($gap: small);
 						border: none;
 					}
+
 					#{c(userSettings box)},
 					#{c(card primary)} {
-						@include nebula-color-styling($bg: primary);
-						@include nebula-rounded-styling($br: small);
+						@include ac-color-styling($bg: primary);
+						@include ac-rounded-styling($br: small);
 						box-shadow: none !important;
 						border: none !important;
 					}
+
 					[class*='max-width__'] {
 						max-width: unset !important;
 					}
+
 					#{c(other cv fullscreen)} {
-						@include nebula-color-styling($bg: transparent);
-						@include nebula-position-styling($pos: relative);
+						@include ac-color-styling($bg: transparent);
+						@include ac-position-styling($pos: relative);
 						overflow: hidden;
 					}
 
 					#{c(modals soundboard nitro upsell container)} {
-						@include nebula-position-styling($max-w: unset);
-						@include nebula-rounded-styling($br: small);
+						@include ac-position-styling($max-w: unset);
+						@include ac-rounded-styling($br: small);
 					}
 				}
 			}
 		}
+
 		#{c(other cv settingsToolsContainer)} {
-			@include nebula-position-styling($w: 100%, $h: 100%);
+			@include ac-position-styling($w: 100%, $h: 100%);
 		}
 	}
 }
+
 html#{c(os win platform)} {
 	#{c(userSettings sidebarInfo)} {
 		&::before {
@@ -82,6 +97,7 @@ html#{c(os win platform)} {
 		}
 	}
 }
+
 html#{c(os mac platform)} {
 	#{c(userSettings sidebarInfo)} {
 		&::before {

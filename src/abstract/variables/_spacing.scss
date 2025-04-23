@@ -9,9 +9,10 @@ $spacing: (
 	'3xl' 26px,
 	'4xl' 30px
 );
+
 html:root {
 	@each $id, $value in $spacing {
-		--nebula-spacing-#{$id}: #{$value};
+		--ac-spacing-#{$id}: #{$value};
 		--space-#{$id}: #{$value};
 	}
 }

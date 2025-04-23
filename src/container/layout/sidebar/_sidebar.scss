@@ -1,10 +1,24 @@
 @use 'abstract' as *;
 
 #{c(sidebar sidebar)} {
+	@include ac-flex-styling($d: grid, $gapc: x-small);
+	@include ac-rounded-styling($br: small);
+	grid-template-areas:
+		'guildList sidebar'
+		'profile profile2';
+
 	&::after {
-		@include nebula-position-styling($d: none);
+		@include ac-position-styling($d: none);
 	}
+
 	#{c(sidebar list)} {
+		@include ac-rounded-styling($br: 0);
 		border: none !important;
+	}
+
+	&:has(#{c(sidebar panel nameTag)}:hover) {
+		#{c(sidebar private channels)}::before {
+			@include ac-color-styling($bg: floating);
+		}
 	}
 }

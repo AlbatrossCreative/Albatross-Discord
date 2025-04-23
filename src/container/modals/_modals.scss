@@ -1,12 +1,13 @@
 @use 'abstract' as *;
 
 #{c(modals root)} {
-	@include nebula-rounded-styling($br: small);
+	@include ac-rounded-styling($br: small);
 	box-shadow: none;
+
 	#{c(modals footer)} {
-		@include nebula-color-styling($bg: secondary);
-		@include nebula-spacing-styling($m: small);
-		@include nebula-rounded-styling($br: small);
+		@include ac-color-styling($bg: secondary);
+		@include ac-spacing-styling($m: small);
+		@include ac-rounded-styling($br: small);
 		box-shadow: none;
 	}
 }

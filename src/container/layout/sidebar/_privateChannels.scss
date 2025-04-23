@@ -1,39 +1,41 @@
 @use 'abstract' as *;
 
 #{c(sidebar private channels)} {
-	@include nebula-color-styling($bg: transparent);
+	@include ac-color-styling($bg: transparent);
 
 	#{c(sidebar private searchBar)} {
-		@include nebula-color-styling($bgc: secondary);
-		@include nebula-position-styling($h: unset);
-		@include nebula-rounded-styling($br: small);
-		@include nebula-spacing-styling($mb: x-small);
-		@include nebula-padding-styling($p: x-small);
+		@include ac-rounded-styling($brtr: small);
+		@include ac-color-styling($bgc: primary);
+		@include ac-position-styling($h: unset);
+		@include ac-spacing-styling($mb: x-small);
+		@include ac-padding-styling($p: 0);
 		overflow: hidden;
 		box-shadow: none;
 		border: none !important;
 
 		button {
-			@include nebula-color-styling($bgc: primary);
-			@include nebula-padding-styling($p: x-small, $pl: large);
-			@include nebula-position-styling($h: unset);
-			@include nebula-rounded-styling($br: small);
+			@include ac-color-styling($bgc: secondary);
+			@include ac-padding-styling($p: medium, $pl: large);
+			@include ac-spacing-styling($m: 0);
+			@include ac-position-styling($h: unset);
+			@include ac-rounded-styling($br: small);
 			border: none !important;
 			line-height: unset;
 		}
 	}
 
 	#{c(sidebar private scroller)} {
-		@include nebula-rounded-styling($br: small);
-		@include nebula-color-styling($bg: secondary);
+		@include ac-rounded-styling($br: small);
+		@include ac-color-styling($bg: secondary);
+		@include ac-spacing-styling($mb: 0);
 
 		ul {
-			@include nebula-flex-styling($ac: flex-start, $wrap: wrap);
-			@include nebula-padding-styling($pt: x-small);
+			@include ac-flex-styling($ac: flex-start, $wrap: wrap);
+			@include ac-padding-styling($pt: x-small);
 
 			#{c(sidebar private friendsButtonContainer)} {
-				@include nebula-flex-styling;
-				margin-left: var(--nebula-spacing-xs);
+				@include ac-flex-styling;
+				margin-left: var(--ac-spacing-xs);
 				flex: 1;
 
 				li#{c(sidebar private channel)} {
@@ -47,7 +49,7 @@
 
 						&::before,
 						&::after {
-							@include nebula-position-styling($d: none);
+							@include ac-position-styling($d: none);
 						}
 					}
 				}
@@ -61,8 +63,17 @@
 				}
 			}
 
+			.sectionDivider__35e86 {
+				@include ac-position-styling($d: none);
+			}
+
+			#{c(sidebar private headerContainer)} {
+				@include ac-padding-styling($pt: x-small);
+				@include ac-position-styling($w: 100%);
+			}
+
 			li#{c(sidebar private channel)} {
-				@include nebula-rounded-styling($br: small);
+				@include ac-rounded-styling($br: small);
 				margin: 0;
 				overflow: hidden;
 				max-width: unset;
@@ -72,33 +83,33 @@
 				}
 
 				&:has(#{c(sidebar private link)}[href*='/channels/@me/']) {
-					margin-left: var(--nebula-spacing-xs);
+					margin-left: var(--ac-spacing-xs);
 					width: -webkit-fill-available;
 
 					#{c(sidebar private interactive)} {
 						transition: 0.1s 0.1s ease;
 
 						#{c(sidebar private link)} {
-							padding: var(--nebula-spacing-xs);
+							padding: var(--ac-spacing-xs);
 							gap: 0;
 
 							#{c(sidebar private layout)} {
-								@include nebula-position-styling($w: 100%, $h: unset);
+								@include ac-position-styling($w: 100%, $h: unset);
 							}
 
 							&::before {
-								@include nebula-position-styling($w: var(--nebula-pill-width),
+								@include ac-position-styling($w: var(--ac-pill-width),
 									$h: 30px,
 									$pos: relative);
-								@include nebula-rounded-styling($br: small);
-								@include nebula-spacing-styling($mr: xx-small);
+								@include ac-rounded-styling($br: small);
+								@include ac-spacing-styling($mr: xx-small);
 								content: '';
 								order: -1;
 							}
 
 							&::after {
-								@include nebula-position-styling($w: 0, $h: 30px, $pos: absolute);
-								@include nebula-rounded-styling($br: small);
+								@include ac-position-styling($w: 0, $h: 30px, $pos: absolute);
+								@include ac-rounded-styling($br: small);
 								transition: 0.1s 0.05s ease all;
 								content: '';
 								order: -1;
@@ -106,7 +117,7 @@
 						}
 
 						#{c(sidebar private closeButton)} {
-							@include nebula-position-styling($d: block);
+							@include ac-position-styling($d: block);
 							transform: translateX(22px);
 							transition: 0.1s 0.07s ease all;
 						}
@@ -115,8 +126,8 @@
 						&:focus-within {
 							#{c(sidebar private link)} {
 								&::after {
-									@include nebula-color-styling($bg: var(--brand-430));
-									@include nebula-position-styling($w: var(--nebula-pill-width),
+									@include ac-color-styling($bg: var(--brand-430));
+									@include ac-position-styling($w: var(--ac-pill-width),
 										$h: 30px,
 										$pos: absolute);
 								}
@@ -128,18 +139,18 @@
 						}
 
 						&:hover {
-							@include nebula-color-styling($bgc: modifier-hover);
+							@include ac-color-styling($bgc: modifier-hover);
 						}
 
 						&#{c(sidebar private interactiveSelected)} {
-							@include nebula-color-styling($bgc: var(--background-modifier-selected),
+							@include ac-color-styling($bgc: var(--background-modifier-selected),
 								$c: var(--interactive-active));
 
 							#{c(sidebar private link)} {
 								&::after {
 									transition-delay: 0 !important;
-									@include nebula-color-styling($bg: var(--brand-530));
-									@include nebula-position-styling($w: var(--nebula-pill-width),
+									@include ac-color-styling($bg: var(--brand-530));
+									@include ac-position-styling($w: var(--ac-pill-width),
 										$h: 30px,
 										$pos: absolute);
 								}
@@ -149,47 +160,61 @@
 				}
 
 				&:has(#{c(sidebar private link)}:not([href*='/channels/@me/'])) {
-					margin-left: var(--nebula-spacing-xs);
+					margin-left: var(--ac-spacing-xs);
 					flex: 1;
 
 					#{c(sidebar private interactive)} {
-						@include nebula-color-styling($bgc: primary);
+						@include ac-color-styling($bgc: primary);
 						transition: 0.2s ease;
 
 						#{c(sidebar private link)} {
-							@include nebula-padding-styling($p: x-small);
+							@include ac-padding-styling($p: x-small);
 
 							#{c(sidebar private newBadge)} {
-								@include nebula-position-styling($d: none);
+								@include ac-position-styling($d: none);
 							}
 
 							#{c(sidebar private layout)} {
-								@include nebula-flex-styling($jc: center);
-								@include nebula-padding-styling($p: 0);
+								@include ac-flex-styling($jc: center);
+								@include ac-padding-styling($p: 0);
 
 								#{c(sidebar private avatar)} {
-									@include nebula-spacing-styling($m: 0);
+									@include ac-spacing-styling($m: 0);
 								}
 
 								#{c(sidebar private content)} {
-									@include nebula-position-styling($d: none);
+									@include ac-position-styling($d: none);
 								}
 							}
 						}
 
 						&:hover,
 						&:focus-within {
-							@include nebula-color-styling($bgc: modifier-hover,
+							@include ac-color-styling($bgc: modifier-hover,
 								$c: var(--interactive-active));
 						}
 
 						&#{c(sidebar private selectedBG)} {
-							@include nebula-color-styling($bg: modifier-selected,
+							@include ac-color-styling($bg: modifier-selected,
 								$c: var(--interactive-active));
 						}
 					}
+
 				}
 			}
 		}
+	}
+
+	&::before {
+		@include ac-position-styling($d: block, $pos: absolute, $w: 100%, $h: 70px, $bottom: 0, $z: 2);
+		@include ac-rounded-styling($br: small);
+		@include ac-color-styling($bg: secondary);
+		transition: .25s ease all;
+		mask-image: linear-gradient(transparent 9%,
+				#0000001a 10%,
+				#0000006a 40%,
+				#000000b6 50%,
+				#000000 80%);
+		content: '';
 	}
 }

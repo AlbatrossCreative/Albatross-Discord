@@ -1,10 +1,11 @@
 @use 'abstract' as *;
 
 #{c(profile outer)} {
-	@include nebula-color-styling($bg: secondary);
-	@include nebula-rounded-styling($br: small);
+	@include ac-color-styling($bg: secondary);
+	@include ac-rounded-styling($br: small);
 	overflow: hidden;
+
 	#{c(profile inner)} {
-		@include nebula-color-styling($bg: transparent);
+		@include ac-color-styling($bg: transparent);
 	}
 }

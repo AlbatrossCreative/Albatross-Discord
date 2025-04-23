@@ -6,9 +6,10 @@
 			#{c(serverList serverWrapper)} {
 				svg {
 					foreignObject {
-						@include nebula-color-styling($bg: primary);
+						@include ac-color-styling($bg: primary);
+
 						img {
-							@include nebula-transition-styling($l: medium, $p: opacity);
+							@include ac-transition-styling($l: medium, $p: opacity);
 						}
 					}
 				}

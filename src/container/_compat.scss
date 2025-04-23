@@ -1,0 +1,20 @@
+@use 'abstract' as *;
+
+.bd- {
+    &modal- {
+        &root {
+            @include ac-rounded-styling($br: small);
+        }
+
+        &footer {
+            @include ac-color-styling($bg: secondary);
+            @include ac-rounded-styling($br: small);
+            @include ac-spacing-styling($m: small);
+            box-shadow: none;
+
+            .bd-button-filled {
+                @include ac-rounded-styling($br: small);
+            }
+        }
+    }
+}

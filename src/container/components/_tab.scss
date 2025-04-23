@@ -5,48 +5,49 @@
 }
 
 #{c(tab topPill)} {
-	@include nebula-flex-styling($gap: small);
+	@include ac-flex-styling($gap: small);
 }
 
 #{c(tab item)} {
-	@include nebula-color-styling($c: var(--interactive-active));
-	@include nebula-rounded-styling($br: small);
-	@include nebula-padding-styling($p: small);
-	@include nebula-flex-styling($ai: center, $gap: 0);
-	@include nebula-spacing-styling($m: 0);
+	@include ac-color-styling($c: var(--interactive-active));
+	@include ac-position-styling($min-h: unset);
+	@include ac-rounded-styling($br: small);
+	@include ac-padding-styling($p: x-small);
+	@include ac-flex-styling($ai: center, $gap: 0);
+	@include ac-spacing-styling($m: 0);
 	transition: 0.1s ease all;
 	border: none !important;
 	overflow: hidden;
 
 	&::after {
-		@include nebula-position-styling($pos: relative, $w: var(--nebula-pill-width), $h: 0);
-		@include nebula-flex-styling($d: block);
-		@include nebula-padding-styling($pr: xx-small);
+		@include ac-position-styling($pos: relative, $w: var(--ac-pill-width), $h: 0);
+		@include ac-flex-styling($d: block);
+		@include ac-padding-styling($pr: xx-small);
 		content: '';
 		order: -1;
 	}
 
 	&#{c(tab selected)} {
-		@include nebula-color-styling($bg: modifier-selected);
+		@include ac-color-styling($bg: modifier-selected);
 
 		&::before {
-			@include nebula-position-styling($w: var(--nebula-pill-width), $h: 55%);
-			@include nebula-color-styling($bg: var(--brand-600));
+			@include ac-position-styling($w: var(--ac-pill-width), $h: 55%);
+			@include ac-color-styling($bg: var(--brand-600));
 		}
 	}
 
 	&:hover:not(#{c(tab selected)}) {
-		@include nebula-color-styling($bg: modifier-hover);
+		@include ac-color-styling($bg: modifier-hover);
 
 		&::before {
-			@include nebula-position-styling($w: var(--nebula-pill-width));
-			@include nebula-color-styling($bg: var(--brand-500));
+			@include ac-position-styling($w: var(--ac-pill-width));
+			@include ac-color-styling($bg: var(--brand-500));
 		}
 	}
 
 	&::before {
-		@include nebula-position-styling($pos: absolute, $h: 50%, $left: x-small, $w: 0);
-		@include nebula-rounded-styling($br: small);
+		@include ac-position-styling($pos: absolute, $h: 50%, $left: x-small, $w: 0);
+		@include ac-rounded-styling($br: small);
 		transition: 0.1s 0.06s ease all;
 		content: '';
 	}

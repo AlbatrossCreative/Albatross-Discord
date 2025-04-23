@@ -1,14 +1,15 @@
 @use 'abstract' as *;
 
 #{c(notice base)} {
-	@include nebula-rounded-styling($br: small);
-	@include nebula-flex-styling($ai: center, $jc: center);
-	@include nebula-padding-styling($p: x-small);
-	@include nebula-spacing-styling($mb: small, $ml: small);
+	@include ac-rounded-styling($br: small);
+	@include ac-flex-styling($ai: center, $jc: center);
+	@include ac-padding-styling($p: x-small);
+	@include ac-spacing-styling($mb: small, $ml: small);
 	overflow: hidden;
+
 	button {
-		@include nebula-position-styling($top: 0);
-		@include nebula-rounded-styling($br: x-small);
+		@include ac-position-styling($top: 0);
+		@include ac-rounded-styling($br: x-small);
 		border-width: 1.5px;
 	}
 }

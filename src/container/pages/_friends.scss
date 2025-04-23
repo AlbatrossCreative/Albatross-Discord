@@ -1,22 +1,26 @@
 @use 'abstract' as *;
 
 #{c(friends container)} {
-	@include nebula-color-styling($bgc: transparent);
+	@include ac-color-styling($bgc: transparent);
 	border: none !important;
+
 	#{c(header themed)} {
-		@include nebula-rounded-styling($br: small);
-		@include nebula-color-styling($bg: secondary);
-		@include nebula-padding-styling($py: 0);
+		@include ac-rounded-styling($br: small);
+		@include ac-color-styling($bg: secondary);
+		@include ac-padding-styling($py: 0);
 		height: unset !important;
 		border: none;
+
 		#{c(header upperContainer)} {
-			@include nebula-spacing-styling($my: xx-small);
+			@include ac-spacing-styling($my: x-small);
+
 			#{c(header children)} {
 				#{c(header tabBar)} {
 					#{c(tab item)} {
-						@include nebula-spacing-styling($mx: 0, $ml: small);
+						@include ac-spacing-styling($mx: 0, $ml: small);
+
 						&#{c(header addFriend)} {
-							@include nebula-color-styling($bg: transparent);
+							@include ac-color-styling($bg: transparent);
 						}
 					}
 				}
@@ -25,31 +29,36 @@
 	}
 
 	#{c(friends tabBody)} {
-		@include nebula-color-styling($bgc: transparent);
-		@include nebula-spacing-styling($mt: small);
+		@include ac-color-styling($bgc: transparent);
+		@include ac-spacing-styling($mt: small);
 
 		#{c(friends peopleColumn)} {
-			@include nebula-color-styling($bg: secondary);
-			@include nebula-rounded-styling($br: small);
-			@include nebula-spacing-styling($mr: small);
+			@include ac-color-styling($bg: secondary);
+			@include ac-rounded-styling($br: small);
+			@include ac-spacing-styling($mr: small);
+
 			#{c(serverSettings roleSearchBar)} {
-				@include nebula-spacing-styling($m: small);
+				@include ac-spacing-styling($m: small);
 			}
+
 			#{c(friends peopleList)} {
 				#{c(scroller content)} {
-					@include nebula-position-styling($h: fit-content);
-					.sectionTitle__5ec2f{
+					@include ac-position-styling($h: fit-content);
+
+					.sectionTitle__5ec2f {
 						h2 {
-							@include nebula-spacing-styling($m: small);
+							@include ac-spacing-styling($m: small);
 						}
 					}
+
 					#{c(friends peopleListItem)} {
-						@include nebula-spacing-styling($mx: small, $mb: xx-small);
-						@include nebula-rounded-styling($br: small);
-						@include nebula-padding-styling($p: small);
+						@include ac-spacing-styling($mx: small, $mb: xx-small);
+						@include ac-rounded-styling($br: small);
+						@include ac-padding-styling($p: small);
 						border: none;
+
 						&:hover {
-							@include nebula-padding-styling($p: small);
+							@include ac-padding-styling($p: small);
 						}
 					}
 				}
@@ -57,20 +66,36 @@
 		}
 
 		#{c(friends nowPlayingColumn)} {
-			@include nebula-color-styling($bg: secondary);
-			@include nebula-rounded-styling($br: small);
+			@include ac-color-styling($bg: secondary);
+			@include ac-rounded-styling($br: small);
 
 			#{c(friends nowPlayingContainer)} {
-				@include nebula-color-styling($bg: transparent);
+				@include ac-color-styling($bg: transparent);
 
 				#{c(friends nowPlayingScroller)} {
-					border: none;
+					border: none !important;
+
+					#{c(friends itemCard)} {
+						@include ac-color-styling($bg: primary);
+						@include ac-rounded-styling($br: small);
+						border: none !important;
+
+						&:hover {
+							@include ac-color-styling($bg: modifier-hover);
+						}
+
+						#{c(friends itemCardBody)} {
+							#{c(friends itemCardBodySection)} {
+								border: none !important;
+							}
+						}
+					}
 				}
 			}
 		}
 
 		&::before {
-			@include nebula-position-styling($d: none);
+			@include ac-position-styling($d: none);
 		}
 	}
 }

@@ -1,12 +1,8 @@
 html:root {
-	--nebula-topbar-height: 58px;
-	--nebula-sidebar-width: 290px;
-	--nebula-guild-item: 48px;
-	--nebula-guild-list-width: 76px;
-	--nebula-sidebar-profile-area-height: 70px;
-	--nebula-sidebar-inner-width: calc(var(--nebula-sidebar-width) - var(--nebula-spacing-lg));
-	--nebula-osbar-height: 32px;
-	--nebula-pill-width: 5px;
+	--ac-osbar-height: 32px;
+	--ac-pill-width: 5px;
+
+	--custom-guild-list-padding: var(--ac-spacing-sm);
 
 	--settingswidth: 1640;
 	--settingsheight: 70;
@@ -37,7 +33,7 @@ html:root {
 	/*
 	   * Shape
 	   */
-	--rs-avatar-shape: 50%;
+	--rs-avatar-shape: 20%;
 	/* 50% for round - 0% for square */
 
 	/*

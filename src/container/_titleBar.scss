@@ -1,46 +1,55 @@
 @use 'abstract' as *;
 
+
 #{c(topBar bar)}:not(#{c(topBar systemBar)}) {
-	@include nebula-position-styling($h: var(--nebula-osbar-height));
-	@include nebula-color-styling($bg: tertiary);
-	@include nebula-flex-styling($gap: 0);
-	@include nebula-padding-styling($p: 0);
+	@include ac-position-styling($h: var(--ac-osbar-height));
+	@include ac-color-styling($bg: secondary);
+	@include ac-padding-styling($p: 0);
+	@include ac-flex-styling($gap: 0);
+	transition: .15s ease background-color;
+
 	#{c(topBar trailing container)} {
-		@include nebula-position-styling($h: 100%, $w: 100%);
-		@include nebula-flex-styling($gap: small);
+		@include ac-position-styling($h: 100%, $w: 100%);
+		@include ac-flex-styling($gap: small);
 		-webkit-app-region: drag !important;
+
 		&::before {
-			@include nebula-color-styling($bg: var(--titlebar-wordmark) center);
-			@include nebula-position-styling($pos: relative, $h: 100%, $w: 100px);
-			@include nebula-spacing-styling($ml: xx-small);
+			@include ac-color-styling($bg: var(--titlebar-wordmark) center);
+			@include ac-position-styling($pos: relative, $h: 100%, $w: 100px);
+			@include ac-spacing-styling($ml: xx-small);
 			text-align: right;
 			content: '';
-
 		}
+
 		&::after {
-			@include nebula-color-styling($c: var(--text-muted));
-			@include nebula-position-styling($pos: relative);
-			@include nebula-spacing-styling($mr: auto);
+			@include ac-color-styling($c: var(--text-muted));
+			@include ac-position-styling($pos: relative);
+			@include ac-spacing-styling($mr: auto);
 			font-size: 12px;
 		}
+
 		#{c(topBar trailing recentsIcon)} {
-			@include nebula-spacing-styling($ml: auto);
+			@include ac-spacing-styling($ml: auto);
 			order: 1;
 		}
+
 		#{c(topBar trailing winButtons)} {
 			-webkit-app-region: no-drag !important;
 			order: 1;
 		}
 	}
+
 	#{c(topBar leading container)} {
-		@include nebula-spacing-styling($m: 0)
+		@include ac-spacing-styling($m: 0)
 	}
+
 	#{c(topBar trailing container)} {
-		a[href="https://support.discord.com"]{
-			@include nebula-position-styling($d: none);
+		a[href="https://support.discord.com"] {
+			@include ac-position-styling($d: none);
 		}
 	}
 }
+
 html {
 	&#{c(os win platform)} {
 		#{c(topBar bar)} {
@@ -51,6 +60,7 @@ html {
 			}
 		}
 	}
+
 	&#{c(os mac platform)} {
 		#{c(topBar bar)} {
 			#{c(topBar trailing container)} {

@@ -1,83 +1,195 @@
 @use 'abstract' as *;
 
 #{c(sidebar panel panels)} {
-	@include nebula-position-styling($w: 100%, $left: 0, $bottom: 0);
-	@include nebula-color-styling($bg: secondary);
-	@include nebula-rounded-styling($br: small);
-	overflow: hidden;
-	#{c(sidebar panel activity activityPanel)} {
-		@include nebula-color-styling($bg: transparent);
-		@include nebula-padding-styling($px: small, $pt: small, $pb: 0);
-		border: unset;
-		#{c(sidebar panel activity body)} {
-			@include nebula-color-styling($bg: secondary-alt);
-			@include nebula-padding-styling($p: small);
-			@include nebula-rounded-styling($br: small);
-		}
-	}
-	#{c(sidebar panel voice wrapper)} {
-		@include nebula-padding-styling($p: small);
-		#{c(sidebar panel voice container)} {
-			@include nebula-rounded-styling($br: small);
-			border: none;
-		}
-		&:empty {
-			@include nebula-padding-styling($p: 0);
-		}
-	}
+	@include ac-position-styling($w: fill, $left: unset, $right: 0, $bottom: 0);
+	@include ac-flex-styling($dir: column);
+	@include ac-color-styling($bg: transparent);
+	@include ac-rounded-styling($br: small);
+	pointer-events: none;
+	border: none !important;
+
 	#{c(sidebar panel container)} {
-		@include nebula-position-styling($h: unset);
-		@include nebula-color-styling($bg: transparent);
-		@include nebula-padding-styling($p: 0);
-		@include nebula-flex-styling($dir: column, $ac: stretch, $gap: small, $wrap: wrap);
-		@include nebula-spacing-styling($m: small);
+		@include ac-position-styling($h: unset);
+		@include ac-color-styling($bg: transparent);
+		@include ac-padding-styling($py: 0, $pr: small, $pl: 0);
+		@include ac-flex-styling($ai: flex-end);
+		@include ac-spacing-styling($m: 0);
+		pointer-events: all;
+
+		&::before {
+			@include ac-position-styling($bottom: 0, $left: 0, $h: var(--custom-guild-list-width), $w: var(--custom-guild-list-width));
+			@include ac-rounded-styling($br: small);
+			@include ac-color-styling($bg: secondary);
+			position: absolute;
+			content: '';
+		}
+
 		#{c(sidebar panel avatarWrapper)} {
-			@include nebula-color-styling($bg: transparent);
-			@include nebula-position-styling($w: 100%, $min-w: 0);
-			@include nebula-padding-styling($p: 0);
-			@include nebula-flex-styling($gap: x-small);
-			@include nebula-spacing-styling($m: 0);
+			@include ac-color-styling($bg: transparent);
+			@include ac-flex-styling($d: grid, $gap: x-small);
+			@include ac-padding-styling($p: 0);
+			@include ac-spacing-styling($m: 0);
+			grid-template-columns: var(--custom-guild-list-width) 1fr;
+			grid-template-rows: var(--custom-guild-list-width);
+			pointer-events: none;
+			grid-template-areas:
+				'profile nameTag';
+
 			#{c(avatar wrapper)} {
+				@include ac-flex-styling($js: center);
+				pointer-events: all;
+				grid-area: profile;
+
 				svg {
-					mask {
+					foreignObject[mask="url(#svg-mask-avatar-status-round-40)"] {}
+
+					rect[height="12"][width="12"]#{c(avatar pointerEvents)} {
+						@include ac-position-styling($w: 40px, $h: 40px);
 					}
-					foreignObject {
-						#{c(avatar stack)} {
+
+					#{c(avatar avatar)} {
+						clip-path: inset(calc(var(--rs-small-spacing) + 1px) calc(var(--rs-small-spacing) + 1px) round var(--rs-avatar-shape)) !important;
+					}
+
+					&#{c(avatar decoration)} {}
+				}
+			}
+
+			#{c(sidebar panel nameTag)} {
+				@include ac-flex-styling($dir: column, $as: flex-end);
+				@include ac-spacing-styling($mb: small);
+				@include ac-padding-styling($pl: small);
+				pointer-events: all;
+				grid-area: nameTag;
+				padding: 0;
+
+				#{c(sidebar panel username)} {
+					line-height: normal;
+					font-size: 16px;
+				}
+
+				#{c(sidebar panel statusSubtext)} {
+					font-size: 12px;
+				}
+			}
+		}
+
+		#{c(sidebar panel buttons buttons)} {
+			@include ac-flex-styling($gap: var(--ac-spacing-xs));
+			@include ac-color-styling($bg: transparent);
+			@include ac-spacing-styling($mb: small);
+			@include ac-padding-styling($p: 0);
+
+
+			#{c(sidebar panel buttons micButtonParent)} {
+				@include ac-rounded-styling($br: small);
+				@include ac-spacing-styling($mr: 0);
+				@include ac-flex-styling($f: 1);
+			}
+
+			button {
+				@include ac-rounded-styling($br: small);
+				@include ac-position-styling($h: unset, $w: unset);
+				@include ac-padding-styling($px: small);
+				@include ac-spacing-styling($m: 0);
+				@include ac-flex-styling($f: 1);
+
+				#{c(button contents)} {
+					@include ac-padding-styling($p: x-small);
+				}
+
+				&:hover {
+					@include ac-color-styling($bg: primary);
+				}
+			}
+		}
+	}
+
+	#{c(sidebar panel activity activityPanel)} {
+		@include ac-color-styling($bg: transparent);
+		@include ac-padding-styling($px: small, $pt: small, $pb: 0);
+		border: unset;
+
+		#{c(sidebar panel activity body)} {
+			@include ac-color-styling($bg: primary);
+			@include ac-padding-styling($p: small);
+			@include ac-rounded-styling($br: small);
+		}
+	}
+
+	#{c(sidebar panel voice wrapper)} {
+		@include ac-position-styling($w: var(--custom-guild-list-width));
+		@include ac-color-styling($bg: secondary);
+		@include ac-rounded-styling($brt: small);
+
+		#{c(sidebar panel voice container)} {
+			@include ac-padding-styling($px: small, $pb: 0);
+			@include ac-flex-styling($gap: x-small);
+			@include ac-spacing-styling($m: 0);
+			pointer-events: all;
+			border: none;
+
+			#{c(sidebar panel voice connection)} {
+				@include ac-flex-styling($dir: column);
+
+				#{c(sidebar panel voice inner)} {
+					@include ac-position-styling($d: flex, $w: 100%);
+
+					#{c(sidebar panel voice rtcConnection statusWrapper)} {
+						@include ac-flex-styling($dir: row);
+
+						#{c(sidebar panel voice rtcConnection status)} {
+							#{c(sidebar panel voice labelWrapper)} {
+								@include ac-position-styling($d: none);
+							}
+						}
+
+						a {
+							#{c(sidebar panel statusSubtext)} {
+								@include ac-position-styling($d: none);
+							}
+
+							@include ac-icon-replacement(call, var(--interactive-normal), var(--interactive-hover));
+						}
+					}
+				}
+
+				#{c(sidebar panel voice voiceButtonsContainer)} {
+					@include ac-position-styling($w: 100%);
+					@include ac-flex-styling($dir: column, $gap: x-small);
+					@include ac-spacing-styling($m: 0);
+
+					button {
+						@include ac-color-styling($bg: var(--button-secondary-background));
+						@include ac-position-styling($w: 100%);
+						@include ac-spacing-styling($m: 0);
+
+						&:hover {
+							@include ac-color-styling($bg: var(--button-secondary-hover));
 						}
 					}
 				}
 			}
-			#{c(sidebar panel nameTag)} {
-				padding: 0;
-				#{c(sidebar panel subtextContainer)} {
-					#{c(sidebar panel statusSubtext)} {
-					}
+
+			#{c(sidebar panel voice actionButtons actionButtons)} {
+				@include ac-flex-styling($dir: column);
+
+				button {
+					@include ac-padding-styling($p: medium);
 				}
 			}
 		}
-		#{c(sidebar panel buttons buttons)} {
-			@include nebula-position-styling($w: 100%);
-			@include nebula-flex-styling($gap: var(--nebula-spacing-xs));
-			@include nebula-color-styling($bg: secondary);
-			@include nebula-padding-styling($p: 0);
-			#{c(sidebar panel buttons micButtonParent)} {
-				@include nebula-color-styling($bg: primary);
-				@include nebula-rounded-styling($br: small);
-				@include nebula-spacing-styling($mr: 0);
-				@include nebula-flex-styling($f: 1);
-			}
-			button {
-				@include nebula-color-styling($bg: primary);
-				@include nebula-rounded-styling($br: small);
-				@include nebula-position-styling($h: unset);
-				@include nebula-spacing-styling($m: 0);
-				@include nebula-flex-styling($f: 1);
-				#{c(button contents)} {
-					@include nebula-padding-styling($p: x-small);
-				}
-				&:hover {
-					@include nebula-color-styling($bg: primary);
-				}
+
+		&:empty {
+			@include ac-padding-styling($p: 0);
+			@include ac-spacing-styling($m: 0);
+		}
+	}
+
+	&:has(#{c(sidebar panel voice wrapper)}:not(:empty)) {
+		#{c(sidebar panel container)} {
+			&::before {
+				@include ac-rounded-styling($brb: small, $brt: 0);
 			}
 		}
 	}

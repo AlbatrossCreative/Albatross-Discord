@@ -1,33 +1,40 @@
 @use 'abstract' as *;
 
 #{c(memberList container)} {
-	@include nebula-color-styling($bg: secondary);
-	@include nebula-rounded-styling($br: small);
+	@include ac-color-styling($bg: secondary);
+	@include ac-rounded-styling($br: small);
 	border: none !important;
 	overflow: hidden;
+
 	aside {
 		border: none !important;
+
 		#{c(memberList members)} {
-			@include nebula-color-styling($bg: transparent);
+			@include ac-color-styling($bg: transparent);
+
 			#{c(other cv memberActivityContainer)} {
-				@include nebula-position-styling($h: unset);
-				@include nebula-color-styling($bg: primary);
-				@include nebula-rounded-styling($br: small);
-				@include nebula-padding-styling($p: small);
+				@include ac-position-styling($h: unset);
+				@include ac-color-styling($bg: primary);
+				@include ac-rounded-styling($br: small);
+				@include ac-padding-styling($p: small);
 				border: none !important;
 				cursor: pointer;
-				&:hover{
-					@include nebula-color-styling($bg: modifier-hover);
+
+				&:hover {
+					@include ac-color-styling($bg: modifier-hover);
 				}
 			}
+
 			#{c(memberList member)} {
-				@include nebula-rounded-styling($br: small);
-				@include nebula-color-styling($bg: transparent);
+				@include ac-rounded-styling($br: small);
+				@include ac-color-styling($bg: transparent);
+
 				#{c(memberList childContainer)},
 				.childContainer__91a9d {
-					@include nebula-padding-styling($p: 0);
+					@include ac-padding-styling($p: 0);
+
 					#{c(memberList layout)} {
-						@include nebula-position-styling($h: unset);
+						@include ac-position-styling($h: unset);
 					}
 				}
 			}

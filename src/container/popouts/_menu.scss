@@ -1,29 +1,29 @@
 @use 'abstract' as *;
 
 #{c(modals menus menu)} {
-	@include nebula-rounded-styling($br: small);
-	@include nebula-padding-styling($p: 0);
-	@include nebula-color-styling($bg: floating);
+	@include ac-rounded-styling($br: small);
+	@include ac-padding-styling($p: 0);
+	@include ac-color-styling($bg: floating);
 	box-shadow: none !important;
 
 	#{c(modals menus quickReactWrapper)} {
-		@include nebula-rounded-styling($br: small);
-		@include nebula-padding-styling($p: x-small);
-		@include nebula-spacing-styling($mb: xx-small);
-		@include nebula-color-styling($bg: secondary);
+		@include ac-rounded-styling($br: small);
+		@include ac-padding-styling($p: x-small);
+		@include ac-spacing-styling($mb: xx-small);
+		@include ac-color-styling($bg: secondary);
 
 		#{c(modals menus customItem)} {
 			#{c(modals menus quickReactionButton)} {
-				@include nebula-rounded-styling($br: small);
+				@include ac-rounded-styling($br: small);
 			}
 		}
 	}
 
 	#{c(modals menus item)} {
-		@include nebula-rounded-styling($br: small);
+		@include ac-rounded-styling($br: small);
 
 		#{c(modals menus iconContainer)} {
-			@include nebula-spacing-styling($ml: 0, $mr: xx-small);
+			@include ac-spacing-styling($ml: 0, $mr: xx-small);
 		}
 	}
 }

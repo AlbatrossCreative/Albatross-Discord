@@ -7,7 +7,7 @@
 	@return red($color), green($color), blue($color);
 }
 
-@mixin nebula-hslvar-func($map, $var, $h-base, $s-base, $l-base, $saturation: null) {
+@mixin ac-hslvar-func($map, $var, $h-base, $s-base, $l-base, $saturation: null) {
 	@each $id, $calc in $map {
 		$h-calc: nth($calc, 1);
 		$s-calc: nth($calc, 2);
@@ -34,13 +34,14 @@ html:root {
 	&.visual-refresh,
 	&.visual-refresh .theme-light,
 	&.visual-refresh .theme-dark,
-	&.visual-refresh .theme-darker {
-		@include nebula-hslvar-func($NB, 'background', $NBV01, $NBV02, $NBV03);
-		@include nebula-hslvar-func($NI, 'interactive', $NBV10, $NBV11, $NBV12, saturation);
-		@include nebula-hslvar-func($NT, 'text', $NBV07, $NBV08, $NBV09, saturation);
-		@include nebula-hslvar-func($NBM, 'background-modifier', $NBV13, $NBV14, $NBV15, saturation);
-		@include nebula-hslvar-func($NA, 'brand', $NBV04, $NBV05, $NBV06, saturation);
-		@include nebula-hslvar-func($NB, 'accent', $NBV04, $NBV05, $NBV06, saturation);
+	&.visual-refresh .theme-darker,
+	&.visual-refresh .theme-midnight{
+		@include ac-hslvar-func($NB, 'background', $NBV01, $NBV02, $NBV03);
+		@include ac-hslvar-func($NI, 'interactive', $NBV10, $NBV11, $NBV12, saturation);
+		@include ac-hslvar-func($NT, 'text', $NBV07, $NBV08, $NBV09, saturation);
+		@include ac-hslvar-func($NBM, 'background-modifier', $NBV13, $NBV14, $NBV15, saturation);
+		@include ac-hslvar-func($NA, 'brand', $NBV04, $NBV05, $NBV06, saturation);
+		@include ac-hslvar-func($NB, 'accent', $NBV04, $NBV05, $NBV06, saturation);
 
 		--text-link: var(--brand-500) !important;
 

@@ -2,18 +2,21 @@
 
 #app-mount {
 	#{c(main bg)} {
-		@include nebula-position-styling($d: none);
+		@include ac-position-styling($d: none);
 	}
+
 	#{c(main appInner)} {
-		@include nebula-color-styling($bg: primary);
+		@include ac-color-styling($bg: primary);
 	}
+
 	#{c(main appLayer)} {
-		@include nebula-color-styling($bg: transparent);
+		@include ac-color-styling($bg: transparent);
+
 		&.stop-animations {
 			&:first-child {
 				&::after {
-					@include nebula-position-styling($pos: fixed, $z: 1000);
-					@include nebula-color-styling($bg: #000);
+					@include ac-position-styling($pos: fixed, $z: 1000);
+					@include ac-color-styling($bg: #000);
 					inset: 0 !important;
 					content: '' !important;
 					opacity: #{$O05} !important;
@@ -21,59 +24,60 @@
 				}
 			}
 		}
-		& ~ #{c(main appLayer)} {
-			@include nebula-position-styling(
-				$pos: absolute,
+
+		&~#{c(main appLayer)} {
+			@include ac-position-styling($pos: absolute,
 				$w: var(--settingswidth_v),
 				$h: var(--settingsheight_v),
-				$z: 1000
-			);
-			@include nebula-spacing-styling($m: auto);
-			@include nebula-padding-styling($p: 0);
+				$z: 1000);
+			@include ac-spacing-styling($m: auto);
+			@include ac-padding-styling($p: 0);
 			overflow: hidden !important;
 			contain: unset !important;
 			inset: 0 !important;
-			--settingsiconsadditionalsize: var(--use-settingsicons, 0) *
-				(var(--settingsicons-size, 0px) + var(--settingsicons-gap, 0px));
+			--settingsiconsadditionalsize: var(--use-settingsicons, 0) * (var(--settingsicons-size, 0px) + var(--settingsicons-gap, 0px));
+
 			#{c(userSettings standardSidebarView)},
-			> div {
-				@include nebula-position-styling($pos: static, $w: 100%, $h: 100%);
-				@include nebula-padding-styling($p: 0);
-				@include nebula-spacing-styling($m: 0);
+			>div {
+				@include ac-position-styling($pos: static, $w: 100%, $h: 100%);
+				@include ac-padding-styling($p: 0);
+				@include ac-spacing-styling($m: 0);
 				overflow: hidden !important;
 			}
+
 			#{c(other cv settingsToolsContainer)} {
-				@include nebula-position-styling(
-					$pos: fixed,
+				@include ac-position-styling($pos: fixed,
 					$max-w: 100%,
 					$max-h: 100%,
 					$z: -1,
 					$w: 100%,
-					$h: 100%
-				);
-				@include nebula-padding-styling($pt: 0);
+					$h: 100%);
+				@include ac-padding-styling($pt: 0);
 				opacity: #{$O12} !important;
 				inset: 0 !important;
+
 				#{c(other cv settingsTools)} {
-					@include nebula-position-styling($w: 100%, $h: 100%);
+					@include ac-position-styling($w: 100%, $h: 100%);
+
 					#{c(userSettings closeButtonContainer)} {
-						@include nebula-position-styling($h: 100%);
+						@include ac-position-styling($h: 100%);
+
 						#{c(userSettings closeButton)} {
-							@include nebula-position-styling(
-								$w: 100%,
+							@include ac-position-styling($w: 100%,
 								$h: 100%,
 								$max-w: unset,
-								$max-h: unset
-							);
+								$max-h: unset);
 							transition: none !important;
 							border: none !important;
 							flex: unset;
-							> svg {
-								@include nebula-position-styling($d: none);
+
+							>svg {
+								@include ac-position-styling($d: none);
 							}
 						}
+
 						#{c(userSettings closeButtonKeybind)} {
-							@include nebula-position-styling($d: none);
+							@include ac-position-styling($d: none);
 						}
 					}
 				}
@@ -82,19 +86,23 @@
 	}
 
 	#{c(main baseLayer)} {
-		@include nebula-color-styling($bg: transparent);
+		@include ac-color-styling($bg: transparent);
 		opacity: #{$O01} !important;
 		transform: unset !important;
 		will-change: unset !important;
+
 		#{c(main container)} {
-			@include nebula-spacing-styling($m: 0);
-			@include nebula-position-styling($w: unset);
+			@include ac-spacing-styling($m: 0);
+			@include ac-position-styling($w: unset);
+
 			#{c(main content)} {
-				@include nebula-flex-styling($d: grid, $gapc: x-small);
-				@include nebula-spacing-styling($m: small);
+				@include ac-flex-styling($d: grid, $gapc: x-small);
+				@include ac-spacing-styling($m: small);
+
 			}
 		}
 	}
+
 	.stop-animations {
 		* {
 			transition-property: inherit !important;
