@@ -17,4 +17,41 @@
             }
         }
     }
+    &store- {
+        &card {
+            @include ac-color-styling($bg: primary);
+            @include ac-rounded-styling($br: small);
+        }
+    }
+
+    &addon- {
+        &store {
+            @include ac-flex-styling($wrap: wrap,  $jc: start, $gap: auto);
+            &-card {
+                @include ac-position-styling($max-w: 345px, $z: 1 1 auto);
+            }
+        }
+        &card {
+            @include ac-color-styling($bg: primary);
+            @include ac-rounded-styling($br: small);
+            @include ac-padding-styling($p: small);
+        }
+        &header{
+            @include ac-rounded-styling($br: small);
+            @include ac-color-styling($bg: secondary);
+        }
+    }
+    &links {
+        @include ac-flex-styling($gap: small);
+    }
+    &controls {
+        @include ac-flex-styling($gap: small);
+    }
+    &button {
+        @include ac-rounded-styling($br: small);
+        @include ac-color-styling($bg: secondary);
+        &:hover {
+            @include ac-color-styling($bg: floating);
+        }
+    }
 }

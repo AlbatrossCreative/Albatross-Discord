@@ -4,7 +4,7 @@
 	#{c(sidebar server header header)} {
 		@include ac-position-styling($h: unset);
 		@include ac-color-styling($bg: secondary);
-		@include ac-rounded-styling($brl: small);
+		@include ac-rounded-styling($br: small);
 		box-shadow: none !important;
 		border: none !important;
 	}

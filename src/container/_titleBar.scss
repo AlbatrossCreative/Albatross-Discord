@@ -1,58 +1,62 @@
 @use 'abstract' as *;
 
 
-#{c(topBar bar)}:not(#{c(topBar systemBar)}) {
+#{c(topBar bar)} {
+	@include ac-padding-styling($p: 0, $px: small);
 	@include ac-position-styling($h: var(--ac-osbar-height));
-	@include ac-color-styling($bg: secondary);
-	@include ac-padding-styling($p: 0);
+	@include ac-color-styling($bg: transparent);
 	@include ac-flex-styling($gap: 0);
-	transition: .15s ease background-color;
+	&:not(#{c(topBar systemBar)}) {
+		#{c(topBar trailing container)} {
+			@include ac-position-styling($h: 100%, $w: 100%);
+			@include ac-flex-styling($gap: x-small);
+			-webkit-app-region: drag !important;
 
-	#{c(topBar trailing container)} {
-		@include ac-position-styling($h: 100%, $w: 100%);
-		@include ac-flex-styling($gap: small);
-		-webkit-app-region: drag !important;
+			&::before {
+				@include ac-color-styling($bg: var(--titlebar-wordmark) center);
+				@include ac-position-styling($pos: relative, $h: 100%, $w: 140px);
+				text-align: right;
+				content: '';
+			}
 
-		&::before {
-			@include ac-color-styling($bg: var(--titlebar-wordmark) center);
-			@include ac-position-styling($pos: relative, $h: 100%, $w: 100px);
-			@include ac-spacing-styling($ml: xx-small);
-			text-align: right;
-			content: '';
+			&::after {
+				@include ac-color-styling($c: var(--text-muted));
+				@include ac-position-styling($pos: relative);
+				@include ac-spacing-styling($mr: auto);
+				font-size: 12px;
+				order: 0;
+			}
+
+			#{c(header iconWrapper)} {
+				order: 1;
+			}
+
+			#{c(topBar trailing recentsIcon)} {
+				@include ac-spacing-styling($ml: auto);
+				order: 1;
+			}
+
+			#{c(topBar trailing winButtons)} {
+				-webkit-app-region: no-drag !important;
+				order: 1;
+			}
 		}
 
-		&::after {
-			@include ac-color-styling($c: var(--text-muted));
-			@include ac-position-styling($pos: relative);
-			@include ac-spacing-styling($mr: auto);
-			font-size: 12px;
+		#{c(topBar leading container)} {
+			@include ac-spacing-styling($m: 0)
 		}
 
-		#{c(topBar trailing recentsIcon)} {
-			@include ac-spacing-styling($ml: auto);
-			order: 1;
-		}
-
-		#{c(topBar trailing winButtons)} {
-			-webkit-app-region: no-drag !important;
-			order: 1;
-		}
-	}
-
-	#{c(topBar leading container)} {
-		@include ac-spacing-styling($m: 0)
-	}
-
-	#{c(topBar trailing container)} {
-		a[href="https://support.discord.com"] {
-			@include ac-position-styling($d: none);
+		#{c(topBar trailing container)} {
+			a[href="https://support.discord.com"] {
+				@include ac-position-styling($d: none);
+			}
 		}
 	}
 }
 
 html {
 	&#{c(os win platform)} {
-		#{c(topBar bar)} {
+		#{c(topBar bar)}:not(#{c(topBar systemBar)}) {
 			#{c(topBar trailing container)} {
 				&::after {
 					content: 'v#{$win-version}' ' 〡 ' '#{$A02} Palette by #{$A01}';
@@ -62,7 +66,7 @@ html {
 	}
 
 	&#{c(os mac platform)} {
-		#{c(topBar bar)} {
+		#{c(topBar bar)}:not(#{c(topBar systemBar)}) {
 			#{c(topBar trailing container)} {
 				&::after {
 					content: 'v#{$osx-version}' ' 〡 ' '#{$A02} Palette by #{$A01}';

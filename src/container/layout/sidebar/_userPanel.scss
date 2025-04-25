@@ -16,21 +16,13 @@
 		@include ac-spacing-styling($m: 0);
 		pointer-events: all;
 
-		&::before {
-			@include ac-position-styling($bottom: 0, $left: 0, $h: var(--custom-guild-list-width), $w: var(--custom-guild-list-width));
-			@include ac-rounded-styling($br: small);
-			@include ac-color-styling($bg: secondary);
-			position: absolute;
-			content: '';
-		}
-
 		#{c(sidebar panel avatarWrapper)} {
 			@include ac-color-styling($bg: transparent);
 			@include ac-flex-styling($d: grid, $gap: x-small);
 			@include ac-padding-styling($p: 0);
 			@include ac-spacing-styling($m: 0);
 			grid-template-columns: var(--custom-guild-list-width) 1fr;
-			grid-template-rows: var(--custom-guild-list-width);
+			grid-template-rows: auto;
 			pointer-events: none;
 			grid-template-areas:
 				'profile nameTag';

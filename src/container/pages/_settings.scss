@@ -1,11 +1,15 @@
 @use 'abstract' as *;
 
 #{c(userSettings standardSidebarView)} {
-	@include ac-color-styling($bg: transparent);
+	@include ac-color-styling($bg: rgba(0, 0, 0, $O07));
 	@include ac-flex-styling($gapc: small);
+	@include ac-spacing-styling($mb: small, $mt: var(--ac-osbar-height), $mx: small);
+	@include ac-rounded-styling($br: x-small);
+	@include ac-padding-styling($py: small);
 
 	#{c(userSettings sidebarRegion)} {
-		@include ac-color-styling($bg: primary);
+		@include ac-spacing-styling($ml: calc(var(--custom-guild-list-width) + calc(var(--ac-spacing-sm) * 2)));
+		@include ac-color-styling($bg: secondary);
 		@include ac-rounded-styling($br: small);
 		@include ac-flex-styling($f: 0);
 
@@ -32,9 +36,10 @@
 	}
 
 	#{c(userSettings contentRegion)} {
-		@include ac-color-styling($bg: primary);
+		@include ac-color-styling($bg: secondary);
 		@include ac-rounded-styling($br: small);
 		@include ac-position-styling($max-w: 100%);
+		@include ac-spacing-styling($mr: small);
 		overflow: hidden;
 
 		#{c(appSettings contentTransitionWrap)} {
@@ -46,7 +51,7 @@
 
 				#{c(userSettings contentColumn)} {
 					@include ac-position-styling($max-w: 100%);
-					@include ac-padding-styling($p: 4xl-large);
+					@include ac-padding-styling($pt: 4xl-large, $pl: 2x-large, $pr: small);
 
 					#{c(tab top)} {
 						@include ac-flex-styling($gap: small);
@@ -75,12 +80,58 @@
 						@include ac-position-styling($max-w: unset);
 						@include ac-rounded-styling($br: small);
 					}
+
+					#{c(userSettings addConnectionContainer)} {
+						@include ac-color-styling($bg: primary);
+						@include ac-rounded-styling($br: small);
+					}
+
+					#{c(userSettings connection)} {
+						@include ac-color-styling($bg: primary);
+						@include ac-rounded-styling($br: small);
+						@include ac-padding-styling($pt: small);
+
+						#{c(userSettings connectionHeader)} {
+							@include ac-color-styling($bg: secondary);
+							@include ac-spacing-styling($mx: small);
+							@include ac-rounded-styling($br: small);
+						}
+					}
+
+					#{c(userSettings devicesSession)} {
+						@include ac-padding-styling($py: small, $px: large);
+						@include ac-color-styling($bg: primary);
+						@include ac-rounded-styling($br: small);
+						@include ac-spacing-styling($mb: small);
+						border: none !important;
+					}
+					
+					.authedAppV2__50a54{
+						@include ac-color-styling($bg: primary);
+						@include ac-rounded-styling($br: small);
+						@include ac-padding-styling($p: small);
+						@include ac-spacing-styling($mb: small);
+						.headerV2__50a54{
+							@include ac-color-styling($bg: secondary);
+							@include ac-rounded-styling($br: small);
+						}
+						.appDetailsContainer__50a54{
+							.footer__50a54{
+								@include ac-spacing-styling($my: small, $mb: 0);
+							}
+						}
+					}
+					.paymentSourceRow__0eeee{
+						@include ac-padding-styling($p: small);
+						@include ac-color-styling($bg: primary);
+						@include ac-rounded-styling($br: small);
+					}
+				}
+
+				#{c(other cv settingsToolsContainer)} {
+					@include ac-position-styling($pos: absolute, $top: 0);
 				}
 			}
-		}
-
-		#{c(other cv settingsToolsContainer)} {
-			@include ac-position-styling($w: 100%, $h: 100%);
 		}
 	}
 }

@@ -6,7 +6,7 @@
 
 	#{c(chat chatContent)} {
 		@include ac-color-styling($bg: transparent);
-		@include ac-spacing-styling($mt: x-small);
+		@include ac-spacing-styling($mt: small);
 		@include ac-flex-styling($gap: small);
 
 		#{c(chat chatContentInner)} {
@@ -36,6 +36,7 @@
 
 				#{c(chat chatScroller)} {
 					@include ac-spacing-styling($mr: xx-small);
+					@include ac-rounded-styling($br: small);
 				}
 
 				#{c(chat chatLoadingWrapper)} {

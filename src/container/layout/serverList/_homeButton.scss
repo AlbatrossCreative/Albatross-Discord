@@ -2,8 +2,7 @@
 
 #{c(serverList homeContainer)} {
 	@include ac-position-styling($pos: sticky, $top: 0px, $z: 5);
-	@include ac-padding-styling($pt: small);
-	@include ac-color-styling($bg: secondary);
+	@include ac-color-styling($bg: primary);
 
 	#{c(serverList listItem)} {
 		@include ac-position-styling($w: unset);

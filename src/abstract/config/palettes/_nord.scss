@@ -1,18 +1,15 @@
-@use 'sass:map';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+// Palette Font Import
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-$A01: 'CorellanStoma';
-$A02: 'CreArts';
+$A01: 'Arctic Ice Studio';
+$A02: 'Nord';
 
 // Skin Fonts
-$B01: 'Quicksand', sans-serif;
-$B02: 'Montserrat', sans-serif;
-$B03: 'Consolas', monospace;
+$B01: 'Rubik', sans-serif;
+$B02: 'Rubik', sans-serif;
+$B03: 'Space Mono', monospace;
 
-// Accent
-$C01: #ce0951;
-$C02: #a30a42;
-$C03: #880837;
+
 
 $ADA: hsl(180, 3%, 87%);
 

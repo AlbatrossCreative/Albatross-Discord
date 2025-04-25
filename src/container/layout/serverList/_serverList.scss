@@ -1,7 +1,8 @@
 @use 'abstract' as *;
 
 #{c(serverList wrapper)} {
-	@include ac-color-styling($bg: secondary);
+	@include ac-spacing-styling($mb: var(--custom-app-panels-height, 0));
+	@include ac-color-styling($bg: transparent);
 	@include ac-rounded-styling($br: small);
 	overflow: hidden;
 

@@ -1,7 +1,7 @@
 @use 'abstract' as *;
 
 #{c(sidebar sidebar)} {
-	@include ac-flex-styling($d: grid, $gapc: x-small);
+	@include ac-flex-styling($d: grid, $gapc: small);
 	@include ac-rounded-styling($br: small);
 	grid-template-areas:
 		'guildList sidebar'

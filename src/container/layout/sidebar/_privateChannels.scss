@@ -7,7 +7,7 @@
 		@include ac-rounded-styling($brtr: small);
 		@include ac-color-styling($bgc: primary);
 		@include ac-position-styling($h: unset);
-		@include ac-spacing-styling($mb: x-small);
+		@include ac-spacing-styling($mb: small);
 		@include ac-padding-styling($p: 0);
 		overflow: hidden;
 		box-shadow: none;
@@ -118,7 +118,7 @@
 
 						#{c(sidebar private closeButton)} {
 							@include ac-position-styling($d: block);
-							transform: translateX(22px);
+							transform: translateX(30px);
 							transition: 0.1s 0.07s ease all;
 						}
 

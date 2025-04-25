@@ -3,7 +3,7 @@
 .radioGroup__963c3 {
 	#{c(userSettings radioGroupItem)} {
 		#{c(userSettings radioBar)} {
-			@include ac-color-styling($bg: secondary);
+			@include ac-color-styling($bg: primary);
 			@include ac-rounded-styling($br: small);
 			@include ac-padding-styling($p: small);
 			grid-template-areas: 'pill checkbox message';

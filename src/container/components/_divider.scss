@@ -1,9 +1,6 @@
 @use 'abstract' as *;
 
-#{c(userSettings divider)} {
-	@include ac-rounded-styling($br: small);
-	border-width: 4px;
-}
+
 
 #{c(tab separator)} {
 	@include ac-rounded-styling($br: small);

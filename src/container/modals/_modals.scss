@@ -2,6 +2,7 @@
 
 #{c(modals root)} {
 	@include ac-rounded-styling($br: small);
+	overflow: unset !important;
 	box-shadow: none;
 
 	#{c(modals footer)} {

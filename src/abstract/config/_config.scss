@@ -1,18 +1,26 @@
-@forward 'palettes/default';
-//@forward 'palettes/crearts';
+//@forward 'palettes/default';\
+@forward 'palettes/crearts';
 //@forward 'palettes/nord';
 //@forward 'palettes/nextui';
 
-$O01: 1; // Full opacity
-$O02: 0.95; // High opacity
-$O03: 0.8; // Medium opacity
-$O04: 0.75; // Low opacity
-$O05: 0.6; // Very low opacity
-$O06: 0.55; // Almost invisible opacity
-$O07: 0.4; // Invisible opacity
-$O08: 0.35; // Very invisible opacity
-$O09: 0.2; // Almost transparent opacity
-$O10: 0.15; // Transparent opacity
-$O11: 0.05; // Very transparent opacity
-$O12: 0; // Transparent opacity
-
+$O01: 1;
+$O02: 0.95;
+$O03: 0.9;
+$O04: 0.85;
+$O05: 0.8;
+$O06: 0.75;
+$O07: 0.7;
+$O08: 0.65;
+$O09: 0.6;
+$O10: 0.55;
+$O11: 0.5;
+$O12: 0.45;
+$O13: 0.4;
+$O14: 0.35;
+$O15: 0.3;
+$O16: 0.25;
+$O17: 0.2;
+$O18: 0.15;
+$O19: 0.1;
+$O20: 0.05;
+$O21: 0;

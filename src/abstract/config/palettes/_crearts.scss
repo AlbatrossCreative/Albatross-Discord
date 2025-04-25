@@ -1,36 +1,32 @@
-@use 'sass:map';
+// Palette Font Import
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
 
 $A01: 'CorellanStoma';
 $A02: 'CreArts';
 
-// Skin Fonts
+// Palette Fonts
 $B01: 'Quicksand', sans-serif;
 $B02: 'Montserrat', sans-serif;
 $B03: 'Consolas', monospace;
 
-// Accent
-$C01: #ce0951;
-$C02: #a30a42;
-$C03: #880837;
-
-// Albatross Background HSL
+// Palette Background HSL
 
 $NBV01: 223;
 $NBV02: 17%;
 $NBV03: 24%;
 
-// Albatross Accent HSL
+// Palette Accent HSL
 $NBV04: 338;
 $NBV05: 92%;
 $NBV06: 42%;
 
-// Albatross Text HSL
+// Palette Text HSL
 $NBV07: 180;
 $NBV08: 5%;
 $NBV09: 87%;
 
-// Albatross Interactive HSL
+// Palette Interactive HSL
 
 $NBV10: 90;
 $NBV11: 3%;

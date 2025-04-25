@@ -65,8 +65,12 @@
 		ul {
 			@include ac-padding-styling($pl: x-small);
 
-			>[style='height: 84px;'] {
+			>[style*='height:'] {
 				@include ac-position-styling($d: none);
+			}
+			&::after{
+				@include ac-position-styling($d: block, $h: var(--custom-app-panels-height), $w: 100%, $pos: relative);
+				content: '';
 			}
 
 			#{c(sidebar server divider)} {
@@ -78,6 +82,8 @@
 					@include ac-padding-styling($p: small);
 					@include ac-color-styling($bg: primary);
 					@include ac-rounded-styling($br: small);
+					@include ac-spacing-styling($mb: small, $ml: 0);
+					border: none;
 
 					#{c(sidebar boostTextArea)},
 					#{c(sidebar boostProgressBarContainer)} {

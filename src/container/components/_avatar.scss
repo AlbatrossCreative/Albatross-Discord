@@ -2,6 +2,22 @@
 
 
 #app-mount {
+	#{c(sidebar private avatar)} {
+		.container__1ce5d{
+			svg {
+				foreignObject {
+					mask: none !important;
+					img{
+					@include ac-rounded-styling($br: calc(var(--rs-avatar-shape)));
+					overflow: hidden;
+						&.circularImage__1ce5d{
+							border: solid var(--background-secondary) 2px;
+						}
+					}
+				}
+			}
+		}
+	}
 	.wrapper__44b0c {
 		border-radius: var(--rs-avatar-shape);
 
@@ -73,8 +89,8 @@
 
 		// Updated status, user typing and bottom left avatar
 		svg[width='25'][height='15']>rect {
-			rx: calc(var(--rs-avatar-shape) * 2) !important;
-			ry: calc(var(--rs-avatar-shape) * 2) !important;
+			rx: var(--rs-avatar-shape) !important;
+			ry: var(--rs-avatar-shape) !important;
 		}
 
 		&[style*='80px'],
@@ -203,7 +219,7 @@
 
 		// Fixes DBFBD chat avatars
 		&:not([style*='80px;'], [style*='120px;'], [style*='16px'])>svg>foreignObject:not(:only-child) img {
-			clip-path: inset(calc(var(--rs-small-spacing) + 1px) calc(var(--rs-small-spacing) + 1px) round var(--rs-avatar-shape));
+			clip-path: inset(calc(var(--rs-small-spacing) + .5px) calc(var(--rs-small-spacing) + .5px) round var(--rs-avatar-shape));
 		}
 
 		// UserTypingAvatars

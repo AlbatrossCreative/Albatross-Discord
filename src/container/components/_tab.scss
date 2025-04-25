@@ -10,7 +10,7 @@
 
 #{c(tab item)} {
 	@include ac-color-styling($c: var(--interactive-active));
-	@include ac-position-styling($min-h: unset);
+	@include ac-position-styling($min-h: 32px, $h: unset);
 	@include ac-rounded-styling($br: small);
 	@include ac-padding-styling($p: x-small);
 	@include ac-flex-styling($ai: center, $gap: 0);

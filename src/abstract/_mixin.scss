@@ -47,61 +47,77 @@ $ac-spacing: (
 	$mt: null,
 	$ml: null,
 	$mr: null) {
-	@if $m and map.has-key($ac-spacing, $m) {
-		margin: map.get($ac-spacing, $m) !important;
-	}
-
-	@else if $m {
-		margin: $m !important;
-	}
-
-	@if $mx and map.has-key($ac-spacing, $mx) {
-		margin-left: map.get($ac-spacing, $mx) !important;
-		margin-right: map.get($ac-spacing, $mx) !important;
-	}
-
-	@else if $mx {
-		margin-left: $mx !important;
-		margin-right: $mx !important;
-	}
-
-	@if $my and map.has-key($ac-spacing, $my) {
-		margin-top: map.get($ac-spacing, $my) !important;
-		margin-bottom: map.get($ac-spacing, $my) !important;
-	}
-
-	@else if $my {
-		margin-top: $my !important;
-		margin-bottom: $my !important;
-	}
-
-	@each $id, $style in (mb: margin-bottom, mt: margin-top, ml: margin-left, mr: margin-right) {
-		$value: null;
-
-		@if $id ==mb {
-			$value: $mb;
+	@if $m {
+		@if map.has-key($ac-spacing, $m) {
+			margin: map.get($ac-spacing, $m) !important;
 		}
 
-		@else if $id ==mt {
-			$value: $mt;
+		@else {
+			margin: $m !important;
+		}
+	}
+
+	@if $mx {
+		@if map.has-key($ac-spacing, $mx) {
+			margin-left: map.get($ac-spacing, $mx) !important;
+			margin-right: map.get($ac-spacing, $mx) !important;
 		}
 
-		@else if $id ==ml {
-			$value: $ml;
+		@else {
+			margin-left: $mx !important;
+			margin-right: $mx !important;
+		}
+	}
+
+	@if $my {
+		@if map.has-key($ac-spacing, $my) {
+			margin-top: map.get($ac-spacing, $my) !important;
+			margin-bottom: map.get($ac-spacing, $my) !important;
 		}
 
-		@else if $id ==mr {
-			$value: $mr;
+		@else {
+			margin-top: $my !important;
+			margin-bottom: $my !important;
+		}
+	}
+
+	@if $mb {
+		@if map.has-key($ac-spacing, $mb) {
+			margin-bottom: map.get($ac-spacing, $mb) !important;
 		}
 
-		@if $value {
-			@if map.has-key($ac-spacing, $value) {
-				#{$style}: map.get($ac-spacing, $value) !important;
-			}
+		@else {
+			margin-bottom: $mb !important;
+		}
+	}
 
-			@else {
-				#{$style}: $value !important;
-			}
+	@if $mt {
+		@if map.has-key($ac-spacing, $mt) {
+			margin-top: map.get($ac-spacing, $mt) !important;
+		}
+
+		@else {
+			margin-top: $mt !important;
+		}
+	}
+
+	@if $ml {
+		@if map.has-key($ac-spacing, $ml) {
+			margin-left: map.get($ac-spacing, $ml) !important;
+		}
+
+		@else {
+			margin-left: $ml !important;
+		}
+	}
+
+	@if $mr {
+		@if map.has-key($ac-spacing, $mr) {
+			margin-right: map.get($ac-spacing, $mr) !important;
+		}
+
+		@else {
+			margin-right: $mr !important;
 		}
 	}
 }
@@ -113,35 +129,77 @@ $ac-spacing: (
 	$pt: null,
 	$pl: null,
 	$pr: null) {
-	@each $id, $value in $ac-spacing {
-		@if $p ==$id {
-			padding: $value !important;
+	@if $p {
+		@if map.has-key($ac-spacing, $p) {
+			padding: map.get($ac-spacing, $p) !important;
 		}
 
-		@if $px ==$id {
-			padding-left: $value !important;
-			padding-right: $value !important;
+		@else {
+			padding: $p !important;
+		}
+	}
+
+	@if $px {
+		@if map.has-key($ac-spacing, $px) {
+			padding-left: map.get($ac-spacing, $px) !important;
+			padding-right: map.get($ac-spacing, $px) !important;
 		}
 
-		@if $py ==$id {
-			padding-top: $value !important;
-			padding-bottom: $value !important;
+		@else {
+			padding-left: $px !important;
+			padding-right: $px !important;
+		}
+	}
+
+	@if $py {
+		@if map.has-key($ac-spacing, $py) {
+			padding-top: map.get($ac-spacing, $py) !important;
+			padding-bottom: map.get($ac-spacing, $py) !important;
 		}
 
-		@if $pb ==$id {
-			padding-bottom: $value !important;
+		@else {
+			padding-top: $py !important;
+			padding-bottom: $py !important;
+		}
+	}
+
+	@if $pb {
+		@if map.has-key($ac-spacing, $pb) {
+			padding-bottom: map.get($ac-spacing, $pb) !important;
 		}
 
-		@if $pt ==$id {
-			padding-top: $value !important;
+		@else {
+			padding-bottom: $pb !important;
+		}
+	}
+
+	@if $pt {
+		@if map.has-key($ac-spacing, $pt) {
+			padding-top: map.get($ac-spacing, $pt) !important;
 		}
 
-		@if $pl ==$id {
-			padding-left: $value !important;
+		@else {
+			padding-top: $pt !important;
+		}
+	}
+
+	@if $pl {
+		@if map.has-key($ac-spacing, $pl) {
+			padding-left: map.get($ac-spacing, $pl) !important;
 		}
 
-		@if $pr ==$id {
-			padding-right: $value !important;
+		@else {
+			padding-left: $pl !important;
+		}
+	}
+
+	@if $pr {
+		@if map.has-key($ac-spacing, $pr) {
+			padding-right: map.get($ac-spacing, $pr) !important;
+		}
+
+		@else {
+			padding-right: $pr !important;
 		}
 	}
 }
@@ -183,49 +241,113 @@ $ac-spacing: (
 	$brbl: null,
 	$brx: null,
 	$bry: null) {
-	@each $id, $value in $ac-rounded {
-		@if $br ==$id {
-			border-radius: $value !important;
+	@if $br {
+		@if map.has-key($ac-rounded, $br) {
+			border-radius: map.get($ac-rounded, $br) !important;
 		}
 
-		@if $brt ==$id {
-			border-radius: $value $value 0 0 !important;
+		@else {
+			border-radius: $br !important;
+		}
+	}
+
+	@if $brt {
+		@if map.has-key($ac-rounded, $brt) {
+			border-radius: map.get($ac-rounded, $brt) map.get($ac-rounded, $brt) 0 0 !important;
 		}
 
-		@if $brb ==$id {
-			border-radius: 0 0 $value $value !important;
+		@else {
+			border-radius: $brt $brt 0 0 !important;
+		}
+	}
+
+	@if $brb {
+		@if map.has-key($ac-rounded, $brb) {
+			border-radius: 0 0 map.get($ac-rounded, $brb) map.get($ac-rounded, $brb) !important;
 		}
 
-		@if $brr ==$id {
-			border-radius: 0 $value $value 0 !important;
+		@else {
+			border-radius: 0 0 $brb $brb !important;
+		}
+	}
+
+	@if $brr {
+		@if map.has-key($ac-rounded, $brr) {
+			border-radius: 0 map.get($ac-rounded, $brr) map.get($ac-rounded, $brr) 0 !important;
 		}
 
-		@if $brl ==$id {
-			border-radius: $value 0 0 $value !important;
+		@else {
+			border-radius: 0 $brr $brr 0 !important;
+		}
+	}
+
+	@if $brl {
+		@if map.has-key($ac-rounded, $brl) {
+			border-radius: map.get($ac-rounded, $brl) 0 0 map.get($ac-rounded, $brl) !important;
 		}
 
-		@if $brtr ==$id {
-			border-radius: 0 $value 0 0 !important;
+		@else {
+			border-radius: $brl 0 0 $brl !important;
+		}
+	}
+
+	@if $brtr {
+		@if map.has-key($ac-rounded, $brtr) {
+			border-radius: 0 map.get($ac-rounded, $brtr) 0 0 !important;
 		}
 
-		@if $brbr ==$id {
-			border-radius: 0 0 $value 0 !important;
+		@else {
+			border-radius: 0 $brtr 0 0 !important;
+		}
+	}
+
+	@if $brbr {
+		@if map.has-key($ac-rounded, $brbr) {
+			border-radius: 0 0 map.get($ac-rounded, $brbr) 0 !important;
 		}
 
-		@if $brtl ==$id {
-			border-radius: $value 0 0 0 !important;
+		@else {
+			border-radius: 0 0 $brbr 0 !important;
+		}
+	}
+
+	@if $brtl {
+		@if map.has-key($ac-rounded, $brtl) {
+			border-radius: map.get($ac-rounded, $brtl) 0 0 0 !important;
 		}
 
-		@if $brbl ==$id {
-			border-radius: 0 0 0 $value !important;
+		@else {
+			border-radius: $brtl 0 0 0 !important;
+		}
+	}
+
+	@if $brbl {
+		@if map.has-key($ac-rounded, $brbl) {
+			border-radius: 0 0 0 map.get($ac-rounded, $brbl) !important;
 		}
 
-		@if $brx ==$id {
-			border-radius: $value 0 $value 0 !important;
+		@else {
+			border-radius: 0 0 0 $brbl !important;
+		}
+	}
+
+	@if $brx {
+		@if map.has-key($ac-rounded, $brx) {
+			border-radius: map.get($ac-rounded, $brx) 0 map.get($ac-rounded, $brx) 0 !important;
 		}
 
-		@if $bry ==$id {
-			border-radius: 0 $value 0 $value !important;
+		@else {
+			border-radius: $brx 0 $brx 0 !important;
+		}
+	}
+
+	@if $bry {
+		@if map.has-key($ac-rounded, $bry) {
+			border-radius: 0 map.get($ac-rounded, $bry) 0 map.get($ac-rounded, $bry) !important;
+		}
+
+		@else {
+			border-radius: 0 $bry 0 $bry !important;
 		}
 	}
 }
@@ -285,38 +407,44 @@ $ac-spacing: (
 		height: $h !important;
 	}
 
-	@each $id, $value in $ac-spacing {
-		@if $left ==$id {
-			$left: $value;
+	@if $left {
+		@if map.has-key($ac-spacing, $left) {
+			left: map.get($ac-spacing, $left) !important;
 		}
 
-		@if $right ==$id {
-			$right: $value;
+		@else {
+			left: $left !important;
+		}
+	}
+
+	@if $right {
+		@if map.has-key($ac-spacing, $right) {
+			right: map.get($ac-spacing, $right) !important;
 		}
 
-		@if $top ==$id {
-			$top: $value;
-		}
-
-		@if $bottom ==$id {
-			$bottom: $value;
+		@else {
+			right: $right !important;
 		}
 	}
 
 	@if $top {
-		top: $top !important;
+		@if map.has-key($ac-spacing, $top) {
+			top: map.get($ac-spacing, $top) !important;
+		}
+
+		@else {
+			top: $top !important;
+		}
 	}
 
 	@if $bottom {
-		bottom: $bottom !important;
-	}
+		@if map.has-key($ac-spacing, $bottom) {
+			bottom: map.get($ac-spacing, $bottom) !important;
+		}
 
-	@if $left {
-		left: $left !important;
-	}
-
-	@if $right {
-		right: $right !important;
+		@else {
+			bottom: $bottom !important;
+		}
 	}
 }
 

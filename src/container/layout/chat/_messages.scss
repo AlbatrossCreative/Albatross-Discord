@@ -1,7 +1,7 @@
 @use 'abstract' as *;
 
-#{c(chat messageWrapper)} {
-	&#{c(chat message)} {
+#{c(chat messageListItem)} {
+	#{c(chat message)} {
 		@include ac-padding-styling($pr: large, $pl: x-large);
 		@include ac-flex-styling($d: grid, $gapc: small);
 		@include ac-color-styling($bg: transparent);

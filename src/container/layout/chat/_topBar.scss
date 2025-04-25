@@ -67,18 +67,6 @@
 							@include ac-color-styling($c: var(--interactive-hover));
 						}
 					}
-
-					&:has([d*="M2 7.4A5.4"]) {
-						@include ac-icon-replacement($ip: call,
-							$ic: var(--interactive-normal),
-							$ich: var(--interactive-hover));
-					}
-
-					&:has([d*="M4 4a3 3 0 0 0-3 3v10a3"]) {
-						@include ac-icon-replacement($ip: videocall,
-							$ic: var(--interactive-normal),
-							$ich: var(--interactive-hover));
-					}
 				}
 
 				#{c(header search)} {

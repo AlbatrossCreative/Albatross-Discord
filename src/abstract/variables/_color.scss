@@ -42,11 +42,11 @@ html:root {
 		@include ac-hslvar-func($NBM, 'background-modifier', $NBV13, $NBV14, $NBV15, saturation);
 		@include ac-hslvar-func($NA, 'brand', $NBV04, $NBV05, $NBV06, saturation);
 		@include ac-hslvar-func($NB, 'accent', $NBV04, $NBV05, $NBV06, saturation);
-
+		@include ac-hslvar-func($NBP, 'blurple', $NBV04, $NBV05, $NBV06 , saturation);
 		--text-link: var(--brand-500) !important;
 
 		--background-mobile: var(--background-secondary) !important;
-		--background-input: var(--background-secondary-alt) !important;
+		--input-background: var(--background-floating) !important;
 		--background-accent: var(--brand-500) !important;
 		--modal-background: var(--background-primary) !important;
 
