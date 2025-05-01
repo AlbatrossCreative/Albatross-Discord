@@ -10,10 +10,9 @@ Albatross is a fun project to help me understand sass more, alot of unnecessary 
 [![betterdiscord](https://img.shields.io/badge/betterdiscord-mod?style=for-the-badge&color=404c5a)](https://vencord.dev)
 [![Sulfide](https://img.shields.io/badge/sulfide-language?style=for-the-badge&color=404c5a)](https://github.com/LeafyLuigi/sulfide)
 
-### Some sort of description that im working on.
-<table >
-  <tr >
-    <td align=center colspan="3"><strong>Featured Palettes<strong></td>
+<table>
+  <tr>
+    <td align=center colspan="3"><strong>Featured Palettes (Many More to Offer..)<strong></td>
   </tr>
     <tr>
     <td align=center><img src="https://github.com/user-attachments/assets/863e5f6f-6d35-4548-969b-7b1f7c24267c"></td>
@@ -23,14 +22,15 @@ Albatross is a fun project to help me understand sass more, alot of unnecessary 
   <tr>
     <td align=center><strong>Comet (Default)</strong></td>
     <td align=center><strong>CreArts</strong></td>
-    <td align=center><strong>Next</strong></td>
+    <td align=center><strong>NextUI</strong></td>
   </tr>
 </table>
 
 ## Getting Started
 
 ## Installation
-Please ensure Discord is installed with your chosen client mod.
+Please ensure Discord is installed with your choosing of the client mods below.
+
 <table>
   <tr>
     <td><strong>Client Mod</strong></td>
@@ -72,11 +72,12 @@ Please ensure Discord is installed with your chosen client mod.
 ```
 
 ## Local Installation & Setup
-These are the steps to locally install Albatross to have full access to its raw code. I recommend doing this until Albatross is in its release stages, and also for users who have intermediate knowledge with sass. 
+I recommend doing this until Albatross has a normally functioning CDN to import through Quick CSS.
+
 ### 1. Clone Repository 
 Use this command to clone the repository to your desired directory.
 ```
-git clone https://github.com/albatrosscreative/albatross-discord
+git clone https://github.com/AlbatrossCreative/Albatross-Discord.git
 ```
 
 ### 2. Go to project folder
@@ -86,18 +87,18 @@ cd albatross-discord
 
 ### 3. Install dependencies
 ```
-pnpm i
+pnpm install
 ```
-### 4. Compile file
+### 4. Development Scripts
 
 **Use** `pnpm` **to begin using Albatross based on your use choice.**
-| Script             | Description                                        |
-| :----------------- | :------------------------------------------------- |
-| `buildVC`          | To build a single css file to Vencord.             |
-| `buildBD`          | To build a single ad to BetterDiscord.             |
-| `compile`          | To build the compiled CSS files to `public/build`. |
-| `devBD` | Begin live development for BetterDiscord.          |
-| `devVC`       | Begin live development for Vencord.                |
+| Script             | Description                                            |
+| :----------------- | :----------------------------------------------------- |
+| `buildVC`          | Creates `new albatross.theme.css` to `vencord/themes`|
+| `buildBD`          | Creates `new albatross.theme.css` to `betterdiscord/themes`|
+| `compile`          | Compile the current theme to `public/build/css`     |
+| `devBD` | Begin live development for BetterDiscord.                         |
+| `devVC`       | Begin live development for Vencord.                         |
 
 ## [Wiki](https://github.com/albatrosscreative/albatross-discord/wiki)
 The wiki contains information regarding Albatross's design system and development process. To contribute to Albatross please read the [contribution](https://github.com/albatrosscreative/albatross-discord/wiki) section of the wiki.
@@ -110,7 +111,7 @@ Before contributing to this project, please look through LeafyLuigi's [Sulfide](
 ## Credits
 Albatross is greatly inspired by these projects to make Albatross what it is today.
 
-- **[SettingsModal](https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/SettingsModal) by [mwittrien](https://github.com/mwittrien)**
+- **[SettingsModal](https://github.com/mwittrien/BetterDiscordAddons/tree/master/Themes/SettingsModal) by [Mwittrien](https://github.com/mwittrien)**
 - **[CreArts](https://github.com/CreArts-Community/CreArts-Discord) by The [CreArts-Community](https://github.com/CreArts-Community)**
 - **[RadialStatus](https://github.com/DiscordStyles/RadialStatus) by [DiscordStyles](https://github.com/DiscordStyles)** 
 
@@ -118,6 +119,7 @@ Albatross is greatly inspired by these projects to make Albatross what it is tod
 
 This project is under the **[GNU General Public License v3.0](https://spdx.org/licenses/GPL-3.0-or-later.html)**. Please refer to the [License](license) for further information regarding the license' permissions, limitations and conditions.
 
+<br>
 <br>
 <br>
 
