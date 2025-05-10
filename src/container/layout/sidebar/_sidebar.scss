@@ -16,9 +16,22 @@
 		border: none !important;
 	}
 
-	&:has(#{c(sidebar panel nameTag)}:hover) {
-		#{c(sidebar private channels)}::before {
-			@include ac-color-styling($bg: floating);
+	&:has(#{c(sidebar panel nameTag)}:hover),
+	&:has(#{c(sidebar panel buttons buttons)}:hover) {
+		#{c(sidebar private channels)},
+		#{c(sidebar server container)},
+		#{c(other cv discoverCategory)} {
+			&::before {
+				@include ac-color-styling($bg: floating);
+			}
+		}
+	}
+
+	&:has(#{c(sidebar panel avatarWrapper)} #{c(avatar wrapper)}:hover) {
+		#{c(sidebar panel container)} {
+			&::after {
+				opacity: 1;
+			}
 		}
 	}
 }

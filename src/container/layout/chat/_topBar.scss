@@ -33,6 +33,9 @@
 
 					svg {
 						@include ac-position-styling($pos: relative);
+						foreignObject {
+							@include ac-position-styling($w: 100%, $h: 100%);
+						}
 					}
 				}
 
@@ -57,6 +60,7 @@
 			}
 
 			#{c(header toolbar)} {
+				@include ac-flex-styling($f: 1);
 				#{c(header iconWrapper)} {
 					svg {
 						@include ac-color-styling($c: var(--interactive-normal));
@@ -70,13 +74,31 @@
 				}
 
 				#{c(header search)} {
-					@include ac-spacing-styling($m: 0);
+					@include ac-spacing-styling($mx: auto);
+					order: -1;
 
 					#{c(header searchInner)} {
 						#{c(header searchBar)} {
-							width: 180px;
+							@include ac-position-styling($min-w: 230px);
+							@include ac-color-styling($bg: tertiary);
+							@include ac-rounded-styling($br: small);
+							@include ac-padding-styling($pr: xx-small);
+							border: none !important;
+							.DraftEditor-root {
+								.public-DraftEditorPlaceholder-root {
+									@include ac-position-styling($top: 0, $h: 100%);
+									@include ac-padding-styling($p: 0);
+									.public-DraftEditorPlaceholder-inner {
+										@include ac-padding-styling($p: xx-small);
+									}
+								}
+								.DraftEditor-editorContainer {
+									[data-contents='true'] {
+										@include ac-padding-styling($py: xx-small);
+									}
+								}
+							}
 							.icon__97492 {
-								@include ac-position-styling($d: none);
 							}
 						}
 					}

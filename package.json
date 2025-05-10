@@ -10,12 +10,10 @@
 		"pnpm": ">=9.0.0"
 	},
 	"scripts": {
-		"buildBD": "sass _index.scss:%APPDATA%/BetterDiscord/themes/albatross.theme.css -I src --no-charset --no-source-map",
-		"buildVC": "sass _index.scss:%APPDATA%/Vencord/themes/albatross.theme.css -I src --no-charset --no-source-map",
-		"compile": "sass _index.scss:public/build/albatross.css -I src --no-source-map & sass _index.scss:public/build/albatross-minified.css -I src --no-source-map --style=compressed",
-		"devFull": "sass _index.scss:%APPDATA%/Vencord/themes/albatross.theme.css -I src --no-source-map --no-charset --watch & sass _index.scss:%APPDATA%/BetterDiscord/themes/albatross.theme.css -I src --no-charset --no-source-map --watch",
-		"devBD": "sass _index.scss:%APPDATA%/BetterDiscord/themes/albatross.theme.css -I src --no-charset --no-source-map --watch",
-		"devVC": "sass _index.scss:%APPDATA%/Vencord/themes/albatross.theme.css -I src --no-source-map --no-charset --watch",
+		"compile": "sass _source.scss:public/build/albatross.css -I src --no-source-map & sass _source.scss:public/build/albatross-minified.css -I src --no-source-map --style=compressed",
+		"devFull": "sass dev.scss:%APPDATA%/Vencord/themes/albatross.theme.css -I src --no-source-map --no-charset --watch & sass dev.scss:%APPDATA%/BetterDiscord/themes/albatross.theme.css -I src --no-charset --no-source-map --watch",
+		"devBD": "sass dev.scss:%APPDATA%/BetterDiscord/themes/albatross.theme.css -I src --no-charset --no-source-map --watch",
+		"devVC": "sass dev.scss:%APPDATA%/Vencord/themes/albatross.theme.css -I src --no-source-map --no-charset --watch",
 		"bundle": "replugged bundle theme",
 		"release": "replugged release",
 		"lint": "prettier ./src --check",

@@ -2,15 +2,10 @@ html:root {
 	--ac-osbar-height: 34px;
 	--ac-pill-width: 5px;
 
-	--custom-guild-list-padding: var(--ac-spacing-sm);
-	--custom-guild-list-width: calc(var(--guildbar-avatar-size) + var(--custom-guild-list-padding)) !important;
-
-	--settingswidth: 1640;
-	--settingsheight: 70;
-
-	--settingswidth_v: min(calc(1px * var(--settingswidth_s, var(--settingswidth))), 99vw);
-	--settingsheight_v: min(calc(1vh * var(--settingsheight_s, var(--settingsheight))), 99vh);
-	
+	--custom-guild-list-padding: var(--ac-spacing-2xl);
+	--custom-guild-list-width: calc(
+		var(--guildbar-avatar-size) + var(--custom-guild-list-padding)
+	) !important;
 
 	/*
 	   * Spacing
@@ -37,7 +32,7 @@ html:root {
 	   */
 	--rs-avatar-shape: 20%;
 	/* 50% for round - 0% for square */
-
+	--rs-user-area-size: 40px;
 	/*
 	   * Colours
 	   */

@@ -1,11 +1,44 @@
 @use 'abstract' as *;
 
-#{c(profile outer)} {
-	@include ac-color-styling($bg: secondary);
-	@include ac-rounded-styling($br: small);
-	overflow: hidden;
+#{c(chat chatContent)} {
+	#{c(profile outer)} {
+		@include ac-color-styling($bg: secondary);
+		@include ac-rounded-styling($br: small);
+		overflow: hidden;
 
-	#{c(profile inner)} {
-		@include ac-color-styling($bg: transparent);
+		#{c(profile inner)} {
+			@include ac-color-styling($bg: transparent);
+			@include ac-padding-styling($p: small);
+
+			#{c(profile firendsMoreEditProfileButtons wrapper)} {
+				@include ac-position-styling($top: small);
+			}
+
+			header {
+				#{c(profile banner mask)} {
+					@include ac-position-styling($min-w: unset, $min-h: unset, $max-w: 100%);
+
+					mask {
+						circle {
+							fill: transparent;
+						}
+					}
+
+					foreignObject {
+						#{c(profile banner banner)} {
+							@include ac-position-styling($max-w: 100%, $h: 100%);
+							@include ac-rounded-styling($br: small);
+						}
+					}
+				}
+			}
+
+			.footer__7f9c0 {
+				@include ac-flex-styling($gap: small);
+				@include ac-color-styling($bg: primary);
+				@include ac-rounded-styling($br: small);
+				border: none !important;
+			}
+		}
 	}
 }

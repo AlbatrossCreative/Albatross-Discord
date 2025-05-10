@@ -25,10 +25,12 @@
 					}
 				}
 
-				#{c(call bottomControls)} {}
+				#{c(call bottomControls)} {
+				}
 			}
 
-			#{c(call voiceCallWrapper)} {}
+			#{c(call voiceCallWrapper)} {
+			}
 		}
 	}
 }

@@ -98,9 +98,11 @@
 							}
 
 							&::before {
-								@include ac-position-styling($w: var(--ac-pill-width),
+								@include ac-position-styling(
+									$w: var(--ac-pill-width),
 									$h: 30px,
-									$pos: relative);
+									$pos: relative
+								);
 								@include ac-rounded-styling($br: small);
 								@include ac-spacing-styling($mr: xx-small);
 								content: '';
@@ -127,9 +129,11 @@
 							#{c(sidebar private link)} {
 								&::after {
 									@include ac-color-styling($bg: var(--brand-430));
-									@include ac-position-styling($w: var(--ac-pill-width),
+									@include ac-position-styling(
+										$w: var(--ac-pill-width),
 										$h: 30px,
-										$pos: absolute);
+										$pos: absolute
+									);
 								}
 							}
 
@@ -143,16 +147,20 @@
 						}
 
 						&#{c(sidebar private interactiveSelected)} {
-							@include ac-color-styling($bgc: var(--background-modifier-selected),
-								$c: var(--interactive-active));
+							@include ac-color-styling(
+								$bgc: var(--background-modifier-selected),
+								$c: var(--interactive-active)
+							);
 
 							#{c(sidebar private link)} {
 								&::after {
 									transition-delay: 0 !important;
 									@include ac-color-styling($bg: var(--brand-530));
-									@include ac-position-styling($w: var(--ac-pill-width),
+									@include ac-position-styling(
+										$w: var(--ac-pill-width),
 										$h: 30px,
-										$pos: absolute);
+										$pos: absolute
+									);
 								}
 							}
 						}
@@ -190,31 +198,44 @@
 
 						&:hover,
 						&:focus-within {
-							@include ac-color-styling($bgc: modifier-hover,
-								$c: var(--interactive-active));
+							@include ac-color-styling(
+								$bgc: modifier-hover,
+								$c: var(--interactive-active)
+							);
 						}
 
 						&#{c(sidebar private selectedBG)} {
-							@include ac-color-styling($bg: modifier-selected,
-								$c: var(--interactive-active));
+							@include ac-color-styling(
+								$bg: modifier-selected,
+								$c: var(--interactive-active)
+							);
 						}
 					}
-
 				}
 			}
 		}
 	}
 
 	&::before {
-		@include ac-position-styling($d: block, $pos: absolute, $w: 100%, $h: 70px, $bottom: 0, $z: 2);
+		@include ac-position-styling(
+			$d: block,
+			$pos: absolute,
+			$w: 100%,
+			$h: 70px,
+			$bottom: 0,
+			$z: 2
+		);
 		@include ac-rounded-styling($br: small);
 		@include ac-color-styling($bg: secondary);
-		transition: .25s ease all;
-		mask-image: linear-gradient(transparent 9%,
-				#0000001a 10%,
-				#0000006a 40%,
-				#000000b6 50%,
-				#000000 80%);
+		pointer-events: none !important;
+		transition: 0.25s ease all;
+		mask-image: linear-gradient(
+			transparent 9%,
+			#0000001a 10%,
+			#0000006a 40%,
+			#000000b6 50%,
+			#000000 80%
+		);
 		content: '';
 	}
 }

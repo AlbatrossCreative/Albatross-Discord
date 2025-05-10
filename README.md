@@ -68,7 +68,7 @@ Please ensure Discord is installed with your choosing of the client mods below.
 ### CSS Import
 - Copy and paste the link in your Quick CSS page.
 ```
-@import url("https://albatrosscreative.github.io/albatross/public/build/albatross.css");
+@import url("https://albatrosscreative.github.io/Albatross-Discord/public/build/albatross.css");
 ```
 
 ## Local Installation & Setup

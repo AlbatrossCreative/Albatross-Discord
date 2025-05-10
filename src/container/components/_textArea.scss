@@ -1,6 +1,6 @@
 @use 'abstract' as *;
 
 #{c(chatForm channelTextAreaBase)} {
-    @include ac-rounded-styling($br: small);
-    border: none !important;
+	@include ac-rounded-styling($br: small);
+	border: none !important;
 }

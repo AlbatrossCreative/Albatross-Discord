@@ -1,57 +1,71 @@
 @use 'abstract' as *;
 
 .bd- {
-    &modal- {
-        &root {
-            @include ac-rounded-styling($br: small);
-        }
+	&notice {
+		@include ac-spacing-styling($mr: calc(var(--ac-spacing-sm) * 2), $my: small, $ml: xx-small);
+		@include ac-rounded-styling($br: small);
+	}
+	&modal- {
+		&root {
+			@include ac-rounded-styling($br: small);
+		}
+		&content {
+			overflow: hidden !important;
+		}
+		&footer {
+			@include ac-flex-styling($gap: small);
+			button {
+				@include ac-rounded-styling($br: small);
+				@include ac-color-styling($bg: secondary-alt);
+			}
+		}
 
-        &footer {
-            @include ac-color-styling($bg: secondary);
-            @include ac-rounded-styling($br: small);
-            @include ac-spacing-styling($m: small);
-            box-shadow: none;
+		&footer {
+			@include ac-color-styling($bg: secondary);
+			@include ac-rounded-styling($br: small);
+			@include ac-spacing-styling($m: small);
+			box-shadow: none;
 
-            .bd-button-filled {
-                @include ac-rounded-styling($br: small);
-            }
-        }
-    }
-    &store- {
-        &card {
-            @include ac-color-styling($bg: primary);
-            @include ac-rounded-styling($br: small);
-        }
-    }
+			.bd-button-filled {
+				@include ac-rounded-styling($br: small);
+			}
+		}
+	}
+	&store- {
+		&card {
+			@include ac-color-styling($bg: primary);
+			@include ac-rounded-styling($br: small);
+		}
+	}
 
-    &addon- {
-        &store {
-            @include ac-flex-styling($wrap: wrap,  $jc: start, $gap: auto);
-            &-card {
-                @include ac-position-styling($max-w: 345px, $z: 1 1 auto);
-            }
-        }
-        &card {
-            @include ac-color-styling($bg: primary);
-            @include ac-rounded-styling($br: small);
-            @include ac-padding-styling($p: small);
-        }
-        &header{
-            @include ac-rounded-styling($br: small);
-            @include ac-color-styling($bg: secondary);
-        }
-    }
-    &links {
-        @include ac-flex-styling($gap: small);
-    }
-    &controls {
-        @include ac-flex-styling($gap: small);
-    }
-    &button {
-        @include ac-rounded-styling($br: small);
-        @include ac-color-styling($bg: secondary);
-        &:hover {
-            @include ac-color-styling($bg: floating);
-        }
-    }
+	&addon- {
+		&store {
+			@include ac-flex-styling($wrap: wrap, $jc: start, $gap: auto);
+			&-card {
+				@include ac-position-styling($max-w: 325px, $z: 1 1 auto);
+			}
+		}
+		&card {
+			@include ac-color-styling($bg: primary);
+			@include ac-rounded-styling($br: small);
+			@include ac-padding-styling($p: small);
+		}
+		&header {
+			@include ac-rounded-styling($br: small);
+			@include ac-color-styling($bg: secondary);
+		}
+	}
+	&links {
+		@include ac-flex-styling($gap: small);
+	}
+	&controls {
+		@include ac-flex-styling($gap: small);
+	}
+	&button {
+		@include ac-rounded-styling($br: small);
+		@include ac-color-styling($bg: secondary);
+		&:hover {
+			@include ac-color-styling($bg: floating);
+		}
+	}
 }

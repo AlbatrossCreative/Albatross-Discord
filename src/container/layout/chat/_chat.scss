@@ -18,18 +18,22 @@
 				overflow: hidden;
 
 				&::before {
-					@include ac-position-styling($w: 100%,
+					@include ac-position-styling(
+						$w: 100%,
 						$h: 100%,
 						$pos: absolute,
 						$top: 0,
 						$left: 0,
-						$z: 4);
+						$z: 4
+					);
 					@include ac-color-styling($bg: secondary);
-					mask-image: linear-gradient(to bottom,
-							#000 0px,
-							transparent 50px,
-							transparent calc(100% - 50px),
-							#000 100%);
+					mask-image: linear-gradient(
+						to bottom,
+						#000 0px,
+						transparent 50px,
+						transparent calc(100% - 50px),
+						#000 100%
+					);
 					pointer-events: none;
 					content: '';
 				}
@@ -93,12 +97,14 @@
 	}
 
 	#{c(chatForm typingBaseBar)} {
-		@include ac-position-styling($pos: relative,
+		@include ac-position-styling(
+			$pos: relative,
 			$right: unset,
 			$left: unset,
 			$top: 0,
 			$h: min-content,
-			$z: 7);
+			$z: 7
+		);
 		@include ac-color-styling($bg: modifier-accent);
 		@include ac-rounded-styling($br: small);
 		@include ac-spacing-styling($m: small);

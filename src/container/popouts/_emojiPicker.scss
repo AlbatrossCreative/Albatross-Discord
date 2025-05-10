@@ -1,0 +1,9 @@
+@use 'abstract' as *;
+
+#{c(modals emoji wrapper)} {
+	@include ac-color-styling($bg: floating);
+	@include ac-rounded-styling($br: small);
+	#{c(modals emoji header)} {
+		@include ac-spacing-styling($m: small);
+	}
+}

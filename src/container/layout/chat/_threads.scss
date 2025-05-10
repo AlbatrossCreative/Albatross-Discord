@@ -1,14 +1,17 @@
 @use 'abstract' as *;
 
-#{c(main content)} {
-	#{c(forums container)} {
-		@include ac-rounded-styling($br: small);
-		@include ac-color-styling($bg: secondary);
-		@include ac-padding-styling($pr: small);
+[style='width: 100%; height: 100%; display: flex;']:has(
+		#{c(chat chat)}#{c(chat threadSidebarOpen)}
+	) {
+	> div[style*='min-width: '] {
+		@include ac-position-styling($d: none);
 	}
 
-	>div[style*='min-width:'] {
-		@include ac-position-styling($d: none);
+	#{c(chat threadSidebarOpen)} {
+		#{c(forums container)} {
+			@include ac-color-styling($bg: secondary);
+			@include ac-rounded-styling($br: small);
+		}
 	}
 
 	#{c(chat layerWrapper)} {
@@ -21,19 +24,56 @@
 		}
 
 		#{c(threads container)} {
-			#{c(threads chat)} {
+			@include ac-color-styling($bg: transparent);
+			border: none !important;
+
+			#{c(header header)} {
 				@include ac-color-styling($bg: secondary);
+				@include ac-rounded-styling($br: small);
+			}
+
+			#{c(threads chat)} {
+				@include ac-color-styling($bg: transparent);
 				@include ac-rounded-styling($br: small);
 				@include ac-spacing-styling($mt: small);
 
 				#{c(chat chatContentInner)} {
 					@include ac-color-styling($bg: transparent);
-				}
 
-				&::before {
-					@include ac-position-styling($d: none);
+					#{c(chat messagesWrapper)} {
+						@include ac-color-styling($bg: secondary);
+						@include ac-rounded-styling($br: small);
+					}
 				}
 			}
 		}
+	}
+}
+
+#{c(forums container)} {
+	@include ac-color-styling($bg: secondary);
+	@include ac-rounded-styling($br: small);
+
+	#{c(forums header)} {
+		@include ac-color-styling($bg: primary);
+		@include ac-rounded-styling($br: small);
+		border: none !important;
+
+		#{c(forums formContainer)} {
+			@include ac-padding-styling($pr: 0);
+
+			#{c(forums form)} {
+				@include ac-spacing-styling($mr: x-small);
+				textarea {
+					@include ac-color-styling($bg: transparent);
+				}
+			}
+		}
+	}
+
+	#{c(forums mainCard)} {
+		@include ac-color-styling($bg: primary);
+		@include ac-rounded-styling($br: small);
+		border: none !important;
 	}
 }

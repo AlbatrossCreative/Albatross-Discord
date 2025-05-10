@@ -1,11 +1,9 @@
-@use '../config/config' as *;
-
 html {
 	&:root {
-		--font-primary: #{$B01} !important;
-		--font-display: #{$B02} !important;
+		--font-primary: var(--ACV18) !important;
+		--font-display: var(--ACV19) !important;
 		--font-headline: var(--font-display) !important;
-		--font-code: #{$B03} !important;
+		--font-code: var(--ACV20) !important;
 	}
 	* {
 		font-optical-sizing: auto;

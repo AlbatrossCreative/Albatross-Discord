@@ -1,64 +1,53 @@
 @use 'abstract' as *;
 
 #{c(profile outer)}.user-profile-modal {
-    @include ac-position-styling($w: 55vw, $h: unset,);
-    @include ac-rounded-styling($brb: small, $brt: 0);
-    overflow: unset !important;
+	@include ac-position-styling($w: 55vw, $h: fit-content);
+	@include ac-rounded-styling($brb: small, $brt: 0);
+	@include ac-padding-styling($p: small);
+	overflow: unset !important;
 
-    #{c(profile inner)} {
-        @include ac-flex-styling($dir: row);
+	#{c(profile inner)} {
+		@include ac-flex-styling($d: grid);
+		grid-template-areas: none;
 
-        #{c(profile firendsMoreEditProfileButtons wrapper)} {
-            @include ac-position-styling($right: unset, $left: calc(var(--ac-spacing-sm) * 2), $top: calc(var(--ac-spacing-sm) * 2), );
-        }
+		#{c(profile firendsMoreEditProfileButtons wrapper)} {
+		}
 
-        header {
-            #{c(profile banner mask)} {
-                @include ac-rounded-styling($br: small);
-                @include ac-spacing-styling($m: small);
+		header {
+			@include ac-flex-styling($dir: column);
+			#{c(profile banner mask)} {
+				mask {
+					circle {
+						display: none;
+					}
+				}
+			}
 
-                mask {
-                    circle {
-                        @include ac-position-styling($d: none);
-                    }
-                }
-            }
+			#{c(profile modal headerInner)} {
+				@include ac-spacing-styling($ml: small);
 
-            #{c(profile modal headerInner)} {
-                @include ac-spacing-styling($mr: small);
+				#{c(profile avatar avatar)} {
+				}
 
-                .headerButtons__24502 {
-                    @include ac-padding-styling($p: 0);
-                }
-            }
-        }
+				.headerButtons__24502 {
+				}
+			}
+		}
 
-        #{c(profile modal body)} {
-            .username__24502 {
-                @include ac-position-styling($pos: absolute, $left: small, $bottom: small);
-                @include ac-spacing-styling($m: 0)
-            }
+		#{c(profile modal body)} {
+			@include ac-flex-styling($f: 1);
+			.username__24502 {
+			}
 
-            .container_d1d9f3 {
-                #{c(tab top)} {
-                    @include ac-position-styling($pos: absolute, $left: 0, $w: fill, $bottom: 100%, $right: 0);
-                    @include ac-rounded-styling($brt: small);
-                    @include ac-color-styling($bg: secondary);
-                    @include ac-padding-styling($px: small, $pt: small);
-                    @include ac-spacing-styling($m: 0);
-                    border: none !important;
-                }
-            }
+			.container_d1d9f3 {
+				#{c(tab top)} {
+				}
 
-            #{c(scroller thin)} {
-                @include ac-flex-styling($gap: small);
-                @include ac-padding-styling($py: small, $pl: 0);
-                height: 350px;
-
-                &#{c(profile modal listScroller)} {
-                    @include ac-flex-styling($dir: column);
-                }
-            }
-        }
-    }
+				#{c(scroller thin)} {
+					&#{c(profile modal listScroller)} {
+					}
+				}
+			}
+		}
+	}
 }

@@ -3,5 +3,6 @@
 #{c(modals mediaViewer carouselModal)} {
 	@include ac-padding-styling($p: 4x-large);
 
-	#{c(modals mediaViewer topBar)} {}
+	#{c(modals mediaViewer topBar)} {
+	}
 }

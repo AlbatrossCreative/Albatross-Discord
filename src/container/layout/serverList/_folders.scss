@@ -1,0 +1,5 @@
+@use 'abstract' as *;
+
+.folderGroupBackground__48112 {
+	@include ac-position-styling($w: calc(100% - var(--ac-spacing-xs) * 2), $left: x-small);
+}

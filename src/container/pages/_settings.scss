@@ -8,13 +8,17 @@
 	@include ac-padding-styling($py: small);
 
 	#{c(userSettings sidebarRegion)} {
-		@include ac-spacing-styling($ml: calc(var(--custom-guild-list-width) + calc(var(--ac-spacing-sm) * 2)));
+		@include ac-spacing-styling(
+			$ml: calc(var(--custom-guild-list-width) + calc(var(--ac-spacing-sm) * 2))
+		);
 		@include ac-color-styling($bg: secondary);
 		@include ac-rounded-styling($br: small);
 		@include ac-flex-styling($f: 0);
 
 		#{c(userSettings sidebarRegionScroller)} {
-			@include ac-position-styling($w: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)));
+			@include ac-position-styling(
+				$w: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width))
+			);
 			@include ac-rounded-styling($br: small);
 			@include ac-color-styling($bg: transparent);
 
@@ -105,23 +109,23 @@
 						@include ac-spacing-styling($mb: small);
 						border: none !important;
 					}
-					
-					.authedAppV2__50a54{
+
+					.authedAppV2__50a54 {
 						@include ac-color-styling($bg: primary);
 						@include ac-rounded-styling($br: small);
 						@include ac-padding-styling($p: small);
 						@include ac-spacing-styling($mb: small);
-						.headerV2__50a54{
+						.headerV2__50a54 {
 							@include ac-color-styling($bg: secondary);
 							@include ac-rounded-styling($br: small);
 						}
-						.appDetailsContainer__50a54{
-							.footer__50a54{
+						.appDetailsContainer__50a54 {
+							.footer__50a54 {
 								@include ac-spacing-styling($my: small, $mb: 0);
 							}
 						}
 					}
-					.paymentSourceRow__0eeee{
+					.paymentSourceRow__0eeee {
 						@include ac-padding-styling($p: small);
 						@include ac-color-styling($bg: primary);
 						@include ac-rounded-styling($br: small);
@@ -144,7 +148,7 @@ html#{c(os win platform)} {
 			text-transform: none;
 			font-size: 12px;
 			position: relative;
-			content: '#{$theme-name} #{$win-version} #{$A02} Edition (#{$A01})';
+			content: '#{$theme-name} #{$win-version} ' var(--ACV17) ' Palette by ' var(--ACV16);
 		}
 	}
 }
@@ -157,7 +161,7 @@ html#{c(os mac platform)} {
 			text-transform: none;
 			font-size: 12px;
 			position: relative;
-			content: '#{$theme-name} #{$osx-version} #{$A02} Edition (#{$A01})';
+			content: '#{$theme-name} #{$osx-version} ' var(--ACV17) ' Palette by ' var(--ACV16);
 		}
 	}
 }

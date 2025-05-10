@@ -2,11 +2,28 @@
 
 #{c(serverList wrapper)} {
 	@include ac-spacing-styling($mb: var(--custom-app-panels-height, 0));
-	@include ac-color-styling($bg: transparent);
-	@include ac-rounded-styling($br: small);
+	@include ac-color-styling($bg: secondary);
+	@include ac-rounded-styling($brt: small);
 	overflow: hidden;
-
+	#{c(serverList unreadMentionsBarTop)} {
+		@include ac-position-styling($top: var(--custom-guild-list-width), $w: unset);
+		@include ac-spacing-styling($mx: small);
+		@include ac-padding-styling($p: 0);
+		#{c(sidebar server unreadBar old bar)} {
+			@include ac-rounded-styling($br: small);
+		}
+	}
 	ul {
+		mask-image: linear-gradient(
+			to bottom,
+			black 0px,
+			black 50px,
+			transparent 50px,
+			black 100px,
+			black calc(100% - 24px),
+			transparent 100%
+		);
+
 		#{c(serverList itemsContainer)} {
 			#{c(serverList scroller)} {
 				@include ac-padding-styling($p: 0);

@@ -12,9 +12,7 @@
 
 			&:before {
 				@include ac-color-styling($bg: var(--radio-bar-accent-color));
-				@include ac-position-styling($w: var(--ac-pill-width),
-					$pos: relative,
-					$h: 65%);
+				@include ac-position-styling($w: var(--ac-pill-width), $pos: relative, $h: 65%);
 				@include ac-rounded-styling($br: small);
 				transition: 0.2s ease;
 				content: '';

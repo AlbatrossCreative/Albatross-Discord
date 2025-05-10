@@ -2,9 +2,28 @@
 
 #{c(serverList homeContainer)} {
 	@include ac-position-styling($pos: sticky, $top: 0px, $z: 5);
-	@include ac-color-styling($bg: primary);
+	@include ac-color-styling($bg: secondary);
+	@include ac-rounded-styling($brt: small);
+	@include ac-padding-styling($pt: small);
 
 	#{c(serverList listItem)} {
 		@include ac-position-styling($w: unset);
+		#{c(serverList serverWrapper)} {
+			foreignObject {
+				#{c(serverList iconWrapper)} {
+					@include ac-color-styling($bg: primary);
+					&#{c(serverList selected)} {
+						@include ac-color-styling($bg: secondary-alt);
+					}
+					#{c(serverList iconChildWrapper)} {
+						@include ac-icon-replacement(
+							albatross-logo,
+							var(--interactive-normal),
+							var(--interactive-hover)
+						);
+					}
+				}
+			}
+		}
 	}
 }

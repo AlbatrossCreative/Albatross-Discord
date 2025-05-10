@@ -1,55 +1,35 @@
 @use 'abstract' as *;
 
-
 #{c(topBar bar)} {
-	@include ac-padding-styling($p: 0, $px: small);
 	@include ac-position-styling($h: var(--ac-osbar-height));
-	@include ac-color-styling($bg: transparent);
-	@include ac-flex-styling($gap: 0);
-	&:not(#{c(topBar systemBar)}) {
-		#{c(topBar trailing container)} {
-			@include ac-position-styling($h: 100%, $w: 100%);
-			@include ac-flex-styling($gap: x-small);
-			-webkit-app-region: drag !important;
+	@include ac-spacing-styling($mx: small);
+	@include ac-padding-styling($p: 0);
 
-			&::before {
-				@include ac-color-styling($bg: var(--titlebar-wordmark) center);
-				@include ac-position-styling($pos: relative, $h: 100%, $w: 140px);
-				text-align: right;
-				content: '';
-			}
+	#{c(topBar trailing container)} {
+		@include ac-flex-styling($gap: small);
 
-			&::after {
-				@include ac-color-styling($c: var(--text-muted));
-				@include ac-position-styling($pos: relative);
-				@include ac-spacing-styling($mr: auto);
-				font-size: 12px;
-				order: 0;
-			}
+		a[href="https://support.discord.com"]
+		{
+			@include ac-position-styling($d: none);
+		}
+	}
 
-			#{c(header iconWrapper)} {
-				order: 1;
-			}
+	#{c(topBar leading container)} {
+		@include ac-position-styling($h: 100%);
+		@include ac-flex-styling($gap: xx-small, $ac: center);
 
-			#{c(topBar trailing recentsIcon)} {
-				@include ac-spacing-styling($ml: auto);
-				order: 1;
-			}
-
-			#{c(topBar trailing winButtons)} {
-				-webkit-app-region: no-drag !important;
-				order: 1;
-			}
+		&::before {
+			@include ac-color-styling($bg: var(--titlebar-wordmark) center);
+			@include ac-position-styling($pos: relative, $h: 100%, $w: 110px);
+			text-align: right;
+			content: '';
 		}
 
-		#{c(topBar leading container)} {
-			@include ac-spacing-styling($m: 0)
-		}
-
-		#{c(topBar trailing container)} {
-			a[href="https://support.discord.com"] {
-				@include ac-position-styling($d: none);
-			}
+		&::after {
+			@include ac-position-styling($pos: relative);
+			@include ac-color-styling($c: var(--text-normal));
+			opacity: #{$O14};
+			font-size: 12px;
 		}
 	}
 }
@@ -57,9 +37,9 @@
 html {
 	&#{c(os win platform)} {
 		#{c(topBar bar)}:not(#{c(topBar systemBar)}) {
-			#{c(topBar trailing container)} {
+			#{c(topBar leading container)} {
 				&::after {
-					content: 'v#{$win-version}' ' 〡 ' '#{$A02} Palette by #{$A01}';
+					content: 'v#{$win-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
 				}
 			}
 		}
@@ -69,7 +49,7 @@ html {
 		#{c(topBar bar)}:not(#{c(topBar systemBar)}) {
 			#{c(topBar trailing container)} {
 				&::after {
-					content: 'v#{$osx-version}' ' 〡 ' '#{$A02} Palette by #{$A01}';
+					content: 'v#{$osx-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
 				}
 			}
 		}

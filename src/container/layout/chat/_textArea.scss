@@ -26,8 +26,15 @@
 			#{c(chatForm scrollableContainer)} {
 				@include ac-color-styling($bg: transparent);
 				overflow: hidden;
-				.channelAttachmentArea_b77158{
-					@include ac-position-styling($pos: absolute, $w: fit-content, $bottom: calc(100% + calc(var(--ac-spacing-md) * 2)), $left: 0, $right: 0, $max-w: 100%);
+				.channelAttachmentArea_b77158 {
+					@include ac-position-styling(
+						$pos: absolute,
+						$w: fit-content,
+						$bottom: calc(100% + calc(var(--ac-spacing-md) * 2)),
+						$left: 0,
+						$right: 0,
+						$max-w: 100%
+					);
 					@include ac-color-styling($bg: primary);
 					@include ac-rounded-styling($br: small);
 					@include ac-padding-styling($p: small);
@@ -41,9 +48,11 @@
 							@include ac-padding-styling($pl: small, $pr: 0, $py: 0);
 
 							#{c(chatForm attachButtonInner)} {
-								@include ac-icon-replacement($ip: attach,
+								@include ac-icon-replacement(
+									$ip: attach,
 									$ic: var(--interactive-normal),
-									$ich: var(--interactive-hover));
+									$ich: var(--interactive-hover)
+								);
 							}
 
 							&:hover {
@@ -84,7 +93,11 @@
 			}
 
 			#{c(modals autocomplete modal)} {
-				@include ac-position-styling($right: 0, $bottom: calc(100% + var(--ac-spacing-sm) * 2), $left: calc(var(--ac-spacing-xxs) * -1));
+				@include ac-position-styling(
+					$right: 0,
+					$bottom: calc(100% + var(--ac-spacing-sm) * 2),
+					$left: calc(var(--ac-spacing-xxs) * -1)
+				);
 				@include ac-rounded-styling($br: small);
 				@include ac-color-styling($bg: primary);
 				box-shadow: none;
@@ -148,9 +161,11 @@
 				&::before {
 					@include ac-position-styling($w: 24px, $pos: relative, $h: 24px);
 					@include ac-spacing-styling($mr: small);
-					@include ac-icon-replacement($ip: cmds,
+					@include ac-icon-replacement(
+						$ip: cmds,
 						$ic: var(--interactive-normal),
-						$ich: var(--interactive-hover));
+						$ich: var(--interactive-hover)
+					);
 					content: '';
 				}
 			}
@@ -176,10 +191,7 @@
 	&::before {
 		@include ac-color-styling($bg: var(--brand-300));
 		@include ac-rounded-styling($br: small);
-		@include ac-position-styling($pos: relative,
-			$d: block,
-			$h: 50%,
-			$w: var(--ac-pill-width));
+		@include ac-position-styling($pos: relative, $d: block, $h: 50%, $w: var(--ac-pill-width));
 		grid-area: pill;
 		transition: 0.125s ease all;
 		content: '';

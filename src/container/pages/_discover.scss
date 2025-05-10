@@ -1,0 +1,28 @@
+@use 'abstract' as *;
+
+#{c(other cv discoverCategory)} {
+	@include ac-color-styling($bg: secondary);
+	@include ac-rounded-styling($br: small);
+
+	&::before {
+		@include ac-position-styling(
+			$d: block,
+			$pos: absolute,
+			$w: 100%,
+			$h: 70px,
+			$bottom: 0,
+			$z: 2
+		);
+		@include ac-rounded-styling($br: small);
+		@include ac-color-styling($bg: secondary);
+		transition: 0.25s ease all;
+		mask-image: linear-gradient(
+			transparent 9%,
+			#0000001a 10%,
+			#0000006a 40%,
+			#000000b6 50%,
+			#000000 80%
+		);
+		content: '';
+	}
+}

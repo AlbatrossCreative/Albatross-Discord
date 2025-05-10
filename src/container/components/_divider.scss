@@ -1,7 +1,5 @@
 @use 'abstract' as *;
 
-
-
 #{c(tab separator)} {
 	@include ac-rounded-styling($br: small);
 	@include ac-position-styling($h: 4px);

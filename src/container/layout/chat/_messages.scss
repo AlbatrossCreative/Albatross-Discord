@@ -47,7 +47,8 @@
 			grid-template-columns: var(--chat-avatar-size) auto;
 
 			#{c(chat repliedMessage)} {
-				@include ac-spacing-styling($ml: large);
+				@include ac-position-styling($left: small);
+				@include ac-spacing-styling($ml: medium, $mb: medium);
 
 				#{c(chat repliedMessageClickableSpine)} {
 					@include ac-rounded-styling($brtl: small);
@@ -72,11 +73,13 @@
 			overflow: unset;
 
 			#{c(chat repliedMessageClickableSpine)} {
-				@include ac-position-styling($pos: relative,
+				@include ac-position-styling(
+					$pos: relative,
 					$top: 30%,
 					$left: 0,
 					$w: 30px,
-					$h: 80%);
+					$h: 80%
+				);
 				border: var(--spine-width) solid var(--spine-default) !important;
 				border-bottom: 0 !important;
 			}
@@ -97,6 +100,7 @@
 			.buttonsInner__5126c {
 				@include ac-color-styling($bg: secondary-alt);
 				@include ac-rounded-styling($br: small);
+				@include ac-padding-styling($p: xx-small);
 				box-shadow: none !important;
 				border: none !important;
 			}
@@ -131,8 +135,7 @@
 			}
 
 			&:has(#{c(chat chatHeaderUsername)}),
-			&:has(#{c(chat messageContent)} > span),
-			&:has(#{c(chat messageContent)} > #{c(main anchorLink)}) {
+			&:has(#{c(chat messageContent)} > span, ol, #{c(main anchorLink)}) {
 				@include ac-padding-styling($p: small);
 			}
 
@@ -140,7 +143,9 @@
 				@include ac-spacing-styling($m: 0);
 				@include ac-padding-styling($p: 0);
 
-				&:has(#{c(other cv messageTimestampAlt)}):not(:has(> *:not(#{c(other cv messageTimestampAlt)}))) {
+				&:has(#{c(other cv messageTimestampAlt)}):not(
+						:has(> *:not(#{c(other cv messageTimestampAlt)}))
+					) {
 					@include ac-position-styling($d: none);
 				}
 
@@ -189,7 +194,10 @@
 				}
 			}
 
-			#{c(other cv attachmentEmbedWrapper)}:not(:has(.imageContainer__0f481, #{c(embeds videoPlayWrapper)})) {
+			#{c(other cv attachmentEmbedWrapper)}:not(
+					:has(.imageContainer__0f481, #{c(embeds videoPlayWrapper)}),
+					.embedSpotify__623de
+				) {
 				@include ac-color-styling($bg: var(--message-background));
 				@include ac-rounded-styling($br: small);
 				@include ac-padding-styling($p: small);
@@ -207,7 +215,7 @@
 				}
 
 				&:hover {
-					@include ac-color-styling($bg: var(--message-background-hover))
+					@include ac-color-styling($bg: var(--message-background-hover));
 				}
 			}
 
@@ -217,7 +225,7 @@
 				@include ac-padding-styling($p: small);
 				border: none !important;
 
-				>div {
+				> div {
 					@include ac-flex-styling($gap: small, $d: grid);
 
 					.container__652b4 {
@@ -363,7 +371,7 @@
 				@include ac-flex-styling($ji: end);
 
 				.visualMediaItemContainer_f4758a {
-					.container_b7e1cb>* {
+					.container_b7e1cb > * {
 						@include ac-flex-styling($js: end, $as: end);
 					}
 				}

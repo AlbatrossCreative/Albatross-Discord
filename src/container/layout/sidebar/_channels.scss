@@ -5,14 +5,24 @@
 	@include ac-padding-styling($pb: 0);
 
 	&::before {
-		@include ac-position-styling($d: block, $pos: absolute, $w: 100%, $h: 80px, $bottom: 0, $z: 2);
+		@include ac-position-styling(
+			$d: block,
+			$pos: absolute,
+			$w: 100%,
+			$h: 80px,
+			$bottom: 0,
+			$z: 2
+		);
 		@include ac-rounded-styling($br: small);
 		@include ac-color-styling($bg: secondary);
-		mask-image: linear-gradient(transparent 9%,
-				#0000001a 10%,
-				#0000006a 40%,
-				#000000b6 50%,
-				#000000 60%);
+		pointer-events: none !important;
+		mask-image: linear-gradient(
+			transparent 9%,
+			#0000001a 10%,
+			#0000006a 40%,
+			#000000b6 50%,
+			#000000 80%
+		);
 		content: '';
 	}
 
@@ -38,7 +48,7 @@
 				@include ac-position-styling($w: 100%);
 				@include ac-spacing-styling($m: small);
 				@include ac-padding-styling($p: 0);
-				transition: .1s ease all;
+				transition: 0.1s ease all;
 
 				#{c(sidebar server unreadBar bar)} {
 					@include ac-rounded-styling($br: small);
@@ -64,12 +74,19 @@
 
 		ul {
 			@include ac-padding-styling($pl: x-small);
+			@include ac-position-styling($h: fit-content);
 
-			>[style*='height:'] {
+			> [style*='height:'] {
 				@include ac-position-styling($d: none);
 			}
-			&::after{
-				@include ac-position-styling($d: block, $h: var(--custom-app-panels-height), $w: 100%, $pos: relative);
+
+			&::after {
+				@include ac-position-styling(
+					$d: block,
+					$h: var(--custom-guild-list-width),
+					$w: 100%,
+					$pos: relative
+				);
 				content: '';
 			}
 
@@ -78,11 +95,19 @@
 			}
 
 			li {
-				#{c(sidebar boostContainer)} {
+				#{c(sidebar server channel wrapper)}#{c(sidebar server channel container)}:has(
+						#{c(sidebar server extras basicChannelRowLink)}
+					) {
+					@include ac-spacing-styling($my: small);
+					#{c(sidebar server extras basicChannelRowLink)} {
+						@include ac-padding-styling($px: small, $py: x-small);
+					}
+				}
+				#{c(sidebar boostContainer)}:not(:empty) {
 					@include ac-padding-styling($p: small);
 					@include ac-color-styling($bg: primary);
 					@include ac-rounded-styling($br: small);
-					@include ac-spacing-styling($mb: small, $ml: 0);
+					@include ac-spacing-styling($my: small, $ml: 0);
 					border: none;
 
 					#{c(sidebar boostTextArea)},
@@ -174,8 +199,9 @@
 						}
 					}
 
-					&#{c(sidebar server channel modeSelected)} {
-						@include ac-color-styling($bg: var(--background-modifier-selected));
+					&#{c(sidebar server channel modeSelected)},
+					&#{c(sidebar server channel modeConnected)} {
+						@include ac-color-styling($bg: modifier-selected);
 
 						a {
 							@include ac-color-styling($bg: transparent);
@@ -183,8 +209,11 @@
 
 						&:before {
 							@include ac-position-styling($w: var(--ac-pill-width));
-							@include ac-color-styling($bg: (var(--brand-600),
-								));
+							@include ac-color-styling(
+								$bg: (
+									var(--brand-600),
+								)
+							);
 						}
 					}
 
@@ -201,7 +230,7 @@
 						}
 					}
 
-					>div[class]:not(#{c(sidebar server channel unreadBlob)}) {
+					> div[class]:not(#{c(sidebar server channel unreadBlob)}) {
 						@include ac-flex-styling($f: 1);
 						@include ac-position-styling($w: 100%);
 

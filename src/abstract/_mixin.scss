@@ -10,7 +10,6 @@ $ac-rounded: (
 	full: var(--ac-rounded-full),
 );
 
-
 $ac-backgrounds: (
 	unset: unset,
 	primary: var(--background-primary),
@@ -40,167 +39,101 @@ $ac-spacing: (
 	4x-large: var(--ac-spacing-4xl),
 );
 
-@mixin ac-spacing-styling($m: null,
+// Helper for spacing properties
+@mixin _ac-space($prop, $val) {
+	@if map.has-key($ac-spacing, $val) {
+		#{$prop}: map.get($ac-spacing, $val) !important;
+	} @else {
+		#{$prop}: $val !important;
+	}
+}
+
+@mixin ac-spacing-styling(
+	$m: null,
 	$mx: null,
 	$my: null,
 	$mb: null,
 	$mt: null,
 	$ml: null,
-	$mr: null) {
+	$mr: null
+) {
 	@if $m {
-		@if map.has-key($ac-spacing, $m) {
-			margin: map.get($ac-spacing, $m) !important;
-		}
-
-		@else {
-			margin: $m !important;
-		}
+		@include _ac-space(margin, $m);
 	}
 
 	@if $mx {
-		@if map.has-key($ac-spacing, $mx) {
-			margin-left: map.get($ac-spacing, $mx) !important;
-			margin-right: map.get($ac-spacing, $mx) !important;
-		}
-
-		@else {
-			margin-left: $mx !important;
-			margin-right: $mx !important;
-		}
+		@include _ac-space(margin-left, $mx);
+		@include _ac-space(margin-right, $mx);
 	}
 
 	@if $my {
-		@if map.has-key($ac-spacing, $my) {
-			margin-top: map.get($ac-spacing, $my) !important;
-			margin-bottom: map.get($ac-spacing, $my) !important;
-		}
-
-		@else {
-			margin-top: $my !important;
-			margin-bottom: $my !important;
-		}
+		@include _ac-space(margin-top, $my);
+		@include _ac-space(margin-bottom, $my);
 	}
 
 	@if $mb {
-		@if map.has-key($ac-spacing, $mb) {
-			margin-bottom: map.get($ac-spacing, $mb) !important;
-		}
-
-		@else {
-			margin-bottom: $mb !important;
-		}
+		@include _ac-space(margin-bottom, $mb);
 	}
 
 	@if $mt {
-		@if map.has-key($ac-spacing, $mt) {
-			margin-top: map.get($ac-spacing, $mt) !important;
-		}
-
-		@else {
-			margin-top: $mt !important;
-		}
+		@include _ac-space(margin-top, $mt);
 	}
 
 	@if $ml {
-		@if map.has-key($ac-spacing, $ml) {
-			margin-left: map.get($ac-spacing, $ml) !important;
-		}
-
-		@else {
-			margin-left: $ml !important;
-		}
+		@include _ac-space(margin-left, $ml);
 	}
 
 	@if $mr {
-		@if map.has-key($ac-spacing, $mr) {
-			margin-right: map.get($ac-spacing, $mr) !important;
-		}
-
-		@else {
-			margin-right: $mr !important;
-		}
+		@include _ac-space(margin-right, $mr);
 	}
 }
 
-@mixin ac-padding-styling($p: null,
+@mixin ac-padding-styling(
+	$p: null,
 	$px: null,
 	$py: null,
 	$pb: null,
 	$pt: null,
 	$pl: null,
-	$pr: null) {
+	$pr: null
+) {
 	@if $p {
-		@if map.has-key($ac-spacing, $p) {
-			padding: map.get($ac-spacing, $p) !important;
-		}
-
-		@else {
-			padding: $p !important;
-		}
+		@include _ac-space(padding, $p);
 	}
 
 	@if $px {
-		@if map.has-key($ac-spacing, $px) {
-			padding-left: map.get($ac-spacing, $px) !important;
-			padding-right: map.get($ac-spacing, $px) !important;
-		}
-
-		@else {
-			padding-left: $px !important;
-			padding-right: $px !important;
-		}
+		@include _ac-space(padding-left, $px);
+		@include _ac-space(padding-right, $px);
 	}
 
 	@if $py {
-		@if map.has-key($ac-spacing, $py) {
-			padding-top: map.get($ac-spacing, $py) !important;
-			padding-bottom: map.get($ac-spacing, $py) !important;
-		}
-
-		@else {
-			padding-top: $py !important;
-			padding-bottom: $py !important;
-		}
+		@include _ac-space(padding-top, $py);
+		@include _ac-space(padding-bottom, $py);
 	}
 
 	@if $pb {
-		@if map.has-key($ac-spacing, $pb) {
-			padding-bottom: map.get($ac-spacing, $pb) !important;
-		}
-
-		@else {
-			padding-bottom: $pb !important;
-		}
+		@include _ac-space(padding-bottom, $pb);
 	}
 
 	@if $pt {
-		@if map.has-key($ac-spacing, $pt) {
-			padding-top: map.get($ac-spacing, $pt) !important;
-		}
-
-		@else {
-			padding-top: $pt !important;
-		}
+		@include _ac-space(padding-top, $pt);
 	}
 
 	@if $pl {
-		@if map.has-key($ac-spacing, $pl) {
-			padding-left: map.get($ac-spacing, $pl) !important;
-		}
-
-		@else {
-			padding-left: $pl !important;
-		}
+		@include _ac-space(padding-left, $pl);
 	}
 
 	@if $pr {
-		@if map.has-key($ac-spacing, $pr) {
-			padding-right: map.get($ac-spacing, $pr) !important;
-		}
+		@include _ac-space(padding-right, $pr);
+	}
+}
 
-		@else {
-			padding-right: $pr !important;
-		}
+// Helper for backgrounds
+@mixin _ac-bg($prop, $val) {
+	@if map.has-key($ac-backgrounds, $val) {
+		#{$prop}: map.get($ac-backgrounds, $val) !important;
+	} @else {
+		#{$prop}: $val !important;
 	}
 }
 
@@ -210,27 +143,25 @@ $ac-spacing: (
 	}
 
 	@if $bg {
-		@if map.has-key($ac-backgrounds, $bg) {
-			background: map.get($ac-backgrounds, $bg) !important;
-		}
-
-		@else {
-			background: $bg !important;
-		}
+		@include _ac-bg(background, $bg);
 	}
 
 	@if $bgc {
-		@if map.has-key($ac-backgrounds, $bgc) {
-			background-color: map.get($ac-backgrounds, $bgc) !important;
-		}
-
-		@else {
-			background-color: $bgc !important;
-		}
+		@include _ac-bg(background-color, $bgc);
 	}
 }
 
-@mixin ac-rounded-styling($br: null,
+// Helper for rounded
+@mixin _ac-rounded-corner($corners, $val) {
+	@if map.has-key($ac-rounded, $val) {
+		border-radius: #{map.get($ac-rounded, $val)} $corners !important;
+	} @else {
+		border-radius: #{$val} $corners !important;
+	}
+}
+
+@mixin ac-rounded-styling(
+	$br: null,
 	$brt: null,
 	$brb: null,
 	$brr: null,
@@ -240,13 +171,12 @@ $ac-spacing: (
 	$brtl: null,
 	$brbl: null,
 	$brx: null,
-	$bry: null) {
+	$bry: null
+) {
 	@if $br {
 		@if map.has-key($ac-rounded, $br) {
 			border-radius: map.get($ac-rounded, $br) !important;
-		}
-
-		@else {
+		} @else {
 			border-radius: $br !important;
 		}
 	}
@@ -254,9 +184,7 @@ $ac-spacing: (
 	@if $brt {
 		@if map.has-key($ac-rounded, $brt) {
 			border-radius: map.get($ac-rounded, $brt) map.get($ac-rounded, $brt) 0 0 !important;
-		}
-
-		@else {
+		} @else {
 			border-radius: $brt $brt 0 0 !important;
 		}
 	}
@@ -264,19 +192,15 @@ $ac-spacing: (
 	@if $brb {
 		@if map.has-key($ac-rounded, $brb) {
 			border-radius: 0 0 map.get($ac-rounded, $brb) map.get($ac-rounded, $brb) !important;
-		}
-
-		@else {
+		} @else {
 			border-radius: 0 0 $brb $brb !important;
 		}
 	}
 
 	@if $brr {
 		@if map.has-key($ac-rounded, $brr) {
-			border-radius: 0 map.get($ac-rounded, $brr) map.get($ac-rounded, $brr) 0 !important;
-		}
-
-		@else {
+			border-radius: 0 map.get($ac-rounded, $brr) map.get($ac-rounded, $brb) 0 !important;
+		} @else {
 			border-radius: 0 $brr $brr 0 !important;
 		}
 	}
@@ -284,9 +208,7 @@ $ac-spacing: (
 	@if $brl {
 		@if map.has-key($ac-rounded, $brl) {
 			border-radius: map.get($ac-rounded, $brl) 0 0 map.get($ac-rounded, $brl) !important;
-		}
-
-		@else {
+		} @else {
 			border-radius: $brl 0 0 $brl !important;
 		}
 	}
@@ -294,9 +216,7 @@ $ac-spacing: (
 	@if $brtr {
 		@if map.has-key($ac-rounded, $brtr) {
 			border-radius: 0 map.get($ac-rounded, $brtr) 0 0 !important;
-		}
-
-		@else {
+		} @else {
 			border-radius: 0 $brtr 0 0 !important;
 		}
 	}
@@ -304,9 +224,7 @@ $ac-spacing: (
 	@if $brbr {
 		@if map.has-key($ac-rounded, $brbr) {
 			border-radius: 0 0 map.get($ac-rounded, $brbr) 0 !important;
-		}
-
-		@else {
+		} @else {
 			border-radius: 0 0 $brbr 0 !important;
 		}
 	}
@@ -314,9 +232,7 @@ $ac-spacing: (
 	@if $brtl {
 		@if map.has-key($ac-rounded, $brtl) {
 			border-radius: map.get($ac-rounded, $brtl) 0 0 0 !important;
-		}
-
-		@else {
+		} @else {
 			border-radius: $brtl 0 0 0 !important;
 		}
 	}
@@ -324,9 +240,7 @@ $ac-spacing: (
 	@if $brbl {
 		@if map.has-key($ac-rounded, $brbl) {
 			border-radius: 0 0 0 map.get($ac-rounded, $brbl) !important;
-		}
-
-		@else {
+		} @else {
 			border-radius: 0 0 0 $brbl !important;
 		}
 	}
@@ -334,9 +248,7 @@ $ac-spacing: (
 	@if $brx {
 		@if map.has-key($ac-rounded, $brx) {
 			border-radius: map.get($ac-rounded, $brx) 0 map.get($ac-rounded, $brx) 0 !important;
-		}
-
-		@else {
+		} @else {
 			border-radius: $brx 0 $brx 0 !important;
 		}
 	}
@@ -344,15 +256,14 @@ $ac-spacing: (
 	@if $bry {
 		@if map.has-key($ac-rounded, $bry) {
 			border-radius: 0 map.get($ac-rounded, $bry) 0 map.get($ac-rounded, $bry) !important;
-		}
-
-		@else {
+		} @else {
 			border-radius: 0 $bry 0 $bry !important;
 		}
 	}
 }
 
-@mixin ac-position-styling($pos: null,
+@mixin ac-position-styling(
+	$pos: null,
 	$d: null,
 	$top: null,
 	$bottom: null,
@@ -364,7 +275,8 @@ $ac-spacing: (
 	$max-h: null,
 	$min-w: null,
 	$min-h: null,
-	$z: null) {
+	$z: null
+) {
 	@if $d {
 		display: $d !important;
 	}
@@ -396,9 +308,7 @@ $ac-spacing: (
 	@if $w {
 		@if $w ==fill {
 			width: -webkit-fill-available !important;
-		}
-
-		@else {
+		} @else {
 			width: $w !important;
 		}
 	}
@@ -408,49 +318,27 @@ $ac-spacing: (
 	}
 
 	@if $left {
-		@if map.has-key($ac-spacing, $left) {
-			left: map.get($ac-spacing, $left) !important;
-		}
-
-		@else {
-			left: $left !important;
-		}
+		@include _ac-space(left, $left);
 	}
 
 	@if $right {
-		@if map.has-key($ac-spacing, $right) {
-			right: map.get($ac-spacing, $right) !important;
-		}
-
-		@else {
-			right: $right !important;
-		}
+		@include _ac-space(right, $right);
 	}
 
 	@if $top {
-		@if map.has-key($ac-spacing, $top) {
-			top: map.get($ac-spacing, $top) !important;
-		}
-
-		@else {
-			top: $top !important;
-		}
+		@include _ac-space(top, $top);
 	}
 
 	@if $bottom {
-		@if map.has-key($ac-spacing, $bottom) {
-			bottom: map.get($ac-spacing, $bottom) !important;
-		}
-
-		@else {
-			bottom: $bottom !important;
-		}
+		@include _ac-space(bottom, $bottom);
 	}
 }
 
-@mixin ac-transition-styling($l: null, $p: null, $d: null) {}
+@mixin ac-transition-styling($l: null, $p: null, $d: null) {
+}
 
-@mixin ac-flex-styling($f: null,
+@mixin ac-flex-styling(
+	$f: null,
 	$gap: null,
 	$gapc: null,
 	$gapr: null,
@@ -462,7 +350,8 @@ $ac-spacing: (
 	$js: null,
 	$as: null,
 	$d: null,
-	$wrap: null) {
+	$wrap: null
+) {
 	@if $f {
 		flex: $f !important;
 	}
@@ -493,40 +382,20 @@ $ac-spacing: (
 
 	@if $d {
 		display: $d !important;
-	}
-
-	@else {
+	} @else {
 		display: flex !important;
 	}
 
 	@if $gap {
-		@if map.has-key($ac-spacing, $gap) {
-			gap: map.get($ac-spacing, $gap) !important;
-		}
-
-		@else {
-			gap: $gap !important;
-		}
+		@include _ac-space(gap, $gap);
 	}
 
 	@if $gapr {
-		@if map.has-key($ac-spacing, $gapr) {
-			grid-row-gap: map.get($ac-spacing, $gapr) !important;
-		}
-
-		@else {
-			grid-row-gap: $gapr !important;
-		}
+		@include _ac-space(grid-row-gap, $gapr);
 	}
 
 	@if $gapc {
-		@if map.has-key($ac-spacing, $gapc) {
-			grid-column-gap: map.get($ac-spacing, $gapc) !important;
-		}
-
-		@else {
-			grid-column-gap: $gapc !important;
-		}
+		@include _ac-space(grid-column-gap, $gapc);
 	}
 
 	@if $as {
@@ -537,7 +406,6 @@ $ac-spacing: (
 		justify-self: $js !important;
 	}
 }
-
 
 @mixin ac-icon-replacement($ip: null, $ic: null, $ich: null) {
 	@if $ip {
