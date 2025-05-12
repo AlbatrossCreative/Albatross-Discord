@@ -3,3 +3,41 @@
 #{c(modals dropdown select)} {
 	@include ac-rounded-styling($br: small);
 }
+
+#{c(modals dropdown popout)} {
+	@include ac-rounded-styling($br: small);
+	@include ac-color-styling($bg: floating);
+	@include ac-padding-styling($p: small);
+
+	#{c(modals dropdown option)} {
+		@include ac-rounded-styling($br: small);
+
+		> span {
+			@include ac-flex-styling($dir: row, $ai: center);
+			&::before {
+				@include ac-position-styling($pos: absolute, $h: 25px, $w: 0, $left: small);
+				@include ac-color-styling($bg: modifier-accent);
+				@include ac-spacing-styling($ml: small);
+				@include ac-rounded-styling($br: small);
+				transition: all 0.1s ease;
+				content: '';
+				order: -1;
+			}
+
+			&:after {
+				@include ac-position-styling($pos: relative, $h: 0, $w: var(--ac-pill-width));
+				@include ac-spacing-styling($mr: xx-small);
+				content: '';
+				order: -1;
+			}
+		}
+
+		&:hover {
+			@include ac-color-styling($bg: primary);
+
+			span::before {
+				@include ac-position-styling($w: var(--ac-pill-width));
+			}
+		}
+	}
+}

@@ -1,8 +1,11 @@
 @use 'sass:map';
+$ac-transitions: (
 
+);
 $ac-rounded: (
 	unset: unset,
 	0: 0,
+	xx-small: var(--ac-rounded-xxs),
 	x-small: var(--ac-rounded-xs),
 	small: var(--ac-rounded-sm),
 	medium: var(--ac-rounded-md),
@@ -47,7 +50,21 @@ $ac-spacing: (
 		#{$prop}: $val !important;
 	}
 }
-
+@mixin ac-border-styling(
+	$style: solid,
+	$w: null, 
+	$color,
+) {
+	border-style: solid !important;
+	@if $w {
+		border-width: $w !important;
+	} @else {
+		border-width: 1px !important;
+	}
+	@if $color {
+		@include _ac-bg(border-color, $color);
+	}
+}
 @mixin ac-spacing-styling(
 	$m: null,
 	$mx: null,

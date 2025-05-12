@@ -26,6 +26,7 @@
 
 				#{c(chat repliedTextPreview)} {
 					@include ac-spacing-styling($mr: xx-small);
+					text-align: right;
 				}
 			}
 
@@ -115,6 +116,7 @@
 			grid-area: message;
 
 			#{c(chat chatAvatar)} {
+				@include ac-rounded-styling($br: var(--rs-avatar-shape));
 				grid-area: avatar;
 				left: 0;
 				top: 0;
@@ -135,7 +137,7 @@
 			}
 
 			&:has(#{c(chat chatHeaderUsername)}),
-			&:has(#{c(chat messageContent)} > span, ol, #{c(main anchorLink)}) {
+			&:has(#{c(chat messageContent)} > span, ol, #{c(main anchorLink)}, s span) {
 				@include ac-padding-styling($p: small);
 			}
 

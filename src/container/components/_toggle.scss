@@ -1,1 +1,16 @@
 @use 'abstract' as *;
+
+#{c(slider container)} {
+    @include ac-rounded-styling($br: x-small);
+    border: none !important;
+    svg#{c(slider slider)} {
+        @include ac-position-styling($pos: relative, $h: 100%);
+        @include ac-spacing-styling($mx: xx-small);
+        rect{
+            rx: var(--ac-rounded-xs) !important;
+        }
+        svg{
+            @include ac-position-styling($d: none);
+        }
+    }
+}

@@ -1,6 +1,6 @@
 /**
  * @name Albatross
- * @description A dark, rounded discord theme.
+ * @description Bringing back full-scale customizable themes. Enjoy!
  * @author Albatross Creative
  * @version 1.0.0
  * @website https://github.com/albatrosscreative/albatross-discord
@@ -12,5 +12,11 @@
 @use 'src/source';
 
 
-@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/backend/albatross-vars.css');
+@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/backend/albatross-vars-minified.css');
+
 @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/crearts.css');
+// @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/comet.css');
+// @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/dracula.css');
+// @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/miyu.css');
+// @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/nord.css');
+// @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/nextui.css');

@@ -34,24 +34,3 @@
 	}
 }
 
-html {
-	&#{c(os win platform)} {
-		#{c(topBar bar)}:not(#{c(topBar systemBar)}) {
-			#{c(topBar leading container)} {
-				&::after {
-					content: 'v#{$win-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
-				}
-			}
-		}
-	}
-
-	&#{c(os mac platform)} {
-		#{c(topBar bar)}:not(#{c(topBar systemBar)}) {
-			#{c(topBar trailing container)} {
-				&::after {
-					content: 'v#{$osx-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
-				}
-			}
-		}
-	}
-}

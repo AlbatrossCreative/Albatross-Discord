@@ -1,50 +1,123 @@
 @use 'abstract' as *;
 
-#{c(profile outer)}.user-profile-modal {
-	@include ac-position-styling($w: 55vw, $h: fit-content);
-	@include ac-rounded-styling($brb: small, $brt: 0);
-	@include ac-padding-styling($p: small);
-	overflow: unset !important;
+.root__24502:has(.user-profile-modal) {
+	@include ac-color-styling($bg: transparent, $bgc: transparent);
 
-	#{c(profile inner)} {
-		@include ac-flex-styling($d: grid);
-		grid-template-areas: none;
+	#{c(profile outer)}.user-profile-modal {
+		@include ac-position-styling($max-w: unset, $w: min-content, $h: fit-content, $max-h: 65vh);
+		@include ac-color-styling($bg: transparent, $bgc: transparent);
+		@include ac-rounded-styling($br: 0);
+		@include ac-padding-styling($p: 0);
+		overflow: unset !important;
 
-		#{c(profile firendsMoreEditProfileButtons wrapper)} {
-		}
+		#{c(profile inner)} {
+			@include ac-color-styling($bg: transparent, $bgc: transparent);
 
-		header {
-			@include ac-flex-styling($dir: column);
-			#{c(profile banner mask)} {
-				mask {
-					circle {
-						display: none;
+
+			#{c(profile firendsMoreEditProfileButtons wrapper)} {
+				@include ac-position-styling($right: calc(var(--ac-spacing-sm) * 2), $top: calc(var(--ac-spacing-sm) * 2))
+			}
+
+			header {
+				@include ac-color-styling($bg: primary);
+				@include ac-flex-styling($d: grid);
+				@include ac-spacing-styling($m: 0);
+				@include ac-padding-styling($p: small);
+				@include ac-rounded-styling($brt: small);
+
+				#{c(profile banner mask)} {
+					height: 210px;
+					grid-area: -1/1;
+
+					mask {
+						rect {
+							filter: brightness(67%);
+							rx: var(--ac-rounded-sm);
+						}
+
+						circle {
+							display: none;
+						}
+					}
+				}
+
+				#{c(profile modal headerInner)} {
+					@include ac-spacing-styling($m: 0);
+					grid-area: -1/1;
+
+					#{c(profile avatar avatar)} {
+						@include ac-position-styling($top: small, $left: small);
+
+						#{c(avatar wrapper)} {
+							svg {
+								foreignObject {
+									#{c(avatar stack)} {
+										img {
+											clip-path: inset(calc(var(--rs-large-spacing) + 1px) calc(var(--rs-large-spacing) + 1px) round var(--ac-rounded-sm)) !important;
+										}
+									}
+								}
+								> rect {
+									rx: var(--ac-rounded-md) !important;
+									ry: var(--ac-rounded-md) !important;
+								}
+							}
+						}
+					}
+					.container_ab8609{
+						@include ac-position-styling($top: 53%, $left: 23%);
+					}
+
+					.headerButtons__24502 {
+						@include ac-flex-styling($as: flex-end);
+						@include ac-padding-styling($p: small, $pb: x-small);
 					}
 				}
 			}
 
-			#{c(profile modal headerInner)} {
-				@include ac-spacing-styling($ml: small);
+			#{c(profile modal body)} {
+				@include ac-flex-styling($gap: 0);
 
-				#{c(profile avatar avatar)} {
+				.username__24502 {
+					@include ac-color-styling($bg: primary);
+					@include ac-spacing-styling($m: 0);
+					@include ac-padding-styling($p: small, $pt: 0);
 				}
 
-				.headerButtons__24502 {
-				}
-			}
-		}
+				.container_d1d9f3 {
+					@include ac-rounded-styling($br: 0);
 
-		#{c(profile modal body)} {
-			@include ac-flex-styling($f: 1);
-			.username__24502 {
-			}
+					#{c(tab top)} {
+						@include ac-color-styling($bg: secondary);
+						@include ac-rounded-styling($brb: small);
+						@include ac-padding-styling($p: small);
+						@include ac-flex-styling($jc: center);
+						@include ac-spacing-styling($m: 0);
+						border: none !important;
+					}
 
-			.container_d1d9f3 {
-				#{c(tab top)} {
-				}
+					#{c(scroller thin)} {
+						@include ac-color-styling($bg: primary);
+						@include ac-rounded-styling($br: small);
+						@include ac-spacing-styling($mt: small);
 
-				#{c(scroller thin)} {
-					&#{c(profile modal listScroller)} {
+						.card__39ec2 {
+							@include ac-color-styling($bg: secondary);
+
+							header {
+								@include ac-rounded-styling($br: x-small);
+							}
+						}
+
+						.role_dfa8b6{
+
+							.roleRemoveButton_dfa8b6{
+
+								.roleCircle__4f569{
+
+								}
+							}
+						}
 					}
 				}
 			}

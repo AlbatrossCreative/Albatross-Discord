@@ -249,6 +249,18 @@
 								#{c(sidebar server channel iconContainer)} {
 									@include ac-spacing-styling($m: 0);
 								}
+
+								#{c(sidebar server channel children)} {
+									#{c(sidebar server channel channelInfo)} {
+										@include ac-spacing-styling($m: 0);
+										.mentionsBadge__933a1{
+											#{c(serverList numberBadge)} {
+												@include ac-color-styling($bg: transparent);
+												text-align: center;
+											}
+										}
+									}
+								}
 							}
 
 							#{c(sidebar server channel linkBottom)} {

@@ -140,28 +140,3 @@
 	}
 }
 
-html#{c(os win platform)} {
-	#{c(userSettings sidebarInfo)} {
-		&::before {
-			font-family: var(--font-primary);
-			color: var(--text-muted);
-			text-transform: none;
-			font-size: 12px;
-			position: relative;
-			content: '#{$theme-name} #{$win-version} ' var(--ACV17) ' Palette by ' var(--ACV16);
-		}
-	}
-}
-
-html#{c(os mac platform)} {
-	#{c(userSettings sidebarInfo)} {
-		&::before {
-			font-family: var(--font-primary);
-			color: var(--text-muted);
-			text-transform: none;
-			font-size: 12px;
-			position: relative;
-			content: '#{$theme-name} #{$osx-version} ' var(--ACV17) ' Palette by ' var(--ACV16);
-		}
-	}
-}

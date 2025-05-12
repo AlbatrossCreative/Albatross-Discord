@@ -3,7 +3,41 @@
 #{c(modals emoji wrapper)} {
 	@include ac-color-styling($bg: floating);
 	@include ac-rounded-styling($br: small);
+
 	#{c(modals emoji header)} {
 		@include ac-spacing-styling($m: small);
+	}
+}
+
+#{c(other cv appPopoutWrapper)} {
+	@include ac-color-styling($bg: floating);
+	@include ac-rounded-styling($br: small);
+
+	.searchBarContainer__927fc {
+		@include ac-spacing-styling($m: small, $mb: 0);
+		@include ac-color-styling($bg: primary);
+		@include ac-rounded-styling($br: small);
+		@include ac-padding-styling($p: x-small);
+
+	}
+
+	.container_cb32c7 {
+		@include ac-color-styling($bg: secondary);
+
+		.bannerImageContainer_cb32c7 {
+			@include ac-spacing-styling($m: x-small);
+			@include ac-rounded-styling($br: small);
+			width: auto;
+
+		}
+
+		.appDetailsContainer_cb32c7 {
+			@include ac-color-styling($bg: primary);
+			@include ac-rounded-styling($br: small);
+			@include ac-spacing-styling($m: x-small);
+		}
+	}
+	.rowDivider_cb32c7{
+		display: none;
 	}
 }

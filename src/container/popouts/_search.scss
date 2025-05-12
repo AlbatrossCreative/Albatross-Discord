@@ -1,0 +1,44 @@
+@use 'abstract' as *;
+
+#{c(modals search dropdown)} {
+    @include ac-color-styling($bg: floating);
+    @include ac-rounded-styling($br: small);
+    border: none !important;
+    box-shadow: none !important;
+
+    ul {
+        #{c(modals search option)} {
+            @include ac-spacing-styling($mx: small);
+            @include ac-rounded-styling($br: small);
+            box-shadow: none !important;
+
+            &::before {
+                @include ac-position-styling($pos: absolute, $h: 55%, $w: 0);
+                @include ac-color-styling($bg: modifier-accent);
+                @include ac-flex-styling($as: anchor-center);
+                @include ac-spacing-styling($ml: x-small);
+                @include ac-rounded-styling($br: small);
+                transition: all 0.1s ease;
+                left: 0;
+                content: '';
+                order: -1;
+            }
+
+            &:after {
+                @include ac-position-styling($pos: absolute, $h: 55%, $w: var(--ac-pill-width));
+                @include ac-position-styling($pos: relative);
+                @include ac-spacing-styling($mr: xx-small);
+                content: '';
+                left: 0;
+                order: -1;
+            }
+
+            &:hover {
+                @include ac-color-styling($bg: primary);
+                &::before{
+                    @include ac-position-styling($w: var(--ac-pill-width));
+                }
+            }
+        }
+    }
+}

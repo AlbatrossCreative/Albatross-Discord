@@ -14,6 +14,7 @@
 		"devFull": "sass dev.scss:%APPDATA%/Vencord/themes/albatross.theme.css -I src --no-source-map --no-charset --watch & sass dev.scss:%APPDATA%/BetterDiscord/themes/albatross.theme.css -I src --no-charset --no-source-map --watch",
 		"devBD": "sass dev.scss:%APPDATA%/BetterDiscord/themes/albatross.theme.css -I src --no-charset --no-source-map --watch",
 		"devVC": "sass dev.scss:%APPDATA%/Vencord/themes/albatross.theme.css -I src --no-source-map --no-charset --watch",
+		"devRP": "sass dev.scss:%APPDATA%/replugged/themes/Albatross-Discord/public/build/albatross-debug.css -I src --no-source-map --no-charset --watch",
 		"bundle": "replugged bundle theme",
 		"release": "replugged release",
 		"lint": "prettier ./src --check",

@@ -1,6 +1,10 @@
 @use 'abstract' as *;
 
 .bd- {
+
+	&divider {
+		border-color: #ffffff0a;
+	}
 	&notice {
 		@include ac-spacing-styling($mr: calc(var(--ac-spacing-sm) * 2), $my: small, $ml: xx-small);
 		@include ac-rounded-styling($br: small);
