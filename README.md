@@ -1,6 +1,6 @@
 # Albatross 1.0
 
-[![Version](https://img.shields.io/github/manifest-json/v/albatrosscreative/albatross-discord?style=for-the-badge&labelColor=404c5a&color=0a4d41)](.github/docs/changelog.md)
+[![Version](https://img.shields.io/github/package-json/v/AlbatrossCreative/Albatross-Discord?style=for-the-badge&labelColor=404c5a&color=0a4d41)](.github/docs/changelog.md)
 [![License](https://img.shields.io/github/license/albatrosscreative/albatross-discord?style=for-the-badge&labelColor=404c5a&color=0a4d41)](license)
 [![Stars](https://img.shields.io/github/stars/albatrosscreative/albatross-discord?style=for-the-badge&labelColor=404c5a&color=0a4d41)](https://github.com/albatrosscreative/albatross-discord/stargazers)
 [![vencord](https://img.shields.io/badge/vencord-mod?style=for-the-badge&color=404c5a)](https://vencord.dev)
@@ -14,9 +14,6 @@
 ### ⚠️Theme Attributes MUST be turned on for Albatross to function properly. Thank you**
 
 Albatross is a fun project to help me understand sass more, alot of unnecessary scss styling throughout the theme, very little optimization, all compiled into one file. Enjoy!
-
-- [Getting started](#getting-started)
-- [Installation](#installation)
 
 | Featured Palettes (Many More to Offer..)                                                  |                                                                                             |                                                                                            |
 | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
