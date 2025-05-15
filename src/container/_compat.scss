@@ -8,6 +8,11 @@
 	&notice {
 		@include ac-spacing-styling($mr: calc(var(--ac-spacing-sm) * 2), $my: small, $ml: xx-small);
 		@include ac-rounded-styling($br: small);
+		@include ac-flex-styling($ai: center, $jc: center);
+		&-button{
+			@include ac-position-styling($top: 0);
+		@include ac-rounded-styling($br: small);
+		}
 	}
 	&modal- {
 		&root {

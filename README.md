@@ -15,6 +15,9 @@
 
 Albatross is a fun project to help me understand sass more, alot of unnecessary scss styling throughout the theme, very little optimization, all compiled into one file. Enjoy!
 
+- [Getting started](#getting-started)
+- [Installation](#installation)
+
 | Featured Palettes (Many More to Offer..)                                                  |                                                                                             |                                                                                            |
 | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | ![Comet](https://github.com/user-attachments/assets/863e5f6f-6d35-4548-969b-7b1f7c24267c) | ![CreArts](https://github.com/user-attachments/assets/65af82b6-1c47-44a4-b76f-a888ee1e4786) | ![NextUI](https://github.com/user-attachments/assets/f61ae4ba-11e8-4c37-a7c6-0bc6ad5ac79b) |

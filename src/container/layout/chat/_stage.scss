@@ -1,0 +1,58 @@
+@use 'abstract' as *;
+
+#{c(stage container)} {
+	@include ac-color-styling($bg: transparent);
+	#{c(stage callContainer)} {
+		@include ac-color-styling($bg: transparent);
+		#{c(call root)} {
+			@include ac-color-styling($bg: transparent);
+			@include ac-rounded-styling($br: small);
+			overflow: hidden;
+			> div[style='width: 100%; height: 100%; display: flex;'] {
+				@include ac-spacing-styling($mt: calc(var(--ac-spacing-sm) * 2));
+				@include ac-rounded-styling($br: small);
+				overflow: hidden;
+				#{c(stage scroller)} {
+					@include ac-color-styling($bg: secondary);
+					#{c(scroller content)} {
+						.rowContainer__8a920 {
+							@include ac-color-styling($bg: transparent);
+						}
+					}
+				}
+			}
+			.container__0b34e {
+				@include ac-spacing-styling($mt: calc(var(--ac-spacing-sm) * 2));
+				@include ac-color-styling($bg: secondary);
+				@include ac-rounded-styling($br: small);
+				overflow: hidden;
+			}
+			#{c(call videoControls)} {
+				@include ac-padding-styling($p: 0);
+				#{c(call bottomControls)} {
+					@include ac-spacing-styling($mb: small);
+				}
+				#{c(call topControls)} {
+                    transform: none !important;
+					.toolbar__9293f {
+						@include ac-padding-styling($p: 0);
+						.button__4783a {
+							@include ac-spacing-styling($mr: small);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#{c(stage requestToSpeakContainer)} {
+	section {
+		@include ac-padding-styling($py: xx-small);
+	}
+	.contentContainer__664ff {
+		@include ac-color-styling($bg: secondary);
+		@include ac-spacing-styling($mt: small);
+		@include ac-rounded-styling($br: small);
+	}
+}

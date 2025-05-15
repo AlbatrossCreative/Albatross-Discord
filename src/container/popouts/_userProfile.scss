@@ -1,96 +1,85 @@
 @use 'abstract' as *;
 
-#{c(main layer)} {
-    .profileEffects__01370 {
-        @include ac-position-styling($z: -1);
-    }
+.user-profile-popout {
+    @include ac-position-styling($w: 18vw, $max-h: unset);
+    @include ac-color-styling($bg: floating);
+    overflow: unset;
 
-    .user-profile-popout {
-        @include ac-position-styling($w: 18vw, $max-h: unset);
-        @include ac-color-styling($bg: floating);
-        @include ac-padding-styling($p: 0);
-        overflow: unset;
+    #{c(profile inner)} {
+        @include ac-flex-styling($gap: 0, $d: grid);
+        grid-template-rows: auto;
+        grid-template-areas:
+            'header header'
+            'body body'
+            'footer footer';
+                    overflow: unset;
 
-        #{c(profile inner)} {
-            @include ac-flex-styling($gap: 0, $d: grid);
-            @include ac-rounded-styling($br: medium);
-            grid-template-rows: auto;
-            grid-template-areas:
-                'header header'
-                'body body'
-                'footer footer';
+        #{c(profile firendsMoreEditProfileButtons wrapper)} {
+            @include ac-position-styling($pos: absolute, $top: x-large, $left: unset, $right: x-large, $w: fit-content);
+            @include ac-spacing-styling($m: 0);
+            @include ac-flex-styling($jc: flex-end);
+        }
+
+        #{c(profile popout bitesize header)} {
+            @include ac-position-styling($min-h: unset, $h: fit-content);
+            @include ac-flex-styling($d: grid, $ai: flex-start);
+            @include ac-padding-styling($p: small, $pb: 0);
+            grid-area: header;
             overflow: unset;
 
-            #{c(profile firendsMoreEditProfileButtons wrapper)} {
-                @include ac-position-styling($pos: absolute, $top: x-large, $left: unset, $right: x-large, $w: fit-content);
-                @include ac-spacing-styling($m: 0);
-                @include ac-flex-styling($jc: flex-end);
+            .container_ab8609{
+                @include ac-position-styling($top: calc(30% * -1));
+                .outer_ab8609{
+                   &::before{
+                    @include ac-position-styling($top: 86%);
+                   }
+                   &::after{
+                    @include ac-position-styling($top: 110%);
+                   } 
+                }
+            }
+            svg {
+                @include ac-position-styling($h: fit-content, $min-w: unset);
+                grid-area: -1/1;
+
+                mask {
+                    rect {
+                        rx: var(--rs-avatar-shape) !important;
+                        filter: brightness(77%);
+                    }
+
+                    circle {
+                        @include ac-position-styling($d: none);
+                    }
+                }
             }
 
-            #{c(profile popout bitesize header)} {
-                @include ac-position-styling($min-h: unset, $h: fit-content);
-                @include ac-flex-styling($d: grid, $ai: flex-start);
-                @include ac-padding-styling($p: small, $pb: 0);
-                grid-area: header;
-                overflow: unset;
+            .referenceContainer_ab8609 {
+                @include ac-position-styling($pos: absolute);
+            }
 
-                .container_ab8609 {
-                    @include ac-position-styling($top: calc(30% * -1));
-
-                    .outer_ab8609 {
-                        &::before {
-                            @include ac-position-styling($top: 86%);
-                        }
-
-                        &::after {
-                            @include ac-position-styling($top: 110%);
-                        }
-                    }
+            >#{c(profile avatar avatar)} {
+                @include ac-position-styling($left: 0, $top: 0, $pos: relative, $h: 100%);
+                @include ac-flex-styling($ai: center);
+                grid-area: -1/-1;
+                &::before{
+                    @include ac-position-styling($pos: absolute, $h: 68px, $w: 68px, $left: small, $top: small);
+                    @include ac-border-styling($w: 6px, $color: floating);
+                    @include ac-color-styling($bg: floating);
+                    @include ac-rounded-styling($br: small);
+                    content: '';
                 }
 
-                svg {
-                    @include ac-position-styling($h: fit-content, $min-w: unset);
-                    grid-area: -1/1;
-
-                    mask {
-                        rect {
-                            rx: var(--ac-rounded-sm) !important;
-                            filter: brightness(77%);
-                        }
-
-                        circle {
-                            @include ac-position-styling($d: none);
-                        }
-                    }
-                }
-
-                .referenceContainer_ab8609 {
-                    @include ac-position-styling($pos: absolute);
-                }
-
-                >#{c(profile avatar avatar)} {
-                    @include ac-position-styling($left: 0, $top: 0, $pos: relative, $h: 100%);
-                    @include ac-flex-styling($ai: center);
-                    grid-area: -1/-1;
-
-                    &::before {
-                        @include ac-position-styling($pos: absolute, $h: 72px, $w: 72px, $left: x-small, $top: x-small);
-                        @include ac-border-styling($w: 6px, $color: floating);
-                        @include ac-color-styling($bg: floating);
-                        @include ac-rounded-styling($br: medium);
-                        content: '';
-                    }
-
-                    >#{c(avatar wrapper)} {
-                        @include ac-spacing-styling($mb: calc(var(--ac-spacing-sm) + 1px), $ml: small);
-
+                #{c(profile avatar avatar)} {
+                    @include ac-position-styling($left: 0, $top: 0, $pos: relative, $h: 100%, $w: 100%);
+                    #{c(avatar wrapper)} {
+                        @include ac-spacing-styling($mt: small, $ml: small);
                         svg {
                             foreignObject {
                                 #{c(profile avatar overlay)} {
-                                    img {
-                                        clip-path: inset(calc(var(--rs-medium-spacing) + 1px) calc(var(--rs-medium-spacing) + 1px) round var(--ac-rounded-sm)) !important;
+                                    img{
+                                        clip-path: inset(calc(var(--rs-medium-spacing) + 1px) calc(var(--rs-medium-spacing) + 1px) round var(--ac-avatar-shape)) !important;
                                     }
-
                                     &::after {
                                         @include ac-rounded-styling($br: small);
                                     }
@@ -133,22 +122,14 @@
                     }
                 }
             }
+        }
 
-            #{c(profile popout bitesize body)} {
-                @include ac-position-styling($w: 100%);
-                @include ac-padding-styling($px: large, $pt: small, $pb: 0);
-                padding-right: 0 !important;
-                grid-area: body;
-            }
-
-            footer {
-                @include ac-padding-styling($p: small);
-                @include ac-flex-styling($jc: flex-end);
-                grid-area: footer;
-
-                input {
-                    @include ac-color-styling($bg: primary);
-                }
+        footer {
+            @include ac-padding-styling($p: small);
+            @include ac-flex-styling($jc: flex-end);
+            grid-area: footer;
+            input {
+                @include ac-color-styling($bg: primary);
             }
         }
     }

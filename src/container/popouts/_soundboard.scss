@@ -1,0 +1,16 @@
+@use 'abstract' as *;
+
+#{c(modals soundboard modal)} {
+    @include ac-rounded-styling($br: small);
+    @include ac-color-styling($bg: tertiary);
+    #{c(modals soundboard header)} {
+        @include ac-spacing-styling($mx: small, $mt: small);
+        @include ac-color-styling($bg: primary);
+        @include ac-rounded-styling($br: small);
+        box-shadow: none !important;
+    }
+    #{c(modals soundboard categoryList)} {
+        @include ac-position-styling($top: calc(63px + var(--ac-spacing-sm) * 2));
+        @include ac-spacing-styling($mb: small);
+    }
+}
