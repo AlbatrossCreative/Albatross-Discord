@@ -741,10 +741,10 @@ html[class*=theme-] * {
 }
 
 html.platform-win .bar_c38106:not(.systemBar_c38106) .leading_c38106::after {
-  content: "v1.0.0 〡 " var(--ACV17) " Palette by " var(--ACV16);
+  content: "v0.1.0 〡 " var(--ACV17) " Palette by " var(--ACV16);
 }
 html.platform-osx .bar_c38106:not(.systemBar_c38106) .trailing_c38106::after {
-  content: "v1.0.0 〡 " var(--ACV17) " Palette by " var(--ACV16);
+  content: "v0.1.0 〡 " var(--ACV17) " Palette by " var(--ACV16);
 }
 
 html.platform-win .info__2debe::before {
@@ -753,7 +753,7 @@ html.platform-win .info__2debe::before {
   text-transform: none;
   font-size: 12px;
   position: relative;
-  content: "Albatross 1.0.0 " "(" var(--ACV-COMMIT) ")";
+  content: "Albatross 0.1.0 " "(" var(--ACV-COMMIT) ")";
 }
 
 html.platform-osx .info__2debe::before {
@@ -762,7 +762,7 @@ html.platform-osx .info__2debe::before {
   text-transform: none;
   font-size: 12px;
   position: relative;
-  content: "Albatross 1.0.0 " "(" var(--ACV-COMMIT) ")";
+  content: "Albatross 0.1.0 " "(" var(--ACV-COMMIT) ")";
 }
 
 .bar_c38106 {

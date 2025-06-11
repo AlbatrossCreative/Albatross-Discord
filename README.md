@@ -43,6 +43,12 @@
 
 ## Palettes
 
+| ![Image](https://github.com/user-attachments/assets/e604ea2a-f5bf-4c41-abce-85e626018624)  | ![Image](https://github.com/user-attachments/assets/9647a40e-0697-456b-8dc5-e7af5067939b)  | ![Image](https://github.com/user-attachments/assets/a33ad952-ec3d-441f-a975-e20b96f8b684) |
+| :---: | :---: | :---: |
+|**Nord**| **CreArts** | **HeroUI**  |
+| ![Image](https://github.com/user-attachments/assets/a9f1dd72-38c0-46c8-9dbb-531ac87ba2b9) | ![Image](https://github.com/user-attachments/assets/69f1f5a3-f88b-4aba-8f79-101eef4bd2f8) | ![Image](https://github.com/user-attachments/assets/94bbc155-b705-412e-807b-087fb6e3c80f) |
+|**Miyu**| **Comet** | **Dracula**  |
+
 ## [Changelog](/changelog.md)
 
 All notable changes to this project will be documented in this file. Visit [changelog.md](/changelog.md) to view the full code history.
