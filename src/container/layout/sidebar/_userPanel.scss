@@ -1,12 +1,117 @@
 @use 'abstract' as *;
 
 #{c(sidebar panel panels)} {
-	@include ac-position-styling($w: fill, $left: unset, $right: 0, $bottom: 0);
+	@include ac-position-styling($w: fill, $left: unset, $right: 0, $bottom: 0, $z: 0);
 	@include ac-flex-styling($dir: column);
 	@include ac-color-styling($bg: transparent);
 	@include ac-rounded-styling($br: small);
 	pointer-events: none;
-	border: none !important;
+	@include ac-border-styling(none);
+
+	>div[id="vc-spotify-player"] {
+		@include ac-color-styling($bg: transparent);
+		@include ac-position-styling($w: fill);
+		@include ac-flex-styling($as: end,
+			$d: grid,
+			$jc: unset,
+			$gapc: calc(var(--ac-spacing-sm) + 2px));
+		grid-template-columns: var(--custom-guild-list-width) 1fr auto;
+		grid-template-rows: auto;
+		@include ac-border-styling(none);
+		@include ac-padding-styling($p: 0);
+		@include ac-rounded-styling($br: 0);
+		grid-template-areas:
+			'icon name buttons'
+			'icon timeline timeline';
+
+		[id="vc-spotify-info-wrapper"] {
+			@include ac-position-styling($d: contents);
+
+			img {
+				@include ac-position-styling($h: var(--guildbar-avatar-size));
+				@include ac-rounded-styling($br: var(--rs-avatar-shape));
+				pointer-events: all;
+				place-self: center;
+				grid-area: icon;
+			}
+
+			[id="vc-spotify-titles"] {
+				@include ac-padding-styling($py: 0, $px: small);
+				grid-area: name;
+				pointer-events: all;
+			}
+
+		}
+
+		[id="vc-spotify-progress-bar"] {
+			@include ac-position-styling($w: auto);
+			grid-area: timeline;
+			@include ac-spacing-styling($my: 0, $mx: small);
+			@include ac-padding-styling($pb: small);
+			pointer-events: all;
+
+		}
+
+		.vc-spotify-button-row {
+			@include ac-padding-styling($pr: small);
+			grid-area: buttons;
+			pointer-events: all;
+		}
+	}
+
+	.container_791eb8 {
+		@include ac-position-styling($w: fill);
+		@include ac-flex-styling($as: end,
+			$d: grid,
+			$jc: unset,
+			$gapc: calc(var(--ac-spacing-sm) + 2px));
+		grid-template-columns: var(--custom-guild-list-width) 1fr auto;
+		@include ac-border-styling(none);
+		@include ac-padding-styling($p: 0);
+		@include ac-rounded-styling($br: 0);
+		grid-template-areas:
+			'icon name buttons'
+			'icon timeline timeline';
+		pointer-events: all;
+
+		.inner_791eb8 {
+			@include ac-position-styling($d: contents);
+
+			.coverWrapper_791eb8 {
+				@include ac-position-styling($h: 100%, $w: 100%);
+				@include ac-flex-styling($ai: start, $jc: center);
+				@include ac-spacing-styling($m: 0);
+				grid-area: icon;
+
+				img {
+					@include ac-position-styling($h: var(--guildbar-avatar-size),
+						$w: var(--guildbar-avatar-size),
+						$z: 2);
+					@include ac-spacing-styling($mt: small);
+					@include ac-rounded-styling($br: var(--rs-avatar-shape));
+				}
+			}
+		}
+
+		.details_791eb8 {
+			@include ac-spacing-styling($mx: small, $mb: xx-small);
+
+			.textScroller_72a89f {
+				@include ac-position-styling($w: max-content);
+			}
+		}
+
+		.timeline_791eb8 {
+			@include ac-spacing-styling($my: 0, $mx: small);
+			grid-area: timeline;
+		}
+
+		div {
+			button.enabled__67645 {
+				@include ac-spacing-styling($m: 0);
+			}
+		}
+	}
 
 	#{c(sidebar panel container)} {
 		@include ac-position-styling($h: unset);
@@ -16,54 +121,36 @@
 		@include ac-spacing-styling($m: 0);
 		pointer-events: all;
 
-		&::before {
-			@include ac-position-styling(
-				$pos: absolute,
-				$w: var(--custom-guild-list-width),
-				$h: var(--custom-guild-list-width),
-				$bottom: 0,
-				$left: 0,
-				$z: -1
-			);
-			@include ac-color-styling($bg: secondary);
-			@include ac-rounded-styling($brb: small);
-			content: '';
-		}
-
 		&:after {
-			@include ac-position-styling(
-				$pos: absolute,
+			@include ac-position-styling($pos: absolute,
 				$w: var(--custom-guild-list-width),
 				$h: var(--custom-guild-list-width),
 				$bottom: 0,
 				$left: 0,
-				$z: -1
-			);
+				$z: -1);
 			@include ac-rounded-styling($br: small);
 			@include ac-color-styling($bg: floating);
 			transition: 0.1s ease-in-out;
-			mask-image: linear-gradient(
-				transparent 9%,
-				#0000001a 10%,
-				#0000006a 40%,
-				#000000b6 50%,
-				#000000 80%
-			);
+			mask-image: linear-gradient(transparent 9%,
+					#0000001a 10%,
+					#0000006a 40%,
+					#000000b6 50%,
+					#000000 80%);
 			opacity: 0;
 			content: '';
 		}
 
 		#{c(sidebar panel avatarWrapper)} {
 			@include ac-color-styling($bg: transparent);
-			@include ac-flex-styling($d: grid, $gap: x-small);
+			@include ac-flex-styling($d: grid, $gap: calc(var(--ac-spacing-sm) + 2px));
 			@include ac-padding-styling($p: 0);
 			@include ac-spacing-styling($m: 0);
 			grid-template-columns: var(--custom-guild-list-width) 1fr;
-			grid-template-rows: var(--custom-guild-list-width);
 			pointer-events: none;
 			grid-template-areas: 'profile nameTag';
 
 			#{c(avatar wrapper)} {
+				@include ac-position-styling($h: 100%);
 				@include ac-flex-styling($js: center);
 				pointer-events: none;
 				grid-area: profile;
@@ -122,15 +209,14 @@
 		@include ac-position-styling($w: var(--custom-guild-list-width));
 		@include ac-color-styling($bg: transparent);
 		@include ac-padding-styling($p: 0);
-		border: unset;
+		@include ac-border-styling(unset);
 
 		#{c(sidebar panel activity body)} {
 			@include ac-color-styling($bg: primary);
 			@include ac-padding-styling($p: 0);
 			@include ac-rounded-styling($br: small);
 
-			.gameWrapper__8c6c2 {
-			}
+			.gameWrapper__8c6c2 {}
 
 			.info__8c6c2 {
 				@include ac-position-styling($d: none);
@@ -141,7 +227,6 @@
 	#{c(sidebar panel voice wrapper)} {
 		@include ac-position-styling($w: var(--custom-guild-list-width));
 		@include ac-color-styling($bg: secondary);
-		@include ac-rounded-styling($brt: small);
 
 		#{c(sidebar panel voice container)} {
 			@include ac-padding-styling($px: small, $pb: 0);
@@ -154,27 +239,22 @@
 				@include ac-flex-styling($dir: column);
 
 				#{c(sidebar panel voice inner)} {
-					@include ac-position-styling($d: flex, $w: 100%);
+					@include ac-position-styling($d: flex,
+						$pos: absolute,
+						$w: var(--ac-sidebar-width),
+						$bottom: calc(var(--ac-spacing-sm) * -1),
+						$left: calc(100% + var(--ac-spacing-sm) * 2));
+					@include ac-padding-styling($py: small);
 
 					#{c(sidebar panel voice rtcConnection statusWrapper)} {
-						@include ac-flex-styling($dir: row);
+						@include ac-flex-styling($dir: column, $gap: xx-small);
 
 						#{c(sidebar panel voice rtcConnection status)} {
-							#{c(sidebar panel voice labelWrapper)} {
-								@include ac-position-styling($d: none);
-							}
+							#{c(sidebar panel voice labelWrapper)} {}
 						}
 
 						a {
-							#{c(sidebar panel statusSubtext)} {
-								@include ac-position-styling($d: none);
-							}
-
-							@include ac-icon-replacement(
-								call,
-								var(--interactive-normal),
-								var(--interactive-hover)
-							);
+							#{c(sidebar panel statusSubtext)} {}
 						}
 					}
 				}

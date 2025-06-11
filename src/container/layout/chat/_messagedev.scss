@@ -1,101 +1,26 @@
 @use 'abstract' as *;
 
-#{c(chat messageListItem)} {
+li#{c(chat messageListItem)} {
 	#{c(chat message)} {
 		@include ac-padding-styling($pr: large, $pl: x-large);
 		@include ac-flex-styling($d: grid, $gapc: small);
 		@include ac-color-styling($bg: transparent);
 
-		.container_b7e1cb {
-			&:empty {
-				@include ac-position-styling($d: none);
-			}
-
-			.container_cacd02 {
-				@include ac-color-styling($bg: primary);
-				@include ac-rounded-styling($br: small);
-				@include ac-flex-styling($js: auto, $jc: auto);
-
-				.bumpBox_cacd02 {
-					@include ac-color-styling($bg: transparent);
-				}
-			}
-		}
-
-		&#{c(chat messageGroupStart)} {
-			@include ac-spacing-styling($mt: small);
-		}
-
-		&[data-is-self='true'] {
-			justify-items: flex-end;
-			grid-template-areas:
-				'replied replied'
-				'message avatar'
-				'media .';
-			grid-template-columns: auto var(--chat-avatar-size);
-
-			#{c(chat repliedMessage)} {
-				@include ac-flex-styling($dir: row-reverse);
-				@include ac-spacing-styling($mr: large);
-
-				#{c(chat repliedMessageClickableSpine)} {
-					@include ac-rounded-styling($brtr: small);
-					@include ac-spacing-styling($m: 0);
-					border-left: 0 !important;
-				}
-
-				#{c(chat repliedTextPreview)} {
-					@include ac-spacing-styling($mr: xx-small);
-					text-align: right;
-				}
-			}
-
-			#{c(other cv messageButtonContainer)} {
-				@include ac-position-styling($left: unset, $right: 0);
-
-				#{c(chat buttons)} {
-					@include ac-position-styling($right: 0);
-				}
-			}
-		}
-
-		&[data-is-self='false'] {
-			justify-items: flex-start;
-			grid-template-areas:
-				'replied replied'
-				'avatar message'
-				'. media';
-			grid-template-columns: var(--chat-avatar-size) auto;
-
-			#{c(chat repliedMessage)} {
-				@include ac-position-styling($left: small);
-				@include ac-spacing-styling($ml: medium, $mb: medium);
-
-				#{c(chat repliedMessageClickableSpine)} {
-					@include ac-rounded-styling($brtl: small);
-					@include ac-spacing-styling($m: 0);
-					border-right: 0 !important;
-				}
-			}
-
-			#{c(other cv messageButtonContainer)} {
-				@include ac-position-styling($left: 0, $right: unset);
-
-				#{c(chat buttons)} {
-					@include ac-position-styling($right: unset);
-				}
-			}
-		}
-
 		#{c(chat repliedMessage)} {
-			@include ac-position-styling($max-w: 40vw, $w: auto);
+			@include ac-position-styling($max-w: 35vw, $w: auto);
 			@include ac-spacing-styling($mb: small);
 			grid-area: replied;
 			overflow: unset;
 
 			#{c(chat repliedMessageClickableSpine)} {
+				@include ac-position-styling($pos: relative, $left: 0, $top: 40%);
+			}
+
+			&::before,
+			#{c(chat repliedMessageClickableSpine)}::before {
 				@include ac-position-styling(
 					$pos: relative,
+					$d: block,
 					$top: 30%,
 					$left: 0,
 					$w: 30px,
@@ -103,6 +28,11 @@
 				);
 				border: var(--spine-width) solid var(--spine-default) !important;
 				border-bottom: 0 !important;
+				inset: unset !important;
+			}
+
+			#{c(chat repliedMessageClickableSpine)} {
+				@include ac-position-styling($h: 100%);
 			}
 
 			#{c(chat repliedTextPreview)} {
@@ -130,16 +60,16 @@
 		#{c(chat messageContents)} {
 			@include ac-flex-styling($dir: column);
 			@include ac-rounded-styling($br: small);
-			@include ac-position-styling($max-w: 40vw, $w: auto);
+			@include ac-position-styling($max-w: 35vw, $w: auto);
 			@include ac-color-styling($bgc: var(--message-background));
+			@include ac-border-styling(normal, primary);
 			transition: 0.15s 0.1s ease all !important;
 			grid-area: message;
 
 			#{c(chat chatAvatar)} {
 				@include ac-rounded-styling($br: var(--rs-avatar-shape));
+				@include ac-position-styling($top: 0, $left: 0);
 				grid-area: avatar;
-				left: 0;
-				top: 0;
 			}
 
 			&:has(#{c(chat messageContent)}:empty):not(:has(#{c(chat chatAvatar)})) {
@@ -151,9 +81,8 @@
 			}
 
 			#{c(chat chatAvatarDecoration)} {
+				@include ac-position-styling($top: 0, $left: -4px);
 				grid-area: avatar;
-				left: -4px;
-				top: 0;
 			}
 
 			&:has(#{c(chat chatHeaderUsername)}),
@@ -297,11 +226,25 @@
 			.mosaicItem__6c706 {
 				@include ac-rounded-styling($br: unset);
 
-				.container_a8e786 {
+				#{c(embeds voiceMessage container)} {
 					@include ac-color-styling($bg: var(--message-background));
 					@include ac-padding-styling($p: small);
 					@include ac-rounded-styling($br: small);
 				}
+			}
+
+			.container_cacd02 {
+				@include ac-color-styling($bg: primary);
+				@include ac-rounded-styling($br: small);
+				@include ac-flex-styling($js: auto, $jc: auto);
+
+				#{c(other cv messagePublishBumpBox)} {
+					@include ac-color-styling($bg: transparent);
+				}
+			}
+
+			&:empty {
+				@include ac-position-styling($d: none);
 			}
 		}
 
@@ -331,7 +274,7 @@
 			#{c(chat messageContents)} {
 				@include ac-padding-styling($p: small);
 
-				.container__235ca {
+				#{c(chat chatWelcomeContainer)} {
 					@include ac-spacing-styling($m: 0);
 				}
 			}
@@ -360,100 +303,73 @@
 		}
 	}
 
-	&[data-is-self='true'] {
-		#{c(chat message)} {
-			justify-items: flex-end;
-			grid-template-areas:
-				'replied replied'
-				'message avatar'
-				'media .';
-			grid-template-columns: auto var(--chat-avatar-size);
+	&[data-is-self='true'] > #{c(chat message)},
+	> [data-is-self='true'] {
+		grid-template-columns: auto var(--chat-avatar-size);
+		@include ac-flex-styling($ji: flex-end, $d: grid);
+		grid-template-areas:
+			'replied replied'
+			'message avatar'
+			'media .';
 
-			#{c(chat repliedMessage)} {
-				@include ac-spacing-styling($mr: medium);
-				@include ac-flex-styling($dir: row-reverse);
+		#{c(chat repliedMessage)} {
+			@include ac-flex-styling($dir: row-reverse);
+			@include ac-spacing-styling($mr: large);
 
-				#{c(chat repliedMessageClickableSpine)} {
-					@include ac-rounded-styling($brtr: small);
-					border-left: 0 !important;
-				}
+			#{c(chat repliedMessageClickableSpine)} {
+				@include ac-rounded-styling($brtr: small);
+				@include ac-spacing-styling($mx: 0, $mr: 0, $ml: small);
+				border-left: 0 !important;
 
-				img {
-					@include ac-spacing-styling($mr: x-small);
-				}
-
-				#{c(chat chatAvatarDecoration)} {
-					@include ac-position-styling($left: unset, $right: xx-small);
+				&::before {
+					border: 0 !important;
 				}
 			}
 
-			#{c(chat messageContents)} {
-				.timestampVisibleOnHover_c19a55 {
-					@include ac-position-styling($left: unset, $right: xx-small);
-				}
+			#{c(chat repliedTextPreview)} {
+				@include ac-spacing-styling($mr: xx-small);
+				text-align: right;
 			}
+		}
 
-			#{c(chat messageAttachmentsContainer)} {
-				@include ac-flex-styling($ji: end);
+		#{c(other cv messageButtonContainer)} {
+			@include ac-position-styling($left: unset, $right: 0);
 
-				.visualMediaItemContainer_f4758a {
-					.container_b7e1cb {
-						> * {
-							@include ac-flex-styling($js: end, $as: end);
-						}
-					}
-				}
-			}
-
-			&#{c(chat isSystemMessage)} {
-				grid-template-columns: 1fr auto;
+			#{c(chat buttons)} {
+				@include ac-position-styling($right: 0);
 			}
 		}
 	}
 
-	&[data-is-self='false'] {
-		#{c(chat message)} {
-			justify-items: flex-start;
-			grid-template-areas:
-				'replied replied'
-				'avatar message'
-				'. media';
-			grid-template-columns: var(--chat-avatar-size) auto;
+	&[data-is-self='false'] > #{c(chat message)},
+	> [data-is-self='false'] {
+		@include ac-flex-styling($ji: flex-start, $d: grid);
+		grid-template-columns: var(--chat-avatar-size) auto;
+		grid-template-areas:
+			'replied replied'
+			'avatar message'
+			'. media';
 
-			#{c(chat repliedMessage)} {
-				@include ac-spacing-styling($ml: medium);
+		#{c(chat repliedMessage)} {
+			@include ac-position-styling($left: small);
+			@include ac-spacing-styling($ml: medium, $mb: medium);
 
-				#{c(chat repliedMessageClickableSpine)} {
-					@include ac-rounded-styling($brtl: small);
-					border-right: 0 !important;
-				}
+			#{c(chat repliedMessageClickableSpine)} {
+				@include ac-rounded-styling($brtl: small);
+				@include ac-spacing-styling($mx: 0, $ml: 0, $mr: small);
+				border-right: 0 !important;
 
-				&.messageSpine_c19a55 {
-					&::before {
-						@include ac-position-styling(
-							$w: 25px,
-							$h: 15px,
-							$pos: relative,
-							$left: 0,
-							$right: 0,
-							$bottom: 0,
-							$top: 0
-						);
-						@include ac-spacing-styling($mt: small);
-						@include ac-rounded-styling($brtl: small);
-					}
-				}
-
-				img {
-					@include ac-spacing-styling($ml: xx-small);
+				&::before {
+					border: 0 !important;
 				}
 			}
+		}
 
-			#{c(chat messageContents)} {
-				h3 {
-					min-height: unset;
-					line-height: unset;
-				}
+		#{c(other cv messageButtonContainer)} {
+			@include ac-position-styling($left: 0, $right: unset);
+
+			#{c(chat buttons)} {
+				@include ac-position-styling($right: unset);
 			}
 		}
 	}

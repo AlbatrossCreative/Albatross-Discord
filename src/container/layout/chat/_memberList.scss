@@ -1,23 +1,24 @@
 @use 'abstract' as *;
 
 #{c(memberList container)} {
+	@include ac-position-styling($h: calc(100% - 2px));
 	@include ac-color-styling($bg: secondary);
 	@include ac-rounded-styling($br: small);
-	border: none !important;
-	overflow: hidden;
+	@include ac-border-styling(normal, secondary-alt);
+	overflow: unset;
 
 	aside {
-		border: none !important;
-
+		@include ac-border-styling(none);
 		#{c(memberList members)} {
 			@include ac-color-styling($bg: transparent);
-
+			@include ac-rounded-styling($br: small);
+			@include ac-border-styling(none);
 			#{c(other cv memberActivityContainer)} {
 				@include ac-position-styling($h: unset);
 				@include ac-color-styling($bg: primary);
 				@include ac-rounded-styling($br: small);
 				@include ac-padding-styling($p: small);
-				border: none !important;
+				@include ac-border-styling(none);
 				cursor: pointer;
 
 				&:hover {

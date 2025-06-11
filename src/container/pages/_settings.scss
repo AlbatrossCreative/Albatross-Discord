@@ -1,16 +1,14 @@
 @use 'abstract' as *;
 
 #{c(userSettings standardSidebarView)} {
-	@include ac-color-styling($bg: rgba(0, 0, 0, $O07));
+	@include ac-color-styling($bg: transparent);
 	@include ac-flex-styling($gapc: small);
-	@include ac-spacing-styling($mb: small, $mt: var(--ac-osbar-height), $mx: small);
+	@include ac-spacing-styling($m: 0);
 	@include ac-rounded-styling($br: x-small);
 	@include ac-padding-styling($py: small);
 
 	#{c(userSettings sidebarRegion)} {
-		@include ac-spacing-styling(
-			$ml: calc(var(--custom-guild-list-width) + calc(var(--ac-spacing-sm) * 2))
-		);
+		@include ac-border-styling(normal, primary);
 		@include ac-color-styling($bg: secondary);
 		@include ac-rounded-styling($br: small);
 		@include ac-flex-styling($f: 0);
@@ -44,7 +42,61 @@
 		@include ac-rounded-styling($br: small);
 		@include ac-position-styling($max-w: 100%);
 		@include ac-spacing-styling($mr: small);
+		@include ac-border-styling(normal, primary);
 		overflow: hidden;
+
+		#{c(userSettings contentRegionScroller)} {
+			@include ac-color-styling($bg: transparent);
+			@include ac-spacing-styling($mt: 0);
+
+			.contentColumnScrollable__23e6b {
+				.content_dbba93 {
+					.leftColumn_dbba93 {
+						@include ac-position-styling($max-w: 100%);
+					}
+				}
+			}
+
+			.section__9e177 {
+				@include ac-position-styling($max-w: 100%);
+				@include ac-spacing-styling($m: 4x-large);
+			}
+		}
+
+		#{c(userSettings accountProfile)} {
+			@include ac-rounded-styling($br: small);
+
+			svg {
+				rect {
+					@include ac-position-styling(
+						$w: calc(100% - calc(var(--ac-spacing-sm) - 3.5px) * 2),
+						$h: calc(100% - var(--ac-spacing-sm))
+					);
+					rx: var(--ac-rounded-xs);
+					x: calc(var(--ac-spacing-xs) - 1px);
+					y: calc(var(--ac-spacing-xs) - 1px);
+				}
+
+				circle {
+					@include ac-position-styling($d: none);
+				}
+			}
+
+			.userInfo__1fed1 {
+				@include ac-padding-styling($p: small);
+
+				#{c(avatar wrapper)} {
+					@include ac-position-styling(
+						$left: calc(var(--ac-spacing-sm) * 2),
+						$top: calc(var(--ac-spacing-sm) * 2)
+					);
+				}
+			}
+
+			.background__1fed1 {
+				@include ac-spacing-styling($m: small);
+			}
+		}
 
 		#{c(appSettings contentTransitionWrap)} {
 			@include ac-position-styling($w: 100%);
@@ -57,6 +109,17 @@
 					@include ac-position-styling($max-w: 100%);
 					@include ac-padding-styling($pt: 4xl-large, $pl: 2x-large, $pr: small);
 
+					.settingCard__1a4ef {
+						@include ac-color-styling($bg: primary);
+						@include ac-rounded-styling($br: small);
+						@include ac-padding-styling($pb: small);
+
+						.cardFolder__1a4ef {
+							@include ac-spacing-styling($mx: small);
+							@include ac-rounded-styling($br: small);
+						}
+					}
+
 					#{c(tab top)} {
 						@include ac-flex-styling($gap: small);
 						border: none;
@@ -67,7 +130,7 @@
 						@include ac-color-styling($bg: primary);
 						@include ac-rounded-styling($br: small);
 						box-shadow: none !important;
-						border: none !important;
+						@include ac-border-styling(none);
 					}
 
 					[class*='max-width__'] {
@@ -107,7 +170,7 @@
 						@include ac-color-styling($bg: primary);
 						@include ac-rounded-styling($br: small);
 						@include ac-spacing-styling($mb: small);
-						border: none !important;
+						@include ac-border-styling(none);
 					}
 
 					.authedAppV2__50a54 {
@@ -115,16 +178,19 @@
 						@include ac-rounded-styling($br: small);
 						@include ac-padding-styling($p: small);
 						@include ac-spacing-styling($mb: small);
+
 						.headerV2__50a54 {
 							@include ac-color-styling($bg: secondary);
 							@include ac-rounded-styling($br: small);
 						}
+
 						.appDetailsContainer__50a54 {
 							.footer__50a54 {
 								@include ac-spacing-styling($my: small, $mb: 0);
 							}
 						}
 					}
+
 					.paymentSourceRow__0eeee {
 						@include ac-padding-styling($p: small);
 						@include ac-color-styling($bg: primary);
@@ -139,4 +205,3 @@
 		}
 	}
 }
-

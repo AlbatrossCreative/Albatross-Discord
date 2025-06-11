@@ -1,16 +1,25 @@
 @use 'abstract' as *;
 
 #{c(slider container)} {
-    @include ac-rounded-styling($br: x-small);
-    border: none !important;
-    svg#{c(slider slider)} {
-        @include ac-position-styling($pos: relative, $h: 100%);
-        @include ac-spacing-styling($mx: xx-small);
-        rect{
-            rx: var(--ac-rounded-xs) !important;
-        }
-        svg{
-            @include ac-position-styling($d: none);
-        }
-    }
+	@include ac-rounded-styling($br: x-small);
+	@include ac-border-styling(none);
+	&[style="background-color: var(--brand-500)"] {
+		@include ac-color-styling($bg: accent);
+	}
+	svg#{c(slider slider)} {
+		@include ac-position-styling($pos: relative, $h: 100%);
+		@include ac-spacing-styling($mx: xx-small);
+
+		rect {
+			rx: var(--ac-rounded-xs) !important;
+
+			[y='0'] {
+				y: -3 !important;
+			}
+		}
+
+		svg {
+			@include ac-position-styling($d: none);
+		}
+	}
 }

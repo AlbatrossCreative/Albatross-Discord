@@ -2,8 +2,7 @@
 
 #{c(friends container)} {
 	@include ac-color-styling($bgc: transparent);
-	border: none !important;
-
+	@include ac-border-styling(none);
 	#{c(header themed)} {
 		@include ac-rounded-styling($br: small);
 		@include ac-color-styling($bg: secondary);
@@ -15,11 +14,13 @@
 			@include ac-spacing-styling($my: x-small);
 
 			#{c(header children)} {
+				@include ac-position-styling($max-w: unset);
+
 				#{c(header tabBar)} {
 					#{c(tab item)} {
 						@include ac-spacing-styling($mx: 0, $ml: small);
 
-						&#{c(header addFriend)} {
+						&#{c(header addFriend)}:not(:hover, #{c(tab selected)}) {
 							@include ac-color-styling($bg: transparent);
 						}
 					}
@@ -36,6 +37,16 @@
 			@include ac-color-styling($bg: secondary);
 			@include ac-rounded-styling($br: small);
 			@include ac-spacing-styling($mr: small);
+			@include ac-border-styling(normal, secondary-alt);
+
+			#{c(friends addFriendInputWrapper)} {
+				@include ac-color-styling($bg: transparent);
+				@include ac-padding-styling($p: 0);
+				@include ac-border-styling(none);
+				input {
+					@include ac-padding-styling($pl: small);
+				}
+			}
 
 			#{c(serverSettings roleSearchBar)} {
 				@include ac-spacing-styling($m: small);
@@ -68,25 +79,24 @@
 		#{c(friends nowPlayingColumn)} {
 			@include ac-color-styling($bg: secondary);
 			@include ac-rounded-styling($br: small);
+			@include ac-border-styling(normal, secondary-alt);
 
 			#{c(friends nowPlayingContainer)} {
 				@include ac-color-styling($bg: transparent);
 
 				#{c(friends nowPlayingScroller)} {
-					border: none !important;
-
+					@include ac-border-styling(none);
 					#{c(friends itemCard)} {
 						@include ac-color-styling($bg: primary);
 						@include ac-rounded-styling($br: small);
-						border: none !important;
-
+						@include ac-border-styling(none);
 						&:hover {
 							@include ac-color-styling($bg: modifier-hover);
 						}
 
 						#{c(friends itemCardBody)} {
 							#{c(friends itemCardBodySection)} {
-								border: none !important;
+								@include ac-border-styling(none);
 							}
 						}
 					}

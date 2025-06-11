@@ -3,19 +3,23 @@
 #{c(sidebar server container)} {
 	@include ac-color-styling($bg: transparent);
 	@include ac-padding-styling($pb: 0);
+	@include ac-spacing-styling($m: 0);
 
 	&::before {
 		@include ac-position-styling(
 			$d: block,
 			$pos: absolute,
-			$w: 100%,
+			$w: calc(100% - 2px),
 			$h: 80px,
-			$bottom: 0,
+			$bottom: 1px,
+			$left: 1px,
+			$right: unset,
 			$z: 2
 		);
 		@include ac-rounded-styling($br: small);
 		@include ac-color-styling($bg: secondary);
 		pointer-events: none !important;
+		transition: 0.1s ease all;
 		mask-image: linear-gradient(
 			transparent 9%,
 			#0000001a 10%,
@@ -30,6 +34,7 @@
 		@include ac-color-styling($bg: secondary);
 		@include ac-rounded-styling($br: small);
 		@include ac-spacing-styling($mt: small);
+		@include ac-border-styling(normal, primary);
 
 		#{c(sidebar eventNotice notice)} {
 			border: none;
@@ -51,13 +56,12 @@
 				transition: 0.1s ease all;
 
 				#{c(sidebar server unreadBar bar)} {
-					@include ac-rounded-styling($br: small);
+					@include ac-rounded-styling($br: x-small);
 					@include ac-position-styling($w: 100%);
 					@include ac-flex-styling($jc: center);
 					@include ac-padding-styling($p: 0);
 					box-shadow: none !important;
-					border: none !important;
-
+					@include ac-border-styling(none);
 					#{c(sidebar server unreadBar text)} {
 						@include ac-spacing-styling($my: xx-small);
 					}
@@ -69,11 +73,12 @@
 	#{c(sidebar server scroller)} {
 		@include ac-color-styling($bg: secondary);
 		@include ac-rounded-styling($br: small);
-		@include ac-spacing-styling($my: x-small);
+		@include ac-spacing-styling($mt: x-small, $mb: 0);
 		@include ac-padding-styling($p: 0);
+		@include ac-border-styling(normal, secondary-alt);
 
 		ul {
-			@include ac-padding-styling($pl: x-small);
+			@include ac-padding-styling($pl: small);
 			@include ac-position-styling($h: fit-content);
 
 			> [style*='height:'] {
@@ -99,16 +104,18 @@
 						#{c(sidebar server extras basicChannelRowLink)}
 					) {
 					@include ac-spacing-styling($my: small);
+
 					#{c(sidebar server extras basicChannelRowLink)} {
 						@include ac-padding-styling($px: small, $py: x-small);
 					}
 				}
+
 				#{c(sidebar boostContainer)}:not(:empty) {
 					@include ac-padding-styling($p: small);
 					@include ac-color-styling($bg: primary);
 					@include ac-rounded-styling($br: small);
 					@include ac-spacing-styling($my: small, $ml: 0);
-					border: none;
+					@include ac-border-styling(normal, primary);
 
 					#{c(sidebar boostTextArea)},
 					#{c(sidebar boostProgressBarContainer)} {
@@ -253,7 +260,8 @@
 								#{c(sidebar server channel children)} {
 									#{c(sidebar server channel channelInfo)} {
 										@include ac-spacing-styling($m: 0);
-										.mentionsBadge__933a1{
+
+										.mentionsBadge__933a1 {
 											#{c(serverList numberBadge)} {
 												@include ac-color-styling($bg: transparent);
 												text-align: center;

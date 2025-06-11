@@ -1,0 +1,14 @@
+@use 'abstract' as *;
+
+#{c(chat page)} {
+	#{c(messageRequests container)} {
+		#{c(chat chatContent)} {
+			@include ac-rounded-styling($br: small);
+			@include ac-color-styling($bg: secondary);
+			#{c(messageRequests item)} {
+				@include ac-rounded-styling($br: small);
+				@include ac-padding-styling($p: large);
+			}
+		}
+	}
+}

@@ -1,9 +1,61 @@
 @use 'abstract' as *;
 
+#{c(main layerContainer)} {
+	@include ac-position-styling($pos: fixed);
+
+	#{c(chat layerWrapper)} {
+		@include ac-position-styling(
+			$h: auto,
+			$bottom: small,
+			$top: var(--ac-osbar-height),
+			$right: small
+		);
+		@include ac-rounded-styling($br: small);
+		@include ac-spacing-styling($m: small);
+
+		#{c(threads resizeHandle)} {
+			@include ac-color-styling($bg: transparent);
+		}
+
+		#{c(threads container)} {
+			@include ac-color-styling($bg: transparent);
+			border: none;
+
+			#{c(header)} {
+				@include ac-spacing-styling($mb: small);
+				@include ac-padding-styling($py: xx-small);
+			}
+
+			.chat_ee72fa {
+				@include ac-rounded-styling($br: small);
+				overflow: hidden;
+
+				section {
+					@include ac-color-styling($bg: transparent);
+
+					#{c(chat messagesWrapper)} {
+						@include ac-color-styling($bg: secondary);
+						@include ac-rounded-styling($br: small);
+					}
+				}
+
+				&::before {
+					@include ac-position-styling($d: none);
+				}
+			}
+		}
+	}
+}
+
 #{c(call wrapper)} {
 	@include ac-color-styling($bg: transparent);
 
+	#{c(call channelChatWrapper)} {
+		@include ac-color-styling($bg: transparent);
+	}
+
 	#{c(call container)} {
+		@include ac-color-styling($bg: transparent);
 		border: none;
 
 		#{c(call root)} {
@@ -11,21 +63,92 @@
 			@include ac-rounded-styling($br: small);
 			@include ac-flex-styling($d: grid);
 
+			> div[style='width: 100%; height: 100%; display: flex;'] {
+				@include ac-position-styling(
+					$pos: absolute,
+					$top: calc(48px + var(--ac-spacing-sm)),
+					$h: fill
+				);
+				@include ac-color-styling($bg: secondary);
+				@include ac-rounded-styling($br: small);
+				@include ac-border-styling(normal, secondary-alt);
+
+				.container__5aa3a {
+					@include ac-rounded-styling($br: small);
+				}
+
+				#{c(call rootChild)} {
+					@include ac-flex-styling($gapc: medium);
+					@include ac-padding-styling($p: 0);
+
+					#{c(call transition)} {
+						@include ac-position-styling($h: 100%);
+						@include ac-spacing-styling($m: 0);
+						@include ac-padding-styling($pt: 4%);
+
+						#{c(call avatarWrapper)} {
+							svg {
+								foreignObject {
+									mask: none;
+
+									img {
+										@include ac-rounded-styling($br: var(--rs-avatar-shape));
+									}
+								}
+							}
+
+							#{c(call avatarBorder)} {
+								@include ac-rounded-styling($br: var(--rs-avatar-shape));
+							}
+						}
+
+						.statusContainer_f910d0 {
+							@include ac-position-styling();
+						}
+					}
+				}
+
+				.tile_d6271c .singleUserRoot__4ad81 {
+					@include ac-color-styling($bg: primary);
+				}
+			}
+
 			#{c(call videoControls)} {
+				@include ac-rounded-styling($br: small);
 				@include ac-padding-styling($p: 0);
 				@include ac-position-styling($h: 100%);
+				overflow: hidden;
+
+				#{c(stage gradientTop)} {
+					@include ac-position-styling($top: calc(var(--ac-spacing-sm) + 48px));
+					@include ac-rounded-styling($brt: small);
+				}
 
 				#{c(call topControls)} {
 					@include ac-position-styling($pos: relative, $top: 0);
+					transform: none !important;
+					opacity: 1 !important;
 
-					div {
+					> div {
+						@include ac-flex-styling($gapc: small, $dir: column);
+
 						#{c(call headerWrapper)} {
-							@include ac-spacing-styling($m: 0);
+							@include ac-spacing-styling($mt: 0, $mb: small, $mx: 0);
+						}
+
+						div {
+							.root__5621e {
+								@include ac-spacing-styling($mr: small, $mt: small);
+								@include ac-padding-styling($pr: small);
+							}
 						}
 					}
 				}
 
 				#{c(call bottomControls)} {
+					@include ac-position-styling($w: calc(100% - var(--ac-spacing-sm)));
+
+					@include ac-spacing-styling($mb: small);
 				}
 			}
 
@@ -33,4 +156,50 @@
 			}
 		}
 	}
+}
+
+#{c(call buttonsWrapper)},
+.experimentWrapper_fcb27c {
+	.buttonSection__1405b,
+	.experimentButtonSection_fcb27c {
+		@include ac-color-styling($bg: transparent);
+		@include ac-padding-styling($p: 0);
+		@include ac-border-styling(none);
+		.attachedCaretButtonContainer_f1ceac {
+			div {
+				#{c(call contextMenuNub)} {
+					@include ac-rounded-styling($br: small);
+					@include ac-spacing-styling($ml: x-small);
+				}
+
+				#{c(call colorable)}:not(.redGlow_f1ceac) {
+					@include ac-color-styling($bg: primary);
+					@include ac-rounded-styling($br: small);
+				}
+
+				.attachedCaret_f1ceac {
+					@include ac-padding-styling($px: xx-small);
+				}
+			}
+
+			.contextMenuNubExperiment_f1ceac {
+				@include ac-rounded-styling($br: small);
+				@include ac-spacing-styling($ml: x-small);
+
+				&:not(#{c(call colorable)}.redGlow_f1ceac) {
+					@include ac-color-styling($bg: primary);
+				}
+			}
+		}
+	}
+}
+
+> div[style='opacity: 1; transform: scale(1);'] {
+	button {
+		@include ac-padding-styling($p: 6px);
+	}
+}
+
+.disconnect_f1ceac {
+	@include ac-padding-styling($p: 4px);
 }

@@ -11,20 +11,166 @@
 
 	#{c(main appLayer)} {
 		@include ac-color-styling($bg: transparent);
-		transform: unset !important;
-		will-change: unset !important;
-		opacity: 1 !important;
+
+		&.stop-animations {
+			&:first-child #{c(main base)} {
+				filter: brightness(29%) !important;
+			}
+		}
+
+		& ~ #{c(main appLayer)} {
+			@include ac-position-styling(
+				$pos: absolute,
+				$w: var(--settingswidth_v),
+				$h: var(--settingsheight_v),
+				$z: 1000
+			);
+			@include ac-spacing-styling($m: auto);
+			@include ac-padding-styling($p: 0);
+			overflow: hidden !important;
+			contain: unset !important;
+			inset: 0 !important;
+			--settingsiconsadditionalsize: var(--use-settingsicons, 0) *
+				(var(--settingsicons-size, 0px) + var(--settingsicons-gap, 0px));
+
+			#{c(userSettings standardSidebarView)},
+			> div {
+				@include ac-position-styling($pos: static, $w: 100%, $h: 100%);
+				@include ac-padding-styling($p: 0);
+				@include ac-spacing-styling($m: 0);
+				overflow: hidden !important;
+			}
+
+			#{c(other cv settingsToolsContainer)} {
+				@include ac-position-styling(
+					$pos: fixed,
+					$max-w: 100%,
+					$max-h: 100%,
+					$z: -1,
+					$w: 100%,
+					$h: 100%
+				);
+				@include ac-padding-styling($pt: 0);
+				opacity: var(--ac-opacity-12) !important;
+				inset: 0 !important;
+
+				#{c(other cv settingsTools)} {
+					@include ac-position-styling($w: 100%, $h: 100%);
+
+					#{c(userSettings closeButtonContainer)} {
+						@include ac-position-styling($h: 100%);
+
+						#{c(userSettings closeButton)} {
+							@include ac-rounded-styling($br: 0);
+							@include ac-position-styling(
+								$w: 100%,
+								$h: 100%,
+								$max-w: unset,
+								$max-h: unset
+							);
+							transition: none !important;
+							@include ac-border-styling(none);
+							flex: unset;
+
+							> svg {
+								@include ac-position-styling($d: none);
+							}
+
+							&:hover {
+								@include ac-color-styling($bg: transparent);
+							}
+						}
+
+						#{c(userSettings closeButtonKeybind)} {
+							@include ac-position-styling($d: none);
+						}
+					}
+				}
+			}
+		}
 	}
 
 	#{c(main baseLayer)} {
 		@include ac-color-styling($bg: transparent);
-		opacity: #{$O01} !important;
+		opacity: var(--ac-opacity-01) !important;
 		transform: unset !important;
 		will-change: unset !important;
+		transition: 0.5s ease-in-out all !important;
 
 		#{c(main container)} {
 			@include ac-spacing-styling($m: 0);
 			@include ac-position-styling($w: unset);
+
+			#{c(main base)} {
+				&::before {
+					@include ac-position-styling(
+						$pos: relative,
+						$w: var(--custom-guild-list-width)
+					);
+					@include ac-spacing-styling(
+						$ml: calc(var(--ac-spacing-sm) * 2),
+						$mt: small,
+						$mb: calc(var(--ac-spacing-sm) * 2)
+					);
+					@include ac-color-styling($bg: secondary);
+					@include ac-border-styling(normal, secondary-alt);
+					@include ac-rounded-styling($br: small);
+					grid-row: titleBarEnd/End;
+					grid-column: start;
+					content: '';
+				}
+
+				&:has(#{c(chat message)}):not(
+						:has(
+							li#{c(chat messageListItem)}[data-is-self],
+							li#{c(chat messageListItem)} [data-is-self]
+						)
+					) {
+					&::after {
+						@include ac-position-styling(
+							$w: auto,
+							$pos: relative,
+							$z: 999,
+							$right: 0,
+							$top: 0
+						);
+						@include ac-color-styling($bg: modifier-accent, $c: text-primary);
+						@include ac-border-styling(normal, secondary-alt);
+						@include ac-spacing-styling(
+							$ml: calc(var(--ac-spacing-xxs) + 1px),
+							$mr: calc(var(--ac-spacing-sm) * 2),
+							$mb: small,
+							$mt: medium
+						);
+						@include ac-padding-styling($p: small);
+						@include ac-rounded-styling($br: small);
+						grid-column: guildsEnd / end;
+						grid-row: titleBarEnd / noticeEnd;
+						font-family: var(--ACV19);
+						font-size: 14px;
+						font-weight: 500;
+						text-align: center;
+						text-transform: capitalize;
+						content: '⚠️ WARNING: theme attributes is not enabled or working. enable theme attributes in betterDiscords general Settings';
+					}
+				}
+
+				&:has(#{c(notice)}) {
+					#{c(main layerContainer)} {
+						#{c(chat layerWrapper)} {
+							@include ac-position-styling(
+								$top: calc(41px + var(--ac-osbar-height) + var(--ac-spacing-sm))
+							);
+						}
+					}
+				}
+
+				#{c(main layerContainer)} {
+					&:has(#{c(chat layerWrapper)}) {
+						@include ac-position-styling($z: 2);
+					}
+				}
+			}
 
 			#{c(main content)} {
 				@include ac-flex-styling($d: grid, $gapc: small);
@@ -32,6 +178,7 @@
 				@include ac-rounded-styling($br: x-small);
 				@include ac-spacing-styling($m: small, $mt: 0);
 				@include ac-padding-styling($p: small);
+				@include ac-border-styling(normal, secondary-alt);
 			}
 		}
 	}

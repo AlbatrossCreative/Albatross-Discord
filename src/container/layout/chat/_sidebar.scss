@@ -2,8 +2,10 @@
 
 #{c(chat chatContent)} {
 	#{c(profile outer)} {
+		@include ac-position-styling($h: calc(100% - 2px));
 		@include ac-color-styling($bg: secondary);
 		@include ac-rounded-styling($br: small);
+		@include ac-border-styling(normal, secondary-alt);
 		overflow: hidden;
 
 		#{c(profile inner)} {
@@ -37,7 +39,7 @@
 				@include ac-flex-styling($gap: small);
 				@include ac-color-styling($bg: primary);
 				@include ac-rounded-styling($br: small);
-				border: none !important;
+				@include ac-border-styling(none);
 			}
 		}
 	}

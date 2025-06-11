@@ -1,11 +1,13 @@
 @use 'abstract' as *;
 
 #{c(store store)} {
+	overflow: hidden;
+
 	.homeWrapper__0920e {
 		@include ac-color-styling($bgc: transparent);
-		border: none !important;
-
-		#{c(store scroller)} {
+		@include ac-border-styling(none);
+		#{c(scroller base)} {
+			@include ac-border-styling(normal, secondary-alt);
 			@include ac-color-styling($bg: secondary);
 			@include ac-rounded-styling($br: small);
 			@include ac-spacing-styling($mt: small);

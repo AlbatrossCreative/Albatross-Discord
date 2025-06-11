@@ -2,11 +2,32 @@
 
 #{c(serverList listItem)} {
 	div {
-		#{c(serverList blobContainer)} {
+		.folderButton__48112 {
+			@include ac-rounded-styling($br: 0);
+
 			#{c(serverList serverWrapper)} {
 				svg {
 					foreignObject {
+						mask: none !important;
+					}
+				}
+			}
+		}
+
+		#{c(serverList blobContainer)} {
+			#{c(serverList serverWrapper)} {
+				svg {
+					defs {
+						rect {
+							rx: var(--ac-rounded-xxs);
+							ry: var(--ac-rounded-xxs);
+						}
+					}
+
+					foreignObject {
 						@include ac-color-styling($bg: primary);
+						@include ac-rounded-styling($br: small);
+						mask: none !important;
 
 						img {
 							@include ac-transition-styling($l: medium, $p: opacity);

@@ -5,6 +5,7 @@
 		@include ac-color-styling($bg: secondary);
 		@include ac-rounded-styling($br: small);
 		@include ac-spacing-styling($mt: small);
+		@include ac-border-styling(normal, secondary-alt);
 	}
 
 	.body_fb04e1 {
@@ -15,5 +16,6 @@
 		@include ac-color-styling($bg: secondary);
 		@include ac-rounded-styling($br: small);
 		@include ac-spacing-styling($mt: small);
+		@include ac-border-styling(normal, secondary-alt);
 	}
 }

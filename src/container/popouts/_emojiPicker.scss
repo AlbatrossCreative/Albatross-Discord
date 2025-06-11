@@ -9,6 +9,121 @@
 	}
 }
 
+#{c(modals expressionPicker contentWrapper)} {
+	@include ac-padding-styling($py: small, $pr: small);
+	@include ac-rounded-styling($br: small);
+	@include ac-flex-styling($gap: 0, $d: grid);
+	grid-template-rows: auto 1fr;
+}
+
+#{c(modals gif container)} {
+	#{c(modals gif header)} {
+		@include ac-padding-styling($px: small, $pb: small);
+		@include ac-color-styling($bg: primary);
+		@include ac-rounded-styling($brb: small);
+		@include ac-spacing-styling($m: 0, $ml: small);
+		@include ac-border-styling(none);
+	}
+
+	#{c(modals gif scroller)} {
+		#{c(modals gif result)} {
+			@include ac-rounded-styling($br: small);
+			overflow: hidden;
+		}
+	}
+}
+
+#{c(modals sticker wrapper)} {
+	#{c(modals sticker header)} {
+		@include ac-padding-styling($px: small, $pb: small);
+		@include ac-color-styling($bg: primary);
+		@include ac-rounded-styling($brb: small);
+		@include ac-spacing-styling($m: 0, $ml: small);
+		@include ac-border-styling(none);
+	}
+
+	#{c(modals sticker listWrapper)} {
+		@include ac-spacing-styling($ml: calc(var(--ac-spacing-sm) * 2), $mt: small);
+
+		#{C(modals sticker gridWrapper)} {
+			#{c(modals sidebarList scroller)} {
+				@include ac-color-styling($bg: primary);
+				@include ac-rounded-styling($br: small);
+			}
+
+			#{c(modals expressionPicker inspector)} {
+				@include ac-spacing-styling($ml: 0);
+			}
+
+			#{c(modals sticker packHeader)} {
+				@include ac-spacing-styling($my: x-small);
+				@include ac-rounded-styling($br: small);
+
+				&::after {
+					@include ac-position-styling($d: none);
+				}
+			}
+		}
+	}
+}
+
+#{c(modals expressionPicker nav)} {
+	@include ac-padding-styling($p: small);
+	@include ac-color-styling($bg: primary);
+	@include ac-rounded-styling($brt: small);
+	@include ac-spacing-styling($ml: small);
+
+	.navList__08434 {
+		@include ac-flex-styling($jc: space-around);
+	}
+}
+
+#{c(modals emoji hasTabWrapper)} {
+	#{c(modals emoji picker)} {
+		@include ac-flex-styling($d: grid, $gapc: small);
+
+		#{c(modals emoji header)} {
+			@include ac-padding-styling($px: small, $pb: small);
+			@include ac-color-styling($bg: primary);
+			@include ac-rounded-styling($brb: small);
+			@include ac-spacing-styling($m: 0, $ml: small);
+			@include ac-border-styling(none);
+		}
+
+		#{c(modals emoji body)} {
+			@include ac-spacing-styling($ml: small, $mt: small);
+
+			#{c(modals emoji listWrapper)} {
+				@include ac-color-styling($bg: primary);
+				@include ac-rounded-styling($br: small);
+
+				#{c(modals emoji categoryHeader)} {
+					@include ac-spacing-styling($m: x-small);
+					@include ac-rounded-styling($br: small);
+
+					&::after {
+						@include ac-position-styling($d: none);
+					}
+				}
+			}
+		}
+	}
+}
+
+#{c(modals expressionPicker inspector)} {
+	@include ac-spacing-styling($ml: small, $mt: small);
+	@include ac-color-styling($bg: primary);
+	@include ac-rounded-styling($br: small);
+	@include ac-border-styling(none);
+}
+
+#{c(modals sidebarList wrapper)} {
+	@include ac-color-styling($bg: primary);
+	@include ac-rounded-styling($br: small);
+	@include ac-spacing-styling($ml: small);
+	@include ac-position-styling($top: calc(50px + var(--ac-spacing-sm)));
+}
+
 #{c(other cv appPopoutWrapper)} {
 	@include ac-color-styling($bg: floating);
 	@include ac-rounded-styling($br: small);
@@ -18,7 +133,6 @@
 		@include ac-color-styling($bg: primary);
 		@include ac-rounded-styling($br: small);
 		@include ac-padding-styling($p: x-small);
-
 	}
 
 	.container_cb32c7 {
@@ -28,7 +142,6 @@
 			@include ac-spacing-styling($m: x-small);
 			@include ac-rounded-styling($br: small);
 			width: auto;
-
 		}
 
 		.appDetailsContainer_cb32c7 {
@@ -37,7 +150,8 @@
 			@include ac-spacing-styling($m: x-small);
 		}
 	}
-	.rowDivider_cb32c7{
+
+	.rowDivider_cb32c7 {
 		display: none;
 	}
 }

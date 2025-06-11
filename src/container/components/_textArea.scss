@@ -2,5 +2,5 @@
 
 #{c(chatForm channelTextAreaBase)} {
 	@include ac-rounded-styling($br: small);
-	border: none !important;
+	@include ac-border-styling(none);
 }

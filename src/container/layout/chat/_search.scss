@@ -3,13 +3,13 @@
 #{c(search wrap)} {
 	@include ac-rounded-styling($br: small);
 	@include ac-color-styling($bg: secondary);
-	border: none !important;
+	@include ac-border-styling(normal, secondary-alt);
 
 	#{c(search header)} {
 		@include ac-spacing-styling($m: small);
-		@include ac-rounded-styling($br: small);
+		@include ac-rounded-styling($br: x-small);
 		@include ac-color-styling($bg: primary);
-		border: none !important;
+		@include ac-border-styling(none);
 	}
 
 	#{c(search scroller)} {
@@ -19,8 +19,8 @@
 			li#{c(search resultContainer)} {
 				#{c(search result)} {
 					@include ac-rounded-styling($br: small);
-					@include ac-color-styling($bg: secondary);
-					border: none !important;
+					@include ac-color-styling($bg: primary);
+					@include ac-border-styling(none);
 				}
 			}
 		}

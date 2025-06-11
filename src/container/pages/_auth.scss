@@ -1,8 +1,17 @@
 @use 'abstract' as *;
 
 #{c(login authBox)} {
-	@include ac-color-styling($bg: primary);
+	@include ac-color-styling($bg: secondary);
 	@include ac-rounded-styling($br: medium);
+
+	#{c(login centeringWrapper)} {
+		#{c(other cv loginAccountsList)} {
+			@include ac-rounded-styling($br: small);
+			[role='separator'] {
+				@include ac-position-styling($d: none);
+			}
+		}
+	}
 
 	&#{c(login authBoxExpanded)} {
 		#{c(login centeringWrapper)} {

@@ -13,9 +13,11 @@
 		#{c(profile inner)} {
 			@include ac-color-styling($bg: transparent, $bgc: transparent);
 
-
 			#{c(profile firendsMoreEditProfileButtons wrapper)} {
-				@include ac-position-styling($right: calc(var(--ac-spacing-sm) * 2), $top: calc(var(--ac-spacing-sm) * 2))
+				@include ac-position-styling(
+					$right: calc(var(--ac-spacing-sm) * 2),
+					$top: calc(var(--ac-spacing-sm) * 2)
+				);
 			}
 
 			header {
@@ -53,10 +55,15 @@
 								foreignObject {
 									#{c(avatar stack)} {
 										img {
-											clip-path: inset(calc(var(--rs-large-spacing) + 1px) calc(var(--rs-large-spacing) + 1px) round var(--ac-rounded-sm)) !important;
+											clip-path: inset(
+												calc(var(--rs-large-spacing) + 1px)
+													calc(var(--rs-large-spacing) + 1px) round
+													var(--ac-rounded-sm)
+											) !important;
 										}
 									}
 								}
+
 								> rect {
 									rx: var(--ac-rounded-md) !important;
 									ry: var(--ac-rounded-md) !important;
@@ -64,7 +71,8 @@
 							}
 						}
 					}
-					.container_ab8609{
+
+					.container_ab8609 {
 						@include ac-position-styling($top: 53%, $left: 23%);
 					}
 
@@ -93,7 +101,7 @@
 						@include ac-padding-styling($p: small);
 						@include ac-flex-styling($jc: center);
 						@include ac-spacing-styling($m: 0);
-						border: none !important;
+						@include ac-border-styling(none);
 					}
 
 					#{c(scroller thin)} {
@@ -109,12 +117,9 @@
 							}
 						}
 
-						.role_dfa8b6{
-
-							.roleRemoveButton_dfa8b6{
-
-								.roleCircle__4f569{
-
+						.role_dfa8b6 {
+							.roleRemoveButton_dfa8b6 {
+								.roleCircle__4f569 {
 								}
 							}
 						}

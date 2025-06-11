@@ -213,10 +213,12 @@
 			}
 			// Private chats and users sidebar
 			&[width='32'] {
+				overflow: unset !important;
 				&:after {
 					width: 10px;
 					height: 14px;
 					top: 30%;
+					left: 102%;
 				}
 			}
 			// Banner wrapper private chat

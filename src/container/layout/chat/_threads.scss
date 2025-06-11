@@ -7,13 +7,6 @@
 		@include ac-position-styling($d: none);
 	}
 
-	#{c(chat threadSidebarOpen)} {
-		#{c(forums container)} {
-			@include ac-color-styling($bg: secondary);
-			@include ac-rounded-styling($br: small);
-		}
-	}
-
 	#{c(chat layerWrapper)} {
 		@include ac-position-styling($pos: relative);
 
@@ -25,8 +18,7 @@
 
 		#{c(threads container)} {
 			@include ac-color-styling($bg: transparent);
-			border: none !important;
-
+			@include ac-border-styling(none);
 			#{c(header header)} {
 				@include ac-color-styling($bg: secondary);
 				@include ac-rounded-styling($br: small);
@@ -53,17 +45,18 @@
 #{c(forums container)} {
 	@include ac-color-styling($bg: secondary);
 	@include ac-rounded-styling($br: small);
+	@include ac-border-styling(normal, secondary-alt);
 
 	#{c(forums header)} {
 		@include ac-color-styling($bg: primary);
 		@include ac-rounded-styling($br: small);
-		border: none !important;
-
+		@include ac-border-styling(none);
 		#{c(forums formContainer)} {
 			@include ac-padding-styling($pr: 0);
 
 			#{c(forums form)} {
 				@include ac-spacing-styling($mr: x-small);
+
 				textarea {
 					@include ac-color-styling($bg: transparent);
 				}
@@ -74,6 +67,6 @@
 	#{c(forums mainCard)} {
 		@include ac-color-styling($bg: primary);
 		@include ac-rounded-styling($br: small);
-		border: none !important;
+		@include ac-border-styling(none);
 	}
 }

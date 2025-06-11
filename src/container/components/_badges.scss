@@ -1,0 +1,13 @@
+@use 'abstract' as *;
+
+#{c(call liveBase)} {
+	@include ac-rounded-styling($br: xx-small);
+	@include ac-color-styling($bg: modifier-accent);
+}
+
+#{c(serverList lowerBadge)} {
+	@include ac-position-styling($top: unset, $bottom: calc(var(--ac-spacing-xxs) * -1), $right: unset, $left: calc(var(--ac-spacing-xxs) * -1));
+}
+#{c(serverList upperBadge)} {
+	@include ac-position-styling($top: calc(var(--ac-spacing-xxs) * -1), $right: calc(var(--ac-spacing-xxs) * -1));
+}

@@ -1,13 +1,30 @@
 @use 'abstract' as *;
 
 #{c(other cv shopAll)} {
-	border: none !important;
+	@include ac-border-styling(none);
 	@include ac-rounded-styling($br: small);
+	@include ac-color-styling($bg: transparent);
 
 	#{c(other cv shopBackground)} {
+		@include ac-color-styling($bg: transparent);
 		@include ac-rounded-styling($br: small);
+		overflow: hidden scroll !important;
 
 		#{c(other cv shopViewWrapper)} {
+			@include ac-rounded-styling($br: small);
+
+			.fullscreenHeaderBar__80679 {
+				#{c(header upperContainer)} {
+					#{c(header children)} {
+						@include ac-position-styling($max-w: 100%);
+
+						.alignedRightContent__80679 {
+							@include ac-spacing-styling($mr: small);
+						}
+					}
+				}
+			}
+
 			#{c(other cv shopPreview)} {
 				@include ac-color-styling($bg: secondary);
 				@include ac-rounded-styling($br: small);

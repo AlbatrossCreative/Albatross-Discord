@@ -14,13 +14,19 @@
 		}
 	}
 
+	#{c(topBar title container)} {
+		-webkit-app-region: drag !important;
+	}
+
 	#{c(topBar leading container)} {
 		@include ac-position-styling($h: 100%);
 		@include ac-flex-styling($gap: xx-small, $ac: center);
+		-webkit-app-region: drag !important;
 
 		&::before {
 			@include ac-color-styling($bg: var(--titlebar-wordmark) center);
 			@include ac-position-styling($pos: relative, $h: 100%, $w: 110px);
+			pointer-events: none;
 			text-align: right;
 			content: '';
 		}
@@ -28,9 +34,9 @@
 		&::after {
 			@include ac-position-styling($pos: relative);
 			@include ac-color-styling($c: var(--text-normal));
-			opacity: #{$O14};
+			pointer-events: none;
+			opacity: var(--ac-opacity-14);
 			font-size: 12px;
 		}
 	}
 }
-

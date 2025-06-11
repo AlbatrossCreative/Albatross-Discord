@@ -1,9 +1,12 @@
 @use 'abstract' as *;
 
 #{c(serverList wrapper)} {
-	@include ac-spacing-styling($mb: calc(var(--custom-app-panels-height, 0) - var(--ac-spacing-sm)));
-	@include ac-color-styling($bg: secondary);
+	@include ac-spacing-styling(
+		$mb: calc(var(--custom-app-panels-height, 0) - var(--ac-spacing-lg))
+	);
+	@include ac-color-styling($bg: transparent);
 	@include ac-rounded-styling($brt: small);
+	@include ac-position-styling($z: 10);
 	overflow: hidden;
 	#{c(serverList unreadMentionsBarTop)} {
 		@include ac-position-styling($top: var(--custom-guild-list-width), $w: unset);
@@ -17,11 +20,11 @@
 		mask-image: linear-gradient(
 			to bottom,
 			black 0px,
-			black 50px,
+			red 78px,
 			transparent 50px,
-			black 100px,
+			black 0px,
 			black calc(100% - 24px),
-			transparent 100%
+			transparent 99.3%
 		);
 
 		#{c(serverList itemsContainer)} {

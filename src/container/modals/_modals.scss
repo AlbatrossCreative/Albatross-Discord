@@ -10,5 +10,9 @@
 		@include ac-spacing-styling($m: small);
 		@include ac-rounded-styling($br: small);
 		box-shadow: none;
+
+		button {
+			@include ac-color-styling($bg: floating);
+		}
 	}
 }

@@ -2,9 +2,8 @@
 
 #{c(button button)} {
 	@include ac-rounded-styling($br: x-small);
-	border: none !important;
-
+	@include ac-border-styling(none);
 	&#{c(button lookOutlined)} {
-		border: solid 2px !important;
+		@include ac-border-styling(normal, secondary-alt);
 	}
 }

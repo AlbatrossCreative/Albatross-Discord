@@ -1,0 +1,13 @@
+@use 'abstract' as *;
+
+#{c(appSettings slider)} {
+	#{c(appSettings sliderTrack)} {
+		#{c(appSettings sliderMark)} {
+			&#{c(appSettings sliderDefaultValue)} {
+				#{c(appSettings sliderMarkValue)} {
+					@include ac-color-styling($c: text-accent);
+				}
+			}
+		}
+	}
+}
