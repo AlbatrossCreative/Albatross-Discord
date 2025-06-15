@@ -1,4 +1,4 @@
-# Albatross Pre-release 1.0.0
+# Albatross Pre-release 0.2.1
 
 ⚠️ This theme is still underdevelopment and bugs **WILL** occur.
 
@@ -9,12 +9,15 @@
 [![Sulfide](https://img.shields.io/badge/sulfide-language?style=for-the-badge&color=404c5a)](https://github.com/LeafyLuigi/sulfide)
 ![replugged](https://img.shields.io/badge/replugged%20not%20supported-language?style=for-the-badge&color=404c5a)
 
-- [Albatross Pre-release 1.0.0](#albatross-pre-release-100)
+- [Albatross Pre-release 0.2.1](#albatross-pre-release-021)
 	- [Disclaimers](#disclaimers)
 	- [Palettes](#palettes)
 	- [Changelog](#changelog)
 		- [Pre-release v0.1.0 - 2025-06-11](#pre-release-v010---2025-06-11)
 			- [Official Release](#official-release)
+		- [Pre-release v0.2.1 - 2025-06-14](#pre-release-v021---2025-06-14)
+			- [Added](#added)
+			- [Bug Fixes](#bug-fixes)
 	- [Known Bugs](#known-bugs)
 		- [Scrolling issues](#scrolling-issues)
 	- [Roadmap](#roadmap)
@@ -64,6 +67,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Officially begun tracking changes and fixes within Albatross. Still expect bugs, and unthemed elements
 
+### Pre-release [v0.2.1](https://github.com/AlbatrossCreative/Albatross-Discord/releases) - 2025-06-14
+
+[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases)
+
+#### Added
+
+- Plugin verification method for Vencord. Click on setting cog/information button on a plugin card in the plugins tab to see if your desired plugin is compatible with Albatross. Only 1/3rd plugins test so far.
+
+#### Bug Fixes
+
+- Soft attempt to platform indicators
+- Fixed thread chats in sidebar
+- Fixed embeds
+- Moved messageButtonContainer for easier avatar accessibility
+- Fixed searchBar in chat topBar
+- Fixed userPanel in sidebar
+- Fixed unthemed elements
+- Fixed Discord logo not showing up in loading container
+- Fixed upload menu buttons
+
+Reporting bugs helps Albatross grow!
+Continue reporting issues [here](https://github.com/albatrosscreative/albatross-discord/issues).
+
 ## Known Bugs
 
 ### Scrolling issues
@@ -76,14 +102,20 @@ Spot a bug? Make an [Issue](https://github.com/AlbatrossCreative/Albatross-Disco
 
 Heres a list of features im planning on adding soon.
 
-**🟢 Minor 🟡 Moderate 🔴 Major**
+**Attention Indicators**
+
+**🟢 Minor (Whatever)**
+**🟡 Moderate (Can Wait)**
+**🔴 Major (ASAP)**
 
 | **Urgency** |    **Feature**     |
 | :---------: | :----------------: |
 |      🔴      | Light mode support |
-|      🟢      | Add more Palettes  |
+|🔴| MacOS support |
 |      🔴      | Nitro customization support |
-|  🟡 | Add more plugin support |
+|  🟡 | Additional plugin support |
+|      🟢      | Add more Palettes  |
+
 
 ## Getting Started
 
@@ -149,9 +181,10 @@ Please ensure Discord is installed with your choosing of the client mods below.
 
 ### Option 1 - Download theme.css file
 
-Easiest method to install Alabatross is to download [albatross.theme.css]() from the [releases]() page. Drag and drop it into your client mods theme folder.
+Easiest method to install Alabatross is to download `albatross.theme.css` from the [releases](https://github.com/AlbatrossCreative/Albatross-Discord/releases/latest) page. Drag and drop it into your client mods theme folder:
 
- `BetterDiscord/themes` or `vencord/themes`
+ `BetterDiscord/themes` **OR**
+  `vencord/themes`
 
 ### Option 2 - CSS Import
 

@@ -1,9 +1,7 @@
 @use 'abstract' as *;
 
-#{c(serverList pillHome)} {
-	@include ac-position-styling($d: none);
-}
-
-#{c(serverList pill)} {
+#{c(serverList pillHome)},
+#{c(serverList pill)},
+.pill_ed9a5f {
 	@include ac-position-styling($d: none);
 }

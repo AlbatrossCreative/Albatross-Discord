@@ -32,7 +32,7 @@
 
 					&::before {
 						@include ac-position-styling(
-							$w: 98%,
+							$w: calc(100% - 18px),
 							$h: 100%,
 							$pos: absolute,
 							$top: 0,

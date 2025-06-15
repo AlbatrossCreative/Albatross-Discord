@@ -78,7 +78,8 @@
 
 					.headerButtons__24502 {
 						@include ac-flex-styling($as: flex-end);
-						@include ac-padding-styling($p: small, $pb: x-small);
+						@include ac-padding-styling($p: small, $pb: small);
+						@include ac-spacing-styling($mb: x-small);
 					}
 				}
 			}

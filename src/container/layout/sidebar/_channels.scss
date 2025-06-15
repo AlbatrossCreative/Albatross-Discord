@@ -6,27 +6,23 @@
 	@include ac-spacing-styling($m: 0);
 
 	&::before {
-		@include ac-position-styling(
-			$d: block,
+		@include ac-position-styling($d: block,
 			$pos: absolute,
 			$w: calc(100% - 2px),
 			$h: 80px,
 			$bottom: 1px,
 			$left: 1px,
 			$right: unset,
-			$z: 2
-		);
+			$z: 2);
 		@include ac-rounded-styling($br: small);
 		@include ac-color-styling($bg: secondary);
 		pointer-events: none !important;
 		transition: 0.1s ease all;
-		mask-image: linear-gradient(
-			transparent 9%,
-			#0000001a 10%,
-			#0000006a 40%,
-			#000000b6 50%,
-			#000000 80%
-		);
+		mask-image: linear-gradient(transparent 9%,
+				#0000001a 10%,
+				#0000006a 40%,
+				#000000b6 50%,
+				#000000 80%);
 		content: '';
 	}
 
@@ -62,6 +58,7 @@
 					@include ac-padding-styling($p: 0);
 					box-shadow: none !important;
 					@include ac-border-styling(none);
+
 					#{c(sidebar server unreadBar text)} {
 						@include ac-spacing-styling($my: xx-small);
 					}
@@ -77,21 +74,19 @@
 		@include ac-padding-styling($p: 0);
 		@include ac-border-styling(normal, secondary-alt);
 
-		ul {
+		>ul {
 			@include ac-padding-styling($pl: small);
 			@include ac-position-styling($h: fit-content);
 
-			> [style*='height:'] {
+			>[style*='height:'] {
 				@include ac-position-styling($d: none);
 			}
 
 			&::after {
-				@include ac-position-styling(
-					$d: block,
+				@include ac-position-styling($d: block,
 					$h: var(--custom-guild-list-width),
 					$w: 100%,
-					$pos: relative
-				);
+					$pos: relative);
 				content: '';
 			}
 
@@ -100,9 +95,36 @@
 			}
 
 			li {
-				#{c(sidebar server channel wrapper)}#{c(sidebar server channel container)}:has(
-						#{c(sidebar server extras basicChannelRowLink)}
-					) {
+				&#{c(sidebar threadsContainer)} {
+					ul {
+						@include ac-padding-styling($pl: 0);
+
+						#{c(sidebar server channel container)} {
+							@include ac-spacing-styling($ml: calc(var(--channels-spine-offset-left) * 2 - var(--ac-spacing-sm)));
+							@include ac-padding-styling($pl: 0);
+
+							#{c(sidebar server channel wrapper)} {
+								@include ac-position-styling($w: fill);
+								@include ac-spacing-styling($m: 0);
+
+								#{c(sidebar server channel link)} {
+									@include ac-spacing-styling($ml: 2x-large);
+									@include ac-padding-styling($pl: 0);
+								}
+							}
+
+							#{c(sidebar threadsSpine)} {
+								@include ac-position-styling($left: calc(var(--channels-spine-offset-left) * -1 + var(--ac-spacing-sm)));
+							}
+
+							&::before {
+								@include ac-position-styling($left: small);
+							}
+						}
+					}
+				}
+
+				#{c(sidebar server channel wrapper)}#{c(sidebar server channel container)}:has(#{c(sidebar server extras basicChannelRowLink)}) {
 					@include ac-spacing-styling($my: small);
 
 					#{c(sidebar server extras basicChannelRowLink)} {
@@ -152,6 +174,9 @@
 						@include ac-rounded-styling($br: small);
 						@include ac-flex-styling($f: 1, $jc: center);
 						@include ac-padding-styling($pl: small);
+						#{c(sidebar server extras content)} {
+							@include ac-flex-styling($ai: self-end);
+						}
 					}
 
 					&:hover {
@@ -169,7 +194,7 @@
 				}
 			}
 
-			li#{c(sidebar server channel container)} {
+			>li#{c(sidebar server channel container)} {
 				@include ac-padding-styling($pb: x-small);
 				@include ac-flex-styling($f: 1, $dir: column);
 
@@ -216,11 +241,8 @@
 
 						&:before {
 							@include ac-position-styling($w: var(--ac-pill-width));
-							@include ac-color-styling(
-								$bg: (
-									var(--brand-600),
-								)
-							);
+							@include ac-color-styling($bg: (var(--brand-600),
+								));
 						}
 					}
 
@@ -237,7 +259,7 @@
 						}
 					}
 
-					> div[class]:not(#{c(sidebar server channel unreadBlob)}) {
+					>div[class]:not(#{c(sidebar server channel unreadBlob)}) {
 						@include ac-flex-styling($f: 1);
 						@include ac-position-styling($w: 100%);
 
@@ -259,11 +281,19 @@
 
 								#{c(sidebar server channel children)} {
 									#{c(sidebar server channel channelInfo)} {
+										@include ac-position-styling($min-w: 16px, $h: 16px);
+										@include ac-color-styling($bg: accent);
+										@include ac-rounded-styling($br: xx-small);
 										@include ac-spacing-styling($m: 0);
+
+										.text-xs\/semibold_cf4812 {
+											@include ac-color-styling($c: header-primary);
+											@include ac-spacing-styling($mx: xx-small);
+										}
 
 										.mentionsBadge__933a1 {
 											#{c(serverList numberBadge)} {
-												@include ac-color-styling($bg: transparent);
+												@include ac-color-styling($bg: accent);
 												text-align: center;
 											}
 										}

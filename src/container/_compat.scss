@@ -19,6 +19,20 @@
 		}
 	}
 }
+#vencordplugins-tab{
+	> div {
+		.vc-m-bottom-16 {
+			@include ac-flex-styling($jc: space-between);
+			&::after{
+				@include ac-position-styling($pos: relative);
+				@include ac-color-styling($c: header-primary);
+				font-size: 16px;
+				font-weight: medium;
+				content: 'Open Plugin information to check theme compatibility';
+			}
+		}
+	}
+}
 
 .bd- {
 	&divider {

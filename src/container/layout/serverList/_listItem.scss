@@ -1,5 +1,26 @@
 @use 'abstract' as *;
 
+.listItemWrapper__91816 {
+	#{c(serverList serverWrapper)} {
+		mask {
+			use[href="#:r54:-lower_badge_masks"] {
+				@include ac-position-styling($d: none);
+			}
+		}
+
+		svg {
+			foreignObject {
+				mask: none !important;
+				#{c(serverList iconWrapper)} {
+					img {
+						@include ac-rounded-styling($br: var(--rs-avatar-shape));
+					}
+				}
+			}
+		}
+	}
+}
+
 #{c(serverList listItem)} {
 	div {
 		.folderButton__48112 {

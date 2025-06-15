@@ -55,6 +55,7 @@
 					@include ac-color-styling($bg: primary);
 					@include ac-rounded-styling($br: small);
 					@include ac-padding-styling($p: small);
+					@include ac-border-styling(normal, secondary-alt);
 				}
 
 				#{c(chatForm inner)} {
@@ -116,6 +117,7 @@
 					$bottom: calc(100% + var(--ac-spacing-sm) * 2),
 					$left: calc(var(--ac-spacing-xxs) * -1)
 				);
+				@include ac-border-styling(normal, secondary-alt);
 				@include ac-rounded-styling($br: small);
 				@include ac-color-styling($bg: primary);
 				box-shadow: none;
@@ -149,14 +151,22 @@
 					@include ac-rounded-styling($br: small);
 					@include ac-color-styling($bg: secondary);
 					@include ac-spacing-styling($my: small, $ml: small);
+					@include ac-padding-styling($p: 0);
 
 					#{c(modals sidebarList wrapper)} {
-						@include ac-position-styling($pos: relative);
-						@include ac-spacing-styling($mt: small);
+						@include ac-position-styling($pos: relative, $top: 0);
+						@include ac-color-styling($bg: secondary);
+						@include ac-spacing-styling($mt: 0, $ml: 0);
+						@include ac-border-styling(normal, secondary-alt);
 
 						#{c(modals sidebarList listItems)} {
 							@include ac-flex-styling($dir: column, $ai: center);
 							inset: 0 !important;
+							.section_b1e4f3 {
+								.wrapper__1a58a {
+									@include ac-padding-styling($p: 0);
+								}
+							}
 						}
 					}
 				}

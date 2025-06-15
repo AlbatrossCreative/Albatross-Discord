@@ -1,7 +1,7 @@
 @use 'abstract' as *;
 
 #{c(sidebar panel panels)} {
-	@include ac-position-styling($w: fill, $left: unset, $right: 0, $bottom: 0, $z: 0);
+	@include ac-position-styling($w: fill, $left: unset, $right: 0, $bottom: 0);
 	@include ac-flex-styling($dir: column);
 	@include ac-color-styling($bg: transparent);
 	@include ac-rounded-styling($br: small);
@@ -176,7 +176,7 @@
 		}
 
 		#{c(sidebar panel buttons buttons)} {
-			@include ac-flex-styling($gap: var(--ac-spacing-xs));
+			@include ac-flex-styling;
 			@include ac-color-styling($bg: transparent);
 			@include ac-spacing-styling($mb: small);
 			@include ac-padding-styling($p: 0);

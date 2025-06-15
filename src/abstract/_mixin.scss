@@ -71,7 +71,9 @@ $ac-spacing: (
 @mixin _ac-space($prop, $val) {
 	@if map.has-key($ac-spacing, $val) {
 		#{$prop}: map.get($ac-spacing, $val) !important;
-	} @else {
+	}
+
+	@else {
 		#{$prop}: $val !important;
 	}
 }
@@ -79,85 +81,68 @@ $ac-spacing: (
 @mixin _ac-border($prop, $val) {
 	@if map.has-key($ac-borders, $val) {
 		#{$prop}: map.get($ac-borders, $val) !important;
-	} @else {
+	}
+
+	@else {
 		#{$prop}: $val !important;
 	}
 }
 
-@mixin ac-border-styling(
-	$w,
-	$color: null,
-	$b: null,
-	$bt: null,
-	$bb: null,
-	$br: null,
-	$bl: null,
-	$bx: null,
-	$by: null
-) {
+@mixin ac-border-styling($w, $color:null, $b: null, $bt: null, $bb: null, $br: null, $bl: null, $bx: null, $by: null) {
+	border-style: solid !important;
+
 	@if $b {
 		border-style: $b !important;
 	}
-
 	@if $bt {
 		border-top: $bt !important;
 	}
-
 	@if $bb {
-		border-bottom-width: $bb !important;
+		border-bottom: $bb !important;
 	}
-
 	@if $br {
-		border-right-width: $br !important;
+		border-right: $br !important;
 	}
-
 	@if $bl {
-		border-left-width: $bl !important;
+		border-left: $bl !important;
 	}
-
 	@if $bx {
-		border-left-width: $bx !important;
+		border-left: $bx !important;
 		border-right: $bx !important;
 	}
-
 	@if $by {
-		border-top-width: $by !important;
-		border-bottom-width: $by !important;
+		border-top: $by !important;
+		border-bottom: $by !important;
 	}
-
 	@if $w == medium {
-		border-width: 2px !important ;
-		border-style: solid !important;
+		border-width: 2px !important;
 	}
 
 	@if $w == normal {
 		border-width: 1px !important;
-		border-style: solid !important;
 	}
 
 	@if $w == thick {
 		border-width: 3px !important;
-		border-style: solid !important;
 	}
 
 	@if $w == none {
-		border: none !important;
+		border-width: 0 !important;
 	}
+
 
 	@if $color {
 		@include _ac-border(border-color, $color);
 	}
 }
 
-@mixin ac-spacing-styling(
-	$m: null,
+@mixin ac-spacing-styling($m: null,
 	$mx: null,
 	$my: null,
 	$mb: null,
 	$mt: null,
 	$ml: null,
-	$mr: null
-) {
+	$mr: null) {
 	@if $m {
 		@include _ac-space(margin, $m);
 	}
@@ -189,15 +174,13 @@ $ac-spacing: (
 	}
 }
 
-@mixin ac-padding-styling(
-	$p: null,
+@mixin ac-padding-styling($p: null,
 	$px: null,
 	$py: null,
 	$pb: null,
 	$pt: null,
 	$pl: null,
-	$pr: null
-) {
+	$pr: null) {
 	@if $p {
 		@include _ac-space(padding, $p);
 	}
@@ -233,7 +216,9 @@ $ac-spacing: (
 @mixin _ac-color($prop, $val) {
 	@if map.has-key($ac-colors, $val) {
 		#{$prop}: map.get($ac-colors, $val) !important;
-	} @else {
+	}
+
+	@else {
 		#{$prop}: $val !important;
 	}
 }
@@ -256,13 +241,14 @@ $ac-spacing: (
 @mixin _ac-rounded-corner($corners, $val) {
 	@if map.has-key($ac-rounded, $val) {
 		border-radius: #{map.get($ac-rounded, $val)} $corners !important;
-	} @else {
+	}
+
+	@else {
 		border-radius: #{$val} $corners !important;
 	}
 }
 
-@mixin ac-rounded-styling(
-	$br: null,
+@mixin ac-rounded-styling($br: null,
 	$brt: null,
 	$brb: null,
 	$brr: null,
@@ -272,12 +258,13 @@ $ac-spacing: (
 	$brtl: null,
 	$brbl: null,
 	$brx: null,
-	$bry: null
-) {
+	$bry: null) {
 	@if $br {
 		@if map.has-key($ac-rounded, $br) {
 			border-radius: map.get($ac-rounded, $br) !important;
-		} @else {
+		}
+
+		@else {
 			border-radius: $br !important;
 		}
 	}
@@ -285,7 +272,9 @@ $ac-spacing: (
 	@if $brt {
 		@if map.has-key($ac-rounded, $brt) {
 			border-radius: map.get($ac-rounded, $brt) map.get($ac-rounded, $brt) 0 0 !important;
-		} @else {
+		}
+
+		@else {
 			border-radius: $brt $brt 0 0 !important;
 		}
 	}
@@ -293,7 +282,9 @@ $ac-spacing: (
 	@if $brb {
 		@if map.has-key($ac-rounded, $brb) {
 			border-radius: 0 0 map.get($ac-rounded, $brb) map.get($ac-rounded, $brb) !important;
-		} @else {
+		}
+
+		@else {
 			border-radius: 0 0 $brb $brb !important;
 		}
 	}
@@ -301,7 +292,9 @@ $ac-spacing: (
 	@if $brr {
 		@if map.has-key($ac-rounded, $brr) {
 			border-radius: 0 map.get($ac-rounded, $brr) map.get($ac-rounded, $brb) 0 !important;
-		} @else {
+		}
+
+		@else {
 			border-radius: 0 $brr $brr 0 !important;
 		}
 	}
@@ -309,7 +302,9 @@ $ac-spacing: (
 	@if $brl {
 		@if map.has-key($ac-rounded, $brl) {
 			border-radius: map.get($ac-rounded, $brl) 0 0 map.get($ac-rounded, $brl) !important;
-		} @else {
+		}
+
+		@else {
 			border-radius: $brl 0 0 $brl !important;
 		}
 	}
@@ -317,7 +312,9 @@ $ac-spacing: (
 	@if $brtr {
 		@if map.has-key($ac-rounded, $brtr) {
 			border-radius: 0 map.get($ac-rounded, $brtr) 0 0 !important;
-		} @else {
+		}
+
+		@else {
 			border-radius: 0 $brtr 0 0 !important;
 		}
 	}
@@ -325,7 +322,9 @@ $ac-spacing: (
 	@if $brbr {
 		@if map.has-key($ac-rounded, $brbr) {
 			border-radius: 0 0 map.get($ac-rounded, $brbr) 0 !important;
-		} @else {
+		}
+
+		@else {
 			border-radius: 0 0 $brbr 0 !important;
 		}
 	}
@@ -333,7 +332,9 @@ $ac-spacing: (
 	@if $brtl {
 		@if map.has-key($ac-rounded, $brtl) {
 			border-radius: map.get($ac-rounded, $brtl) 0 0 0 !important;
-		} @else {
+		}
+
+		@else {
 			border-radius: $brtl 0 0 0 !important;
 		}
 	}
@@ -341,7 +342,9 @@ $ac-spacing: (
 	@if $brbl {
 		@if map.has-key($ac-rounded, $brbl) {
 			border-radius: 0 0 0 map.get($ac-rounded, $brbl) !important;
-		} @else {
+		}
+
+		@else {
 			border-radius: 0 0 0 $brbl !important;
 		}
 	}
@@ -349,7 +352,9 @@ $ac-spacing: (
 	@if $brx {
 		@if map.has-key($ac-rounded, $brx) {
 			border-radius: map.get($ac-rounded, $brx) 0 map.get($ac-rounded, $brx) 0 !important;
-		} @else {
+		}
+
+		@else {
 			border-radius: $brx 0 $brx 0 !important;
 		}
 	}
@@ -357,14 +362,15 @@ $ac-spacing: (
 	@if $bry {
 		@if map.has-key($ac-rounded, $bry) {
 			border-radius: 0 map.get($ac-rounded, $bry) 0 map.get($ac-rounded, $bry) !important;
-		} @else {
+		}
+
+		@else {
 			border-radius: 0 $bry 0 $bry !important;
 		}
 	}
 }
 
-@mixin ac-position-styling(
-	$pos: null,
+@mixin ac-position-styling($pos: null,
 	$d: null,
 	$top: null,
 	$bottom: null,
@@ -376,8 +382,7 @@ $ac-spacing: (
 	$max-h: null,
 	$min-w: null,
 	$min-h: null,
-	$z: null
-) {
+	$z: null) {
 	@if $d {
 		display: $d !important;
 	}
@@ -409,7 +414,9 @@ $ac-spacing: (
 	@if $w {
 		@if $w ==fill {
 			width: -webkit-fill-available !important;
-		} @else {
+		}
+
+		@else {
 			width: $w !important;
 		}
 	}
@@ -417,7 +424,9 @@ $ac-spacing: (
 	@if $h {
 		@if $h ==fill {
 			height: -webkit-fill-available !important;
-		} @else {
+		}
+
+		@else {
 			height: $h !important;
 		}
 	}
@@ -439,11 +448,9 @@ $ac-spacing: (
 	}
 }
 
-@mixin ac-transition-styling($l: null, $p: null, $d: null) {
-}
+@mixin ac-transition-styling($l: null, $p: null, $d: null) {}
 
-@mixin ac-flex-styling(
-	$f: null,
+@mixin ac-flex-styling($f: null,
 	$gap: null,
 	$gapc: null,
 	$gapr: null,
@@ -455,8 +462,7 @@ $ac-spacing: (
 	$js: null,
 	$as: null,
 	$d: null,
-	$wrap: null
-) {
+	$wrap: null) {
 	@if $f {
 		flex: $f !important;
 	}
@@ -487,7 +493,9 @@ $ac-spacing: (
 
 	@if $d {
 		display: $d !important;
-	} @else {
+	}
+
+	@else {
 		display: flex !important;
 	}
 
