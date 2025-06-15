@@ -786,10 +786,10 @@ html[class*=theme-] * {
 }
 
 html.platform-win .bar_c38106:not(.systemBar_c38106) .leading_c38106::after {
-  content: "v0.2.1 〡 " var(--ACV17) " Palette by " var(--ACV16);
+  content: "v0.2.2 〡 " var(--ACV17) " Palette by " var(--ACV16);
 }
 html.platform-osx .bar_c38106:not(.systemBar_c38106) .trailing_c38106::after {
-  content: "v0.2.1 〡 " var(--ACV17) " Palette by " var(--ACV16);
+  content: "v0.1.0 〡 " var(--ACV17) " Palette by " var(--ACV16);
 }
 
 html.platform-win .info__2debe::before {
@@ -798,16 +798,24 @@ html.platform-win .info__2debe::before {
   text-transform: none;
   font-size: 12px;
   position: relative;
-  content: "Albatross 0.2.1 " "(" var(--ACV-COMMIT) ")";
+  content: "Albatross 0.2.2 " "(" var(--ACV-COMMIT) ")";
 }
 
 html.platform-osx .info__2debe::before {
+  content: "Albatross 0.1.0 " "(" var(--ACV-COMMIT) ")";
   font-family: var(--font-primary);
   color: var(--text-muted);
   text-transform: none;
   font-size: 12px;
   position: relative;
-  content: "Albatross 0.2.1 " "(" var(--ACV-COMMIT) ")";
+}
+html.platform-osx .info__2debe::after {
+  content: "Albatross Backend" " (" var(--ACB-COMMIT) ")";
+  color: var(--text-muted);
+  font-family: var(--font-primary);
+  position: relative;
+  text-transform: none;
+  font-size: 12px;
 }
 
 .bar_c38106 {
@@ -2141,6 +2149,7 @@ li.messageListItem__5126c > [data-is-self=false] .buttonContainer_c19a55 .button
   background: var(--background-tertiary) !important;
   border-radius: var(--ac-rounded-sm) !important;
   padding-right: var(--ac-spacing-xxs) !important;
+  width: 100% !important;
   pointer-events: all !important;
   border-style: solid !important;
   border-width: 0 !important;

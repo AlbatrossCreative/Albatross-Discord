@@ -18,6 +18,8 @@
 		- [Pre-release v0.2.1 - 2025-06-14](#pre-release-v021---2025-06-14)
 			- [Added](#added)
 			- [Bug Fixes](#bug-fixes)
+		- [Pre-release v0.2.2 - 2025-06-14](#pre-release-v022---2025-06-14)
+			- [Bug Fixes](#bug-fixes-1)
 	- [Known Bugs](#known-bugs)
 		- [Scrolling issues](#scrolling-issues)
 	- [Roadmap](#roadmap)
@@ -61,7 +63,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Pre-release [v0.1.0](https://github.com/AlbatrossCreative/Albatross-Discord/releases) - 2025-06-11
 
-[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases)
+[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/0.1.0)
 
 #### Official Release
 
@@ -69,7 +71,7 @@ Officially begun tracking changes and fixes within Albatross. Still expect bugs,
 
 ### Pre-release [v0.2.1](https://github.com/AlbatrossCreative/Albatross-Discord/releases) - 2025-06-14
 
-[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases)
+[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/0.2.1)
 
 #### Added
 
@@ -87,8 +89,16 @@ Officially begun tracking changes and fixes within Albatross. Still expect bugs,
 - Fixed Discord logo not showing up in loading container
 - Fixed upload menu buttons
 
+### Pre-release [v0.2.2](https://github.com/AlbatrossCreative/Albatross-Discord/releases) - 2025-06-14
+
+[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.2)
+
+#### Bug Fixes
+
+- Fixed searchBar
+
 Reporting bugs helps Albatross grow!
-Continue reporting issues [here](https://github.com/albatrosscreative/albatross-discord/issues).
+Continue reporting issues [here](https://github.com/albatrosscreative/albatross-discord/issues). Open [Changelog](/changelog.md) to see more releases.
 
 ## Known Bugs
 

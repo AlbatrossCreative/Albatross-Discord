@@ -38,12 +38,21 @@ html#{c(os win platform)} {
 html#{c(os mac platform)} {
 	#{c(userSettings sidebarInfo)} {
 		&::before {
+			content: '#{$theme-name} #{$osx-version} ' '(' var(--ACV-COMMIT) ')';
 			font-family: var(--font-primary);
 			color: var(--text-muted);
 			text-transform: none;
 			font-size: 12px;
 			position: relative;
-			content: '#{$theme-name} #{$osx-version} ' '(' var(--ACV-COMMIT) ')';
+		}
+
+		&::after {
+			content: 'Albatross Backend' ' (' var(--ACB-COMMIT) ')';
+			color: var(--text-muted);
+			font-family: var(--font-primary);
+			position: relative;
+			text-transform: none;
+			font-size: 12px;
 		}
 	}
 }
