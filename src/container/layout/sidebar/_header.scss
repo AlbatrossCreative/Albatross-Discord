@@ -11,7 +11,10 @@
 	}
 
 	#{c(sidebar server header bannerContainer)} {
-		@include ac-position-styling($pos: relative, $max-w: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)));
+		@include ac-position-styling(
+			$pos: relative,
+			$max-w: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width))
+		);
 		@include ac-color-styling($bg: transparent);
 		@include ac-spacing-styling($mt: small);
 		@include ac-rounded-styling($br: small);
@@ -23,7 +26,6 @@
 		#{c(sidebar server header bannerImage)} {
 			@include ac-color-styling($bg: transparent);
 			@include ac-position-styling($pos: relative, $w: 100%);
-
 
 			transform: none !important;
 			opacity: 1 !important;

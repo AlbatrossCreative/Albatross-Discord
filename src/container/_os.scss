@@ -1,58 +1,40 @@
 @use 'abstract' as *;
 
+%version-info-base {
+	font-family: var(--font-primary);
+	color: var(--text-muted);
+	text-transform: none;
+	font-size: 12px;
+	position: relative;
+}
+
 html {
-	&#{c(os win platform)} {
-		#{c(topBar bar)}:not(#{c(topBar systemBar)}) {
-			#{c(topBar leading container)} {
-				&::after {
-					content: 'v#{$win-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
-				}
-			}
-		}
+	&#{c(os win platform)}
+		#{c(topBar bar)}:not(#{c(topBar systemBar)})
+		#{c(topBar leading container)}::after {
+		content: 'v#{$win-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
 	}
 
-	&#{c(os mac platform)} {
-		#{c(topBar bar)}:not(#{c(topBar systemBar)}) {
-			#{c(topBar trailing container)} {
-				&::after {
-					content: 'v#{$osx-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
-				}
-			}
-		}
+	&#{c(os mac platform)}
+		#{c(topBar bar)}:not(#{c(topBar systemBar)})
+		#{c(topBar trailing container)}::after {
+		content: 'v#{$osx-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
 	}
 }
 
-html#{c(os win platform)} {
-	#{c(userSettings sidebarInfo)} {
-		&::before {
-			font-family: var(--font-primary);
-			color: var(--text-muted);
-			text-transform: none;
-			font-size: 12px;
-			position: relative;
-			content: '#{$theme-name} #{$win-version} ' '(' var(--ACV-COMMIT) ')';
-		}
-	}
+html#{c(os win platform)} #{c(userSettings sidebarInfo)}::before {
+	@extend %version-info-base;
+	content: '#{$theme-name} #{$win-version} ' '(' var(--ACV-COMMIT) ')';
 }
 
-html#{c(os mac platform)} {
-	#{c(userSettings sidebarInfo)} {
-		&::before {
-			content: '#{$theme-name} #{$osx-version} ' '(' var(--ACV-COMMIT) ')';
-			font-family: var(--font-primary);
-			color: var(--text-muted);
-			text-transform: none;
-			font-size: 12px;
-			position: relative;
-		}
+html#{c(os mac platform)} #{c(userSettings sidebarInfo)} {
+	&::before {
+		@extend %version-info-base;
+		content: '#{$theme-name} #{$osx-version} ' '(' var(--ACV-COMMIT) ')';
+	}
 
-		&::after {
-			content: 'Albatross Backend' ' (' var(--ACB-COMMIT) ')';
-			color: var(--text-muted);
-			font-family: var(--font-primary);
-			position: relative;
-			text-transform: none;
-			font-size: 12px;
-		}
+	&::after {
+		@extend %version-info-base;
+		content: 'Albatross Backend' ' (' var(--ACB-COMMIT) ')';
 	}
 }

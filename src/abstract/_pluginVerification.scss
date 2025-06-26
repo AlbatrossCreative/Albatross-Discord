@@ -1,144 +1,140 @@
 @use 'mixin';
 
 $compatible-plugins: (
-    "AccountPanelServerProfile",
-    "AlwaysAnimate",
-    "AlwaysExpandRoles",
-    "AlwaysTrust",
-    "AnonymiseFileNames",
-    "BetterGifAltText",
-    "BetterGifPicker",
-    "BetterNotesBox",
-    "BetterRoleContext",
-    "BetterRoleDot",
-    "BetterSessions",
-    "BetterSettings",
-    "BiggerStreamervPreview",
-    "BlurNSFW",
-    "CallTimer",
-    "ClearURLs",
-    "ColorSighted",
-    "ConsoleJanitor",
-    "ConsoleShortcuts",
-    "CopyEmojiMarkdown",
-    "CopyFileContents",
-    "CopyUserURLs",
-    "CrashHandler",
-    "CtrlEnterSend",
-    "CustomIdle",
-    "CustomRPC",
-    "Dearrow",
-    "Decor",
-    "DisableCallIdle",
-    "DontRoundMyTimestamps",
-    "Experiments",
-    "ExpressionCloner",
-    "F8Break",
-    "FakeNitro",
-    "FakeProfileThemes",
-    "FavoriteEmojiFirst",
-    "FavoriteGifSearch",
-    "FixImageQuality",
-    "FixSpotifyEmbedS",
-    "FixYoutubeEmbedS",
-    "ForceOwnerCrown",
-    "FriendInvites",
-    "FriendsSince",
-    "FullSearchContext",
-    "FullUserInChatBox",
-    "GameActivityToggle",
-    "GifPaste",
-    "GreetStickerPicker",
-    "HideMedia",
-    "IgnoreActivities",
-    "iLoveSpam",
-    "ImageLink",
-    "ImageZoom",
-    "ImplicitRelationships",
-    "InvisibleChat",
-    "IrcColors",
+	'AccountPanelServerProfile',
+	'AlwaysAnimate',
+	'AlwaysExpandRoles',
+	'AlwaysTrust',
+	'AnonymiseFileNames',
+	'BetterGifAltText',
+	'BetterGifPicker',
+	'BetterNotesBox',
+	'BetterRoleContext',
+	'BetterRoleDot',
+	'BetterSessions',
+	'BetterSettings',
+	'BiggerStreamervPreview',
+	'BlurNSFW',
+	'CallTimer',
+	'ClearURLs',
+	'ColorSighted',
+	'ConsoleJanitor',
+	'ConsoleShortcuts',
+	'CopyEmojiMarkdown',
+	'CopyFileContents',
+	'CopyUserURLs',
+	'CrashHandler',
+	'CtrlEnterSend',
+	'CustomIdle',
+	'CustomRPC',
+	'Dearrow',
+	'Decor',
+	'DisableCallIdle',
+	'DontRoundMyTimestamps',
+	'Experiments',
+	'ExpressionCloner',
+	'F8Break',
+	'FakeNitro',
+	'FakeProfileThemes',
+	'FavoriteEmojiFirst',
+	'FavoriteGifSearch',
+	'FixImageQuality',
+	'FixSpotifyEmbedS',
+	'FixYoutubeEmbedS',
+	'ForceOwnerCrown',
+	'FriendInvites',
+	'FriendsSince',
+	'FullSearchContext',
+	'FullUserInChatBox',
+	'GameActivityToggle',
+	'GifPaste',
+	'GreetStickerPicker',
+	'HideMedia',
+	'IgnoreActivities',
+	'iLoveSpam',
+	'ImageLink',
+	'ImageZoom',
+	'ImplicitRelationships',
+	'InvisibleChat',
+	'IrcColors'
 );
 
-$incompatible-plugins: (
-    "FixCodeblockGap",
-    "BetterFolders",
-    "BetterUploadButton",
-    "ClientTheme",
-);
+$incompatible-plugins: ('FixCodeblockGap', 'BetterFolders', 'BetterUploadButton', 'ClientTheme');
 
 html {
-    .ac-verified {
-        &::before {
-            @include mixin.ac-border-styling(normal, secondary-alt);
-            @include mixin.ac-color-styling($c: header-primary);
-            @include mixin.ac-rounded-styling($br: x-small);
-            @include mixin.ac-padding-styling($px: small, $py: xx-small);
-            @include mixin.ac-spacing-styling($mr: x-small);
-            white-space: pre;
-            place-self: center;
-            content: ''
-        }
-    }
+	.ac-verified {
+		&::before {
+			@include mixin.ac-border-styling(normal, secondary-alt);
+			@include mixin.ac-color-styling($c: header-primary);
+			@include mixin.ac-rounded-styling($br: x-small);
+			@include mixin.ac-padding-styling($px: small, $py: xx-small);
+			@include mixin.ac-spacing-styling($mr: x-small);
+			white-space: pre;
+			place-self: center;
+			content: '';
+		}
+	}
 
-    .ac-compatible {
-        &::before {
-            @include mixin.ac-color-styling($bg: var(--green-tertiary));
-            content: 'Compatible with Albatross';
-        }
-    }
+	.ac-compatible {
+		&::before {
+			@include mixin.ac-color-styling($bg: var(--green-tertiary));
+			content: 'Compatible with Albatross';
+		}
+	}
 
-    .ac-incompatible {
-        &::before {
-            @include mixin.ac-color-styling($bg: var(--red-tertiary));
-            content: 'Incompatible with Albatross';
-        }
-    }
+	.ac-incompatible {
+		&::before {
+			@include mixin.ac-color-styling($bg: var(--red-tertiary));
+			content: 'Incompatible with Albatross';
+		}
+	}
 
-    .ac-untested {
-        &::before {
-            @include mixin.ac-color-styling($bg: var(--yellow-tertiary));
-            content: 'Waiting for verification';
-        }
-    }
+	.ac-untested {
+		&::before {
+			@include mixin.ac-color-styling($bg: var(--yellow-tertiary));
+			content: 'Waiting for verification';
+		}
+	}
 }
 
 @mixin verified($tested: null) {
-    @extend .ac-verified;
+	@extend .ac-verified;
 
-    @if $tested ==compatible {
-        @extend .ac-compatible;
-    }
-
-    @else if $tested ==incompatible {
-        @extend .ac-incompatible;
-    }
-
-    @else {
-        @extend .ac-untested;
-    }
+	@if $tested ==compatible {
+		@extend .ac-compatible;
+	} @else if $tested ==incompatible {
+		@extend .ac-incompatible;
+	} @else {
+		@extend .ac-untested;
+	}
 }
 
-
 .vc-settings-modal-links {
-    @include verified;
+	@include verified;
 
-    // Generate compatible plugin selectors
-    $compatible-selectors: ();
-    @each $plugin in $compatible-plugins {
-        $compatible-selectors: append($compatible-selectors, 'a[href="https://vencord.dev/plugins/#{$plugin}"]', comma);
-    }
+	$compatible-selectors: ();
+	@each $plugin in $compatible-plugins {
+		$compatible-selectors: append(
+			$compatible-selectors,
+			'a[href="https://vencord.dev/plugins/#{$plugin}"]',
+			comma
+		);
+	}
 
-    &:has(#{$compatible-selectors}) {
-        @include verified(compatible);
-    }
+	&:has(#{$compatible-selectors}) {
+		@include verified(compatible);
+	}
 
-    // Generate incompatible plugin selectors  
-    $incompatible-selectors: ();
-    @each $plugin in $incompatible-plugins {
-        $incompatible-selectors: append($incompatible-selectors, 'a[href="https://vencord.dev/plugins/#{$plugin}"]', comma);
-    }
+	$incompatible-selectors: ();
+	@each $plugin in $incompatible-plugins {
+		$incompatible-selectors: append(
+			$incompatible-selectors,
+			'a[href="https://vencord.dev/plugins/#{$plugin}"]',
+			comma
+		);
+	}
 
-    &:has(#{$incompatible-selectors}) {
-        @include verified(incompatible);
-    }
+	&:has(#{$incompatible-selectors}) {
+		@include verified(incompatible);
+	}
 }

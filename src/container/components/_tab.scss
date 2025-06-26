@@ -15,8 +15,8 @@
 	@include ac-padding-styling($p: x-small);
 	@include ac-flex-styling($ai: center, $gap: 0);
 	@include ac-spacing-styling($m: 0);
-	transition: 0.1s ease all;
 	@include ac-border-styling(none);
+	transition: 0.1s ease all;
 	overflow: hidden;
 
 	&::after {
@@ -25,6 +25,13 @@
 		@include ac-padding-styling($pr: xx-small);
 		content: '';
 		order: -1;
+	}
+
+	&::before {
+		@include ac-position-styling($pos: absolute, $h: 50%, $left: x-small, $w: 0);
+		@include ac-rounded-styling($br: small);
+		transition: 0.1s 0.06s ease all;
+		content: '';
 	}
 
 	&#{c(tab selected)} {
@@ -43,12 +50,5 @@
 			@include ac-position-styling($w: var(--ac-pill-width));
 			@include ac-color-styling($bg: var(--brand-500));
 		}
-	}
-
-	&::before {
-		@include ac-position-styling($pos: absolute, $h: 50%, $left: x-small, $w: 0);
-		@include ac-rounded-styling($br: small);
-		transition: 0.1s 0.06s ease all;
-		content: '';
 	}
 }

@@ -1,0 +1,93 @@
+@use 'abstract' as *;
+
+#{c(modals inbox popout)} {
+	@include ac-color-styling($bg: floating);
+	@include ac-border-styling(thin, secondary-alt);
+	@include ac-rounded-styling($br: small);
+	@include ac-padding-styling($p: small);
+	#{c(modals inbox header)} {
+		@include ac-color-styling($bg: transparent);
+		@include ac-padding-styling($p: 0);
+		@include ac-spacing-styling($mb: small);
+		@include ac-border-styling(none);
+		.headerTabs_ab6641 {
+			@include ac-spacing-styling($m: 0);
+			#{c(modals inbox tabBar)} {
+				@include ac-border-styling(none, $bb: none);
+			}
+		}
+	}
+	#{c(modals inbox forYou bodyContainer)} {
+		@include ac-rounded-styling($br: small);
+		@include ac-border-styling(normal, secondary-alt);
+	}
+	#{c(modals inbox mentions scroller)} {
+		@include ac-rounded-styling($br: small);
+		#{c(modals inbox mentions container)} {
+			#{c(modals inbox mentions messageContainer)} {
+				@include ac-color-styling($bg: transparent);
+				@include ac-border-styling(none);
+				@include ac-padding-styling($p: 0);
+				@include ac-spacing-styling($m: 0);
+			}
+		}
+	}
+	#{c(modals inbox channelHeader)} {
+		@include ac-color-styling($bg: secondary);
+		@include ac-border-styling(normal, primary);
+		@include ac-rounded-styling($br: small);
+		@include ac-padding-styling($p: small);
+		#{c(modals inbox unread collapseButton)} {
+			@include ac-position-styling($pos: relative, $left: unset);
+			@include ac-spacing-styling($mr: medium);
+			order: -1;
+		}
+	}
+
+	#{c(modals inbox unread scroller)} {
+		@include ac-rounded-styling($br: small);
+		@include ac-padding-styling($pl: 0);
+		#{c(modals inbox unread channel)} {
+			#{c(modals inbox unread messages)} {
+				@include ac-color-styling($bg: transparent);
+				@include ac-border-styling(none);
+				@include ac-padding-styling($p: 0);
+			}
+		}
+	}
+	#{c(chat messageWrapper)} {
+		@include ac-flex-styling($d: grid, $gap: small, $ji: flex-start);
+		grid-template-columns: var(--chat-avatar-size) auto;
+		@include ac-color-styling($bg: transparent);
+		@include ac-padding-styling($p: 0);
+		grid-template-areas:
+			'replied replied'
+			'avatar message'
+			'. media';
+		#{c(chat repliedMessage)} {
+			grid-area: replied;
+		}
+		#{c(chat messageContents)} {
+			grid-area: message;
+			img {
+				@include ac-position-styling($left: 0);
+				grid-area: avatar;
+			}
+			h2 {
+				@include ac-spacing-styling($ml: small, $mb: x-small);
+			}
+			#{c(chat messageContent)} {
+				@include ac-rounded-styling($br: small);
+				@include ac-padding-styling($p: small);
+				@include ac-color-styling($bg: var(--message-background));
+				@include ac-border-styling(normal, secondary-alt);
+				@include ac-spacing-styling($ml: small);
+				@include ac-position-styling($w: fit-content);
+			}
+		}
+		#{c(chat messageAttachmentsContainer)} {
+			@include ac-spacing-styling($ml: small);
+			grid-area: media;
+		}
+	}
+}

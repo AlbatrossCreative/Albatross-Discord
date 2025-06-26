@@ -149,7 +149,7 @@
 				@include ac-border-styling(none);
 				.barButtonBase__0f481 {
 					@include ac-position-styling($h: unset, $w: 100%);
-					@include ac-padding-styling($py: xx-small);
+					@include ac-padding-styling($p: 0);
 				}
 
 				button {

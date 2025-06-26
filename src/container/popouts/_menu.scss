@@ -1,36 +1,39 @@
 @use 'abstract' as *;
-.actionBar_aa605f {
-	#{c(chat buttonWrapper)} {
-		@include ac-color-styling($bg: tertiary);
-		@include ac-border-styling(normal, primary);
-		@include ac-rounded-styling($br: small);
-		@include ac-padding-styling($p: xx-small);
-		#{c(chat button)} {
-			@include ac-rounded-styling($br: x-small);
-		}
+
+%rounded-base {
+	@include ac-rounded-styling($br: small);
+}
+
+.actionBar_aa605f #{c(chat buttonWrapper)} {
+	@include ac-color-styling($bg: tertiary);
+	@include ac-border-styling(normal, primary);
+	@extend %rounded-base;
+	@include ac-padding-styling($p: xx-small);
+
+	#{c(chat button)} {
+		@include ac-rounded-styling($br: x-small);
 	}
 }
+
 #{c(modals menus menu)} {
-	@include ac-rounded-styling($br: small);
+	@extend %rounded-base;
 	@include ac-padding-styling($p: 0);
 	@include ac-color-styling($bg: floating);
 	box-shadow: none !important;
 
 	#{c(modals menus quickReactWrapper)} {
-		@include ac-rounded-styling($br: small);
+		@extend %rounded-base;
 		@include ac-padding-styling($p: x-small);
 		@include ac-spacing-styling($mb: xx-small);
 		@include ac-color-styling($bg: secondary);
 
-		#{c(modals menus customItem)} {
-			#{c(modals menus quickReactionButton)} {
-				@include ac-rounded-styling($br: small);
-			}
+		#{c(modals menus customItem)} #{c(modals menus quickReactionButton)} {
+			@extend %rounded-base;
 		}
 	}
 
 	#{c(modals menus item)} {
-		@include ac-rounded-styling($br: small);
+		@extend %rounded-base;
 
 		#{c(modals menus iconContainer)} {
 			@include ac-spacing-styling($ml: 0, $mr: xx-small);

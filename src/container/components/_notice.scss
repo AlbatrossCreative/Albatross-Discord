@@ -11,6 +11,7 @@
 		$mr: calc(var(--ac-spacing-sm) * 2)
 	);
 	overflow: hidden !important;
+
 	#{c(notice closeButton)} {
 		@include ac-position-styling($h: 100%);
 	}

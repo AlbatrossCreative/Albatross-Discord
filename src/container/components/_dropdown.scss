@@ -1,34 +1,42 @@
 @use 'abstract' as *;
 
-#{c(modals dropdown select)} {
+%dropdown-base {
 	@include ac-rounded-styling($br: small);
 }
 
+#{c(modals dropdown select)} {
+	@extend %dropdown-base;
+}
+
 #{c(modals dropdown popout)} {
-	@include ac-rounded-styling($br: small);
+	@extend %dropdown-base;
 	@include ac-color-styling($bg: floating);
 	@include ac-padding-styling($p: small);
 
 	#{c(modals dropdown option)} {
-		@include ac-rounded-styling($br: small);
+		@extend %dropdown-base;
 
 		> span {
 			@include ac-flex-styling($dir: row, $ai: center);
-			&::before {
-				@include ac-position-styling($pos: absolute, $h: 25px, $w: 0, $left: small);
-				@include ac-color-styling($bg: modifier-accent);
-				@include ac-spacing-styling($ml: small);
+
+			&::before,
+			&::after {
+				@include ac-position-styling($pos: relative);
 				@include ac-rounded-styling($br: small);
-				transition: all 0.1s ease;
 				content: '';
 				order: -1;
 			}
 
-			&:after {
-				@include ac-position-styling($pos: relative, $h: 0, $w: var(--ac-pill-width));
+			&::before {
+				@include ac-position-styling($pos: absolute, $h: 25px, $w: 0, $left: small);
+				@include ac-color-styling($bg: modifier-accent);
+				@include ac-spacing-styling($ml: small);
+				transition: all 0.1s ease;
+			}
+
+			&::after {
+				@include ac-position-styling($h: 0, $w: var(--ac-pill-width));
 				@include ac-spacing-styling($mr: xx-small);
-				content: '';
-				order: -1;
 			}
 		}
 

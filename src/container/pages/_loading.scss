@@ -1,16 +1,21 @@
 @use 'abstract' as *;
 
 #{c(loading container)} {
-    @include ac-color-styling($bg: tertiary);
-    #{c(loading content)} {
-        @include ac-position-styling($z: 1);
-    }
-    &::before{
-        @include ac-position-styling($pos: absolute, $w: calc(100% - var(--ac-spacing-sm) * 2), $h: calc(100vh - var(--ac-spacing-sm) * 2), $bottom: 0);
-        @include ac-border-styling(normal, secondary-alt);
-        @include ac-color-styling($bg: secondary);
-        @include ac-rounded-styling($br: small);
-        @include ac-spacing-styling($m: small);
-        content: '';
-    }
+	@include ac-color-styling($bg: tertiary);
+	#{c(loading content)} {
+		@include ac-position-styling($z: 1);
+	}
+	&::before {
+		@include ac-position-styling(
+			$pos: absolute,
+			$w: calc(100% - var(--ac-spacing-sm) * 2),
+			$h: calc(100vh - var(--ac-spacing-sm) * 2),
+			$bottom: 0
+		);
+		@include ac-border-styling(normal, secondary-alt);
+		@include ac-color-styling($bg: secondary);
+		@include ac-rounded-styling($br: small);
+		@include ac-spacing-styling($m: small);
+		content: '';
+	}
 }

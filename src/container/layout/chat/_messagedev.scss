@@ -18,12 +18,14 @@ li#{c(chat messageListItem)} {
 
 			&::before,
 			#{c(chat repliedMessageClickableSpine)}::before {
-				@include ac-position-styling($pos: relative,
+				@include ac-position-styling(
+					$pos: relative,
 					$d: block,
 					$top: 30%,
 					$left: 0,
 					$w: 30px,
-					$h: 80%);
+					$h: 80%
+				);
 				border: var(--spine-width) solid var(--spine-default) !important;
 				border-bottom: 0 !important;
 				inset: unset !important;
@@ -97,7 +99,9 @@ li#{c(chat messageListItem)} {
 				@include ac-spacing-styling($m: 0);
 				@include ac-padding-styling($p: 0);
 
-				&:has(#{c(other cv messageTimestampAlt)}):not(:has(> *:not(#{c(other cv messageTimestampAlt)}))) {
+				&:has(#{c(other cv messageTimestampAlt)}):not(
+						:has(> *:not(#{c(other cv messageTimestampAlt)}))
+					) {
 					@include ac-position-styling($d: none);
 				}
 
@@ -117,9 +121,18 @@ li#{c(chat messageListItem)} {
 			@include ac-flex-styling($gapr: small, $d: grid);
 			grid-area: media;
 
+			#{c(embeds giftContainer)} {
+				#{c(embeds embedVertical)} {
+					@include ac-padding-styling($p: 0);
+					#{c(embeds giftDescription)} {
+						@include ac-padding-styling($p: small);
+					}
+				}
+			}
+
 			#{c(other cv embed)} {
 				@include ac-rounded-styling($br: small);
-				.embedMedia__623de{ 
+				.embedMedia__623de {
 					.altText__0f481 {
 						@include ac-color-styling($bg: secondary);
 						@include ac-spacing-styling($m: xx-small);
@@ -166,9 +179,11 @@ li#{c(chat messageListItem)} {
 				}
 			}
 
-			#{c(other cv attachmentEmbedWrapper)}:not(:has(.imageContainer__0f481, #{c(embeds videoPlayWrapper)}),
-				.embedSpotify__623de,
-				.gridContainer__623de) {
+			#{c(other cv attachmentEmbedWrapper)}:not(
+					:has(.imageContainer__0f481, #{c(embeds videoPlayWrapper)}),
+					.embedSpotify__623de,
+					.gridContainer__623de
+				) {
 				@include ac-rounded-styling($br: small);
 				@include ac-padding-styling($p: small);
 				@include ac-flex-styling($gap: small, $d: grid);
@@ -190,7 +205,7 @@ li#{c(chat messageListItem)} {
 				@include ac-padding-styling($p: small);
 				@include ac-border-styling(none);
 
-				>div {
+				> div {
 					@include ac-flex-styling($gap: small, $d: grid);
 
 					.container__652b4 {
@@ -314,8 +329,8 @@ li#{c(chat messageListItem)} {
 		}
 	}
 
-	&[data-is-self='true']>#{c(chat message)},
-	>[data-is-self='true'] {
+	&[data-is-self='true'] > #{c(chat message)},
+	> [data-is-self='true'] {
 		grid-template-columns: auto var(--chat-avatar-size);
 		@include ac-flex-styling($ji: flex-end, $d: grid);
 		grid-template-areas:
@@ -347,13 +362,16 @@ li#{c(chat messageListItem)} {
 			@include ac-position-styling($left: unset, $right: small);
 
 			#{c(chat buttons)} {
-				@include ac-position-styling($right: calc(var(--chat-avatar-size) + var(--ac-spacing-sm)), $left: unset);
+				@include ac-position-styling(
+					$right: calc(var(--chat-avatar-size) + var(--ac-spacing-sm)),
+					$left: unset
+				);
 			}
 		}
 	}
 
-	&[data-is-self='false']>#{c(chat message)},
-	>[data-is-self='false'] {
+	&[data-is-self='false'] > #{c(chat message)},
+	> [data-is-self='false'] {
 		@include ac-flex-styling($ji: flex-start, $d: grid);
 		grid-template-columns: var(--chat-avatar-size) auto;
 		grid-template-areas:
@@ -380,7 +398,10 @@ li#{c(chat messageListItem)} {
 			@include ac-position-styling($left: 0, $right: unset);
 
 			#{c(chat buttons)} {
-				@include ac-position-styling($right: unset, $left: calc(var(--chat-avatar-size) + var(--ac-spacing-sm)));
+				@include ac-position-styling(
+					$right: unset,
+					$left: calc(var(--chat-avatar-size) + var(--ac-spacing-sm))
+				);
 			}
 		}
 	}

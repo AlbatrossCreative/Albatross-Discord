@@ -1,8 +1,13 @@
 @use 'abstract' as *;
 
+.roundButton_c15210 {
+	@include ac-rounded-styling($br: xx-small);
+}
+
 #{c(button button)} {
 	@include ac-rounded-styling($br: x-small);
 	@include ac-border-styling(none);
+
 	&#{c(button lookOutlined)} {
 		@include ac-border-styling(normal, secondary-alt);
 	}

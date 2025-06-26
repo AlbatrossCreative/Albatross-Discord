@@ -2,35 +2,25 @@
 
 .vc- {
 	&notification {
-		@include ac-color-styling($bg: floating);
-		@include ac-rounded-styling($br: small);
-		@include ac-border-styling(normal, secondary-alt);
-		@include ac-spacing-styling($m: small);
-
-		&-container {
-		}
 
 		&-root {
 			@include ac-position-styling(
 				$right: calc(var(--ac-spacing-sm) * 2),
 				$bottom: calc(var(--ac-spacing-sm) * 2)
 			);
-			@include ac-color-styling($bgc: transparent);
+			@include ac-color-styling($bgc: floating);
 		}
 	}
 }
-#vencordplugins-tab{
-	> div {
-		.vc-m-bottom-16 {
-			@include ac-flex-styling($jc: space-between);
-			&::after{
-				@include ac-position-styling($pos: relative);
-				@include ac-color-styling($c: header-primary);
-				font-size: 16px;
-				font-weight: medium;
-				content: 'Open Plugin information to check theme compatibility';
-			}
-		}
+
+#vencordplugins-tab > div .vc-m-bottom-16 {
+	@include ac-flex-styling($jc: space-between);
+
+	&::after {
+		@include ac-position-styling($pos: relative);
+		@include ac-color-styling($c: header-primary);
+		font: 500 16px / 1 inherit;
+		content: 'Open Plugin information to check theme compatibility';
 	}
 }
 
@@ -61,30 +51,23 @@
 
 		&footer {
 			@include ac-flex-styling($gap: small);
-
-			button {
-				@include ac-rounded-styling($br: small);
-				@include ac-color-styling($bg: secondary-alt);
-			}
-		}
-
-		&footer {
 			@include ac-color-styling($bg: secondary);
 			@include ac-rounded-styling($br: small);
 			@include ac-spacing-styling($m: small);
 			box-shadow: none;
 
+			button,
 			.bd-button-filled {
 				@include ac-rounded-styling($br: small);
+				@include ac-color-styling($bg: secondary-alt);
 			}
 		}
 	}
 
-	&store- {
-		&card {
-			@include ac-color-styling($bg: primary);
-			@include ac-rounded-styling($br: small);
-		}
+	&store-card,
+	&addon-card {
+		@include ac-color-styling($bg: primary);
+		@include ac-rounded-styling($br: small);
 	}
 
 	&addon- {
@@ -97,8 +80,6 @@
 		}
 
 		&card {
-			@include ac-color-styling($bg: primary);
-			@include ac-rounded-styling($br: small);
 			@include ac-padding-styling($p: small);
 		}
 
@@ -108,10 +89,7 @@
 		}
 	}
 
-	&links {
-		@include ac-flex-styling($gap: small);
-	}
-
+	&links,
 	&controls {
 		@include ac-flex-styling($gap: small);
 	}

@@ -3,13 +3,14 @@
 .listItemWrapper__91816 {
 	#{c(serverList serverWrapper)} {
 		mask {
-			use[href="#:r54:-lower_badge_masks"] {
+			use[href='#:r54:-lower_badge_masks'] {
 				@include ac-position-styling($d: none);
 			}
 		}
 
 		svg {
 			foreignObject {
+				@include ac-rounded-styling($br: var(--rs-avatar-shape));
 				mask: none !important;
 				#{c(serverList iconWrapper)} {
 					img {

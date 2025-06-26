@@ -36,6 +36,24 @@
 
 					#{c(memberList layout)} {
 						@include ac-position-styling($h: unset);
+						#{c(memberList avatar)} {
+							#{c(avatar wrapper)} {
+								foreignObject[mask*='mobile'] {
+									overflow: unset !important;
+									&:after {
+										width: calc(
+											var(--custom-member-list-width) - calc(
+													var(--ac-spacing-md) * 2
+												)
+										);
+										place-self: flex-end;
+										height: 14px;
+										top: 0%;
+										left: -20%;
+									}
+								}
+							}
+						}
 					}
 				}
 			}

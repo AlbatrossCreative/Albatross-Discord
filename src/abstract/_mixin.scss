@@ -1,148 +1,144 @@
 @use 'sass:map';
-$ac-transitions: (
-	'unset': unset,
-	'none': none,
-	'all': all,
-	'color': color,
-	'background-color': background-color,
-	'opacity': opacity,
-	'transform': transform,
-	'box-shadow': box-shadow,
-);
-$ac-rounded: (
-	unset: unset,
-	0: 0,
-	xx-small: var(--ac-rounded-xxs),
-	x-small: var(--ac-rounded-xs),
-	small: var(--ac-rounded-sm),
-	medium: var(--ac-rounded-md),
-	large: var(--ac-rounded-lg),
-	full: var(--ac-rounded-full),
+
+$ac-maps: (
+	spacing: (
+		unset: unset,
+		auto: auto,
+		0: 0,
+		xx-small: var(--ac-spacing-xxs),
+		x-small: var(--ac-spacing-xs),
+		small: var(--ac-spacing-sm),
+		medium: var(--ac-spacing-md),
+		large: var(--ac-spacing-lg),
+		x-large: var(--ac-spacing-xl),
+		2x-large: var(--ac-spacing-2xl),
+		3x-large: var(--ac-spacing-3xl),
+		4x-large: var(--ac-spacing-4xl),
+	),
+	rounded: (
+		unset: unset,
+		0: 0,
+		xx-small: var(--ac-rounded-xxs),
+		x-small: var(--ac-rounded-xs),
+		small: var(--ac-rounded-sm),
+		medium: var(--ac-rounded-md),
+		large: var(--ac-rounded-lg),
+		full: var(--ac-rounded-full),
+	),
+	colors: (
+		unset: unset,
+		transparent: transparent,
+		primary: var(--background-primary),
+		secondary: var(--background-secondary),
+		secondary-alt: var(--background-secondary-alt),
+		tertiary: var(--background-tertiary),
+		floating: var(--background-floating),
+		accent: var(--background-accent),
+		interactive-active: var(--interactive-active),
+		modifier-active: var(--background-modifier-active),
+		modifier-selected: var(--background-modifier-selected),
+		modifier-hover: var(--background-modifier-hover),
+		modifier-accent: var(--background-modifier-accent),
+		text-primary: var(--text-primary),
+		text-secondary: var(--text-secondary),
+		text-tertiary: var(--text-tertiary),
+		text-accent: var(--brand-600),
+		text-muted: var(--text-muted),
+		header-primary: var(--header-primary),
+		header-secondary: var(--header-secondary),
+	),
+	borders: (
+		primary: var(--ac-border-primary),
+		secondary: var(--ac-border-secondary),
+		secondary-alt: var(--ac-border-secondary-alt),
+		tertiary: var(--ac-border-tertiary),
+		active: var(--ac-border-active),
+		accent: var(--ac-modifier-accent),
+	),
 );
 
-$ac-colors: (
-	unset: unset,
-	primary: var(--background-primary),
-	secondary: var(--background-secondary),
-	secondary-alt: var(--background-secondary-alt),
-	tertiary: var(--background-tertiary),
-	floating: var(--background-floating),
-	accent: var(--background-accent),
-	interactive-active: var(--interactive-active),
-	modifier-active: var(--background-modifier-active),
-	modifier-selected: var(--background-modifier-selected),
-	modifier-hover: var(--background-modifier-hover),
-	modifier-accent: var(--background-modifier-accent),
-	text-primary: var(--text-primary),
-	text-secondary: var(--text-secondary),
-	text-tertiary: var(--text-tertiary),
-	text-accent: var(--brand-600),
-	text-muted: var(--text-muted),
-	header-primary: var(--header-primary),
-	header-secondary: var(--header-secondary),
-	transparent: transparent,
-);
+@function _get-value($type, $key) {
+	$map: map.get($ac-maps, $type);
+	@return if(map.has-key($map, $key), map.get($map, $key), $key);
+}
 
-$ac-borders: (
-	primary: var(--ac-border-primary),
-	secondary: var(--ac-border-secondary),
-	secondary-alt: var(--ac-border-secondary-alt),
-	tertiary: var(--ac-border-tertiary),
-	active: var(--ac-border-active),
-	accent: var(--ac-modifier-accent),
-);
-
-$ac-spacing: (
-	unset: unset,
-	auto: auto,
-	0: 0,
-	xx-small: var(--ac-spacing-xxs),
-	x-small: var(--ac-spacing-xs),
-	small: var(--ac-spacing-sm),
-	medium: var(--ac-spacing-md),
-	large: var(--ac-spacing-lg),
-	x-large: var(--ac-spacing-xl),
-	2x-large: var(--ac-spacing-2xl),
-	3x-large: var(--ac-spacing-3xl),
-	4x-large: var(--ac-spacing-4xl),
-);
-
-// Helper for spacing properties
 @mixin _ac-space($prop, $val) {
-	@if map.has-key($ac-spacing, $val) {
-		#{$prop}: map.get($ac-spacing, $val) !important;
-	}
-
-	@else {
-		#{$prop}: $val !important;
-	}
+	#{$prop}: _get-value(spacing, $val) !important;
 }
 
 @mixin _ac-border($prop, $val) {
-	@if map.has-key($ac-borders, $val) {
-		#{$prop}: map.get($ac-borders, $val) !important;
-	}
-
-	@else {
-		#{$prop}: $val !important;
-	}
+	#{$prop}: _get-value(borders, $val) !important;
 }
 
-@mixin ac-border-styling($w, $color:null, $b: null, $bt: null, $bb: null, $br: null, $bl: null, $bx: null, $by: null) {
+@mixin _ac-color($prop, $val) {
+	#{$prop}: _get-value(colors, $val) !important;
+}
+
+@mixin ac-border-styling(
+	$w,
+	$color: null,
+	$b: null,
+	$bt: null,
+	$bb: null,
+	$br: null,
+	$bl: null,
+	$bx: null,
+	$by: null
+) {
 	border-style: solid !important;
 
-	@if $b {
-		border-style: $b !important;
-	}
+	$widths: (
+		none: 0,
+		normal: 1px,
+		medium: 2px,
+		thick: 3px,
+	);
+	border-width: if(map.has-key($widths, $w), map.get($widths, $w), $w) !important;
+
 	@if $bt {
 		border-top: $bt !important;
 	}
+
 	@if $bb {
 		border-bottom: $bb !important;
 	}
+
 	@if $br {
 		border-right: $br !important;
 	}
+
 	@if $bl {
 		border-left: $bl !important;
 	}
+
 	@if $bx {
 		border-left: $bx !important;
 		border-right: $bx !important;
 	}
+
 	@if $by {
 		border-top: $by !important;
 		border-bottom: $by !important;
 	}
-	@if $w == medium {
-		border-width: 2px !important;
-	}
 
-	@if $w == normal {
-		border-width: 1px !important;
+	@if $b {
+		border-style: $b !important;
 	}
-
-	@if $w == thick {
-		border-width: 3px !important;
-	}
-
-	@if $w == none {
-		border-width: 0 !important;
-	}
-
 
 	@if $color {
 		@include _ac-border(border-color, $color);
 	}
 }
 
-@mixin ac-spacing-styling($m: null,
+@mixin ac-spacing-styling(
+	$m: null,
 	$mx: null,
 	$my: null,
 	$mb: null,
 	$mt: null,
 	$ml: null,
-	$mr: null) {
+	$mr: null
+) {
 	@if $m {
 		@include _ac-space(margin, $m);
 	}
@@ -174,13 +170,15 @@ $ac-spacing: (
 	}
 }
 
-@mixin ac-padding-styling($p: null,
+@mixin ac-padding-styling(
+	$p: null,
 	$px: null,
 	$py: null,
 	$pb: null,
 	$pt: null,
 	$pl: null,
-	$pr: null) {
+	$pr: null
+) {
 	@if $p {
 		@include _ac-space(padding, $p);
 	}
@@ -212,17 +210,6 @@ $ac-spacing: (
 	}
 }
 
-// Helper for colors
-@mixin _ac-color($prop, $val) {
-	@if map.has-key($ac-colors, $val) {
-		#{$prop}: map.get($ac-colors, $val) !important;
-	}
-
-	@else {
-		#{$prop}: $val !important;
-	}
-}
-
 @mixin ac-color-styling($bg: null, $bgc: null, $c: null) {
 	@if $c {
 		@include _ac-color(color, $c);
@@ -237,18 +224,12 @@ $ac-spacing: (
 	}
 }
 
-// Helper for rounded
-@mixin _ac-rounded-corner($corners, $val) {
-	@if map.has-key($ac-rounded, $val) {
-		border-radius: #{map.get($ac-rounded, $val)} $corners !important;
-	}
-
-	@else {
-		border-radius: #{$val} $corners !important;
-	}
+@function _get-rounded($val) {
+	@return _get-value(rounded, $val);
 }
 
-@mixin ac-rounded-styling($br: null,
+@mixin ac-rounded-styling(
+	$br: null,
 	$brt: null,
 	$brb: null,
 	$brr: null,
@@ -258,119 +239,65 @@ $ac-spacing: (
 	$brtl: null,
 	$brbl: null,
 	$brx: null,
-	$bry: null) {
+	$bry: null
+) {
 	@if $br {
-		@if map.has-key($ac-rounded, $br) {
-			border-radius: map.get($ac-rounded, $br) !important;
-		}
-
-		@else {
-			border-radius: $br !important;
-		}
+		border-radius: _get-rounded($br) !important;
 	}
 
 	@if $brt {
-		@if map.has-key($ac-rounded, $brt) {
-			border-radius: map.get($ac-rounded, $brt) map.get($ac-rounded, $brt) 0 0 !important;
-		}
-
-		@else {
-			border-radius: $brt $brt 0 0 !important;
-		}
+		$val: _get-rounded($brt);
+		border-top-left-radius: $val !important;
+		border-top-right-radius: $val !important;
 	}
 
 	@if $brb {
-		@if map.has-key($ac-rounded, $brb) {
-			border-radius: 0 0 map.get($ac-rounded, $brb) map.get($ac-rounded, $brb) !important;
-		}
-
-		@else {
-			border-radius: 0 0 $brb $brb !important;
-		}
+		$val: _get-rounded($brb);
+		border-bottom-left-radius: $val !important;
+		border-bottom-right-radius: $val !important;
 	}
 
 	@if $brr {
-		@if map.has-key($ac-rounded, $brr) {
-			border-radius: 0 map.get($ac-rounded, $brr) map.get($ac-rounded, $brb) 0 !important;
-		}
-
-		@else {
-			border-radius: 0 $brr $brr 0 !important;
-		}
+		$val: _get-rounded($brr);
+		border-top-right-radius: $val !important;
+		border-bottom-right-radius: $val !important;
 	}
 
 	@if $brl {
-		@if map.has-key($ac-rounded, $brl) {
-			border-radius: map.get($ac-rounded, $brl) 0 0 map.get($ac-rounded, $brl) !important;
-		}
-
-		@else {
-			border-radius: $brl 0 0 $brl !important;
-		}
+		$val: _get-rounded($brl);
+		border-top-left-radius: $val !important;
+		border-bottom-left-radius: $val !important;
 	}
 
 	@if $brtr {
-		@if map.has-key($ac-rounded, $brtr) {
-			border-radius: 0 map.get($ac-rounded, $brtr) 0 0 !important;
-		}
-
-		@else {
-			border-radius: 0 $brtr 0 0 !important;
-		}
+		border-radius: 0 _get-rounded($brtr) 0 0 !important;
 	}
 
 	@if $brbr {
-		@if map.has-key($ac-rounded, $brbr) {
-			border-radius: 0 0 map.get($ac-rounded, $brbr) 0 !important;
-		}
-
-		@else {
-			border-radius: 0 0 $brbr 0 !important;
-		}
+		border-radius: 0 0 _get-rounded($brbr) 0 !important;
 	}
 
 	@if $brtl {
-		@if map.has-key($ac-rounded, $brtl) {
-			border-radius: map.get($ac-rounded, $brtl) 0 0 0 !important;
-		}
-
-		@else {
-			border-radius: $brtl 0 0 0 !important;
-		}
+		border-radius: _get-rounded($brtl) 0 0 0 !important;
 	}
 
 	@if $brbl {
-		@if map.has-key($ac-rounded, $brbl) {
-			border-radius: 0 0 0 map.get($ac-rounded, $brbl) !important;
-		}
-
-		@else {
-			border-radius: 0 0 0 $brbl !important;
-		}
+		border-radius: 0 0 0 _get-rounded($brbl) !important;
 	}
 
 	@if $brx {
-		@if map.has-key($ac-rounded, $brx) {
-			border-radius: map.get($ac-rounded, $brx) 0 map.get($ac-rounded, $brx) 0 !important;
-		}
-
-		@else {
-			border-radius: $brx 0 $brx 0 !important;
-		}
+		$val: _get-rounded($brx);
+		border-radius: $val 0 $val 0 !important;
 	}
 
 	@if $bry {
-		@if map.has-key($ac-rounded, $bry) {
-			border-radius: 0 map.get($ac-rounded, $bry) 0 map.get($ac-rounded, $bry) !important;
-		}
-
-		@else {
-			border-radius: 0 $bry 0 $bry !important;
-		}
+		$val: _get-rounded($bry);
+		border-radius: 0 $val 0 $val !important;
 	}
 }
 
-@mixin ac-position-styling($pos: null,
+@mixin ac-position-styling(
+	$pos: null,
 	$d: null,
 	$top: null,
 	$bottom: null,
@@ -382,7 +309,8 @@ $ac-spacing: (
 	$max-h: null,
 	$min-w: null,
 	$min-h: null,
-	$z: null) {
+	$z: null
+) {
 	@if $d {
 		display: $d !important;
 	}
@@ -412,23 +340,11 @@ $ac-spacing: (
 	}
 
 	@if $w {
-		@if $w ==fill {
-			width: -webkit-fill-available !important;
-		}
-
-		@else {
-			width: $w !important;
-		}
+		width: if($w ==fill, -webkit-fill-available, $w) !important;
 	}
 
 	@if $h {
-		@if $h ==fill {
-			height: -webkit-fill-available !important;
-		}
-
-		@else {
-			height: $h !important;
-		}
+		height: if($h ==fill, -webkit-fill-available, $h) !important;
 	}
 
 	@if $left {
@@ -448,9 +364,11 @@ $ac-spacing: (
 	}
 }
 
-@mixin ac-transition-styling($l: null, $p: null, $d: null) {}
+@mixin ac-transition-styling($l: null, $p: null, $d: null) {
+}
 
-@mixin ac-flex-styling($f: null,
+@mixin ac-flex-styling(
+	$f: null,
 	$gap: null,
 	$gapc: null,
 	$gapr: null,
@@ -462,7 +380,10 @@ $ac-spacing: (
 	$js: null,
 	$as: null,
 	$d: null,
-	$wrap: null) {
+	$wrap: null
+) {
+	display: if($d, $d, flex) !important;
+
 	@if $f {
 		flex: $f !important;
 	}
@@ -491,12 +412,12 @@ $ac-spacing: (
 		justify-items: $ji !important;
 	}
 
-	@if $d {
-		display: $d !important;
+	@if $as {
+		align-self: $as !important;
 	}
 
-	@else {
-		display: flex !important;
+	@if $js {
+		justify-self: $js !important;
 	}
 
 	@if $gap {
@@ -509,14 +430,6 @@ $ac-spacing: (
 
 	@if $gapc {
 		@include _ac-space(grid-column-gap, $gapc);
-	}
-
-	@if $as {
-		align-self: $as !important;
-	}
-
-	@if $js {
-		justify-self: $js !important;
 	}
 }
 

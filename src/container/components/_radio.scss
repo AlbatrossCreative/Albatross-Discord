@@ -6,11 +6,10 @@
 			@include ac-color-styling($bg: primary);
 			@include ac-rounded-styling($br: small);
 			@include ac-padding-styling($p: small);
-			grid-template-areas: 'pill checkbox message';
-			grid-template-columns: auto auto 1fr;
+			grid-template: 'pill checkbox message' / auto auto 1fr;
 			border: none;
 
-			&:before {
+			&::before {
 				@include ac-color-styling($bg: var(--radio-bar-accent-color));
 				@include ac-position-styling($w: var(--ac-pill-width), $pos: relative, $h: 65%);
 				@include ac-rounded-styling($br: small);
@@ -23,20 +22,16 @@
 			}
 		}
 
-		&[aria-checked='true'] {
-			#{c(userSettings radioBar)} {
-				@include ac-color-styling($bg: modifier-selected);
+		&[aria-checked='true'] #{c(userSettings radioBar)} {
+			@include ac-color-styling($bg: modifier-selected);
 
-				&::before {
-					@include ac-position-styling($h: 90%);
-				}
+			&::before {
+				@include ac-position-styling($h: 90%);
 			}
 		}
 
-		&:hover:not([aria-checked='true']) {
-			#{c(userSettings radioBar)} {
-				@include ac-color-styling($bg: modifier-hover);
-			}
+		&:hover:not([aria-checked='true']) #{c(userSettings radioBar)} {
+			@include ac-color-styling($bg: modifier-hover);
 		}
 	}
 }

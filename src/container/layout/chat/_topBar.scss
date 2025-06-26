@@ -39,7 +39,7 @@
 							@include ac-position-styling($w: 100%, $h: 100%);
 						}
 
-						>rect {
+						> rect {
 							x: 2 !important;
 							y: 2 !important;
 						}
@@ -115,18 +115,19 @@
 									@include ac-padding-styling($p: 0);
 
 									.public-DraftEditorPlaceholder-inner {
-										@include ac-padding-styling($p: xx-small);
+										@include ac-padding-styling($px: xx-small);
 									}
 								}
 
 								.DraftEditor-editorContainer {
 									[data-contents='true'] {
-										@include ac-padding-styling($py: xx-small);
+										@include ac-padding-styling($pb: xx-small);
 									}
 								}
 							}
 
-							.icon__97492 {}
+							.icon__97492 {
+							}
 						}
 					}
 				}

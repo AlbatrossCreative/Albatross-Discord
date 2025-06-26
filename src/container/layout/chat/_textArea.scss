@@ -245,7 +245,7 @@
 
 	#{c(chatForm typing)} {
 		@include ac-position-styling($w: auto, $left: 0, $right: 0, $z: 1);
-		@include ac-padding-styling($py: xx-small, $pr: small);
+		@include ac-padding-styling($py: xx-small, $px: small);
 		grid-area: typingBase;
 
 		#{c(chatForm typingDots)} {

@@ -1,4 +1,4 @@
-# Albatross Pre-release 0.2.1
+# Albatross Pre-release 0.2.3
 
 ⚠️ This theme is still underdevelopment and bugs **WILL** occur.
 
@@ -9,17 +9,21 @@
 [![Sulfide](https://img.shields.io/badge/sulfide-language?style=for-the-badge&color=404c5a)](https://github.com/LeafyLuigi/sulfide)
 ![replugged](https://img.shields.io/badge/replugged%20not%20supported-language?style=for-the-badge&color=404c5a)
 
-- [Albatross Pre-release 0.2.1](#albatross-pre-release-021)
+
+- [Albatross Pre-release 0.2.3](#albatross-pre-release-023)
 	- [Disclaimers](#disclaimers)
 	- [Palettes](#palettes)
 	- [Changelog](#changelog)
-		- [Pre-release v0.1.0 - 2025-06-11](#pre-release-v010---2025-06-11)
-			- [Official Release](#official-release)
-		- [Pre-release v0.2.1 - 2025-06-14](#pre-release-v021---2025-06-14)
-			- [Added](#added)
-			- [Bug Fixes](#bug-fixes)
+		- [Pre-release v0.2.3 - 2025-06-22](#pre-release-v023---2025-06-22)
+			- [Styled Elements](#styled-elements)
+	- [Bug Fixes](#bug-fixes)
 		- [Pre-release v0.2.2 - 2025-06-14](#pre-release-v022---2025-06-14)
 			- [Bug Fixes](#bug-fixes-1)
+		- [Pre-release v0.2.1 - 2025-06-14](#pre-release-v021---2025-06-14)
+			- [Added](#added)
+			- [Bug Fixes](#bug-fixes-2)
+		- [Pre-release v0.1.0 - 2025-06-11](#pre-release-v010---2025-06-11)
+			- [Official Release](#official-release)
 	- [Known Bugs](#known-bugs)
 		- [Scrolling issues](#scrolling-issues)
 	- [Roadmap](#roadmap)
@@ -61,13 +65,35 @@ All notable changes to this project will be documented in this file. Visit [chan
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### Pre-release [v0.1.0](https://github.com/AlbatrossCreative/Albatross-Discord/releases) - 2025-06-11
+### Pre-release [v0.2.3](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.3) - 2025-06-22
 
-[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/0.1.0)
+[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.3)
 
-#### Official Release
 
-Officially begun tracking changes and fixes within Albatross. Still expect bugs, and unthemed elements
+#### Styled Elements
+
+- Styled activityPanel
+- Styled Error page
+- Styled Nameplates (Thanks [LuckFire](https://github.com/luckfire) ❤️)
+- Styled Inbox popout
+
+## Bug Fixes
+
+- Fixed searchBar again
+- Changed mixin functions and map utils
+- Removed redundant files
+- Fixed various inconsistent elements
+- Testing helpers around files
+- Slightly fixed toggle component
+
+### Pre-release [v0.2.2](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.2) - 2025-06-14
+
+[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.2)
+
+#### Bug Fixes
+
+- Fixed searchBar
+
 
 ### Pre-release [v0.2.1](https://github.com/AlbatrossCreative/Albatross-Discord/releases) - 2025-06-14
 
@@ -89,16 +115,20 @@ Officially begun tracking changes and fixes within Albatross. Still expect bugs,
 - Fixed Discord logo not showing up in loading container
 - Fixed upload menu buttons
 
-### Pre-release [v0.2.2](https://github.com/AlbatrossCreative/Albatross-Discord/releases) - 2025-06-14
 
-[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.2)
+### Pre-release [v0.1.0](https://github.com/AlbatrossCreative/Albatross-Discord/releases) - 2025-06-11
 
-#### Bug Fixes
+[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/0.1.0)
 
-- Fixed searchBar
+#### Official Release
+
+Officially begun tracking changes and fixes within Albatross. Still expect bugs, and unthemed elements
+
 
 Reporting bugs helps Albatross grow!
 Continue reporting issues [here](https://github.com/albatrosscreative/albatross-discord/issues). Open [Changelog](/changelog.md) to see more releases.
+
+
 
 ## Known Bugs
 
@@ -118,13 +148,13 @@ Heres a list of features im planning on adding soon.
 **🟡 Moderate (Can Wait)**
 **🔴 Major (ASAP)**
 
-| **Urgency** |    **Feature**     |
-| :---------: | :----------------: |
-|      🔴      | Light mode support |
-|🔴| MacOS support |
-|      🔴      | Nitro customization support |
-|  🟡 | Additional plugin support |
-|      🟢      | Add more Palettes  |
+| **Urgency** |    **Feature**     | **Status** |
+| :---------: | :----------------: | :--------: |
+|      🔴      | Light mode support | Not started |
+|🔴| MacOS support | Not started|
+|      🔴      | Nitro customization support | Actively developing.. |
+|  🟡 | Additional plugin support | Actively developing |
+|      🟢      | Add more Palettes  | Not Started |
 
 
 ## Getting Started
@@ -209,12 +239,12 @@ Easiest method to install Alabatross is to download `albatross.theme.css` from t
 
 #### 2. Palette
 
-- Albatross also requires a palette of your choice to display properly. More palettes will be available in the future
+- Albatross also requires a palette of your choice to display properly. More palettes will be available in the future. View Palettes [here](#palettes)
   
 ```css
 /* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/crearts.css'); */
 /* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/comet.css'); */
-/* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/nextui.css'); */
+/* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/heroui.css'); */
 /* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/dracula.css'); */
 /* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/miyu.css'); */
 /* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/nord.css'); */
@@ -222,7 +252,7 @@ Easiest method to install Alabatross is to download `albatross.theme.css` from t
 
 ###  Option 3 - Local Installation & Setup
 
-I recommend doing this until Albatross has a normally functioning CDN to import through Quick CSS.
+This is for advanced users looking for direct access to work and develop on Albatross Discord.
 
 #### 1. Clone Repository
 

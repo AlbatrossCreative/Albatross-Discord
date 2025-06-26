@@ -165,6 +165,7 @@
 		@include ac-color-styling($bg: transparent);
 		@include ac-padding-styling($p: 0);
 		@include ac-border-styling(none);
+
 		.attachedCaretButtonContainer_f1ceac {
 			div {
 				#{c(call contextMenuNub)} {
@@ -192,11 +193,11 @@
 			}
 		}
 	}
-}
 
-> div[style='opacity: 1; transform: scale(1);'] {
-	button {
-		@include ac-padding-styling($p: 6px);
+	> div[style='opacity: 1; transform: scale(1);'] {
+		button {
+			@include ac-padding-styling($p: 6px);
+		}
 	}
 }
 

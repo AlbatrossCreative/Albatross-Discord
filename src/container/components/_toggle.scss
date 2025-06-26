@@ -3,19 +3,15 @@
 #{c(slider container)} {
 	@include ac-rounded-styling($br: x-small);
 	@include ac-border-styling(none);
-	&[style="background-color: var(--brand-500)"] {
+
+	&[style='background-color: var(--brand-500)'] {
 		@include ac-color-styling($bg: accent);
 	}
-	svg#{c(slider slider)} {
-		@include ac-position-styling($pos: relative, $h: 100%);
-		@include ac-spacing-styling($mx: xx-small);
 
+	svg#{c(slider slider)} {
+		@include ac-spacing-styling($mb: 0, $mt: xx-small, $mx: xx-small);
 		rect {
 			rx: var(--ac-rounded-xs) !important;
-
-			[y='0'] {
-				y: -3 !important;
-			}
 		}
 
 		svg {

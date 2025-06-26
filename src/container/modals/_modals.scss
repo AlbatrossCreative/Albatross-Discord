@@ -4,14 +4,14 @@
 	@include ac-rounded-styling($br: small);
 	overflow: unset !important;
 	box-shadow: none;
-	.card_ac86f6{
-		.promotionalGiftMessage__6fbbd{
-			@include ac-position-styling($left: unset, $right: unset, $w: auto, $top: unset);
-			@include ac-rounded-styling($br: small);
-			@include ac-spacing-styling($mt: 2x-large);
-			.avatar__6fbbd {
-				@include ac-spacing-styling($m: 0);
-			}
+
+	.card_ac86f6 .promotionalGiftMessage__6fbbd {
+		@include ac-position-styling($left: unset, $right: unset, $w: auto, $top: unset);
+		@include ac-rounded-styling($br: small);
+		@include ac-spacing-styling($mt: 2x-large);
+
+		.avatar__6fbbd {
+			@include ac-spacing-styling($m: 0);
 		}
 	}
 

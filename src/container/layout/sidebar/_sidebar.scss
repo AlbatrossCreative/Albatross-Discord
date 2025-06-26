@@ -22,7 +22,7 @@
 			#{c(sidebar panel voice inner)}:hover,
 			.inner_791eb8:hover,
 			.container_791eb8:hover,
-			[id="vc-spotify-player"]:hover
+			[id='vc-spotify-player']:hover
 		) {
 		#{c(sidebar private channels)},
 		#{c(sidebar server container)},
@@ -33,7 +33,7 @@
 		}
 	}
 
-	&:has(#{c(sidebar panel voice wrapper)}, .container_791eb8, [id="vc-spotify-player"]) {
+	&:has(#{c(sidebar panel voice wrapper)}, .container_791eb8, [id='vc-spotify-player']) {
 		#{c(sidebar private channels)},
 		#{c(sidebar server container)},
 		#{c(other cv discoverCategory)} {

@@ -31,7 +31,7 @@
 				.menus_ce8328 {
 					@include ac-flex-styling($dir: row);
 
-					.overlay_c0bea0 {
+					#{c(profile overlay)} {
 						@include ac-color-styling($bg: transparent);
 						@include ac-flex-styling($f: 1);
 						@include ac-padding-styling($p: 0);

@@ -4,7 +4,7 @@
 	@include ac-color-styling($bg: transparent, $bgc: transparent);
 
 	#{c(profile outer)}.user-profile-modal {
-		@include ac-position-styling($max-w: unset, $w: min-content, $h: fit-content, $max-h: 65vh);
+		@include ac-position-styling($max-w: 620px, $w: min-content, $h: fit-content, $max-h: 65vh);
 		@include ac-color-styling($bg: transparent, $bgc: transparent);
 		@include ac-rounded-styling($br: 0);
 		@include ac-padding-styling($p: 0);
@@ -86,6 +86,19 @@
 
 			#{c(profile modal body)} {
 				@include ac-flex-styling($gap: 0);
+
+				#{c(profile overlay)} {
+					@include ac-color-styling($bg: primary);
+					@include ac-spacing-styling($m: 0);
+					@include ac-rounded-styling($br: 0);
+
+					.friendRequestBanner__24502 {
+						@include ac-padding-styling($px: small);
+						@include ac-color-styling($bg: secondary);
+						@include ac-spacing-styling($m: small, $mt: 0);
+						@include ac-rounded-styling($br: small);
+					}
+				}
 
 				.username__24502 {
 					@include ac-color-styling($bg: primary);

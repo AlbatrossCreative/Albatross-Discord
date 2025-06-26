@@ -8,6 +8,22 @@
 	#{c(main appInner)} {
 		@include ac-color-styling($bg: tertiary);
 	}
+	#{c(error page)} {
+		@include ac-color-styling($bg: transparent);
+		&::before {
+			@include ac-color-styling($bg: url(https://canary.discord.com/assets/069714e321aa543f.svg), $bgc: primary);
+			@include ac-border-styling(normal, secondary-alt);
+			@include ac-position-styling($pos: absolute);
+			@include ac-rounded-styling($br: small);
+			inset: var(--ac-spacing-sm);
+			content: '';
+		}
+		> div {
+			*{
+				@include ac-position-styling($z: 1);
+			}
+		}
+	}
 
 	#{c(main appLayer)} {
 		@include ac-color-styling($bg: transparent);
