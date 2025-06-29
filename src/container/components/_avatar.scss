@@ -2,7 +2,7 @@
 
 #app-mount {
 	#{c(avatar wrapper)} {
-		border-radius: var(--rs-avatar-shape);
+		@include ac-rounded-styling($br: var(--rs-avatar-shape));
 
 		// Remove masks
 		svg:not(:root) {
@@ -50,7 +50,7 @@
 		// Avatar shape
 		img,
 		&#{c(memberList avatar)} {
-			border-radius: var(--rs-avatar-shape);
+			@include ac-rounded-styling($br: var(--rs-avatar-shape));
 		}
 
 		// Updated status, user typing and bottom left avatar
@@ -60,7 +60,7 @@
 		}
 		&[style*='80px'],
 		&[style*='120px'] {
-			svg#{c(avatar cursorDefault)} rect {
+			svg.cursorDefault__44b0c rect {
 				ry: calc(var(--rs-avatar-shape) * 3.3);
 				rx: calc(var(--rs-avatar-shape) * 3.3);
 			}
@@ -79,15 +79,18 @@
 			fill: transparent !important;
 			stroke-width: var(--rs-small-width);
 			&[fill='#23a55a'],
-			&[fill='#40a258'] {
+			&[fill='#40a258'],
+			&[fill='#43a25a'] {
 				stroke: var(--rs-online-color);
 			}
 			&[fill='#f0b232'],
-			&[fill='#cc954c'] {
+			&[fill='#cc954c'],
+			&[fill='#ca9654'] {
 				stroke: var(--rs-idle-color);
 			}
 			&[fill='#f23f43'],
-			&[fill='#d83a41'] {
+			&[fill='#d83a41'],
+			&[fill='#d83a42'] {
 				stroke: var(--rs-dnd-color);
 			}
 			&[fill='#593695'],
@@ -201,41 +204,46 @@
 		}
 
 		// Mobile indicator
-		foreignObject[mask*='mobile'] {
+		foreignObject[mask*='mobile']:not([mask*='avatar-decoration']) {
 			property: inherit;
 			// Chat message top
 			&[width='24'] {
 				&:after {
-					width: 10px;
-					height: 12px;
-					top: 30%;
+					@include ac-position-styling($w: 10px, $h: 12px, $top: 30%, $bottom: 0);
+				}
+			}
+			&[width='32'] {
+				&:after {
+					@include ac-position-styling(
+						$h: 14px,
+						$bottom: xx-small,
+						$left: calc(var(--ac-spacing-xs) * -1)
+					);
 				}
 			}
 			// Banner wrapper private chat
 			&[width='80'] {
 				&:after {
-					width: 14px;
-					height: 18px;
+					@include ac-position-styling($w: 14px, $h: 18px, $right: small, $bottom: small);
 				}
 			}
 			// User profile banner
 			&[width='120'] {
 				&:after {
-					width: 24px;
-					height: 20px;
+					@include ac-position-styling($w: 24px, $h: 20px, $right: small, $bottom: small);
 				}
 			}
 
 			&:after {
-				content: '';
-				display: var(--rs-phone-visible, block);
+				@include ac-position-styling(
+					$z: 1,
+					$d: var(--rs-phone-visible, block),
+					$pos: absolute
+				);
+				@include ac-color-styling($bg: var(--rs-phone-color, var(--rs-online-color)));
 				mask: url('data:image/svg+xml; utf-8,<svg aria-hidden="true" focusable="false" data-prefix="fas" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg>')
 					right no-repeat;
-				position: absolute;
-				right: 0%;
-				bottom: 0%;
-				background: var(--rs-phone-color, var(--rs-online-color));
-				z-index: 1;
+				content: '';
 			}
 
 			& + rect {
@@ -244,7 +252,6 @@
 		}
 	}
 
-	// User area
 	#{c(sidebar panel avatarWrapper)} #{c(avatar mask)} > g {
 		transform: none !important;
 		rect {
@@ -255,20 +262,18 @@
 		}
 	}
 
-	//Bottom left avatar, speaking in VC
 	#{c(avatar speaking)} {
 		position: absolute;
 		top: 2px;
 		left: 2px;
 		width: calc(100% - 4px);
 		height: calc(100% - 4px);
-		border-radius: var(--rs-avatar-shape);
+		@include ac-rounded-styling($br: var(--rs-avatar-shape));
 		box-shadow:
 			inset 0 0 0 2px var(--rs-self-speaking-colour, #57d39b),
 			inset 0 0 0 3px var(--background-secondary);
 	}
 
-	// Mobile and typing fix for status everywhere plugins
 	#{c(chat message)} #{c(avatar wrapper)} {
 		foreignObject[mask*='mobile'] {
 			width: calc(100% + 3px);
@@ -283,38 +288,33 @@
 		mask: none;
 	}
 	.avatarHintInner_f89da9 {
-		border-radius: var(--rs-avatar-shape) !important;
-		padding-top: 0;
-		width: calc(100% - var(--rs-medium-width) - var(--rs-medium-spacing) + 1px * 2);
-		height: calc(100% - var(--rs-medium-width) - var(--rs-medium-spacing) + 1px * 2);
-		top: 50%;
-		left: 50%;
+		@include ac-rounded-styling($br: var(--rs-avatar-shape));
+		@include ac-padding-styling($pt: 0);
+		@include ac-position-styling(
+			$w: calc(100% - var(--rs-medium-width) - var(--rs-medium-spacing) + 1px * 2),
+			$h: calc(100% - var(--rs-medium-width) - var(--rs-medium-spacing) + 1px * 2),
+			$top: 50%,
+			$left: 50%,
+			$pos: relative
+		);
 		transform: translate(-50%, -50%);
-		position: relative;
 	}
 
-	// Offline
 	.memberOffline-2lN7gt img {
 		clip-path: none !important;
 	}
+
 	#{c(memberList offline)} img {
 		clip-path: none !important;
 	}
 
-	// Webhook popout
 	.avatarWrapperNonUserBot_f89da9 #{c(avatar wrapper)} img {
 		clip-path: none !important;
 	}
-
-	// Fix clipping on user friends tab
 	.userInfo__0a06e #{c(avatar wrapper)} {
-		margin-top: 1px;
-		margin-left: 1px;
+		@include ac-spacing-styling($mt: 1px, $ml: 1px);
 	}
-
-	// Version info
-	.info__2debe .line__2debe:last-child:after {
-		content: 'RadialStatus ' var(--rs-version);
-		display: block;
+	.avatarBackground_eb2508 {
+		@include ac-rounded-styling($br: var(--rs-avatar-shape));
 	}
 }

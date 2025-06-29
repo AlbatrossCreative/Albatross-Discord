@@ -13,9 +13,10 @@
 		@include ac-color-styling($bg: transparent);
 		@include ac-border-styling(none);
 		#{c(chat chatContent)} {
-			background: transparent !important;
+			@include ac-color-styling($bg: transparent);
 			@include ac-spacing-styling($mt: small);
 			@include ac-flex-styling($gap: small);
+			@include ac-border-styling(none);
 
 			#{c(pages pageBody)} {
 				@include ac-rounded-styling($br: small);
@@ -28,6 +29,7 @@
 					@include ac-color-styling($bg: secondary);
 					@include ac-rounded-styling($br: small);
 					@include ac-border-styling(normal, secondary-alt);
+					@include ac-position-styling($d: block);
 					overflow: hidden;
 
 					&::before {
@@ -89,7 +91,7 @@
 					#{c(chat divider)} {
 						@include ac-position-styling($h: unset);
 						@include ac-flex-styling($jc: start);
-						border: none;
+						@include ac-border-styling(none);
 
 						#{c(chat unreadPill)} {
 							@include ac-position-styling($pos: relative, $top: 0, $h: unset);
@@ -142,6 +144,7 @@
 			@include ac-spacing-styling($m: small);
 			@include ac-padding-styling($p: xx-small);
 			@include ac-flex-styling($f: 1);
+			@include ac-position-styling($d: block);
 			box-shadow: none !important;
 			@include ac-border-styling(none);
 			&#{c(chatForm jumpToPresentBar)} {

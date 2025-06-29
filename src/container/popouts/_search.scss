@@ -19,7 +19,7 @@
 				@include ac-spacing-styling($ml: x-small);
 				@include ac-rounded-styling($br: small);
 				transition: all 0.1s ease;
-				left: 0;
+				@include ac-position-styling($left: 0);
 				content: '';
 				order: -1;
 			}

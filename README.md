@@ -1,4 +1,4 @@
-# Albatross Pre-release 0.2.3
+# Albatross Pre-release 0.3.3
 
 ⚠️ This theme is still underdevelopment and bugs **WILL** occur.
 
@@ -10,18 +10,21 @@
 ![replugged](https://img.shields.io/badge/replugged%20not%20supported-language?style=for-the-badge&color=404c5a)
 
 
-- [Albatross Pre-release 0.2.3](#albatross-pre-release-023)
+- [Albatross Pre-release 0.3.3](#albatross-pre-release-033)
 	- [Disclaimers](#disclaimers)
 	- [Palettes](#palettes)
 	- [Changelog](#changelog)
+		- [Pre-release v0.3.3 - 2024-06-28](#pre-release-v033---2024-06-28)
+		- [Added](#added)
+		- [Bug Fixes](#bug-fixes)
 		- [Pre-release v0.2.3 - 2025-06-22](#pre-release-v023---2025-06-22)
 			- [Styled Elements](#styled-elements)
-	- [Bug Fixes](#bug-fixes)
+	- [Bug Fixes](#bug-fixes-1)
 		- [Pre-release v0.2.2 - 2025-06-14](#pre-release-v022---2025-06-14)
-			- [Bug Fixes](#bug-fixes-1)
-		- [Pre-release v0.2.1 - 2025-06-14](#pre-release-v021---2025-06-14)
-			- [Added](#added)
 			- [Bug Fixes](#bug-fixes-2)
+		- [Pre-release v0.2.1 - 2025-06-14](#pre-release-v021---2025-06-14)
+			- [Added](#added-1)
+			- [Bug Fixes](#bug-fixes-3)
 		- [Pre-release v0.1.0 - 2025-06-11](#pre-release-v010---2025-06-11)
 			- [Official Release](#official-release)
 	- [Known Bugs](#known-bugs)
@@ -64,6 +67,25 @@ All notable changes to this project will be documented in this file. Visit [chan
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+### Pre-release [v0.3.3](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.4) - 2024-06-28
+
+[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.4)
+
+### Added
+
+- Restored theme version information in settings sidebar
+- Added nitro support for user popouts and modals
+
+### Bug Fixes
+
+- Fixed Discords custom styles on themes
+- Fixed avatar in the standing settings page
+- Fixed nitro user modal
+- Fixed discovery page topbar
+- Redid Radial Status
+- Code cleanup
+
 
 ### Pre-release [v0.2.3](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.3) - 2025-06-22
 
@@ -155,6 +177,7 @@ Heres a list of features im planning on adding soon.
 |      🔴      | Nitro customization support | Actively developing.. |
 |  🟡 | Additional plugin support | Actively developing |
 |      🟢      | Add more Palettes  | Not Started |
+| 🟡 | Web support | Not yet planned |
 
 
 ## Getting Started

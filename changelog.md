@@ -7,16 +7,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 - [Changelog](#changelog)
+    - [Pre-release v0.3.3 - 2024-06-28](#pre-release-v033---2024-06-28)
+    - [Added](#added)
+    - [Bug Fixes](#bug-fixes)
     - [Pre-release v0.2.3 - 2025-06-22](#pre-release-v023---2025-06-22)
       - [Styled Elements](#styled-elements)
-      - [Bug Fixes](#bug-fixes)
-    - [Pre-release v0.2.2 - 2025-06-14](#pre-release-v022---2025-06-14)
       - [Bug Fixes](#bug-fixes-1)
-    - [Pre-release v0.2.1 - 2025-06-14](#pre-release-v021---2025-06-14)
-      - [Added](#added)
+    - [Pre-release v0.2.2 - 2025-06-14](#pre-release-v022---2025-06-14)
       - [Bug Fixes](#bug-fixes-2)
+    - [Pre-release v0.2.1 - 2025-06-14](#pre-release-v021---2025-06-14)
+      - [Added](#added-1)
+      - [Bug Fixes](#bug-fixes-3)
     - [Pre-release v0.1.0 - 2025-06-11](#pre-release-v010---2025-06-11)
       - [Official Release](#official-release)
+
+
+
+### Pre-release [v0.3.3](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.4) - 2024-06-28
+
+[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.4)
+
+### Added
+
+- Restored theme version information in settings sidebar
+- Added nitro support for user popouts and modals
+
+### Bug Fixes
+
+- Fixed Discords custom styles on themes
+- Fixed avatar in the standing settings page
+- Fixed nitro user modal
+- Fixed discovery page topbar
+- Redid Radial Status
+- Code cleanup
 
 
 ### Pre-release [v0.2.3](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.3) - 2025-06-22

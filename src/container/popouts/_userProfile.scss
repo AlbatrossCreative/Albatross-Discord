@@ -7,13 +7,22 @@
 
 	.user-profile-popout {
 		@include ac-position-styling($w: 18vw, $max-h: unset);
-		@include ac-color-styling($bg: tertiary);
-		@include ac-padding-styling($p: 0);
+		@include ac-padding-styling($p: 3px);
+		@include ac-rounded-styling($br: small);
 		overflow: unset;
+		&#{c(profile themed)} {
+			#{c(profile popout bitesize header)} {
+				> #{c(profile avatar avatar)} {
+					&::before {
+						@include ac-color-styling($bg: var(--profile-gradient-primary-color));
+					}
+				}
+			}
+		}
 
 		#{c(profile inner)} {
 			@include ac-flex-styling($gap: 0, $d: grid);
-			@include ac-rounded-styling($br: medium);
+			@include ac-rounded-styling($br: small);
 			grid-template-rows: auto;
 			grid-template-areas:
 				'header header'
@@ -114,14 +123,13 @@
 					&::before {
 						@include ac-position-styling(
 							$pos: absolute,
-							$h: 74px,
-							$w: 74px,
+							$h: 80px,
+							$w: 80px,
 							$left: small,
 							$top: small
 						);
-						@include ac-border-styling($w: 6px, $color: floating);
+						@include ac-rounded-styling($br: var(--rs-avatar-shape));
 						@include ac-color-styling($bg: floating);
-						@include ac-rounded-styling($br: medium);
 						content: '';
 					}
 
@@ -149,8 +157,8 @@
 							}
 
 							> rect {
-								ry: var(--ac-rounded-md) !important;
-								rx: var(--ac-rounded-md) !important;
+								ry: var(--rs-avatar-shape) !important;
+								rx: var(--rs-avatar-shape) !important;
 							}
 						}
 					}

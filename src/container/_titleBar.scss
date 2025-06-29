@@ -32,11 +32,7 @@
 		}
 
 		&::after {
-			@include ac-position-styling($pos: relative);
-			@include ac-color-styling($c: var(--text-normal));
 			pointer-events: none;
-			opacity: var(--ac-opacity-14);
-			font-size: 12px;
 		}
 	}
 }

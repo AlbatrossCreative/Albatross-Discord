@@ -10,6 +10,7 @@
 		$ml: calc(var(--ac-spacing-xs) - 2px),
 		$mr: calc(var(--ac-spacing-sm) * 2)
 	);
+	@include ac-position-styling($d: block);
 	overflow: hidden !important;
 
 	#{c(notice closeButton)} {
@@ -19,6 +20,6 @@
 	button {
 		@include ac-position-styling($top: 0);
 		@include ac-rounded-styling($br: x-small);
-		border-width: 1.5px;
+		@include ac-border-styling(medium);
 	}
 }

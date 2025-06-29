@@ -1,5 +1,7 @@
 @use 'abstract' as *;
-
+#{c(chat subtitleContainer)} {
+	@include ac-border-styling(none);
+}
 #{c(header header)} {
 	@include ac-color-styling($bg: secondary);
 	@include ac-rounded-styling($br: small);

@@ -1,5 +1,27 @@
 @use 'abstract' as *;
-
+#{c(chat page)} {
+	.container_a592e1 {
+		@include ac-rounded-styling($br: small);
+		@include ac-border-styling(normal, secondary-alt);
+		overflow: hidden;
+		.container_d08938 {
+			.headerBar__8a7fc {
+				@include ac-position-styling($w: fill);
+				@include ac-spacing-styling($m: small);
+				@include ac-rounded-styling($br: small);
+				@include ac-color-styling($bg: secondary);
+				.container__65d41{
+					#{c(tab top)} {
+						@include ac-flex-styling($ai: center);
+					}
+				}
+				&::after{
+					@include ac-position-styling($d: none);
+				}
+			}
+		}
+	}
+}
 #{c(other cv discoverCategory)} {
 	@include ac-color-styling($bg: secondary);
 	@include ac-rounded-styling($br: small);

@@ -1,40 +1,45 @@
 @use 'abstract' as *;
 
-%version-info-base {
+%ac-info-base {
+	@include ac-position-styling($pos: relative, $d: inline-block);
+	@include ac-color-styling($c: text-muted);
 	font-family: var(--font-primary);
-	color: var(--text-muted);
 	text-transform: none;
+	line-height: 1.33;
 	font-size: 12px;
-	position: relative;
 }
 
 html {
-	&#{c(os win platform)}
-		#{c(topBar bar)}:not(#{c(topBar systemBar)})
-		#{c(topBar leading container)}::after {
-		content: 'v#{$win-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
+	&#{c(os win)} {
+		#{c(userSettings sidebarInfo)} {
+			@include ac-flex-styling($dir: column);
+			&::before {
+				content: '#{$theme-name} Discord #{$win-version}' ' (' var(--ACV-COMMIT) ')';
+				@extend %ac-info-base;
+			}
+			&::after {
+				content: 'Albatross Backend ' var(--ACB-VERSION);
+				@extend %ac-info-base;
+				order: -1;
+			}
+		}
+		#{c(topBar bar)}:not(#{c(topBar systemBar)}) #{c(topBar leading container)} {
+			&::after {
+				content: 'v#{$win-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
+				opacity: var(--ac-opacity-14);
+				@extend %ac-info-base;
+			}
+		}
 	}
 
-	&#{c(os mac platform)}
-		#{c(topBar bar)}:not(#{c(topBar systemBar)})
-		#{c(topBar trailing container)}::after {
-		content: 'v#{$osx-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
-	}
-}
-
-html#{c(os win platform)} #{c(userSettings sidebarInfo)}::before {
-	@extend %version-info-base;
-	content: '#{$theme-name} #{$win-version} ' '(' var(--ACV-COMMIT) ')';
-}
-
-html#{c(os mac platform)} #{c(userSettings sidebarInfo)} {
-	&::before {
-		@extend %version-info-base;
-		content: '#{$theme-name} #{$osx-version} ' '(' var(--ACV-COMMIT) ')';
-	}
-
-	&::after {
-		@extend %version-info-base;
-		content: 'Albatross Backend' ' (' var(--ACB-COMMIT) ')';
+	&#{c(os mac)} {
+		#{c(userSettings sidebarInfo)} {
+		}
+		#{c(topBar bar)}:not(#{c(topBar systemBar)}) #{c(topBar trailing container)} {
+			&::after {
+				content: 'v#{$osx-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
+				@extend %ac-info-base;
+			}
+		}
 	}
 }

@@ -14,17 +14,16 @@
 
 /* BACKEND IMPORTS */
 @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/backend/albatross-vars.css');
-@import url('https://albatrosscreative.github.io/Albatross-Discord/public/build/albatross.css');
+@import url('https://albatrosscreative.github.io/Albatross-Discord/public/build/albatross-minified.css');
 
 /* DO NOT COMMENT THE FOLLOWING LINES ABOVE */
 
 /* Palettes */
-
-@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/crearts.css');
+@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/heroui.css');
 
 
 /* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/comet.css');
-@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/nextui.css');
 @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/dracula.css');
+@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/crearts.css');
 @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/miyu.css');
 @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/nord.css'); */

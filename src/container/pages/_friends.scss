@@ -31,6 +31,7 @@
 	#{c(friends tabBody)} {
 		@include ac-color-styling($bgc: transparent);
 		@include ac-spacing-styling($mt: small);
+		@include ac-border-styling(none);
 
 		#{c(friends peopleColumn)} {
 			@include ac-color-styling($bg: secondary);

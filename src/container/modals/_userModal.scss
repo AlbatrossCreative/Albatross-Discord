@@ -1,10 +1,126 @@
 @use 'abstract' as *;
 
-.root__24502:has(.user-profile-modal) {
+#{c(profile modal root)}:has(#{c(profile modal)}) {
 	@include ac-color-styling($bg: transparent, $bgc: transparent);
+	#{c(profile outer)}#{c(profile themed)} {
+		--ac-profile-gradient-start: color-mix(
+			in oklab,
+			var(--profile-gradient-overlay-color) 55%,
+			var(--profile-gradient-primary-color)
+		);
+		--ac-profile-gradient-end: color-mix(
+			in oklab,
+			var(--profile-gradient-overlay-color) 55%,
+			var(--profile-gradient-secondary-color)
+		);
 
-	#{c(profile outer)}.user-profile-modal {
-		@include ac-position-styling($max-w: 620px, $w: min-content, $h: fit-content, $max-h: 65vh);
+		--ac-profile-border-gradient-start: color-mix(
+			in oklab,
+			var(--profile-gradient-overlay-color) 25%,
+			var(--profile-gradient-primary-color)
+		);
+		--ac-profile-border-gradient-end: color-mix(
+			in oklab,
+			var(--profile-gradient-overlay-color) 25%,
+			var(--profile-gradient-secondary-color)
+		);
+
+		--ac-profile-gradient-border-45deg: linear-gradient(
+			45deg,
+			var(--ac-profile-border-gradient-start),
+			var(--ac-profile-border-gradient-end)
+		);
+		--ac-profile-gradient-border-60deg: linear-gradient(
+			60deg,
+			var(--ac-profile-border-gradient-start),
+			var(--ac-profile-border-gradient-end)
+		);
+		--ac-profile-gradient-border-90deg: linear-gradient(
+			90deg,
+			var(--ac-profile-border-gradient-start),
+			var(--ac-profile-border-gradient-end)
+		);
+		--ac-profile-gradient-border-130deg: linear-gradient(
+			1300deg,
+			var(--ac-profile-border-gradient-start),
+			var(--ac-profile-border-gradient-end)
+		);
+
+		--ac-profile-gradient-border-header: linear-gradient(
+			-90deg,
+			var(--ac-profile-border-gradient-start) 0%,
+			var(--ac-profile-border-gradient-start) 70%,
+			var(--ac-profile-border-gradient-end) 100%
+		);
+		--ac-profile-gradient-border-username: linear-gradient(
+			-90deg,
+			var(--ac-profile-border-gradient-start) 0%,
+			var(--ac-profile-border-gradient-start) 10%,
+			var(--ac-profile-border-gradient-end) 100%
+		);
+
+		--ac-profile-gradient-border: linear-gradient(
+			180deg,
+			var(--ac-profile-border-gradient-start) 0%,
+			var(--ac-profile-border-gradient-end) 100%
+		);
+
+		--ac-profile-gradient-45deg: linear-gradient(
+			45deg,
+			var(--ac-profile-gradient-start),
+			var(--ac-profile-gradient-start) var(--custom-user-profile-banner-height),
+			var(--ac-profile-gradient-end)
+		);
+		--ac-profile-gradient-60deg: linear-gradient(
+			60deg,
+			var(--ac-profile-gradient-start),
+			var(--ac-profile-gradient-start) var(--custom-user-profile-banner-height),
+			var(--ac-profile-gradient-end)
+		);
+		--ac-profile-gradient-90deg: linear-gradient(
+			90deg,
+			var(--ac-profile-gradient-start),
+			var(--ac-profile-gradient-start) var(--custom-user-profile-banner-height),
+			var(--ac-profile-gradient-end)
+		);
+
+		#{c(profile inner)} {
+			#{c(profile modal body)} {
+				#{c(profile modal bodyContainer)} {
+					background:
+						var(--ac-profile-gradient-45deg) padding-box,
+						var(--ac-profile-gradient-border-130deg) border-box !important;
+					@include ac-border-styling(thick, transparent);
+				}
+				.username__24502 {
+					background:
+						var(--ac-profile-gradient-border-username) padding-box,
+						var(--ac-profile-gradient-border-60deg) border-box !important;
+					@include ac-border-styling(thick, transparent, $bt: 0);
+				}
+				#{c(tab top)} {
+					background:
+						var(--ac-profile-gradient-90deg) padding-box,
+						var(--ac-profile-gradient-border-130deg) border-box !important;
+					@include ac-border-styling(thick, transparent);
+				}
+			}
+			header {
+				background:
+					var(--ac-profile-gradient-border-header) padding-box,
+					var(--ac-profile-gradient-border-60deg) border-box !important;
+				@include ac-border-styling(thick, transparent, $bb: 0);
+			}
+		}
+	}
+	&:has(.profileEffects__01370) {
+		.profileEffects__01370 {
+			@include ac-position-styling($top: unset, $bottom: 0, $h: 100%);
+			@include ac-rounded-styling($br: small);
+		}
+	}
+	#{c(profile outer)}#{c(profile modal)} {
+		@include ac-position-styling($max-w: 622px, $w: fit-content, $h: fit-content, $max-h: 65vh);
 		@include ac-color-styling($bg: transparent, $bgc: transparent);
 		@include ac-rounded-styling($br: 0);
 		@include ac-padding-styling($p: 0);
@@ -21,11 +137,14 @@
 			}
 
 			header {
-				@include ac-color-styling($bg: primary);
+				border: solid 1px var(--background-secondary-alt);
+				background: var(--background-primary);
+				border-bottom: none !important;
 				@include ac-flex-styling($d: grid);
 				@include ac-spacing-styling($m: 0);
-				@include ac-padding-styling($p: small);
-				@include ac-rounded-styling($brt: small);
+				@include ac-padding-styling($p: small, $pb: xx-small);
+				@include ac-rounded-styling($brt: small, $brb: 0);
+				@include ac-position-styling($w: 100%);
 
 				#{c(profile banner mask)} {
 					height: 210px;
@@ -33,12 +152,22 @@
 
 					mask {
 						rect {
-							filter: brightness(67%);
-							rx: var(--ac-rounded-sm);
+							filter: brightness(67%) !important;
+							rx: var(--ac-rounded-xs) !important;
 						}
 
 						circle {
-							display: none;
+							@include ac-position-styling($d: none);
+						}
+					}
+					foreignObject {
+						@include ac-rounded-styling($br: small);
+						mask: none !important;
+						#{c(profile banner banner)} {
+							@include ac-rounded-styling($br: small);
+							&::before {
+								@include ac-position-styling($d: none);
+							}
 						}
 					}
 				}
@@ -85,10 +214,12 @@
 			}
 
 			#{c(profile modal body)} {
-				@include ac-flex-styling($gap: 0);
+				@include ac-flex-styling($gap: 0, $d: grid);
+				grid-template-areas:
+					'username'
+					'container';
 
 				#{c(profile overlay)} {
-					@include ac-color-styling($bg: primary);
 					@include ac-spacing-styling($m: 0);
 					@include ac-rounded-styling($br: 0);
 
@@ -101,40 +232,47 @@
 				}
 
 				.username__24502 {
-					@include ac-color-styling($bg: primary);
+					border: solid 1px var(--background-secondary-alt);
+					background: var(--background-primary);
+					border-top: none !important;
 					@include ac-spacing-styling($m: 0);
-					@include ac-padding-styling($p: small, $pt: 0);
+					@include ac-padding-styling($p: small, $pt: 0, $pl: large);
+					@include ac-rounded-styling($brt: 0, $brb: small);
+					grid-area: username;
 				}
 
-				.container_d1d9f3 {
-					@include ac-rounded-styling($br: 0);
+				#{c(profile modal bodyContainer)} {
+					border: solid 1px var(--background-secondary-alt);
+					background: var(--background-primary);
+					@include ac-rounded-styling($br: small);
+					@include ac-spacing-styling($mt: small);
+					grid-area: container;
 
 					#{c(tab top)} {
-						@include ac-color-styling($bg: secondary);
-						@include ac-rounded-styling($brb: small);
+						background-color: var(--background-secondary);
+						border: solid 1px var(--background-secondary-alt);
+						@include ac-rounded-styling($br: small);
 						@include ac-padding-styling($p: small);
 						@include ac-flex-styling($jc: center);
-						@include ac-spacing-styling($m: 0);
-						@include ac-border-styling(none);
+						@include ac-spacing-styling($m: small);
 					}
 
 					#{c(scroller thin)} {
-						@include ac-color-styling($bg: primary);
-						@include ac-rounded-styling($br: small);
-						@include ac-spacing-styling($mt: small);
+						@include ac-position-styling($h: 300px);
+						@include ac-spacing-styling($m: 0);
+						@include ac-padding-styling($p: small);
 
 						.card__39ec2 {
-							@include ac-color-styling($bg: secondary);
-
+							@include ac-border-styling(normal, secondary-alt);
+							@include ac-rounded-styling($br: small);
 							header {
 								@include ac-rounded-styling($br: x-small);
 							}
 						}
 
-						.role_dfa8b6 {
-							.roleRemoveButton_dfa8b6 {
-								.roleCircle__4f569 {
-								}
+						.note_fcb628 {
+							textarea {
+								@include ac-color-styling($bg: rgb(var(--bg-overlay-color-inverse)/.1));
 							}
 						}
 					}

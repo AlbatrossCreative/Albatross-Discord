@@ -19,7 +19,7 @@
 
 		#{c(threads container)} {
 			@include ac-color-styling($bg: transparent);
-			border: none;
+			@include ac-border-styling(none);
 
 			#{c(header)} {
 				@include ac-spacing-styling($mb: small);
@@ -56,7 +56,7 @@
 
 	#{c(call container)} {
 		@include ac-color-styling($bg: transparent);
-		border: none;
+		@include ac-border-styling(none);
 
 		#{c(call root)} {
 			@include ac-color-styling($bg: transparent);
@@ -150,9 +150,6 @@
 
 					@include ac-spacing-styling($mb: small);
 				}
-			}
-
-			#{c(call voiceCallWrapper)} {
 			}
 		}
 	}

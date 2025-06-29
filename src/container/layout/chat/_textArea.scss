@@ -7,6 +7,7 @@
 	@include ac-rounded-styling($br: small);
 	@include ac-flex-styling($ai: center, $d: grid);
 	@include ac-border-styling(normal, secondary-alt);
+	@include ac-position-styling($d: grid);
 	grid-template-columns: auto 1fr;
 	grid-template-rows: auto auto;
 	grid-template-areas: 'pill BottomBar';

@@ -19,6 +19,7 @@
 		@include ac-color-styling($bg: secondary);
 		@include ac-spacing-styling($m: small);
 		@include ac-rounded-styling($br: small);
+		@include ac-flex-styling($gap: small);
 		box-shadow: none;
 
 		button {
