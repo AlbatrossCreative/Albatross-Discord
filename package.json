@@ -1,6 +1,6 @@
 {
 	"name": "albatross",
-	"version": "0.3.3",
+	"version": "0.3.4",
 	"description": "Bringing Discord Grand Ideas.",
 	"author": "Albatross Creative",
 	"license": "GPL-3.0-only",
@@ -35,6 +35,8 @@
 		"replugged": "^4.8.1"
 	},
 	"dependencies": {
+		"@sass-fairy/list": "^1.2.4",
+		"@sass-fairy/string": "^1.3.1",
 		"sass": "^1.85.0"
 	}
 }

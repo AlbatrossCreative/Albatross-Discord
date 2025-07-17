@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@sass-fairy/list':
+        specifier: ^1.2.4
+        version: 1.2.4
+      '@sass-fairy/string':
+        specifier: ^1.3.1
+        version: 1.3.1
       sass:
         specifier: ^1.85.0
         version: 1.85.0
@@ -464,6 +470,21 @@ packages:
   '@pnpm/npm-conf@2.3.1':
     resolution: {integrity: sha512-c83qWb22rNRuB0UaVCI0uRPNRr8Z0FWnEIvT47jiHAmOIUHbBOg5XvV7pM5x+rKn9HRpjxquDbXYSXr3fAKFcw==}
     engines: {node: '>=12'}
+
+  '@sass-fairy/exception@1.1.1':
+    resolution: {integrity: sha512-DP3dwerkS/gE79CaCzaE46zkTSWxmUc8Q/8Io6FC9qYRaNJ5aR8l1IvRbEe6ZnsnVE1+Ow1XOzC9uL2eeh62Hg==}
+
+  '@sass-fairy/list@1.2.4':
+    resolution: {integrity: sha512-gs+96qO1kqPbnDU0tqG9/V77ceUXtA8grYQ554jIEQKYerFRs8usUs7KUu7JZJfkmEDpyoDbvNm18vr1WVgz6w==}
+
+  '@sass-fairy/math@1.0.3':
+    resolution: {integrity: sha512-Lg/0vwx9Y7BSl/hTy3zO13bObx3dz8wkV/G6suX8B2j3IloXMGZmvdlmGwH+8J4e9/nUA/Yv3N9B6+W/IdLHmw==}
+
+  '@sass-fairy/meta@1.0.2':
+    resolution: {integrity: sha512-LLQnuY5kLdsGjGM+r94y3xew1wi7iok4Ciw43fYC9fCtyvwbeohMA0OK4vjl2iP9RaGIMEWfpjX7WZ0gSc5sSQ==}
+
+  '@sass-fairy/string@1.3.1':
+    resolution: {integrity: sha512-uOBQn5/jBc2agMy4PXofRJnlpQ1Z4msV6INjs3xK4MmjAOIQXbh0pgVPMKfVN/j/7uJbhf9mLksvUsxO7s685A==}
 
   '@types/node@18.19.76':
     resolution: {integrity: sha512-yvR7Q9LdPz2vGpmpJX5LolrgRdWvB67MJKDPSgIIzpFbaf9a1j/f5DnLp5VDyHGMR0QZHlTr1afsD87QCXFHKw==}
@@ -1378,6 +1399,27 @@ snapshots:
       '@pnpm/config.env-replace': 1.1.0
       '@pnpm/network.ca-file': 1.0.2
       config-chain: 1.1.13
+
+  '@sass-fairy/exception@1.1.1': {}
+
+  '@sass-fairy/list@1.2.4':
+    dependencies:
+      '@sass-fairy/exception': 1.1.1
+      '@sass-fairy/math': 1.0.3
+      '@sass-fairy/meta': 1.0.2
+
+  '@sass-fairy/math@1.0.3':
+    dependencies:
+      '@sass-fairy/exception': 1.1.1
+
+  '@sass-fairy/meta@1.0.2':
+    dependencies:
+      '@sass-fairy/exception': 1.1.1
+
+  '@sass-fairy/string@1.3.1':
+    dependencies:
+      '@sass-fairy/exception': 1.1.1
+      '@sass-fairy/list': 1.2.4
 
   '@types/node@18.19.76':
     dependencies:
