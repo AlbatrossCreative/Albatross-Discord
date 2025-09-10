@@ -8,12 +8,13 @@
 	#{c(modals inbox header)} {
 		@include ac-color-styling($bg: transparent);
 		@include ac-padding-styling($p: 0);
-		@include ac-spacing-styling($mb: small);
 		@include ac-border-styling(none);
 		.headerTabs_ab6641 {
 			@include ac-spacing-styling($m: 0);
 			#{c(modals inbox tabBar)} {
 				@include ac-border-styling(none, $bb: none);
+				@include ac-flex-styling($jc: space-around);
+				@include ac-position-styling($w: fill);
 			}
 		}
 	}
@@ -24,6 +25,7 @@
 	#{c(modals inbox mentions scroller)} {
 		@include ac-rounded-styling($br: small);
 		#{c(modals inbox mentions container)} {
+			@include ac-padding-styling($pr: x-small);
 			#{c(modals inbox mentions messageContainer)} {
 				@include ac-color-styling($bg: transparent);
 				@include ac-border-styling(none);
@@ -87,6 +89,7 @@
 		}
 		#{c(chat messageAttachmentsContainer)} {
 			@include ac-spacing-styling($ml: small);
+			@include ac-position-styling($w: fill);
 			grid-area: media;
 		}
 	}

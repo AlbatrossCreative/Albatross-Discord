@@ -1,6 +1,7 @@
 @use 'abstract' as *;
 
 #{c(modals root)} {
+	@include ac-border-styling(normal, secondary-alt);
 	@include ac-rounded-styling($br: small);
 	overflow: unset !important;
 	box-shadow: none;
@@ -16,6 +17,7 @@
 	}
 
 	#{c(modals footer)} {
+		@include ac-border-styling(normal, secondary-alt);
 		@include ac-color-styling($bg: secondary);
 		@include ac-spacing-styling($m: small);
 		@include ac-rounded-styling($br: small);
@@ -24,6 +26,7 @@
 
 		button {
 			@include ac-color-styling($bg: floating);
+			@include ac-position-styling($h: 100%, $max-h: unset);
 		}
 	}
 }

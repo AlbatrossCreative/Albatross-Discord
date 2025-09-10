@@ -1,45 +1,46 @@
 @use 'abstract' as *;
 
-%ac-info-base {
+.ac-info-base {
 	@include ac-position-styling($pos: relative, $d: inline-block);
 	@include ac-color-styling($c: text-muted);
 	font-family: var(--font-primary);
-	text-transform: none;
+	text-transform: capitalize;
 	line-height: 1.33;
 	font-size: 12px;
 }
 
-html {
-	&#{c(os win)} {
-		#{c(userSettings sidebarInfo)} {
-			@include ac-flex-styling($dir: column);
-			&::before {
-				content: '#{$theme-name} Discord #{$win-version}' ' (' var(--ACV-COMMIT) ')';
-				@extend %ac-info-base;
-			}
-			&::after {
-				content: 'Albatross Backend ' var(--ACB-VERSION);
-				@extend %ac-info-base;
-				order: -1;
-			}
+#{c(os win)} {
+	#{c(userSettings sidebarInfo)} {
+		@include ac-flex-styling($dir: column);
+		span {
+			@extend .ac-info-base;
 		}
-		#{c(topBar bar)}:not(#{c(topBar systemBar)}) #{c(topBar leading container)} {
-			&::after {
-				content: 'v#{$win-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
-				opacity: var(--ac-opacity-14);
-				@extend %ac-info-base;
-			}
+		&::before {
+			content: '#{$theme-name} Discord #{$win-version}' ' (' var(--ACV-COMMIT) ')';
+			@extend .ac-info-base;
+		}
+		&::after {
+			content: 'Albatross Backend ' var(--ACB-VERSION);
+			@extend .ac-info-base;
+			order: -1;
 		}
 	}
-
-	&#{c(os mac)} {
-		#{c(userSettings sidebarInfo)} {
+	#{c(topBar bar)}#{c(topBar leading container)} {
+		&::after {
+			content: 'v#{$win-version} 〡 Palette by ' var(--ACV16);
+			opacity: var(--ac-opacity-14);
+			@extend .ac-info-base;
 		}
-		#{c(topBar bar)}:not(#{c(topBar systemBar)}) #{c(topBar trailing container)} {
-			&::after {
-				content: 'v#{$osx-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
-				@extend %ac-info-base;
-			}
+	}
+}
+
+#{c(os mac)} {
+	#{c(userSettings sidebarInfo)} {
+	}
+	#{c(topBar bar)}#{c(topBar trailing container)} {
+		&::after {
+			content: 'v#{$osx-version} 〡 ' var(--ACV17) ' Palette by ' var(--ACV16);
+			@extend .ac-info-base;
 		}
 	}
 }

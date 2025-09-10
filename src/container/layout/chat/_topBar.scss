@@ -27,10 +27,11 @@
 				@include ac-color-styling($bg: transparent);
 				@include ac-position-styling($max-w: 35%, $w: fill);
 				@include ac-rounded-styling($br: small);
+				overflow: unset !important;
 				flex: unset;
 
 				#{c(avatar wrapper)} {
-					@include ac-spacing-styling($m: 0);
+					@include ac-spacing-styling($mr: small, $ml: xx-small);
 					@include ac-padding-styling($px: xx-small);
 					@include ac-position-styling($h: 100%, $w: unset);
 
@@ -42,8 +43,8 @@
 						}
 
 						> rect {
-							x: 2 !important;
-							y: 2 !important;
+							x: 0 !important;
+							y: 0 !important;
 						}
 					}
 				}
@@ -126,9 +127,6 @@
 										@include ac-padding-styling($pb: xx-small);
 									}
 								}
-							}
-
-							.icon__97492 {
 							}
 						}
 					}

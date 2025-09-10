@@ -7,32 +7,60 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 - [Changelog](#changelog)
-    - [Pre-release v0.3.3 - 2024-06-28](#pre-release-v033---2024-06-28)
-    - [Added](#added)
-    - [Bug Fixes](#bug-fixes)
-    - [Pre-release v0.2.3 - 2025-06-22](#pre-release-v023---2025-06-22)
+    - [Beta v0.4.3a - 2024-09-10](#beta-v043a---2024-09-10)
+      - [Added](#added)
       - [Styled Elements](#styled-elements)
-      - [Bug Fixes](#bug-fixes-1)
-    - [Pre-release v0.2.2 - 2025-06-14](#pre-release-v022---2025-06-14)
-      - [Bug Fixes](#bug-fixes-2)
-    - [Pre-release v0.2.1 - 2025-06-14](#pre-release-v021---2025-06-14)
+      - [Bug Fixes](#bug-fixes)
+    - [Pre-release v0.3.3 - 2024-06-28](#pre-release-v033---2024-06-28)
       - [Added](#added-1)
+      - [Bug Fixes](#bug-fixes-1)
+    - [Pre-release v0.2.3 - 2025-06-22](#pre-release-v023---2025-06-22)
+      - [Styled Elements](#styled-elements-1)
+      - [Bug Fixes](#bug-fixes-2)
+    - [Pre-release v0.2.2 - 2025-06-14](#pre-release-v022---2025-06-14)
       - [Bug Fixes](#bug-fixes-3)
+    - [Pre-release v0.2.1 - 2025-06-14](#pre-release-v021---2025-06-14)
+      - [Added](#added-2)
+      - [Bug Fixes](#bug-fixes-4)
     - [Pre-release v0.1.0 - 2025-06-11](#pre-release-v010---2025-06-11)
       - [Official Release](#official-release)
 
 
 
-### Pre-release [v0.3.3](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.4) - 2024-06-28
+### Beta [v0.4.3a](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.4.3a) - 2024-09-10
 
-[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.4)
+[Download albatross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.4.3a)
 
-### Added
+#### Added
+
+- Albatross Day (BETA). [Albatross Backend](https://github.com/albatrosscreative/albatross-backend) now has partial support for light mode on most palettes. Some palettes may have unfitting colors, which will be fixed in later updates. Please send feedback in our [support server](https://discord.gg/Rfm6d4yWVD)
+
+#### Styled Elements
+
+- Fixed some inconsistencies throughout the theme. Still working on it
+- Fixed various components across the app
+- Fixed message specificity.
+- Styled V2 user modals
+- Styled the call section
+
+#### Bug Fixes
+
+- Fixed various elements in user modals and profile
+- Fixed textArea element being behind pseudo element
+- Fixed sidebar in direct messages and in servers
+- Fixed chat right hand sidebar
+
+
+### Pre-release [v0.3.3](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.3.3) - 2024-06-28
+
+[Download albatross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.3.3)
+
+#### Added
 
 - Restored theme version information in settings sidebar
 - Added nitro support for user popouts and modals
 
-### Bug Fixes
+#### Bug Fixes
 
 - Fixed Discords custom styles on themes
 - Fixed avatar in the standing settings page
@@ -44,7 +72,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Pre-release [v0.2.3](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.3) - 2025-06-22
 
-[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.3)
+[Download albatross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.3)
 
 
 #### Styled Elements
@@ -65,7 +93,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Pre-release [v0.2.2](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.2) - 2025-06-14
 
-[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.2)
+[Download albatross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tags/0.2.2)
 
 #### Bug Fixes
 
@@ -74,7 +102,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Pre-release [v0.2.1](https://github.com/AlbatrossCreative/Albatross-Discord/releases) - 2025-06-14
 
-[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/0.2.1)
+[Download albatross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/0.2.1)
 
 #### Added
 
@@ -95,7 +123,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Pre-release [v0.1.0](https://github.com/AlbatrossCreative/Albatross-Discord/releases) - 2025-06-11
 
-[Download alabtross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/0.1.0)
+[Download albatross.theme.css](https://github.com/AlbatrossCreative/Albatross-Discord/releases/0.1.0)
 
 #### Official Release
 

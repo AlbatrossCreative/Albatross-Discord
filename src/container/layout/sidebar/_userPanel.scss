@@ -10,9 +10,12 @@
 
 	.container__4bbc6 {
 		@include ac-rounded-styling($brt: 0);
-		transition: .25ms ease all;
+		transition: 0.25ms ease all;
+		pointer-events: all !important;
+		filter: brightness(0.7);
 		@include ac-position-styling(
 			$w: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) - 2px),
+			$max-h: 230px,
 			$left: unset,
 			$right: 1px,
 			$h: var(--custom-app-panels-height),
@@ -27,57 +30,6 @@
 			black 65%
 		);
 		pointer-events: all;
-	}
-
-	> div[id='vc-spotify-player'] {
-		@include ac-color-styling($bg: transparent);
-		@include ac-position-styling($w: fill);
-		@include ac-flex-styling(
-			$as: end,
-			$d: grid,
-			$jc: unset,
-			$gapc: calc(var(--ac-spacing-sm) + 2px)
-		);
-		grid-template-columns: var(--custom-guild-list-width) 1fr auto;
-		grid-template-rows: auto;
-		@include ac-border-styling(none);
-		@include ac-padding-styling($p: 0);
-		@include ac-rounded-styling($br: 0);
-		grid-template-areas:
-			'icon name buttons'
-			'icon timeline timeline';
-
-		[id='vc-spotify-info-wrapper'] {
-			@include ac-position-styling($d: contents);
-
-			img {
-				@include ac-position-styling($h: var(--guildbar-avatar-size));
-				@include ac-rounded-styling($br: var(--rs-avatar-shape));
-				pointer-events: all;
-				place-self: center;
-				grid-area: icon;
-			}
-
-			[id='vc-spotify-titles'] {
-				@include ac-padding-styling($py: 0, $px: small);
-				grid-area: name;
-				pointer-events: all;
-			}
-		}
-
-		[id='vc-spotify-progress-bar'] {
-			@include ac-position-styling($w: auto);
-			grid-area: timeline;
-			@include ac-spacing-styling($my: 0, $mx: small);
-			@include ac-padding-styling($pb: small);
-			pointer-events: all;
-		}
-
-		.vc-spotify-button-row {
-			@include ac-padding-styling($pr: small);
-			grid-area: buttons;
-			pointer-events: all;
-		}
 	}
 
 	.container_791eb8 {
@@ -230,6 +182,9 @@
 				#{c(button contents)} {
 					@include ac-padding-styling($p: x-small);
 					@include ac-position-styling($w: unset);
+					.iconForeground__37e49 {
+						@include ac-color-styling($c: inherit);
+					}
 				}
 
 				&:hover {
@@ -251,18 +206,13 @@
 			@include ac-flex-styling($jc: center, $d: grid, $gap: calc(var(--ac-spacing-sm) + 2px));
 			grid-template-columns: var(--custom-guild-list-width) 1fr auto;
 
-			.gameWrapper__8c6c2 {
+			.gameWrapper__5dec7 {
 				@include ac-position-styling($d: contents);
-				.gameIconWrapper__8c6c2{
-					@include ac-position-styling($h: unset);
-					@include ac-flex-styling($jc: center);
+				.wrapper_a629d4 {
+					@include ac-flex-styling($jc: center, $js: anchor-center);
 					grid-area: icon;
-					img{
-						@include ac-position-styling($h: 40px, $w: 40px);
-					}
 				}
-				.info__8c6c2 {
-					grid-area: info;
+				.info__5dec7 {
 					> div {
 						.gameName__8c6c2 {
 							font-size: 16px;
@@ -271,7 +221,28 @@
 					}
 				}
 			}
-			.actions__4cd01{
+			.gameWrapper__8c6c2 {
+				@include ac-position-styling($d: contents);
+				.gameIconWrapper__8c6c2 {
+					@include ac-position-styling($h: unset);
+					@include ac-flex-styling($jc: center);
+					grid-area: icon;
+					img {
+						@include ac-position-styling($h: 40px, $w: 40px);
+					}
+				}
+				.info__8c6c2 {
+					grid-area: info;
+					> div {
+						.gameName__8c6c2 {
+							//specificity
+							font-size: 16px;
+							line-height: 20px;
+						}
+					}
+				}
+			}
+			.actions__4cd01 {
 				@include ac-spacing-styling($mr: small, $ml: unset);
 				grid-area: buttons;
 			}
@@ -295,7 +266,6 @@
 	#{c(sidebar panel voice wrapper)} {
 		@include ac-position-styling($w: var(--custom-guild-list-width));
 		@include ac-color-styling($bg: secondary);
-		@include ac-spacing-styling($mb: x-small);
 		order: -1;
 
 		#{c(sidebar panel voice container)} {
@@ -312,8 +282,8 @@
 					@include ac-position-styling(
 						$d: flex,
 						$pos: absolute,
-						$w: var(--ac-sidebar-width),
-						$bottom: calc(var(--ac-spacing-sm) * -1),
+						$w: fill,
+						$bottom: calc(var(--ac-spacing-sm) * -2),
 						$left: calc(100% + var(--ac-spacing-sm) * 2)
 					);
 					@include ac-padding-styling($py: small);
@@ -344,7 +314,9 @@
 						@include ac-spacing-styling($m: 0);
 
 						&:hover {
-							@include ac-color-styling($bg: var(--button-secondary-hover));
+							@include ac-color-styling(
+								$bg: var(--button-secondary-background-hover)
+							);
 						}
 					}
 				}
@@ -355,6 +327,7 @@
 
 				button {
 					@include ac-position-styling($w: 100%);
+					@include ac-padding-styling($p: small);
 				}
 			}
 		}

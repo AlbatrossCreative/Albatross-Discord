@@ -36,22 +36,20 @@
 
 					#{c(memberList layout)} {
 						@include ac-position-styling($h: unset);
-						@include ac-padding-styling($pr: 2x-large);
-						#{c(memberList avatar)} {
-							#{c(avatar wrapper)} {
-								foreignObject[mask*='mobile'] {
-									overflow: unset !important;
-									&:after {
-										@include ac-position-styling(
-											$w: calc(
-													var(--custom-member-list-width) - calc(
-															var(--ac-spacing-md) * 2
-														)
-												),
-											$left: calc(var(--ac-spacing-xs) * -1)
-										);
-										place-self: flex-end;
-									}
+						@include ac-padding-styling($pr: 2x-large, $pl: x-small, $py: x-small);
+						#{c(avatar wrapper)} {
+							foreignObject[mask*='mobile'] {
+								overflow: unset !important;
+								&:after {
+									@include ac-position-styling(
+										$w: calc(
+												var(--custom-member-list-width) - calc(
+														var(--ac-spacing-md) * 2
+													)
+											),
+										$left: calc(var(--ac-spacing-xs) * -1)
+									);
+									place-self: flex-end;
 								}
 							}
 						}

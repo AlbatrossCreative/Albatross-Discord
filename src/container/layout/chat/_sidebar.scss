@@ -1,5 +1,20 @@
 @use 'abstract' as *;
 
+#{c(chat layerWrapper)} {
+	#{c(threads container)} {
+		.chat_a44415 {
+			@include ac-spacing-styling($mt: small);
+			#{c(chat chatContentInner)} {
+				@include ac-border-styling(normal, secondary-alt);
+				@include ac-color-styling($bg: secondary);
+				@include ac-rounded-styling($br: small);
+			}
+			&::before {
+				@include ac-position-styling($d: none);
+			}
+		}
+	}
+}
 #{c(chat chatContent)} {
 	#{c(profile outer)} {
 		@include ac-position-styling($h: calc(100% - 2px));
@@ -15,8 +30,10 @@
 			#{c(profile firendsMoreEditProfileButtons wrapper)} {
 				@include ac-position-styling($top: small);
 			}
-
-			header {
+			.body_b32ca4 {
+				@include ac-spacing-styling($m: 0);
+			}
+			.header__7f9c0 {
 				#{c(profile banner mask)} {
 					@include ac-position-styling($min-w: unset, $min-h: unset, $max-w: 100%);
 
@@ -33,9 +50,34 @@
 						}
 					}
 				}
+				#{c(profile avatar avatar)} {
+					foreignObject {
+						#{c(avatar stack)} {
+							&::after {
+								@include ac-rounded-styling($br: var(--rs-avatar-shape));
+							}
+						}
+					}
+				}
+			}
+			#{c(profile overlay)} {
+				@include ac-color-styling($bg: floating);
+				@include ac-spacing-styling($m: 0, $mt: small);
+				@include ac-rounded-styling($br: small);
+				@include ac-flex-styling($gap: x-small);
+				@include ac-padding-styling($p: small);
+				.divider__23eb0 {
+					@include ac-spacing-styling($m: 0);
+				}
+				.section__1f6ca {
+					@include ac-color-styling($bg: primary);
+					@include ac-padding-styling($p: small);
+					@include ac-rounded-styling($br: small);
+				}
 			}
 
 			.footer__7f9c0 {
+				@include ac-position-styling($w: 100%);
 				@include ac-flex-styling($gap: small);
 				@include ac-color-styling($bg: primary);
 				@include ac-rounded-styling($br: small);

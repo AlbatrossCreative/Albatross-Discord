@@ -31,7 +31,7 @@
 		&::after {
 			@include ac-color-styling($bg: secondary);
 			@include ac-rounded-styling($br: small);
-			@include ac-position-styling($pos: absolute, $w: 100%, $h: 100%, $z: 0, $left: 0);
+			@include ac-position-styling($pos: absolute, $w: 100%, $h: 100%, $z: -1, $left: 0);
 			content: '';
 		}
 
@@ -100,6 +100,17 @@
 						@include ac-position-styling($h: unset);
 						@include ac-flex-styling($gap: 0);
 					}
+				}
+			}
+			.floatingBars__74017 {
+				&:not(:empty) {
+					@include ac-spacing-styling($mt: small);
+				}
+				.banner__183e8 {
+					@include ac-border-styling(normal, secondary-alt);
+					@include ac-color-styling($bg: primary);
+					@include ac-rounded-styling($br: small);
+					@include ac-spacing-styling($ml: small);
 				}
 			}
 
@@ -175,28 +186,26 @@
 		}
 
 		.entryPointButtonContainer_f75fb0 {
+			@include ac-color-styling($bg: accent);
+			@include ac-rounded-styling($br: x-small);
 			@include ac-position-styling($pos: relative, $h: 100%);
-			@include ac-spacing-styling($m: 0);
-
-			button {
-				@include ac-color-styling($bg: transparent);
-				@include ac-position-styling($w: unset, $min-w: unset);
+			@include ac-spacing-styling($ml: small, $mb: 0);
+			> div {
 				@include ac-spacing-styling($m: 0);
-				@include ac-padding-styling($p: 0);
+				@include ac-position-styling($min-w: unset);
+				button {
+					@include ac-color-styling($bg: transparent);
+					@include ac-position-styling($w: unset, $min-w: unset);
+					@include ac-spacing-styling($m: 0);
+					@include ac-padding-styling($p: 0);
+					.buttonChildrenWrapper__6af3a {
+						@include ac-position-styling($min-h: 30px);
+						@include ac-padding-styling($py: xx-small);
+					}
 
-				#{c(button contents)} {
-					display: none;
-				}
-
-				&::before {
-					@include ac-position-styling($w: 24px, $pos: relative, $h: 24px);
-					@include ac-spacing-styling($mr: small);
-					@include ac-icon-replacement(
-						$ip: cmds,
-						$ic: var(--interactive-normal),
-						$ich: var(--interactive-hover)
-					);
-					content: '';
+					#{c(button contents)} {
+						display: none;
+					}
 				}
 			}
 		}
@@ -260,7 +269,7 @@
 		@include ac-position-styling($w: unset, $h: unset);
 		@include ac-color-styling($bg: transparent);
 		@include ac-rounded-styling($br: small);
-		@include ac-padding-styling($py: small, $pr: small);
+		@include ac-padding-styling($py: small);
 		@include ac-spacing-styling($m: 0);
 		@include ac-border-styling(none);
 		grid-column: 2 / -1;
@@ -279,18 +288,18 @@
 		}
 	}
 
+	&:hover {
+		&::before {
+			@include ac-position-styling($h: 65%);
+			@include ac-color-styling($bg: var(--brand-330));
+		}
+	}
+
 	&:focus-within,
 	&:has(.channelAttachmentArea_b77158) {
 		&::before {
 			@include ac-color-styling($bg: var(--brand-500));
 			@include ac-position-styling($h: 65%);
-		}
-	}
-
-	&:hover:not(&:focus-within):not(:has(.channelAttachmentArea_b77158)) {
-		&::before {
-			@include ac-position-styling($h: 58%);
-			@include ac-color-styling($bg: var(--brand-330));
 		}
 	}
 }

@@ -1,22 +1,22 @@
 {
 	"name": "albatross",
-	"version": "0.3.4",
+	"version": "0.4.3a",
 	"description": "Bringing Discord Grand Ideas.",
 	"author": "Albatross Creative",
 	"license": "GPL-3.0-only",
+	"private": true,
 	"engines": {
 		"node": ">=20.0.0",
 		"pnpm": ">=9.0.0"
 	},
 	"scripts": {
-		"compile": "sass _source.scss:public/build/albatross.css -I src --no-source-map & sass _source.scss:public/build/albatross-minified.css -I src --no-source-map --style=compressed",
-		"devFull": "sass dev.scss:%APPDATA%/Vencord/themes/albatross.theme.css -I src --no-source-map --no-charset --watch & sass dev.scss:%APPDATA%/BetterDiscord/themes/albatross.theme.css -I src --no-charset --no-source-map --watch",
-		"devBD": "sass dev.scss:%APPDATA%/BetterDiscord/themes/albatross.theme.css -I src --no-charset --no-source-map --watch",
-		"devVC": "sass dev.scss:%APPDATA%/Vencord/themes/albatross.theme.css -I src --no-source-map --no-charset --watch",
-		"devRP": "sass dev.scss:%APPDATA%/replugged/themes/Albatross-Discord/public/build/albatross-debug.css -I src --no-source-map --no-charset --watch",
+		"compile": "sass _source.scss:public/build/albatross.css -I src -I node_modules --no-source-map & sass _source.scss:public/build/albatross-minified.css -I src -I node_modules --no-source-map --style=compressed",
+		"devFull": "sass dev.scss:%APPDATA%/Vencord/themes/albatross-dev.theme.css -I src -I node_modules --no-source-map --no-charset --watch & sass dev.scss:%APPDATA%/BetterDiscord/themes/albatross.theme.css -I src -I node_modules --no-charset --no-source-map --watch",
+		"devBD": "sass dev.scss:%APPDATA%/BetterDiscord/themes/albatross-dev.theme.css -I src -I node_modules --no-charset --source-map  --watch",
+		"devVC": "sass dev.scss:%APPDATA%/Vencord/themes/albatross-dev.theme.css -I src -I node_modules --source-map --no-charset --watch --style=compressed",
+		"devRP": "sass dev.scss:%APPDATA%/replugged/themes/Albatross-Discord/public/build/albatross-dev.css -I src -I node_modules --source-map --no-charset --watch",
 		"bundle": "replugged bundle theme",
 		"release": "replugged release",
-		"lint": "prettier ./src --check",
 		"lint:fix": "prettier ./src --write",
 		"debugClassList": "sass src/abstract/_debug-dump-all.scss public/debug/output.css -I public/build/albatross.css"
 	},
@@ -35,8 +35,16 @@
 		"replugged": "^4.8.1"
 	},
 	"dependencies": {
-		"@sass-fairy/list": "^1.2.4",
 		"@sass-fairy/string": "^1.3.1",
-		"sass": "^1.85.0"
+		"@sass-fairy/break": "^1.2.0",
+		"@sass-fairy/color": "^1.2.0",
+		"@sass-fairy/exception": "^1.1.1",
+		"@sass-fairy/list": "^1.2.4",
+		"@sass-fairy/map": "^1.1.1",
+		"@sass-fairy/math": "^1.0.3",
+		"@sass-fairy/meta": "^1.0.2",
+		"@sass-fairy/url": "^1.0.1",
+		"sass": "^1.85.0",
+		"pnpm": "^7.33.7"
 	}
 }

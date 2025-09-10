@@ -2,6 +2,7 @@
 
 #{c(sidebar sidebar)} {
 	@include ac-flex-styling($d: grid, $gapc: small);
+	@include ac-color-styling($bg: transparent);
 	@include ac-rounded-styling($br: small);
 	grid-template-areas:
 		'guildList sidebar'
@@ -14,6 +15,8 @@
 	#{c(sidebar list)} {
 		@include ac-rounded-styling($br: 0);
 		@include ac-border-styling(none);
+		-webkit-backdrop-filter: unset !important;
+		backdrop-filter: unset !important;
 	}
 
 	&:has(
@@ -49,5 +52,8 @@
 				opacity: 1;
 			}
 		}
+	}
+	&.channelListHidden_c48ade {
+		@include ac-flex-styling($gap: unset);
 	}
 }

@@ -5,7 +5,7 @@
 
 	#{c(sidebar private searchBar)} {
 		@include ac-color-styling($bgc: transparent);
-		@include ac-border-styling(normal, primary);
+		@include ac-border-styling(normal, secondary-alt);
 		@include ac-rounded-styling($br: small);
 		@include ac-position-styling($h: unset);
 		@include ac-spacing-styling($mb: small);
@@ -53,6 +53,8 @@
 			@include ac-flex-styling($ac: flex-start, $wrap: wrap);
 			@include ac-color-styling($bg: transparent);
 			@include ac-spacing-styling($m: 0);
+			contain: layout paint;
+			will-change: scroll-position;
 
 			#{c(sidebar private friendsButtonContainer)} {
 				@include ac-flex-styling($f: 1 1 auto);
@@ -92,15 +94,16 @@
 
 			li#{c(sidebar private channel)} {
 				@include ac-position-styling($max-w: unset);
-				@include ac-rounded-styling($br: small);
+				@include ac-rounded-styling($br: x-small);
 				@include ac-spacing-styling($m: 0);
 				overflow: hidden;
 
 				#{c(sidebar private interactive)} {
+					@include ac-color-styling($c: text-primary);
 					@include ac-padding-styling($p: 0);
 				}
 
-				&:has(#{c(sidebar private link)}[href*='/channels/@me/']) {
+				&:has(#{c(sidebar private interactive)} > #{c(sidebar private link)}[href^='/channels/@me/']) {
 					@include ac-spacing-styling($ml: x-small);
 					@include ac-position-styling($w: fill);
 
@@ -167,7 +170,7 @@
 						&#{c(sidebar private interactiveSelected)} {
 							@include ac-color-styling(
 								$bgc: var(--background-modifier-selected),
-								$c: var(--interactive-active)
+								$c: var(--brand-700)
 							);
 
 							#{c(sidebar private link)} {
@@ -185,7 +188,7 @@
 					}
 				}
 
-				&:has(#{c(sidebar private link)}:not([href*='/channels/@me/'])) {
+				&:has(#{c(sidebar private interactive)} > #{c(sidebar private link)}:not([href^='/channels/@me/'])) {
 					@include ac-spacing-styling($ml: x-small);
 					flex: 1 1 auto;
 
@@ -224,6 +227,9 @@
 
 								#{c(sidebar private avatar)} {
 									@include ac-spacing-styling($m: 0);
+									svg {
+										@include ac-color-styling($c: inherit);
+									}
 								}
 
 								#{c(sidebar private content)} {
@@ -232,35 +238,23 @@
 							}
 						}
 
-						&:has(#{c(sidebar private newBadge)}) {
+						&:has(#{c(sidebar private link)} :is(#{c(sidebar private newBadge)}, .premiumTrialBadge__4c1e4)) {
+							// Preserve both background variants used previously
 							@include ac-color-styling($bgc: modifier-accent);
-
-							a svg {
-								@include ac-color-styling($c: interactive-active);
-							}
-						}
-
-						&:has(.premiumTrialBadge__4c1e4) {
 							@include ac-color-styling($bg: modifier-accent);
 
 							a svg {
-								@include ac-color-styling($c: interactive-active);
+								@include ac-color-styling($c: var(--brand-700));
 							}
 						}
 
 						&:hover,
 						&:focus-within {
-							@include ac-color-styling(
-								$bgc: modifier-hover,
-								$c: var(--interactive-active)
-							);
+							@include ac-color-styling($bgc: modifier-hover, $c: var(--brand-700));
 						}
 
 						&#{c(sidebar private selectedBG)} {
-							@include ac-color-styling(
-								$bg: modifier-selected,
-								$c: var(--interactive-active)
-							);
+							@include ac-color-styling($bg: modifier-selected, $c: var(--brand-700));
 						}
 					}
 				}

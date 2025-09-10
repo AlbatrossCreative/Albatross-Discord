@@ -1,0 +1,10 @@
+@use 'abstract' as *;
+
+#{c(membersPage page)} {
+	> #{c(scroller base)} {
+		@include ac-border-styling(normal, secondary-alt);
+		@include ac-color-styling($bg: secondary);
+		@include ac-rounded-styling($br: small);
+		@include ac-spacing-styling($mt: small);
+	}
+}

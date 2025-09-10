@@ -5,24 +5,44 @@
 	@include ac-rounded-styling($br: small);
 
 	#{c(modals emoji header)} {
+		@include ac-border-styling(normal, secondary-alt);
 		@include ac-spacing-styling($m: small);
+		@include ac-rounded-styling($br: small);
+	}
+	#{c(modals sidebarList wrapper)} {
+		@include ac-spacing-styling($mb: small);
+	}
+	#{c(modals emoji picker)} {
+		@include ac-color-styling($bg: transparent);
+		@include ac-flex-styling($d: grid, $gapc: small);
+		@include ac-border-styling(none);
+		box-shadow: none !important;
+		#{c(modals emoji body)} {
+			@include ac-spacing-styling($ml: small);
+		}
+		#{c(modals emoji inspectorGrid)} {
+			@include ac-position-styling($pos: relative, $top: 0);
+			@include ac-spacing-styling($mb: small, $mt: 0, $ml: small);
+		}
 	}
 }
 
 #{c(modals expressionPicker contentWrapper)} {
 	@include ac-padding-styling($py: small, $pr: small);
+	@include ac-color-styling($bg: floating);
 	@include ac-rounded-styling($br: small);
 	@include ac-flex-styling($gap: 0, $d: grid);
 	grid-template-rows: auto 1fr;
 }
 
 #{c(modals gif container)} {
+	@include ac-color-styling($bg: floating);
 	#{c(modals gif header)} {
+		@include ac-border-styling(normal, secondary-alt, $bt: 0);
 		@include ac-padding-styling($px: small, $pb: small);
 		@include ac-color-styling($bg: primary);
 		@include ac-rounded-styling($brb: small);
 		@include ac-spacing-styling($m: 0, $ml: small);
-		@include ac-border-styling(none);
 	}
 
 	#{c(modals gif scroller)} {
@@ -35,11 +55,11 @@
 
 #{c(modals sticker wrapper)} {
 	#{c(modals sticker header)} {
+		@include ac-border-styling(normal, secondary-alt, $bt: 0);
 		@include ac-padding-styling($px: small, $pb: small);
 		@include ac-color-styling($bg: primary);
 		@include ac-rounded-styling($brb: small);
 		@include ac-spacing-styling($m: 0, $ml: small);
-		@include ac-border-styling(none);
 	}
 
 	#{c(modals sticker listWrapper)} {
@@ -68,6 +88,7 @@
 }
 
 #{c(modals expressionPicker nav)} {
+	@include ac-border-styling(normal, secondary-alt, $bb: 0);
 	@include ac-padding-styling($p: small);
 	@include ac-color-styling($bg: primary);
 	@include ac-rounded-styling($brt: small);
@@ -83,17 +104,18 @@
 		@include ac-flex-styling($d: grid, $gapc: small);
 
 		#{c(modals emoji header)} {
+			@include ac-border-styling(normal, secondary-alt, $bt: 0);
 			@include ac-padding-styling($px: small, $pb: small);
 			@include ac-color-styling($bg: primary);
-			@include ac-rounded-styling($brb: small);
+			@include ac-rounded-styling($brb: small, $brt: 0);
 			@include ac-spacing-styling($m: 0, $ml: small);
-			@include ac-border-styling(none);
 		}
 
 		#{c(modals emoji body)} {
-			@include ac-spacing-styling($ml: small, $mt: small);
+			@include ac-spacing-styling($ml: small, $my: small);
 
 			#{c(modals emoji listWrapper)} {
+				@include ac-border-styling(normal, secondary-alt);
 				@include ac-color-styling($bg: primary);
 				@include ac-rounded-styling($br: small);
 
@@ -111,17 +133,21 @@
 }
 
 #{c(modals expressionPicker inspector)} {
+	@include ac-border-styling(normal, secondary-alt);
 	@include ac-spacing-styling($ml: small, $mt: small);
 	@include ac-color-styling($bg: primary);
 	@include ac-rounded-styling($br: small);
-	@include ac-border-styling(none);
 }
 
 #{c(modals sidebarList wrapper)} {
+	@include ac-border-styling(normal, secondary-alt);
 	@include ac-color-styling($bg: primary);
 	@include ac-rounded-styling($br: small);
 	@include ac-spacing-styling($ml: small);
 	@include ac-position-styling($top: calc(50px + var(--ac-spacing-sm)));
+	#{c(modals emoji unicodeShortcut)} {
+		@include ac-border-styling(none);
+	}
 }
 
 #{c(other cv appPopoutWrapper)} {

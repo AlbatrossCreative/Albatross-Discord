@@ -107,3 +107,6 @@ dist
 
 .config
 .github/docs/.instructions.md
+
+.vscode/
+/Albatross-Discord.wiki

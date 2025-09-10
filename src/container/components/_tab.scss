@@ -7,9 +7,16 @@
 #{c(tab topPill)} {
 	@include ac-flex-styling($gap: small);
 }
-
+#{c(tab top)} {
+	@include ac-border-styling(normal, secondary-alt);
+	@include ac-position-styling($w: fit-content);
+	@include ac-color-styling($bg: primary);
+	@include ac-rounded-styling($br: small);
+	@include ac-flex-styling($gap: small, $jc: space-around);
+	@include ac-padding-styling($p: small);
+}
 #{c(tab item)} {
-	@include ac-color-styling($c: var(--interactive-active));
+	@include ac-color-styling($c: text-primary);
 	@include ac-position-styling($max-h: 32px, $h: unset);
 	@include ac-rounded-styling($br: small);
 	@include ac-padding-styling($p: x-small);
@@ -35,7 +42,7 @@
 	}
 
 	&#{c(tab selected)} {
-		@include ac-color-styling($bg: modifier-selected);
+		@include ac-color-styling($bg: modifier-selected, $c: var(--brand-700));
 
 		&::before {
 			@include ac-position-styling($w: var(--ac-pill-width), $h: 55%);
@@ -44,7 +51,7 @@
 	}
 
 	&:hover:not(#{c(tab selected)}) {
-		@include ac-color-styling($bg: modifier-hover);
+		@include ac-color-styling($bg: modifier-hover, $c: var(--brand-600));
 
 		&::before {
 			@include ac-position-styling($w: var(--ac-pill-width));

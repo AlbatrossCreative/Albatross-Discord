@@ -4,20 +4,18 @@
 	.profileEffects__01370 {
 		@include ac-position-styling($z: -1);
 	}
-
 	.user-profile-popout {
-		@include ac-position-styling($w: 18vw, $max-h: unset);
+		@include ac-position-styling($w: fit-content, $max-w: 18vw, $max-h: unset);
+		@include ac-border-styling(normal, secondary-alt);
 		@include ac-padding-styling($p: 3px);
 		@include ac-rounded-styling($br: small);
 		overflow: unset;
 		&#{c(profile themed)} {
-			#{c(profile popout bitesize header)} {
-				> #{c(profile avatar avatar)} {
+				#{c(profile avatar avatar)} {
 					&::before {
 						@include ac-color-styling($bg: var(--profile-gradient-primary-color));
 					}
 				}
-			}
 		}
 
 		#{c(profile inner)} {
@@ -31,6 +29,7 @@
 			overflow: unset;
 
 			.body_ce8328 {
+				@include ac-padding-styling($p: small);
 				grid-area: body;
 				.clickableContainer__39ec2 {
 					:where(#{c(profile overlay)}) {
@@ -48,13 +47,18 @@
 						> div {
 							@include ac-flex-styling($dir: row);
 							button {
-								@include ac-color-styling($bg: secondary);
+								@include ac-border-styling(normal, secondary-alt);
+								@include ac-color-styling($bg: primary);
 
 								.contents__201d5 {
 									@include ac-flex-styling($jc: center, $gap: 0);
 									.menuItemLabel_ce8328 {
 										@include ac-position-styling($d: none);
 									}
+								}
+								&:hover {
+									@include ac-border-styling(normal, secondary);
+									@include ac-color-styling($bg: secondary);
 								}
 							}
 						}
@@ -95,8 +99,8 @@
 					}
 				}
 
-				svg {
-					@include ac-position-styling($h: fit-content, $min-w: unset);
+				> svg {
+					@include ac-position-styling($h: fit-content, $min-w: unset, $w: 100%);
 					grid-area: -1/1;
 
 					mask {
@@ -140,12 +144,39 @@
 						);
 
 						svg {
+							#{c(profile avatar overlay)} {
+								&::after {
+									@include ac-rounded-styling($br: small);
+								}
+							}
+						}
+
+						> rect {
+							ry: var(--rs-avatar-shape) !important;
+							rx: var(--rs-avatar-shape) !important;
+						}
+					}
+				}
+
+				#{c(profile avatar avatar)} {
+					@include ac-position-styling(
+						$left: 0,
+						$top: 0,
+						$pos: relative,
+						$h: 100%,
+						$w: 100%
+					);
+
+					#{c(avatar wrapper)} {
+						@include ac-spacing-styling($mt: small, $ml: small);
+
+						svg {
 							foreignObject {
 								#{c(profile avatar overlay)} {
 									img {
 										clip-path: inset(
-											calc(var(--rs-medium-spacing) + 1px)
-												calc(var(--rs-medium-spacing) + 1px) round
+											calc(var(--rs-medium-spacing) + 3px)
+												calc(var(--rs-medium-spacing) + 3px) round
 												var(--ac-rounded-sm)
 										) !important;
 									}
@@ -157,66 +188,29 @@
 							}
 
 							> rect {
-								ry: var(--rs-avatar-shape) !important;
-								rx: var(--rs-avatar-shape) !important;
-							}
-						}
-					}
-
-					#{c(profile avatar avatar)} {
-						@include ac-position-styling(
-							$left: 0,
-							$top: 0,
-							$pos: relative,
-							$h: 100%,
-							$w: 100%
-						);
-
-						#{c(avatar wrapper)} {
-							@include ac-spacing-styling($mt: small, $ml: small);
-
-							svg {
-								foreignObject {
-									#{c(profile avatar overlay)} {
-										img {
-											clip-path: inset(
-												calc(var(--rs-medium-spacing) + 1px)
-													calc(var(--rs-medium-spacing) + 1px) round
-													var(--ac-rounded-sm)
-											) !important;
-										}
-
-										&::after {
-											@include ac-rounded-styling($br: small);
-										}
-									}
-								}
-
-								> rect {
-									ry: var(--ac-rounded-md) !important;
-									rx: var(--ac-rounded-md) !important;
-								}
+								ry: var(--ac-rounded-md) !important;
+								rx: var(--ac-rounded-md) !important;
 							}
 						}
 					}
 				}
 			}
+		}
 
-			#{c(profile popout bitesize body)} {
-				@include ac-position-styling($w: 100%);
-				@include ac-padding-styling($px: small, $pt: small, $pb: 0, $pr: small);
-				overflow: hidden !important;
-				grid-area: body;
-			}
+		#{c(profile popout bitesize body)} {
+			@include ac-position-styling($w: 100%);
+			@include ac-padding-styling($px: small, $pt: small, $pb: 0, $pr: small);
+			overflow: hidden !important;
+			grid-area: body;
+		}
 
-			footer {
-				@include ac-padding-styling($p: small);
-				@include ac-flex-styling($jc: flex-end);
-				grid-area: footer;
-
-				input {
-					@include ac-color-styling($bg: primary);
-				}
+		#{c(profile popout bitesize footer)} {
+			@include ac-padding-styling($p: small);
+			@include ac-flex-styling($jc: flex-end);
+			grid-area: footer;
+			.container_a99829 {
+				@include ac-color-styling($bg: primary);
+				@include ac-rounded-styling($br: small);
 			}
 		}
 	}

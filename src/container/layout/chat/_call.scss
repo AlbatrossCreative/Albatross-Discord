@@ -48,8 +48,14 @@
 }
 
 #{c(call wrapper)} {
+	@include ac-position-styling($min-h: 240px);
 	@include ac-color-styling($bg: transparent);
-
+	&.fullScreen_cb9592 {
+		align-self: end !important;
+		@include ac-position-styling(
+			$w: calc(100% - var(--custom-guild-list-width) - var(--ac-spacing-sm))
+		);
+	}
 	#{c(call channelChatWrapper)} {
 		@include ac-color-styling($bg: transparent);
 	}
@@ -78,13 +84,15 @@
 				}
 
 				#{c(call rootChild)} {
-					@include ac-flex-styling($gapc: medium);
+					@include ac-flex-styling($gapc: medium, $ai: start);
 					@include ac-padding-styling($p: 0);
 
 					#{c(call transition)} {
 						@include ac-position-styling($h: 100%);
 						@include ac-spacing-styling($m: 0);
-						@include ac-padding-styling($pt: 4%);
+						@include ac-padding-styling($py: small);
+						@include ac-flex-styling($d: grid, $ai: center, $wrap: wrap);
+						grid-template-rows: 1fr 60px;
 
 						#{c(call avatarWrapper)} {
 							svg {
@@ -100,10 +108,22 @@
 							#{c(call avatarBorder)} {
 								@include ac-rounded-styling($br: var(--rs-avatar-shape));
 							}
+							&.ringingOutgoing_f910d0 {
+								&::after {
+									@include ac-rounded-styling($br: var(--rs-avatar-shape));
+								}
+							}
 						}
 
 						.statusContainer_f910d0 {
-							@include ac-position-styling();
+							@include ac-rounded-styling($br: x-small);
+							@include ac-position-styling(
+								$h: unset,
+								$w: unset,
+								$right: calc(var(--ac-spacing-xs) * -1),
+								$bottom: calc(var(--ac-spacing-xs) * -1)
+							);
+							@include ac-padding-styling($p: xx-small);
 						}
 					}
 				}
@@ -119,6 +139,24 @@
 				@include ac-position-styling($h: 100%);
 				overflow: hidden;
 
+				#{c(stage gradientContainer)} {
+					background: linear-gradient(
+						var(--background-secondary),
+						color-mix(in oklab, var(--background-secondary), transparent 26.2%) 19%,
+						color-mix(in oklab, var(--background-secondary), transparent 45.9%) 34%,
+						color-mix(in oklab, var(--background-secondary), transparent 61.8%) 47%,
+						color-mix(in oklab, var(--background-secondary), transparent 72.2%) 56.5%,
+						color-mix(in oklab, var(--background-secondary), transparent 80.6%) 65%,
+						color-mix(in oklab, var(--background-secondary), transparent 87.4%) 73%,
+						color-mix(in oklab, var(--background-secondary), transparent 92.5%) 80.2%,
+						color-mix(in oklab, var(--background-secondary), transparent 95.8%) 86.1%,
+						color-mix(in oklab, var(--background-secondary), transparent 97.9%) 91%,
+						color-mix(in oklab, var(--background-secondary), transparent 99.2%) 95.2%,
+						color-mix(in oklab, var(--background-secondary), transparent 99.8%) 98.2%,
+						transparent
+					) !important;
+				}
+
 				#{c(stage gradientTop)} {
 					@include ac-position-styling($top: calc(var(--ac-spacing-sm) + 48px));
 					@include ac-rounded-styling($brt: small);
@@ -131,9 +169,43 @@
 
 					> div {
 						@include ac-flex-styling($gapc: small, $dir: column);
-
 						#{c(call headerWrapper)} {
 							@include ac-spacing-styling($mt: 0, $mb: small, $mx: 0);
+							section {
+								pointer-events: auto !important;
+								#{c(header upperContainer)} {
+									pointer-events: auto !important;
+									opacity: 1 !important;
+									#{c(header children)} {
+										pointer-events: auto !important;
+										overflow: unset !important;
+										opacity: 1 !important;
+										> div:has(#{c(avatar wrapper)}) {
+											@include ac-flex-styling($jc: center, $ai: center);
+											@include ac-position-styling($h: 100%, $w: fit-content);
+											#{c(avatar wrapper)} {
+												@include ac-position-styling(
+													$h: fit-content,
+													$w: fit-content
+												);
+												svg {
+													@include ac-position-styling($pos: relative);
+													foreignObject {
+														@include ac-position-styling(
+															$w: 100%,
+															$h: 100%
+														);
+													}
+												}
+											}
+										}
+									}
+									#{c(header toolbar)} {
+										pointer-events: auto !important;
+										opacity: 1 !important;
+									}
+								}
+							}
 						}
 
 						div {
@@ -147,7 +219,7 @@
 
 				#{c(call bottomControls)} {
 					@include ac-position-styling($w: calc(100% - var(--ac-spacing-sm)));
-
+					@include ac-padding-styling($pl: small);
 					@include ac-spacing-styling($mb: small);
 				}
 			}
@@ -155,16 +227,30 @@
 	}
 }
 
+#{c(call buttonsWrapper)}:not(:has(> .buttonSection__1405b)) {
+	@include ac-color-styling($bg: secondary);
+	@include ac-padding-styling($py: x-small, $px: small);
+	@include ac-border-styling(normal, secondary-alt);
+	@include ac-rounded-styling($br: small);
+	div {
+			#{c(button contents)} {
+				svg {
+					@include ac-padding-styling($p: 0);
+				}
+			}
+		}
+	
+}
 #{c(call buttonsWrapper)},
 .experimentWrapper_fcb27c {
 	.buttonSection__1405b,
 	.experimentButtonSection_fcb27c {
-		@include ac-color-styling($bg: transparent);
-		@include ac-padding-styling($p: 0);
-		@include ac-border-styling(none);
+		@include ac-color-styling($bg: secondary);
+		@include ac-padding-styling($py: x-small, $px: small);
+		@include ac-border-styling(normal, secondary-alt);
+		@include ac-rounded-styling($br: small);
 
 		.attachedCaretButtonContainer_f1ceac {
-			div {
 				#{c(call contextMenuNub)} {
 					@include ac-rounded-styling($br: small);
 					@include ac-spacing-styling($ml: x-small);
@@ -178,7 +264,7 @@
 				.attachedCaret_f1ceac {
 					@include ac-padding-styling($px: xx-small);
 				}
-			}
+			
 
 			.contextMenuNubExperiment_f1ceac {
 				@include ac-rounded-styling($br: small);
@@ -192,8 +278,21 @@
 	}
 
 	> div[style='opacity: 1; transform: scale(1);'] {
-		button {
-			@include ac-padding-styling($p: 6px);
+		@extend .buttonSection__1405b;
+		.attachedCaretButtonContainer_f1ceac {
+			@include ac-position-styling($h: 40px, $w: 40px);
+			div {
+				@include ac-position-styling($h: 100%, $w: 100%);
+				@include ac-flex-styling($dir: column, $ai: center, $jc: center);
+				button {
+					@include ac-position-styling($h: 100%, $w: 100%);
+					@include ac-padding-styling($p: 6px);
+					.lottieIcon__5eb9b {
+						@include ac-position-styling($h: 20px, $w: 20px);
+						@include ac-padding-styling($p: 0);
+					}
+				}
+			}
 		}
 	}
 }

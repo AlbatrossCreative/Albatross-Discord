@@ -4,20 +4,49 @@
 		@include ac-rounded-styling($br: small);
 		@include ac-border-styling(normal, secondary-alt);
 		overflow: hidden;
-		.container_d08938 {
-			.headerBar__8a7fc {
-				@include ac-position-styling($w: fill);
-				@include ac-spacing-styling($m: small);
-				@include ac-rounded-styling($br: small);
-				@include ac-color-styling($bg: secondary);
-				.container__65d41{
-					#{c(tab top)} {
-						@include ac-flex-styling($ai: center);
-					}
+		.headerBar__1a9ce {
+			@include ac-color-styling($bg: primary);
+			@include ac-spacing-styling($m: small);
+			@include ac-position-styling($w: fill);
+		}
+		.headerBar__8a7fc {
+			@include ac-position-styling($w: fill);
+			@include ac-spacing-styling(
+				$mr: calc(var(--ac-spacing-sm) * 3 - 2px),
+				$ml: calc(var(--ac-spacing-sm) * 2),
+				$mt: calc(var(--ac-spacing-sm) * 2)
+			);
+			@include ac-rounded-styling($br: small);
+			@include ac-color-styling($bg: primary);
+			@include ac-border-styling(normal, secondary-alt);
+			@include ac-padding-styling($pl: x-small, $pr: xx-small);
+			overflow: hidden;
+			.container__65d41 {
+				#{c(tab top)} {
+					@include ac-color-styling(transparent);
+					@include ac-border-styling(none);
+					@include ac-flex-styling($ai: center);
 				}
-				&::after{
-					@include ac-position-styling($d: none);
+			}
+			&::after {
+				@include ac-position-styling($d: none);
+			}
+		}
+		.container_e9ef78 {
+			@include ac-spacing-styling($mx: small);
+			@include ac-rounded-styling($br: small);
+			overflow: hidden;
+		}
+		#{c(other cv discoverQuest)} {
+			.container_e9ef78 {
+				.gradientBackground_e9ef78 {
+					@include ac-spacing-styling($m: small);
+					@include ac-rounded-styling($br: small);
+					overflow: hidden;
 				}
+			}
+			.contentSection_b6bcee {
+				@include ac-padding-styling($pt: 10vh);
 			}
 		}
 	}

@@ -11,7 +11,7 @@
 	svg#{c(slider slider)} {
 		@include ac-spacing-styling($mb: 0, $mt: xx-small, $mx: xx-small);
 		rect {
-			@include ac-rounded-styling($br: x-small);
+			rx: var(--ac-rounded-xs) !important;
 		}
 
 		svg {

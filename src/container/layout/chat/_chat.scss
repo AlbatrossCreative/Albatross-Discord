@@ -1,6 +1,7 @@
 @use 'abstract' as *;
 
 #{c(chat page)} {
+	@include ac-border-styling(none);
 	&:has(.fullScreen_cb9592) {
 		grid-column: -1/1 !important;
 
@@ -8,15 +9,47 @@
 			@include ac-position-styling($top: 0);
 		}
 	}
+	.container__89463 {
+		@include ac-flex-styling($gapr: small);
+		.contentContainer__89463 {
+			@include ac-flex-styling($gapc: small);
+			.powerupsContainer__89463 {
+				@include ac-border-styling(normal, secondary-alt);
+				@include ac-color-styling($bg: secondary);
+				@include ac-rounded-styling($br: small);
+			}
+			.sidebarContainer__89463 {
+				@include ac-border-styling(normal, secondary-alt);
+				@include ac-rounded-styling($br: small);
+			}
+		}
+	}
 
 	#{c(chat _index)} {
 		@include ac-color-styling($bg: transparent);
 		@include ac-border-styling(none);
+		> #{c(scroller auto)} {
+			@include ac-border-styling(normal, secondary-alt);
+			@include ac-spacing-styling($mt: small);
+			@include ac-color-styling($bg: secondary);
+			@include ac-rounded-styling($br: small);
+			#{c(other cv homeContainer)} {
+				@include ac-spacing-styling($m: 2x-large);
+				.maxWidthWrapper__7449f {
+					@include ac-flex-styling($f: 1, $wrap: wrap, $ac: end);
+				}
+			}
+		}
 		#{c(chat chatContent)} {
 			@include ac-color-styling($bg: transparent);
 			@include ac-spacing-styling($mt: small);
 			@include ac-flex-styling($gap: small);
 			@include ac-border-styling(none);
+
+			#{c(chat chatScrollerNSFW)} {
+				@include ac-border-styling(normal, secondary-alt);
+				@include ac-rounded-styling($br: small);
+			}
 
 			#{c(pages pageBody)} {
 				@include ac-rounded-styling($br: small);
@@ -25,11 +58,20 @@
 			#{c(chat chatContentInner)} {
 				@include ac-color-styling($bg: transparent);
 
+				#{c(other cv channelNotInList)} {
+					@include ac-border-styling(normal, secondary-alt);
+					@include ac-color-styling($bg: secondary);
+					@include ac-rounded-styling($br: small);
+					@include ac-spacing-styling($mb: small);
+					&::after {
+						@include ac-position-styling($d: none);
+					}
+				}
+
 				#{c(chat messagesWrapper)} {
 					@include ac-color-styling($bg: secondary);
 					@include ac-rounded-styling($br: small);
 					@include ac-border-styling(normal, secondary-alt);
-					@include ac-position-styling($d: block);
 					overflow: hidden;
 
 					&::before {
@@ -82,6 +124,7 @@
 
 					#{c(chat newMessagesBar)} {
 						@include ac-position-styling($w: unset, $left: unset, $right: unset);
+						@include ac-color-styling($c: header-primary);
 					}
 
 					#{c(chat scrollerSpacer)} {
@@ -109,7 +152,8 @@
 							@include ac-padding-styling($py: xx-small, $px: x-small);
 							@include ac-color-styling($bg: primary, $c: header-primary);
 							@include ac-border-styling(normal, secondary-alt);
-							@include ac-rounded-styling($br: small);
+							@include ac-position-styling($h: unset);
+							@include ac-rounded-styling($br: x-small);
 						}
 					}
 				}
@@ -139,17 +183,23 @@
 				$h: min-content,
 				$z: 7
 			);
-			@include ac-color-styling($bg: modifier-accent);
+			@include ac-border-styling(normal, secondary-alt);
+			@include ac-color-styling($bg: floating);
 			@include ac-rounded-styling($br: small);
 			@include ac-spacing-styling($m: small);
-			@include ac-padding-styling($p: xx-small);
+			@include ac-padding-styling($p: x-small);
 			@include ac-flex-styling($f: 1);
 			@include ac-position-styling($d: block);
 			box-shadow: none !important;
-			@include ac-border-styling(none);
 			&#{c(chatForm jumpToPresentBar)} {
 				@include ac-position-styling($bottom: auto, $min-h: unset);
 				@include ac-border-styling(none);
+				&.barWithAppLauncherButton__0f481 {
+					@include ac-flex-styling($dir: row, $gapc: small);
+					button {
+						@include ac-color-styling($bg: modifier-selected);
+					}
+				}
 				.barButtonBase__0f481 {
 					@include ac-position-styling($h: unset, $w: 100%);
 					@include ac-padding-styling($p: 0);

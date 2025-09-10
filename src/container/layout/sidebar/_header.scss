@@ -1,6 +1,9 @@
 @use 'abstract' as *;
 
 #{c(sidebar server header container)} {
+	.headerGlass_f37cb1 {
+		@include ac-position-styling($d: none);
+	}
 	#{c(sidebar server header header)} {
 		@include ac-border-styling(normal, primary);
 		@include ac-color-styling($bg: secondary);

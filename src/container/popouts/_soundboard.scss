@@ -1,16 +1,45 @@
 @use 'abstract' as *;
 
 #{c(modals soundboard modal)} {
+	@include ac-flex-styling($d: grid, $grid-gapr: small);
+	@include ac-position-styling($w: 550px);
 	@include ac-rounded-styling($br: small);
-	@include ac-color-styling($bg: tertiary);
+	@include ac-color-styling($bg: floating);
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+		'header header'
+		'categoryList soundList';
 	#{c(modals soundboard header)} {
+		@include ac-border-styling(normal, secondary-alt);
 		@include ac-spacing-styling($mx: small, $mt: small);
-		@include ac-color-styling($bg: primary);
+		@include ac-color-styling($bg: secondary);
 		@include ac-rounded-styling($br: small);
 		box-shadow: none !important;
+		grid-area: header;
 	}
 	#{c(modals soundboard categoryList)} {
-		@include ac-position-styling($top: calc(63px + var(--ac-spacing-sm) * 2));
+		@include ac-position-styling($top: 0, $pos: relative);
 		@include ac-spacing-styling($mb: small);
+		@include ac-color-styling($bg: secondary);
+		grid-area: categoryList;
+	}
+	#{c(modals soundboard listWrapper)} {
+		@include ac-border-styling(normal, secondary-alt);
+		@include ac-spacing-styling($m: small, $mt: 0);
+		@include ac-position-styling($left: 0, $w: fill);
+		@include ac-color-styling($bg: secondary);
+		@include ac-rounded-styling($br: small);
+		overflow: hidden;
+		grid-area: soundList;
+		#{c(modals soundboard wrapper)} {
+			@include ac-position-styling($pos: relative);
+			#{c(modals sidebarList listItems)} {
+				@include ac-position-styling($w: min-content);
+			}
+		}
+	}
+	.gridNoticeWrapper__0856d:empty {
+		display: none;
 	}
 }

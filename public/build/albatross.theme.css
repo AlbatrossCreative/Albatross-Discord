@@ -1,29 +1,121 @@
 /**
- * @name Albatross
- * @description Bringing Discord Grand Ideas.
+ * @name Albatross Discord
+ * @description Reimaging, Redesigning, Recreating.
  * @author Albatross Creative
- * @version 0.2.2
- * @website https://github.com/albatrosscreative/albatross-discord
- * @source https://albatrosscreative.github.io/Albatross-Discord/public/build/albatross.theme.css
- * @authorId 597072695875600385
+ * @version 0.4.3a
+ * @website https://github.com/albatrosscreative
+ * @source https://github.com/albatrosscreative/albatross-discord
+ * @license GPL-3.0
+ * @authorId 1402803294694281236
  * @authorLink https://www.github.com/albatrosscreative
  */
 
 
-/* DO NOT COMMMENT THE FOLLOWING LINES BELOW */
-
 /* BACKEND IMPORTS */
-@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/backend/albatross-vars.css');
+
+/* DO NOT COMMENT THE FOLLOWING LINES BELOW */
+
+@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/backend/albatross-vars-minified.css');
 @import url('https://albatrosscreative.github.io/Albatross-Discord/public/build/albatross-minified.css');
 
 /* DO NOT COMMENT THE FOLLOWING LINES ABOVE */
 
-/* Palettes */
-@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/heroui.css');
 
 
-/* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/comet.css');
-@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/dracula.css');
-@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/crearts.css');
-@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/miyu.css');
-@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/nord.css'); */
+/* Palettes (ONLY ONE AT A TIME) */
+
+/* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/abyss.css'); */
+/* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/comet.css'); */
+/* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/crearts.css'); */
+/* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/dracula.css'); */
+/* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/github-dark.css'); */
+/* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/github-dimmed.css'); */
+/* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/heroui.css'); */
+/* @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/miyu.css'); */
+ @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/nord.css'); 
+
+	
+
+/*
+CUSTOM PALETTE 
+
+
+READ DOCUMENTATION BEFORE USING
+NOTE: USES HSL VALUES
+
+/*
+html:root {
+
+	--ACV16: 'author';
+	--ACV17: 'palette name';
+
+	--ACV18: 'primary font', sans-serif;
+	--ACV19: 'secondary font', sans-serif;
+	--ACV20: 'code font', monospace;
+}
+
+.theme-dark,
+.theme-darker,
+.theme-midnight {
+	--ACV01: 000; 
+	--ACV02: 00%;
+	--ACV03: 00%; 
+	--ACVA1: 1; 
+
+	--ACV04: 000;
+	--ACV05: 00%;
+	--ACV06: 00%;
+	--ACVA2: 1;
+
+	--ACV07: 000;
+	--ACV08: 00%;
+	--ACV09: 00%;
+	--ACVA3: 1;
+
+	--ACV10: 000;
+	--ACV11: 00%;
+	--ACV12: 00%;
+	--ACVA4: 1;
+
+	--ACV13: 000;
+	--ACV14: 00%;
+	--ACV15: 00%;
+	--ACVA5: 1;
+
+	--ACV21: 0;
+    --ACV22: 100%;
+    --ACV23: 100%;
+	--ACVA6: 1;
+}
+
+.theme-light {
+	--ACV01: 000;
+	--ACV02: 00%;
+	--ACV03: 00%;
+	--ACVA1: 1;
+
+	--ACV04: 000;
+	--ACV05: 00%;
+	--ACV06: 00%;
+	--ACVA2: 1;
+
+	--ACV07: 000;
+	--ACV08: 00%;
+	--ACV09: 00%;
+	--ACVA3: 1;
+
+	--ACV10: 000;
+	--ACV11: 00%;
+	--ACV12: 00%;
+	--ACVA4: 1;
+
+	--ACV13: 000;
+	--ACV14: 00%;
+	--ACV15: 00%;
+	--ACVA5: 1;
+
+	--ACV21: 0;
+    --ACV22: 100%;
+    --ACV23: 100%;
+	--ACVA6: 1;
+}

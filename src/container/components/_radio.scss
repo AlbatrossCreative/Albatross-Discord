@@ -30,7 +30,7 @@
 			}
 		}
 
-		&:hover:not([aria-checked='true']) #{c(userSettings radioBar)} {
+		&:hover[aria-checked='false'] #{c(userSettings radioBar)} {
 			@include ac-color-styling($bg: modifier-hover);
 		}
 	}

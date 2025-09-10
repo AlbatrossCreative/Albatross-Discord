@@ -1,13 +1,9 @@
 @use 'abstract' as *;
 
-%rounded-base {
-	@include ac-rounded-styling($br: small);
-}
-
 .actionBar_aa605f #{c(chat buttonWrapper)} {
 	@include ac-color-styling($bg: tertiary);
 	@include ac-border-styling(normal, primary);
-	@extend %rounded-base;
+	@include ac-rounded-styling($br: small);
 	@include ac-padding-styling($p: xx-small);
 
 	#{c(chat button)} {
@@ -16,24 +12,24 @@
 }
 
 #{c(modals menus menu)} {
-	@extend %rounded-base;
+	@include ac-rounded-styling($br: small);
 	@include ac-padding-styling($p: 0);
 	@include ac-color-styling($bg: floating);
 	box-shadow: none !important;
 
 	#{c(modals menus quickReactWrapper)} {
-		@extend %rounded-base;
+		@include ac-rounded-styling($br: small);
 		@include ac-padding-styling($p: x-small);
 		@include ac-spacing-styling($mb: xx-small);
 		@include ac-color-styling($bg: secondary);
 
 		#{c(modals menus customItem)} #{c(modals menus quickReactionButton)} {
-			@extend %rounded-base;
+			@include ac-rounded-styling($br: small);
 		}
 	}
 
 	#{c(modals menus item)} {
-		@extend %rounded-base;
+		@include ac-rounded-styling($br: small);
 
 		#{c(modals menus iconContainer)} {
 			@include ac-spacing-styling($ml: 0, $mr: xx-small);

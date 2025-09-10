@@ -28,6 +28,9 @@
 					.searchBar_c7e907 {
 						@include ac-rounded-styling($br: small);
 					}
+					#{c(tab item)} {
+						@include ac-color-styling($c: text-primary);
+					}
 
 					#{c(tab header)} {
 						@include ac-padding-styling($py: small, $px: 0);
@@ -44,22 +47,30 @@
 		@include ac-spacing-styling($mr: small);
 		@include ac-border-styling(normal, primary);
 		overflow: hidden;
+		.container_cdb2b0 {
+			@include ac-position-styling($w: 100%);
+		}
 
 		#{c(userSettings contentRegionScroller)} {
 			@include ac-color-styling($bg: transparent);
 			@include ac-spacing-styling($mt: 0);
 
-			.contentColumnScrollable__23e6b {
-				.content_dbba93 {
-					.leftColumn_dbba93 {
-						@include ac-position-styling($max-w: 100%);
-					}
+			.content_dbba93 {
+				.leftColumn_dbba93 {
+					@include ac-position-styling($max-w: 100%);
+					@include ac-flex-styling($f: 1);
 				}
 			}
 
 			.section__9e177 {
 				@include ac-position-styling($max-w: 100%);
 				@include ac-spacing-styling($m: 4x-large);
+			}
+		}
+		#{c(userSettings customScroller)} {
+			> div,
+			main {
+				@include ac-position-styling($max-w: 100%);
 			}
 		}
 
@@ -120,17 +131,12 @@
 						}
 					}
 
-					#{c(tab top)} {
-						@include ac-flex-styling($gap: small);
-						border: none;
-					}
-
 					#{c(userSettings box)},
 					#{c(card primary)} {
-						@include ac-color-styling($bg: primary);
+						@include ac-border-styling(normal, secondary-alt);
+						background-color: var(--background-primary);
 						@include ac-rounded-styling($br: small);
 						box-shadow: none !important;
-						@include ac-border-styling(none);
 					}
 
 					[class*='max-width__'] {
@@ -171,6 +177,11 @@
 						@include ac-rounded-styling($br: small);
 						@include ac-spacing-styling($mb: small);
 						@include ac-border-styling(none);
+						#{c(serverList serverWrapper)} {
+							#{c(serverList lowerBadge)} {
+								@include ac-position-styling($right: 0, $left: unset, $bottom: 0);
+							}
+						}
 					}
 
 					.authedAppV2__50a54 {
@@ -198,7 +209,7 @@
 					}
 				}
 
-				#{c(other cv settingsToolsContainer)} {
+				#{c(settings tools toolsContainer)} {
 					@include ac-position-styling($pos: absolute, $top: 0);
 				}
 			}

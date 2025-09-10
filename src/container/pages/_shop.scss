@@ -5,30 +5,44 @@
 	@include ac-rounded-styling($br: small);
 	@include ac-color-styling($bg: transparent);
 
-	#{c(other cv shopBackground)} {
-		@include ac-color-styling($bg: transparent);
+	#{c(other cv shopViewWrapper)} {
+		@include ac-spacing-styling($mt: small);
 		@include ac-rounded-styling($br: small);
-		overflow: hidden scroll !important;
+		@include ac-color-styling($bg: secondary);
+		overflow: hidden !important;
 
-		#{c(other cv shopViewWrapper)} {
-			@include ac-rounded-styling($br: small);
+		.shopScroll__08415 {
+			@include ac-color-styling($bg: transparent);
+		}
 
-			.fullscreenHeaderBar__80679 {
-				#{c(header upperContainer)} {
-					#{c(header children)} {
-						@include ac-position-styling($max-w: 100%);
+		#{c(header)} {
+			@include ac-position-styling($w: auto, $pos: sticky, $top: small);
+			@include ac-spacing-styling($mx: small);
+			@include ac-color-styling($bg: primary);
+		}
 
-						.alignedRightContent__80679 {
-							@include ac-spacing-styling($mr: small);
-						}
+		.fullscreenHeaderBar__80679 {
+			#{c(header upperContainer)} {
+				#{c(header children)} {
+					@include ac-position-styling($max-w: 100%);
+
+					.alignedRightContent__80679 {
+						@include ac-spacing-styling($mr: small);
 					}
 				}
 			}
+		}
 
-			#{c(other cv shopPreview)} {
-				@include ac-color-styling($bg: secondary);
-				@include ac-rounded-styling($br: small);
-				@include ac-spacing-styling($mt: small);
+		#{c(other cv shopPreview)} {
+			@include ac-color-styling($bg: secondary);
+			.feedSingleRow__08415 {
+				@include ac-spacing-styling($m: 0);
+				@include ac-padding-styling($p: 0);
+			}
+			.banner__08415 {
+				@include ac-rounded-styling($br: large);
+				@include ac-spacing-styling($m: large);
+				box-shadow: 1px 1px 92px 0px var(--background-secondary) inset;
 			}
 		}
 	}

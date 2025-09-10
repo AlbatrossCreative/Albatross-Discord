@@ -1,22 +1,24 @@
 /**
  * @name Albatross Dev
- * @description Dev version of Albatross Discord
+ * @description Bringing Discord Grand Ideas.
  * @author Albatross Creative
- * @version 0.3.3
+ * @version 0.4.3a
  * @website https://github.com/albatrosscreative/albatross-discord
- * @source https://github.com/albatrosscreative/albatross-discord/blob/master/public/build/albatross.theme.css
+ * @source https://albatrosscreative.github.io/Albatross-Discord/public/build/albatross.theme.css
  * @authorId 597072695875600385
  * @authorLink https://www.github.com/albatrosscreative
  */
- 
-@use 'src/source';
+@forward 'src/source';
 
+// @import url("https://albatrosscreative.github.io/Albatross-Backend/theme/backend/albatross-vars-minified.css");
 
-@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/backend/albatross-vars-minified.css');
+// @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/abyss.css');
+// @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/comet.css');
+// @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/crearts.css');
+// @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/dracula.css');
+// @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/github-dark.css');
+// @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/github-dimmed.css');
+// @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/heroui.css');
+// @import url('https://cdn.jsdelivr.net/gh/albatrosscreative/albatross-backend@main/theme/palettes/miyu.css');
+// @import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/nord.css');
 
-//@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/crearts.css');
-//@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/comet.css');
-//@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/dracula.css');
-//@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/miyu.css');
-//@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/nord.css');
-@import url('https://albatrosscreative.github.io/Albatross-Backend/theme/palettes/heroui.css');

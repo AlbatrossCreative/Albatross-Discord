@@ -1,61 +1,51 @@
 @use 'abstract' as *;
 
 .listItemWrapper__91816 {
-	#{c(serverList serverWrapper)} {
-		mask {
-			use[href='#:r54:-lower_badge_masks'] {
-				@include ac-position-styling($d: none);
-			}
+	mask {
+		use[href='#:r54:-lower_badge_masks'] {
+			@include ac-position-styling($d: none);
 		}
+	}
 
-		svg {
-			foreignObject {
+	foreignObject {
+		@include ac-rounded-styling($br: var(--rs-avatar-shape));
+		mask: none !important;
+		#{c(serverList iconWrapper)} {
+			img {
 				@include ac-rounded-styling($br: var(--rs-avatar-shape));
-				mask: none !important;
-				#{c(serverList iconWrapper)} {
-					img {
-						@include ac-rounded-styling($br: var(--rs-avatar-shape));
-					}
-				}
 			}
 		}
 	}
 }
 
 #{c(serverList listItem)} {
-	div {
-		.folderButton__48112 {
-			@include ac-rounded-styling($br: 0);
+	.folderButton__48112 {
+		@include ac-rounded-styling($br: 0);
 
-			#{c(serverList serverWrapper)} {
-				svg {
-					foreignObject {
-						mask: none !important;
-					}
+		#{c(serverList serverWrapper)} {
+			svg {
+				foreignObject {
+					mask: none !important;
 				}
 			}
 		}
+	}
 
-		#{c(serverList blobContainer)} {
-			#{c(serverList serverWrapper)} {
-				svg {
-					defs {
-						rect {
-							rx: var(--ac-rounded-xxs);
-							ry: var(--ac-rounded-xxs);
-						}
-					}
+	#{c(serverList blobContainer)} {
+		svg {
+			rect {
+				rx: var(--ac-rounded-xxs);
+				ry: var(--ac-rounded-xxs);
+			}
+		}
 
-					foreignObject {
-						@include ac-color-styling($bg: primary);
-						@include ac-rounded-styling($br: small);
-						mask: none !important;
+		foreignObject {
+			@include ac-color-styling($bg: primary);
+			@include ac-rounded-styling($br: small);
+			mask: none !important;
 
-						img {
-							@include ac-transition-styling($l: medium, $p: opacity);
-						}
-					}
-				}
+			img {
+				@include ac-transition-styling($l: medium, $p: opacity);
 			}
 		}
 	}

@@ -8,13 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Pre-release [v0.1.0](https://github.com/AlbatrossCreative/Albatross-Discord/releases) - 2025-06-11
 
 
-[Download alabtross.theme.css 0.2.1](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tag/0.1.0)
+[Download albatross.theme.css 0.2.1](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tag/0.1.0)
 
 Developer Release of Albatross Discord
 
 ## Pre-release [v0.2.1](https://github.com/AlbatrossCreative/Albatross-Discord/releases) - 2025-06-14
 
-[Download alabtross.theme.css 0.2.1](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tag/0.2.1)
+[Download albatross.theme.css 0.2.1](https://github.com/AlbatrossCreative/Albatross-Discord/releases/tag/0.2.1)
 
 ### Added
 

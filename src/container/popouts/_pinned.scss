@@ -1,0 +1,66 @@
+@use 'abstract' as *;
+
+#{c(modals headerDropdown messagesPopoutWrap)} {
+	@include ac-color-styling($bg: floating);
+	@include ac-border-styling(thin, secondary-alt);
+	@include ac-rounded-styling($br: small);
+	@include ac-padding-styling($p: small);
+	box-shadow: none !important;
+	#{c(modals headerDropdown header)} {
+		@include ac-border-styling(normal, secondary);
+		@include ac-rounded-styling($br: small);
+	}
+	#{c(modals headerDropdown messagesPopout)} {
+		@include ac-padding-styling($pl: xx-small, $pr: 0, $pb: 0);
+		overflow: scroll visible !important;
+		#{c(modals pinned messageGroup)} {
+			@include ac-border-styling(none);
+			#{c(chat messageWrapper)} {
+				@include ac-flex-styling($d: grid, $gapc: x-small, $ji: flex-start);
+				grid-template-columns: var(--chat-avatar-size) auto;
+				@include ac-color-styling($bg: transparent);
+				@include ac-padding-styling($p: 0);
+				grid-template-areas:
+					'replied replied'
+					'avatar message'
+					'. media';
+				#{c(chat repliedMessage)} {
+					grid-area: replied;
+				}
+				#{c(chat messageContents)} {
+					grid-area: message;
+					img {
+						@include ac-position-styling($left: 0);
+						grid-area: avatar;
+					}
+					h2 {
+						@include ac-spacing-styling($ml: small, $mb: x-small);
+					}
+					#{c(chat messageContent)} {
+						@include ac-rounded-styling($br: small);
+						@include ac-padding-styling($p: small);
+						@include ac-color-styling($bg: var(--message-background));
+						@include ac-border-styling(normal, secondary-alt);
+						@include ac-spacing-styling($ml: small);
+						@include ac-position-styling($w: fit-content);
+					}
+				}
+				#{c(chat messageAttachmentsContainer)} {
+					@include ac-spacing-styling($ml: small);
+					@include ac-position-styling($w: fill);
+					grid-area: media;
+				}
+			}
+		}
+		#{c(modals pinned footer)} {
+			@include ac-border-styling(normal, secondary);
+			@include ac-color-styling($bg: secondary);
+			@include ac-rounded-styling($br: small);
+		}
+	}
+	#{c(modals pinned footer)} {
+		@include ac-border-styling(normal, secondary-alt);
+		@include ac-color-styling($bg: secondary);
+		@include ac-rounded-styling($br: small);
+	}
+}

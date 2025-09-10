@@ -10,8 +10,9 @@
 		$ml: calc(var(--ac-spacing-xs) - 2px),
 		$mr: calc(var(--ac-spacing-sm) * 2)
 	);
-	@include ac-position-styling($d: block);
+	@include ac-position-styling($d: flex);
 	overflow: hidden !important;
+	line-height: 1;
 
 	#{c(notice closeButton)} {
 		@include ac-position-styling($h: 100%);

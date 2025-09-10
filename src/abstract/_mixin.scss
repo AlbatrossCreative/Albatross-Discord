@@ -33,7 +33,7 @@ $ac-maps: (
 		secondary-alt: var(--background-secondary-alt),
 		tertiary: var(--background-tertiary),
 		floating: var(--background-floating),
-		accent: var(--background-accent),
+		accent: var(--brand-500),
 		interactive-active: var(--interactive-active),
 		modifier-active: var(--background-modifier-active),
 		modifier-selected: var(--background-modifier-selected),
@@ -44,6 +44,7 @@ $ac-maps: (
 		text-tertiary: var(--text-tertiary),
 		text-accent: var(--brand-600),
 		text-muted: var(--text-muted),
+		text-active: var(--text-active),
 		header-primary: var(--header-primary),
 		header-secondary: var(--header-secondary),
 	),
@@ -89,6 +90,7 @@ $ac-maps: (
 
 	$widths: (
 		none: 0,
+		thin: 0.5px,
 		normal: 1px,
 		medium: 2px,
 		thick: 3px,
@@ -98,7 +100,9 @@ $ac-maps: (
 	@if $bt {
 		border-top: $bt !important;
 	}
-
+	@if $w == none {
+		border: none !important;
+	}
 	@if $bb {
 		border-bottom: $bb !important;
 	}
@@ -370,6 +374,9 @@ $ac-maps: (
 @mixin ac-flex-styling(
 	$f: null,
 	$gap: null,
+	$grid-gapc: null,
+	$grid-gapr: null,
+	$grid-gap: null,
 	$gapc: null,
 	$gapr: null,
 	$dir: null,
@@ -385,39 +392,39 @@ $ac-maps: (
 	display: if($d, $d, flex) !important;
 
 	@if $f {
-		flex: $f !important;
+		flex: $f;
 	}
 
 	@if $wrap {
-		flex-wrap: $wrap !important;
+		flex-wrap: $wrap;
 	}
 
 	@if $dir {
-		flex-direction: $dir !important;
+		flex-direction: $dir;
 	}
 
 	@if $ac {
-		align-content: $ac !important;
+		align-content: $ac;
 	}
 
 	@if $ai {
-		align-items: $ai !important;
+		align-items: $ai;
 	}
 
 	@if $jc {
-		justify-content: $jc !important;
+		justify-content: $jc;
 	}
 
 	@if $ji {
-		justify-items: $ji !important;
+		justify-items: $ji;
 	}
 
 	@if $as {
-		align-self: $as !important;
+		align-self: $as;
 	}
 
 	@if $js {
-		justify-self: $js !important;
+		justify-self: $js;
 	}
 
 	@if $gap {
@@ -425,11 +432,20 @@ $ac-maps: (
 	}
 
 	@if $gapr {
-		@include _ac-space(grid-row-gap, $gapr);
+		@include _ac-space(row-gap, $gapr);
 	}
 
 	@if $gapc {
-		@include _ac-space(grid-column-gap, $gapc);
+		@include _ac-space(column-gap, $gapc);
+	}
+	@if $grid-gap {
+		@include _ac-space(grid-gap, $grid-gap);
+	}
+	@if $grid-gapc {
+		@include _ac-space(grid-column-gap, $grid-gapc);
+	}
+	@if $grid-gapr {
+		@include _ac-space(grid-row-gap, $grid-gapr);
 	}
 }
 

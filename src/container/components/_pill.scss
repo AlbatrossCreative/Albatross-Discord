@@ -1,0 +1,12 @@
+@use 'abstract' as *;
+
+.pillContainer__9e06a {
+	@include ac-border-styling(normal, secondary-alt);
+	@include ac-rounded-styling($br: small);
+	.pillItem__9e06a {
+		@include ac-rounded-styling($br: small);
+		&.pillItemSelected__9e06a {
+			@include ac-color-styling($bg: modifier-selected);
+		}
+	}
+}

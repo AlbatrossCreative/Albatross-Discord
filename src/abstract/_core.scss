@@ -1,7 +1,10 @@
 $theme-name: 'Albatross';
-$win-version: '0.3.3';
+$win-version: '0.4.3a';
 $osx-version: '0.1.0';
 
-* {
-	box-sizing: border-box !important;
+body {
+	::selection {
+		background: var(--brand-460);
+		color: var(--brand-760);
+	}
 }
